@@ -1,7 +1,9 @@
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
+import { promises as fs } from 'fs'
+import path from 'path'
 
-const parts = [
+const partMeta = [
   {
     number: 5,
     label: 'Incomplete Sentences',
@@ -22,7 +24,20 @@ const parts = [
   },
 ]
 
-export default function Home() {
+async function getQuestionCounts(): Promise<Record<number, number>> {
+  const dataPath = path.join(process.cwd(), 'public', 'data.json')
+  const raw = await fs.readFile(dataPath, 'utf-8')
+  const data = JSON.parse(raw)
+  return {
+    5: (data.part5 as unknown[]).length,
+    6: (data.part6 as { questions: unknown[] }[]).reduce((sum, p) => sum + p.questions.length, 0),
+    7: (data.part7 as { questions: unknown[] }[]).reduce((sum, p) => sum + p.questions.length, 0),
+  }
+}
+
+export default async function Home() {
+  const counts = await getQuestionCounts()
+
   return (
     <div className="max-w-xl mx-auto px-6 py-20 w-full">
       <div className="mb-14">
@@ -34,7 +49,7 @@ export default function Home() {
       </div>
 
       <div className="space-y-3">
-        {parts.map((part) => (
+        {partMeta.map((part) => (
           <Link
             key={part.number}
             href={part.href}
@@ -47,7 +62,10 @@ export default function Home() {
                 </span>
                 <span className="text-sm font-medium text-gray-900">{part.label}</span>
               </div>
-              <p className="text-xs text-gray-500 leading-relaxed">{part.description}</p>
+              <p className="text-xs text-gray-500 leading-relaxed mb-3">{part.description}</p>
+              <span className="inline-flex items-center px-2 py-0.5 rounded bg-gray-100 text-xs font-medium text-gray-500 tabular-nums">
+                {counts[part.number]} câu hỏi
+              </span>
             </div>
             <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-gray-900 flex-shrink-0 mt-0.5 transition-colors" />
           </Link>

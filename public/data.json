@@ -779,6 +779,216 @@
       },
       "answer": "A",
       "explanation": "'Seamlessly' means smoothly, without any visible transitions or joints. 'Seamlessly combines' is common film criticism language. 'Collectively' (as a group), 'factually' (based on facts), and 'distantly' (from a distance) do not describe how visual styles blend."
+    },
+    {
+      "id": "ets1-p5-101",
+      "question": "Before operating your handheld device, please ___ the enclosed cable to charge it.",
+      "options": { "A": "plan", "B": "remain", "C": "use", "D": "finish" },
+      "answer": "C",
+      "explanation": "'Use the enclosed cable' means employ it for its intended purpose. 'Plan' and 'finish' do not collocate with 'cable'. 'Remain' means to stay in place, not perform an action on an object."
+    },
+    {
+      "id": "ets1-p5-102",
+      "question": "Safile's new external hard drive can ___ store up to one terabyte of data.",
+      "options": { "A": "secure", "B": "security", "C": "securely", "D": "secured" },
+      "answer": "C",
+      "explanation": "An adverb is needed to modify the verb 'store'. 'Securely store' = store safely without risk of loss. 'Secure' and 'secured' are adjective/verb forms; 'security' is a noun — none can modify a verb."
+    },
+    {
+      "id": "ets1-p5-103",
+      "question": "Mr. Peterson will travel ___ the Tokyo office for the annual meeting.",
+      "options": { "A": "to", "B": "through", "C": "in", "D": "over" },
+      "answer": "A",
+      "explanation": "'Travel to a place' expresses the destination. 'Through' suggests passing by without stopping, 'in' would mean working there, and 'over' does not indicate travel to a destination."
+    },
+    {
+      "id": "ets1-p5-104",
+      "question": "Yong-Soo Cosmetics will not charge for items on back order until ___ have left our warehouse.",
+      "options": { "A": "them", "B": "they", "C": "themselves", "D": "their" },
+      "answer": "B",
+      "explanation": "A subject pronoun is needed to head the subordinate clause 'until ___ have left'. 'They' refers to the items on back order. 'Them' is an object pronoun, 'themselves' is reflexive, and 'their' is possessive."
+    },
+    {
+      "id": "ets1-p5-105",
+      "question": "Our premium day tour takes visitors to historic sites ___ the Aprio River.",
+      "options": { "A": "onto", "B": "since", "C": "inside", "D": "along" },
+      "answer": "D",
+      "explanation": "'Along the river' means beside or following the length of it — the natural phrase for sites near a river. 'Onto' means on top of, 'since' is a time connector, and 'inside' implies an enclosed space."
+    },
+    {
+      "id": "ets1-p5-106",
+      "question": "Eighty percent of drivers surveyed said they would consider buying a vehicle that runs on ___.",
+      "options": { "A": "electricity", "B": "electrically", "C": "electricians", "D": "electrify" },
+      "answer": "A",
+      "explanation": "The preposition 'on' requires a noun as its object. 'Runs on electricity' is the standard phrase for electric-powered vehicles. 'Electrically' is an adverb, 'electricians' are people, and 'electrify' is a verb."
+    },
+    {
+      "id": "ets1-p5-107",
+      "question": "Xinzhe Zu has ___ Petrin Engineering as the vice president of operations.",
+      "options": { "A": "attached", "B": "resigned", "C": "joined", "D": "combined" },
+      "answer": "C",
+      "explanation": "'Joined a company as a title' means became a member of that organization in that role. 'Attached' means fastened, 'resigned' means quit, and 'combined' means merged — none describe starting a new position at a company."
+    },
+    {
+      "id": "ets1-p5-108",
+      "question": "Next month, Barder House Books will be holding ___ third author's hour in Cleveland.",
+      "options": { "A": "it", "B": "itself", "C": "its own", "D": "its" },
+      "answer": "D",
+      "explanation": "A possessive pronoun is needed before the ordinal 'third'. 'Its third author's hour' = the company's third such event. 'It' is a subject/object pronoun, 'itself' is reflexive, and 'its own' is redundant in this context."
+    },
+    {
+      "id": "ets1-p5-109",
+      "question": "Chester's Tiles has ___ expanded to a second location in Turrington.",
+      "options": { "A": "severely", "B": "usually", "C": "recently", "D": "exactly" },
+      "answer": "C",
+      "explanation": "'Recently' means not long ago, fitting an announcement about a new location opening. 'Severely' means harshly, 'usually' implies a habitual action, and 'exactly' means precisely — none describe the timing of a business expansion."
+    },
+    {
+      "id": "ets1-p5-110",
+      "question": "Tabrino's has ___ increased the number of almonds in the Nut Medley snack pack.",
+      "options": { "A": "significant", "B": "significance", "C": "signifies", "D": "significantly" },
+      "answer": "D",
+      "explanation": "An adverb is needed to modify the verb 'increased'. 'Significantly increased' = increased by a large amount. 'Significant' is an adjective, 'significance' is a noun, and 'signifies' is a finite verb — none can modify a verb."
+    },
+    {
+      "id": "ets1-p5-111",
+      "question": "___ she travels, Jacintha Flores collects samples of local fabrics and patterns.",
+      "options": { "A": "Wherever", "B": "In addition to", "C": "Either", "D": "In contrast to" },
+      "answer": "A",
+      "explanation": "'Wherever she travels' = in every place she goes — an adverb clause of place. 'In addition to' requires a noun or gerund, 'either' requires a paired alternative, and 'in contrast to' sets up a comparison between two things."
+    },
+    {
+      "id": "ets1-p5-112",
+      "question": "Most picture ___ at Glowing Photo Lab go on sale at 3:00 P.M. today.",
+      "options": { "A": "framer", "B": "framing", "C": "framed", "D": "frames" },
+      "answer": "D",
+      "explanation": "'Picture frames' is a compound noun — frames used to display pictures. As a plural noun, 'frames' serves as the subject of the sentence. 'Framer' means a person who frames, 'framing' is a gerund or adjective, and 'framed' is a past participle."
+    },
+    {
+      "id": "ets1-p5-113",
+      "question": "All students in the business management class hold ___ college degrees.",
+      "options": { "A": "late", "B": "developed", "C": "advanced", "D": "elated" },
+      "answer": "C",
+      "explanation": "'Advanced degrees' is the standard term for graduate-level qualifications such as a master's or doctorate. 'Late' means delayed or near the end, 'developed' describes progress, and 'elated' means very happy — none collocate with 'college degrees'."
+    },
+    {
+      "id": "ets1-p5-114",
+      "question": "We hired Noah Wan of Shengyao Accounting Ltd. ___ our company's financial assets.",
+      "options": { "A": "to evaluate", "B": "to be evaluated", "C": "will be evaluated", "D": "evaluate" },
+      "answer": "A",
+      "explanation": "'Hired someone to do something' uses the to-infinitive to express purpose. 'To evaluate our assets' = for the purpose of assessing them. 'To be evaluated' reverses the subject, 'will be evaluated' is a finite clause, and bare 'evaluate' cannot follow 'hired' as a purpose phrase."
+    },
+    {
+      "id": "ets1-p5-115",
+      "question": "Ms. Charisse is taking on a new account ___ she finishes the Morrison project.",
+      "options": { "A": "with", "B": "going", "C": "after", "D": "between" },
+      "answer": "C",
+      "explanation": "'After she finishes' introduces a time clause indicating sequence — first the Morrison project, then the new account. 'With' suggests accompaniment, 'going' is a participle, and 'between' refers to an interval with two defined endpoints."
+    },
+    {
+      "id": "ets1-p5-116",
+      "question": "Cornet Motors' profits are ___ this year than last year.",
+      "options": { "A": "higher", "B": "high", "C": "highly", "D": "highest" },
+      "answer": "A",
+      "explanation": "'Than' signals a comparison, requiring the comparative form. 'Higher than' compares two time periods. 'High' is the base form, 'highly' is an adverb that cannot follow 'are' in this structure, and 'highest' is superlative (needs 'the')."
+    },
+    {
+      "id": "ets1-p5-117",
+      "question": "In its ___ advertising campaign, Jaymor Tools demonstrates how reliable its products are.",
+      "options": { "A": "current", "B": "relative", "C": "spacious", "D": "collected" },
+      "answer": "A",
+      "explanation": "'Current campaign' = the one happening now. This is a common business expression. 'Relative' means comparative, 'spacious' refers to physical space, and 'collected' means gathered — none describe an ongoing advertising effort."
+    },
+    {
+      "id": "ets1-p5-118",
+      "question": "Remember to submit receipts for reimbursement ___ returning from a business trip.",
+      "options": { "A": "such as", "B": "when", "C": "then", "D": "within" },
+      "answer": "B",
+      "explanation": "'When returning' = at the time of returning, telling employees the moment to submit receipts. 'Such as' introduces examples, 'then' is a time adverb that cannot introduce a participial phrase, and 'within' needs a time noun to follow."
+    },
+    {
+      "id": "ets1-p5-119",
+      "question": "Patrons will be able to access Westside Library's ___ acquired collection of books on Tuesday.",
+      "options": { "A": "instantly", "B": "newly", "C": "early", "D": "naturally" },
+      "answer": "B",
+      "explanation": "'Newly acquired' = recently obtained. This participial phrase describes books the library has just added to its collection. 'Instantly' means immediately (not a descriptor for acquisition timing), 'early' refers to scheduling, and 'naturally' means in a natural way."
+    },
+    {
+      "id": "ets1-p5-120",
+      "question": "Please ___ any questions about time sheets to Tabitha Jones in the payroll department.",
+      "options": { "A": "direction", "B": "directive", "C": "directed", "D": "direct" },
+      "answer": "D",
+      "explanation": "A base verb is needed for the imperative sentence. 'Direct questions to someone' = address or send them. 'Direction' and 'directive' are nouns; 'directed' is past tense or adjective — none can function as the main verb in an imperative."
+    },
+    {
+      "id": "ets1-p5-121",
+      "question": "Before signing a delivery ___, be sure to double-check that all the items ordered are in the shipment.",
+      "options": { "A": "decision", "B": "announcement", "C": "receipt", "D": "limit" },
+      "answer": "C",
+      "explanation": "A 'delivery receipt' is the document a recipient signs to confirm a shipment has arrived. 'Decision' and 'announcement' are unrelated to receiving deliveries. 'Limit' refers to a maximum amount, not a document."
+    },
+    {
+      "id": "ets1-p5-122",
+      "question": "Funds have been added to the budget for expenses ___ with the new building.",
+      "options": { "A": "associated", "B": "association", "C": "associate", "D": "associates" },
+      "answer": "A",
+      "explanation": "'Expenses associated with' = costs connected to or arising from something. 'Associated' functions as a participial adjective modifying 'expenses'. 'Association', 'associate', and 'associates' are nouns or verbs that cannot fill this adjective role."
+    },
+    {
+      "id": "ets1-p5-123",
+      "question": "Ms. Bernard ___ that a deadline was approaching, so she requested some assistance.",
+      "options": { "A": "noticed", "B": "obscured", "C": "withdrew", "D": "appeared" },
+      "answer": "A",
+      "explanation": "'Noticed that' = became aware of a fact. Noticing the deadline prompted her to ask for help — the cause-and-effect is logical. 'Obscured' means hid or made unclear, 'withdrew' means pulled back, and 'appeared' means became visible."
+    },
+    {
+      "id": "ets1-p5-124",
+      "question": "Mr. Moscowitz is ___ that Dr. Tanaka will agree to present the keynote speech at this year's conference.",
+      "options": { "A": "hopes", "B": "hoped", "C": "hopeful", "D": "hopefully" },
+      "answer": "C",
+      "explanation": "After the linking verb 'is', an adjective is needed. 'Is hopeful that' = feels optimistic about. 'Hopes' and 'hoped' are verb forms, and 'hopefully' is an adverb — none can follow 'is' as a predicate adjective."
+    },
+    {
+      "id": "ets1-p5-125",
+      "question": "Two Australian companies are developing new smartphones, but it is unclear ___ phone will become available first.",
+      "options": { "A": "if", "B": "which", "C": "before", "D": "because" },
+      "answer": "B",
+      "explanation": "'Which phone' selects from a specific known set (the two companies' phones). 'It is unclear which phone' = no one knows the answer among the two options. 'If' asks yes/no questions, 'before' is a time conjunction, and 'because' introduces reasons."
+    },
+    {
+      "id": "ets1-p5-126",
+      "question": "Corners Gym offers its members a free lesson in how to use ___ properly.",
+      "options": { "A": "weighs", "B": "weights", "C": "weighty", "D": "weighed" },
+      "answer": "B",
+      "explanation": "'Weights' (plural noun) refers to gym equipment used for strength training. 'How to use weights properly' = correct technique with dumbbells or barbells. 'Weighs' is a verb, 'weighty' is an adjective, and 'weighed' is a past participle."
+    },
+    {
+      "id": "ets1-p5-127",
+      "question": "___ the rules, overnight parking is not permitted at the clubhouse facility.",
+      "options": { "A": "Prior to", "B": "Except for", "C": "Instead of", "D": "According to" },
+      "answer": "D",
+      "explanation": "'According to the rules' = as stated by the regulations, citing the authority for the restriction. 'Prior to' is time-based, 'except for' creates an exclusion, and 'instead of' introduces an alternative — none cite a source of authority."
+    },
+    {
+      "id": "ets1-p5-128",
+      "question": "Once everyone ___, we can begin the conference call.",
+      "options": { "A": "arrived", "B": "is arriving", "C": "to arrive", "D": "has arrived" },
+      "answer": "D",
+      "explanation": "'Once' in a time clause requires a completed action before the main clause begins. 'Has arrived' (present perfect) confirms everyone is now present. Simple past 'arrived' is less standard after 'once'; 'is arriving' is incomplete; 'to arrive' is infinitive."
+    },
+    {
+      "id": "ets1-p5-129",
+      "question": "Each summer a motivational video that highlights the past year's ___ is shown to all company employees.",
+      "options": { "A": "preferences", "B": "accomplishments", "C": "communications", "D": "uncertainties" },
+      "answer": "B",
+      "explanation": "A motivational video highlights achievements to inspire employees. 'Accomplishments' = things successfully achieved during the year. 'Preferences' are choices, 'communications' refers to messages, and 'uncertainties' are doubts — none suit a motivational context."
+    },
+    {
+      "id": "ets1-p5-130",
+      "question": "Employees who wish to attend the retirement dinner ___ Ms. Howell's 30 years of service should contact Mr. Lee.",
+      "options": { "A": "honor", "B": "to honor", "C": "will honor", "D": "will be honored" },
+      "answer": "B",
+      "explanation": "'Dinner to honor someone' uses the to-infinitive to express purpose — the dinner's purpose is honoring Ms. Howell. Bare 'honor' needs a subject, while 'will honor' and 'will be honored' are finite clauses that cannot function as adjective phrases modifying 'dinner'."
     }
   ],
   "part6": [
@@ -1147,6 +1357,123 @@
           "explanation": "'Reach a target' is the standard collocation meaning to achieve a goal. The context is positive — green energy helping India meet its environmental commitments. 'Block' is the opposite meaning. 'Understand' and 'explain' are cognitive verbs, not achievement verbs."
         }
       ]
+    },
+    {
+      "id": "ets1-p6-131",
+      "passage": "To: Myung-Hee Hahn\nFrom: Dellwyn Home Store\nDate: January 15\nSubject: Order update\n\nDear Ms. Hahn,\n\nYour order of a red oak dining table and six matching chairs arrived at our store this morning. We are pleased to confirm that the items are in ---131--- condition. We would now like to arrange for the delivery of the ---132--- to your home. Please feel free ---133--- to Coleman Cobb, our delivery manager. ---134---\n\nCustomer Service,\nDellwyn Home Store",
+      "questions": [
+        {
+          "id": "ets1-p6-131-q1",
+          "question": "(131) We are pleased to confirm that the items are in _______ condition.",
+          "options": { "A": "specially", "B": "specialize", "C": "special", "D": "specializing" },
+          "answer": "C",
+          "explanation": "An adjective is needed to modify the noun 'condition'. 'Special condition' = a specific, satisfactory state of the items. 'Specially' is an adverb, 'specialize' and 'specializing' are verb forms — none can directly modify a noun."
+        },
+        {
+          "id": "ets1-p6-131-q2",
+          "question": "(132) We would now like to arrange for the delivery of the _______ to your home.",
+          "options": { "A": "furniture", "B": "appliances", "C": "refund", "D": "tools" },
+          "answer": "A",
+          "explanation": "The email discusses a dining table and chairs, which are furniture. 'Delivery of the furniture' = bringing these items to the customer's home. 'Appliances' are machines like refrigerators, 'refund' is a reimbursement, and 'tools' are equipment — none match the items ordered."
+        },
+        {
+          "id": "ets1-p6-131-q3",
+          "question": "(133) Please feel free _______ to Coleman Cobb, our delivery manager.",
+          "options": { "A": "speak", "B": "spoken", "C": "is speaking", "D": "to speak" },
+          "answer": "D",
+          "explanation": "'Feel free to do something' uses the to-infinitive. 'Please feel free to speak to Coleman Cobb' = you are welcome to contact him. 'Speak' (base verb), 'spoken' (past participle), and 'is speaking' (continuous) do not follow 'feel free'."
+        },
+        {
+          "id": "ets1-p6-131-q4",
+          "question": "(134) Which sentence best fits this position in the e-mail?",
+          "options": {
+            "A": "He can schedule a convenient time.",
+            "B": "He began working here yesterday.",
+            "C": "He can meet you at 11:00 A.M.",
+            "D": "He recently moved to Dellwyn."
+          },
+          "answer": "A",
+          "explanation": "After introducing Coleman Cobb as the delivery manager and inviting the customer to speak with him, the logical next detail is what he can do — schedule a convenient delivery time. Options B and D add irrelevant personal background. Option C specifies a fixed time that has not been agreed upon."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p6-139",
+      "passage": "To: All Customers\nFrom: asquires@lightidea.com\nDate: March 6\nSubject: Information\n\nDear Light Idea Customers,\n\nLight Idea is enacting a price increase on select energy-efficient products, effective April 17.\n\nSpecific product pricing will ---139---. Please contact your sales representative for details and questions.\n\nThe last date for ordering at current prices is April 16. All orders ---140--- after this date will follow the new price list. ---141--- Customers will be able to find this on our Web site.\n\nWe will continue to provide quality products and ---142--- service to our valued customers. Thank you for your business.\n\nSincerely,\nArvin Squires\nHead of Sales, Light Idea",
+      "questions": [
+        {
+          "id": "ets1-p6-139-q1",
+          "question": "(139) Specific product pricing will _______.",
+          "options": { "A": "agree", "B": "vary", "C": "wait", "D": "decline" },
+          "answer": "B",
+          "explanation": "'Pricing will vary' = different products will have different price changes. This is standard language for announcing non-uniform price adjustments. 'Agree' and 'wait' do not describe pricing behavior; 'decline' would mean prices are falling, which contradicts the announced increase."
+        },
+        {
+          "id": "ets1-p6-139-q2",
+          "question": "(140) All orders _______ after this date will follow the new price list.",
+          "options": { "A": "receiving", "B": "having received", "C": "received", "D": "will be received" },
+          "answer": "C",
+          "explanation": "A past participle functions as an adjective modifying 'orders'. 'Orders received after this date' = orders that arrive after April 16. 'Receiving' (active) would imply the orders are doing the receiving. 'Will be received' is a finite clause that cannot modify a noun."
+        },
+        {
+          "id": "ets1-p6-139-q3",
+          "question": "(141) Which sentence best fits this position in the e-mail?",
+          "options": {
+            "A": "The updated price list will be available on March 20.",
+            "B": "We apologize for this inconvenience.",
+            "C": "Your orders will be shipped after April 17.",
+            "D": "We are increasing prices because of rising costs."
+          },
+          "answer": "A",
+          "explanation": "The following sentence says 'Customers will be able to find this on our Web site.' The pronoun 'this' must refer to something just mentioned — the updated price list. Option A introduces that subject, making the transition logical. The other options break the flow by adding unrelated or misplaced information."
+        },
+        {
+          "id": "ets1-p6-139-q4",
+          "question": "(142) We will continue to provide quality products and _______ service to our valued customers.",
+          "options": { "A": "exceptionally", "B": "exception", "C": "exceptional", "D": "exceptionalism" },
+          "answer": "C",
+          "explanation": "An adjective is needed to modify the noun 'service', parallel to 'quality' earlier in the phrase. 'Exceptional service' = outstanding service. 'Exceptionally' is an adverb, 'exception' and 'exceptionalism' are nouns — none can directly modify 'service'."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p6-143",
+      "passage": "To: Jang-Ho Kwon jkwon@newart.nz\nFrom: Kenneth Okim k.okim@okimjewelry.nz\nSubject: Good news\nDate: 30 August\n\nDear Jang-Ho,\n\nThank you for the shipment last month of 80 units of your jewelry pieces. I am happy to report that they have been selling very well in my shop. My ---143--- love the colourful designs as well as the quality of your workmanship. ---144---\n\nI would like to increase the number of units I order from you. Would you be able to ---145--- my order for the September shipment?\n\nFinally, I would like to discuss the possibility of featuring your work exclusively in my store. I believe that I could reach your target audience best and that the agreement would serve ---146--- both very well. I look forward to hearing from you.\n\nBest regards,\nKenneth Okim\nOkim Jewelry",
+      "questions": [
+        {
+          "id": "ets1-p6-143-q1",
+          "question": "(143) My _______ love the colourful designs as well as the quality of your workmanship.",
+          "options": { "A": "patients", "B": "students", "C": "customers", "D": "teammates" },
+          "answer": "C",
+          "explanation": "Kenneth Okim owns a jewelry shop, so the people who buy from him are customers. 'My customers love the designs' = the shoppers at Okim Jewelry. 'Patients' visit doctors, 'students' attend classes, and 'teammates' are colleagues — none apply to a retail jewelry shop."
+        },
+        {
+          "id": "ets1-p6-143-q2",
+          "question": "(144) Which sentence best fits this position in the e-mail?",
+          "options": {
+            "A": "If you need more time, please let me know.",
+            "B": "Unfortunately, I do not have adequate shelf space at this time.",
+            "C": "I would like to show you some of my own designs.",
+            "D": "The reasonable prices also make your pieces a great value."
+          },
+          "answer": "D",
+          "explanation": "The preceding sentences praise the jewelry's colourful designs and quality workmanship. Option D continues this list of selling points by adding that reasonable prices also attract buyers. The other options shift the topic or introduce contradictory or unrelated information."
+        },
+        {
+          "id": "ets1-p6-143-q3",
+          "question": "(145) Would you be able to _______ my order for the September shipment?",
+          "options": { "A": "include", "B": "double", "C": "repeat", "D": "insure" },
+          "answer": "B",
+          "explanation": "'Double my order' = increase the quantity to twice the previous amount. The sentence before states Kenneth wants to 'increase the number of units', so doubling is the specific action. 'Include' means to add something else, 'repeat' means the same quantity again, and 'insure' means to protect against risk."
+        },
+        {
+          "id": "ets1-p6-143-q4",
+          "question": "(146) I believe that the agreement would serve _______ both very well.",
+          "options": { "A": "us", "B": "you", "C": "we", "D": "these" },
+          "answer": "A",
+          "explanation": "The object pronoun 'us' refers to Kenneth and Jang-Ho together — the agreement benefits both parties. 'You' refers only to Jang-Ho. 'We' is a subject pronoun and cannot be the object of 'serve'. 'These' refers to things, not the two people involved."
+        }
+      ]
     }
   ],
   "part7": [
@@ -1201,6 +1528,582 @@
           },
           "answer": "C",
           "explanation": "The email states: 'Please revise the proposal to include these adjustments and resubmit by Friday, June 1.' The board meeting and the 30-minute call are separate items with no June 1 deadline."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-147",
+      "passage": "Focus Your Social Media Presence\n\nFor small-business owners, it can be a challenge to stand out in a competitive social media environment. Successfully reaching your target market involves knowing how and where to promote your products in a way that is effective and memorable. The Savan Business Center offers support for business owners who need a boost in doing just that. For over 50 years, we've been helping entrepreneurs grow their sales through insight of current industry trends and understanding of our clients' unique needs.\n\nLet us help you get more organized in creating effective and far-reaching social media content. Our latest webinar, Focus Your Social Media Presence, will cover topics related to making your business stand out. You can sign up on our event Web page.\n\nDate: February 5\nTime: 10:00 A.M. to 11:00 A.M.\nEvent Web page: www.savanbusinesscenter.com/socialmedia",
+      "questions": [
+        {
+          "id": "ets1-p7-147-q1",
+          "question": "What is true about the Savan Business Center?",
+          "options": {
+            "A": "It works with small businesses.",
+            "B": "It publishes a weekly newsletter.",
+            "C": "It recently launched a new Web site.",
+            "D": "It is seeking suggestions for webinar topics."
+          },
+          "answer": "A",
+          "explanation": "The passage states the Savan Business Center targets 'small-business owners' and has 'been helping entrepreneurs grow their sales.' Options B, C, and D are not mentioned anywhere in the text."
+        },
+        {
+          "id": "ets1-p7-147-q2",
+          "question": "What is indicated about the webinar?",
+          "options": {
+            "A": "It begins at 11:00 A.M.",
+            "B": "It features advice on creating promotional content.",
+            "C": "It is being offered every month.",
+            "D": "It requires a small fee to attend."
+          },
+          "answer": "B",
+          "explanation": "The webinar 'will cover topics related to making your business stand out' and help owners create 'effective and far-reaching social media content' — which is promotional content. The start time is 10:00 A.M. (not 11:00), frequency and fees are not mentioned."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-149",
+      "passage": "Dine Out Darville Is Back!\n\nDine Out Darville, which runs this year from June 22 to 28, is the perfect chance to try a restaurant in Darville for the first time or revisit one of your favorite restaurants in town. You might even visit multiple restaurants during the weeklong event! Twelve popular restaurants will offer special four-course dinners—including a cup of soup, a salad, a main course, and a dessert—all for a reduced price of $30. Reservations are highly recommended. Dine Out Darville welcomes hundreds of locals and tourists each year, and you do not want to miss your opportunity to get a great meal at a great price. Visit www.darvillebusinesscouncil.org/dineout for a list of participating restaurants.",
+      "questions": [
+        {
+          "id": "ets1-p7-149-q1",
+          "question": "What is mentioned about Dine Out Darville?",
+          "options": {
+            "A": "It lasts for one week.",
+            "B": "It is held in a different location each year.",
+            "C": "It is being held for the first time.",
+            "D": "It includes both lunch and dinner."
+          },
+          "answer": "A",
+          "explanation": "The event runs from June 22 to 28 — exactly seven days, i.e., one week. The advertisement calls it a 'weeklong event.' Option B is not stated; Option C is contradicted by 'Is Back!' in the title; Option D is not mentioned."
+        },
+        {
+          "id": "ets1-p7-149-q2",
+          "question": "What is NOT included in the reduced-price meals?",
+          "options": {
+            "A": "A cup of soup",
+            "B": "A salad",
+            "C": "A dessert",
+            "D": "A beverage"
+          },
+          "answer": "D",
+          "explanation": "The passage explicitly lists the four courses: a cup of soup, a salad, a main course, and a dessert. A beverage is never mentioned as part of the meal. Options A, B, and C are all specifically included in the four-course dinner."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-151",
+      "passage": "Rainsy To Move Headquarters\n\nDADE (July 11) — Rainsy LLC announced yesterday that it is moving its headquarters to Dade.\n\nA data storage and analytics firm currently based in Salt Creek, Rainsy has clients that include some of the country's largest credit card companies, online retailers, and software providers. Rainsy helps these businesses manage and understand their customer data.\n\nRainsy is not planning to close its current offices in Salt Creek. However, the Dade location will become its new base of operations, as several members of its executive team will work there. The company's chief executive officer and chief financial officer will relocate to Dade along with approximately 50 percent of the company's workforce.\n\nThe office of Rainsy's chief technology officer will remain in Salt Creek, as will the account management team. The company's new Dade offices are located at 12 Glacier Parkway.",
+      "questions": [
+        {
+          "id": "ets1-p7-151-q1",
+          "question": "What does Rainsy LLC do?",
+          "options": {
+            "A": "It stores and analyzes consumer information.",
+            "B": "It sells technology products online.",
+            "C": "It processes credit card payments for retailers.",
+            "D": "It develops computer software programs."
+          },
+          "answer": "A",
+          "explanation": "The article describes Rainsy as 'a data storage and analytics firm' that 'helps these businesses manage and understand their customer data.' Option B, C, and D mischaracterize the company's role — it serves credit card companies and retailers but does not process payments or sell products."
+        },
+        {
+          "id": "ets1-p7-151-q2",
+          "question": "Who will be based in Dade?",
+          "options": {
+            "A": "Rainsy's chief technology officer",
+            "B": "The entire Rainsy executive team",
+            "C": "About half of Rainsy's employees",
+            "D": "The Rainsy account management team"
+          },
+          "answer": "C",
+          "explanation": "The article states 'approximately 50 percent of the company's workforce' will relocate to Dade. Option A is wrong — the CTO stays in Salt Creek. Option B is wrong — the CTO does not move. Option D is wrong — the account management team stays in Salt Creek."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-155",
+      "passage": "20 May\nNeil Croft, Director\nQueensland Libraries\n13 Hummocky Road\nBrisbane QLD 4003\n\nDear Mr. Croft,\n\n[1] I have read your inquiry about offering financial management courses at libraries across Queensland. The Society for Financial Management Advisors (SFMA) welcomes the opportunity to partner with the libraries to make basic financial management information more widely available.\n\nYou proposed that SFMA members could lead introductory courses at several library branches. [2] SFMA members have offered similar courses to recent graduates, people changing careers, and first-time investors in the past.\n\n[3] If you have a list of library branches that would host the first series of events, I can suggest facilitators who work near those libraries or would be willing to travel to them. Do you have a general profile of the expected attendees? [4] That information would help us tailor the courses to audience needs and interests.\n\nI look forward to meeting with you to develop a plan. Please contact me by telephone at 07 5550 1344 to set up a time to discuss the courses.\n\nSincerely,\nRoberta Otney\nChairperson, Society for Financial Management Advisors",
+      "questions": [
+        {
+          "id": "ets1-p7-155-q1",
+          "question": "Why did Ms. Otney write the letter?",
+          "options": {
+            "A": "To welcome a new library director",
+            "B": "To register for an SFMA finance course",
+            "C": "To confirm some educational credentials",
+            "D": "To reply to a question from Mr. Croft"
+          },
+          "answer": "D",
+          "explanation": "Ms. Otney opens with 'I have read your inquiry' — the letter is a direct response to Mr. Croft's earlier question about hosting financial management courses. Options A, B, and C are not supported by the text."
+        },
+        {
+          "id": "ets1-p7-155-q2",
+          "question": "What is one thing Ms. Otney requested?",
+          "options": {
+            "A": "A library membership",
+            "B": "A list of course instructors",
+            "C": "The locations of some libraries",
+            "D": "Mr. Croft's telephone number"
+          },
+          "answer": "C",
+          "explanation": "Ms. Otney writes: 'If you have a list of library branches that would host the first series of events, I can suggest facilitators.' She is asking for the library locations so she can match facilitators to them. She provides her own phone number, not the other way around."
+        },
+        {
+          "id": "ets1-p7-155-q3",
+          "question": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong? \"This is something I would be happy to arrange.\"",
+          "options": {
+            "A": "[1]",
+            "B": "[2]",
+            "C": "[3]",
+            "D": "[4]"
+          },
+          "answer": "B",
+          "explanation": "Position [2] follows the sentence 'You proposed that SFMA members could lead introductory courses at several library branches.' The inserted sentence 'This is something I would be happy to arrange' directly responds to that proposal — Ms. Otney confirms she is willing to organize it. No other position has a preceding proposal to refer to."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-158",
+      "passage": "Claro Vision\nThe difference is clear.\n\nTake advantage of our limited-time offer: 50% off all eyeglass frames through 30 September\n\nOther advantages available today and every day:\n\nFree eyeglass fittings and adjustments\n\nMoney-back guarantee if you are not completely satisfied\n\nMore than 500 locations in shopping malls throughout Canada\n\nLow-cost vision checkups by licensed opticians\n\nTo find a store near you, visit www.clarovision.ca/locations, or call 416-555-0122 today!",
+      "questions": [
+        {
+          "id": "ets1-p7-158-q1",
+          "question": "Why most likely was the advertisement created?",
+          "options": {
+            "A": "To draw attention to an underused professional service",
+            "B": "To publicize the benefits of a warranty policy",
+            "C": "To announce the opening of new store locations",
+            "D": "To promote a temporary price discount"
+          },
+          "answer": "D",
+          "explanation": "The most prominent feature is the 'limited-time offer: 50% off all eyeglass frames through 30 September.' This time-sensitive discount is the primary reason for the advertisement. Options A, B, and C may be mentioned but are not the main promotional message."
+        },
+        {
+          "id": "ets1-p7-158-q2",
+          "question": "What is stated about Claro Vision stores?",
+          "options": {
+            "A": "They are larger than competitors' stores.",
+            "B": "They accept all major credit cards.",
+            "C": "They are located next to shopping malls.",
+            "D": "They provide eyeglass fittings at no cost."
+          },
+          "answer": "D",
+          "explanation": "The advertisement lists 'Free eyeglass fittings and adjustments' as an everyday benefit — meaning there is no cost. Option C is wrong: stores are 'in' shopping malls, not next to them. Options A and B are not mentioned."
+        },
+        {
+          "id": "ets1-p7-158-q3",
+          "question": "What is stated about vision checkups?",
+          "options": {
+            "A": "They are completed by a partner company.",
+            "B": "They are performed by a certified professional.",
+            "C": "They should be done every ten months.",
+            "D": "They are offered on a limited number of days."
+          },
+          "answer": "B",
+          "explanation": "The ad states 'Low-cost vision checkups by licensed opticians.' A licensed optician is a certified professional. Option A is not stated; Option C mentions a schedule not found in the text; Option D contradicts the 'today and every day' phrasing."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-161",
+      "passage": "1 April\nElizabeth Balakrishnan\nBala Home Furnishings\n416 Holliton Drive C2\nSingapore 793801\n\nDear Ms. Balakrishnan,\n\nThis is a reminder that the one-year lease for your space will end on 30 April. Please contact my office at 1555 0124 to make an appointment to renew your lease. There will be a small increase in rent and fees because of rising operating costs.\n\nUpdated charges upon lease renewal:\nMonthly rental: $1,800.00\nParking space fee: $50.00\nCleaning service: $10.00\nSecurity fee: $35.00\nTotal monthly charge: $1,895.00\n\nIf you are not renewing your lease, please notify our office by 15 April. Plan to vacate the property by 5 p.m. on 30 April. There will be an inspection of the property, and there may be charges for repairs or damages beyond normal usage.\n\nKind regards,\nAlexis Tan\nRossery Building Corporation",
+      "questions": [
+        {
+          "id": "ets1-p7-161-q1",
+          "question": "What is the purpose of the letter?",
+          "options": {
+            "A": "To explain the fees for equipment installation",
+            "B": "To offer a discount on a service",
+            "C": "To provide information about a lease agreement",
+            "D": "To request a change to a property amenity"
+          },
+          "answer": "C",
+          "explanation": "The letter reminds the tenant that the lease ends on 30 April, explains the updated charges for renewal, and gives instructions for both renewing and vacating. This is information about a lease agreement. Options A, B, and D are not supported by the letter."
+        },
+        {
+          "id": "ets1-p7-161-q2",
+          "question": "According to the letter, what must Ms. Balakrishnan pay for each month?",
+          "options": {
+            "A": "Furniture rental",
+            "B": "Office supplies",
+            "C": "An inspection fee",
+            "D": "A parking space"
+          },
+          "answer": "D",
+          "explanation": "The updated charge table lists 'Parking space fee: $50.00' as a monthly cost. Furniture rental and office supplies are not mentioned. An inspection is noted as a possibility at the end of the lease, not a recurring monthly fee."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-168",
+      "passage": "Shipping Disruptions\n\nSINGAPORE (6 June) — Recently, the demand for international freight space has been outpacing the availability of shipping containers. This container shortage has led to higher costs for goods being shipped out of Asian ports. A drop in the production of rolls of steel, the raw material that containers are made from, has further complicated the situation. [1]\n\nSome exporters have considered the more expensive option of air freight, but companies are still faced with a difficult choice. [2] They must either ask their customers to accept shipment delays, or substantially raise customer prices to cover the costs of expedited shipping. Either way, suppliers risk triggering customer dissatisfaction.\n\n\"We are working with business partners, investors, and government officials to discuss solutions to this problem,\" said Henry Lam, a spokesperson for the household goods producer QET Group. [3] \"It's going to take total cooperation of all stakeholders to find a solution.\"\n\nNot all companies are suffering, though. For example, Fezker, the producer of athletic apparel and footwear, has implemented strategies to better overcome this situation. Fezker has successfully refocused its efforts away from exports to western countries and toward expanding its domestic and regional markets. [4]\n\n\"We moved quickly, so the shipping container shortage has not caused a significant impact on our profits,\" said Fezker CEO Nuwa Lee.",
+      "questions": [
+        {
+          "id": "ets1-p7-168-q1",
+          "question": "What is mentioned about shipping containers?",
+          "options": {
+            "A": "They come in different sizes.",
+            "B": "They are in short supply.",
+            "C": "They are made from a variety of materials.",
+            "D": "They can be used for long-term storage."
+          },
+          "answer": "B",
+          "explanation": "The article opens with 'the demand for international freight space has been outpacing the availability of shipping containers' — a container shortage. Option C is wrong: only steel is mentioned as the material. Options A and D are not stated."
+        },
+        {
+          "id": "ets1-p7-168-q2",
+          "question": "What does Mr. Lam say is needed to resolve the situation?",
+          "options": {
+            "A": "A sharp increase in the number of customers",
+            "B": "A relaxation of government restrictions",
+            "C": "The development of new technologies",
+            "D": "Communication between affected groups"
+          },
+          "answer": "D",
+          "explanation": "Mr. Lam states: 'It's going to take total cooperation of all stakeholders to find a solution.' Cooperation among stakeholders (business partners, investors, government officials) = communication between affected groups. Options A, B, and C are not mentioned."
+        },
+        {
+          "id": "ets1-p7-168-q3",
+          "question": "What type of clothing does Fezker produce?",
+          "options": {
+            "A": "Rain jackets",
+            "B": "Sportswear",
+            "C": "Business suits",
+            "D": "Work uniforms"
+          },
+          "answer": "B",
+          "explanation": "The article describes Fezker as 'the producer of athletic apparel and footwear.' Athletic apparel = sportswear. Rain jackets, business suits, and work uniforms are not mentioned."
+        },
+        {
+          "id": "ets1-p7-168-q4",
+          "question": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong? \"These markets are supplied using more readily available truck and train transportation.\"",
+          "options": {
+            "A": "[1]",
+            "B": "[2]",
+            "C": "[3]",
+            "D": "[4]"
+          },
+          "answer": "D",
+          "explanation": "Position [4] follows the sentence about Fezker refocusing on 'domestic and regional markets.' The inserted sentence explains how those markets are supplied — by truck and train, which avoids the shipping container problem. No other position discusses domestic/regional supply chains."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-172",
+      "passage": "Gary Wendel (7:40 A.M.): Good morning, team. Can you share the current status of your projects, please?\nJing Yu (7:42 A.M.): I met with the client last week to confirm the start date for Phase B of the Palisade project.\nRobbie Zuniga (7:43 A.M.): I am headed to the job site now for the Riverview project. The rain last week delayed pouring the concrete for the sidewalks. I will check the conditions this morning to see if the situation has improved.\nGary Wendel (7:44 A.M.): When will Phase B of the Palisade project begin?\nJing Yu (7:46 A.M.): We will break ground in March and plan to have the building completed by November.\nGary Wendel (7:47 A.M.): That's good news about the March start date. I am sure the client is happy about that.\nGary Wendel (7:50 A.M.): Robbie, let me know what you find out about the site conditions. Perhaps Nathan Burry can help at the site. He's our most knowledgeable concrete finisher.\nRobbie Zuniga (7:55 A.M.): Actually, I'm meeting Nathan at the site this morning, so I'll get his opinion on when we can pour the concrete. The rest of the project is on hold until we can do this.\nGary Wendel (7:57 A.M.): Keep me posted. I don't want to rush it if it's still too wet. At the same time, the Riverview project is already behind schedule because of equipment problems and late delivery of building materials.\nRobbie Zuniga (7:58 A.M.): Will do.",
+      "questions": [
+        {
+          "id": "ets1-p7-172-q1",
+          "question": "In what industry do the writers most likely work?",
+          "options": {
+            "A": "Construction",
+            "B": "Energy",
+            "C": "Manufacturing",
+            "D": "Travel"
+          },
+          "answer": "A",
+          "explanation": "The conversation references job sites, pouring concrete for sidewalks, breaking ground, building completion, and concrete finishers — all vocabulary associated with construction. Energy, manufacturing, and travel are not relevant to the discussion."
+        },
+        {
+          "id": "ets1-p7-172-q2",
+          "question": "Why did Mr. Wendel begin the discussion?",
+          "options": {
+            "A": "To plan a client meeting",
+            "B": "To discuss a weather forecast",
+            "C": "To obtain an update on some work",
+            "D": "To change the start date of an event"
+          },
+          "answer": "C",
+          "explanation": "Mr. Wendel's first message is 'Can you share the current status of your projects, please?' — he is asking for a progress update. Options A, B, and D are not the reason he initiated the conversation."
+        },
+        {
+          "id": "ets1-p7-172-q3",
+          "question": "What is indicated about the Riverview project?",
+          "options": {
+            "A": "It has had several delays.",
+            "B": "It is being managed by Ms. Yu.",
+            "C": "It will be completed in November.",
+            "D": "Its clients are happy with the progress."
+          },
+          "answer": "A",
+          "explanation": "Mr. Wendel notes the Riverview project is 'already behind schedule because of equipment problems and late delivery of building materials' — and rain has delayed concrete pouring. Multiple causes = several delays. Ms. Yu manages the Palisade project; November completion applies to Palisade, not Riverview."
+        },
+        {
+          "id": "ets1-p7-172-q4",
+          "question": "At 7:58 A.M., what does Mr. Zuniga most likely mean when he writes, \"Will do\"?",
+          "options": {
+            "A": "He will revise a delivery schedule.",
+            "B": "He will purchase more equipment.",
+            "C": "He will hire workers to help at a site.",
+            "D": "He will share the outcome of a meeting."
+          },
+          "answer": "D",
+          "explanation": "'Will do' responds to Mr. Wendel's request to 'Keep me posted.' Mr. Zuniga is meeting Nathan at the site this morning to assess conditions — so he will report back on the outcome of that site visit. Options A, B, and C are not what Mr. Wendel asked."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-176",
+      "passage": "From: Madalyn Kerluke mkerluke@karabel.ca\nTo: Omar Niklaus oniklaus@karabel.ca, Jay Tonic jtonic@karabel.ca\nDate: Friday, 3 February 2:16 P.M.\nSubject: Taste-test results\nAttachment: Fator Labs survey results\n\nHi, Team.\n\nI just received the 24-26 January survey results from Fator Labs for our new ice-cream taste test. As you can see from the attached document, the results are very disappointing. We sent the four flavours that we considered to be the best, but none of them received high enough ratings to advance to the next stage of development. Most of the reviews were consistent among the 92 taste-test participants in our target market of consumers ages 25 through 40. It's not a big problem if a product gets low scores in colour in the testing phase, since we can easily adjust that in the laboratory. But we should never be sending out samples that are getting scores lower than 3 in the taste category.\n\nI would like to meet at 9 A.M. on Monday (6 February) to figure out how to proceed. There is one flavour we may be able to work with if we make a few adjustments, as suggested by most of our taste testers. We will also need to get some new flavours to Fator Labs no later than 1 March if we are going to get a new ice cream on the Preston Grocers freezer shelves by the beginning of June.\n\nMadalyn Kerluke\n\n---\n\nFator Labs Consumer Taste-Testing Survey\nDate: 24 January\nCompany: Karabel Industries\nParticipant number: 54\n\nDirections: You will be given a 45 g sample of 4 different ice creams. Please rate the taste, texture, sweetness, and colour of each ice cream on a scale of 1 (very unpleasant) to 5 (very pleasant).\n\nFlavour | Taste | Texture | Sweetness | Colour\nLemon   |   2   |    3    |     2     |   4\nMango   |   3   |    3    |     2     |   1\nSalted Caramel | 2 | 1  |     1     |   5\nPeanut Brittle | 3 | 4  |     2     |   2\n\nComments: The fruit-flavoured ice creams were surprisingly sour. I did not care for them at all. I think the Peanut Brittle has the most potential, but it's missing something. I bet that adding chocolate swirls or brownie bits would make it a winner.",
+      "questions": [
+        {
+          "id": "ets1-p7-176-q1",
+          "question": "What does the e-mail indicate about Karabel Industries ice cream?",
+          "options": {
+            "A": "It is currently sold in four flavors.",
+            "B": "Its coloring can be changed easily.",
+            "C": "Its popularity has declined recently.",
+            "D": "It is sold in Karabel Industries stores."
+          },
+          "answer": "B",
+          "explanation": "Ms. Kerluke writes: 'It's not a big problem if a product gets low scores in colour in the testing phase, since we can easily adjust that in the laboratory.' This directly states that coloring can be changed easily. Options A, C, and D are not supported by the email."
+        },
+        {
+          "id": "ets1-p7-176-q2",
+          "question": "What does Ms. Kerluke state that she wants to do?",
+          "options": {
+            "A": "Visit a laboratory",
+            "B": "Hold a team meeting",
+            "C": "Contact a grocery store",
+            "D": "Write new survey questions"
+          },
+          "answer": "B",
+          "explanation": "Ms. Kerluke writes: 'I would like to meet at 9 A.M. on Monday (6 February) to figure out how to proceed.' This is a team meeting. Options A, C, and D are not stated as things she wants to do."
+        },
+        {
+          "id": "ets1-p7-176-q3",
+          "question": "What is suggested about Fator Labs?",
+          "options": {
+            "A": "It has 92 employees.",
+            "B": "It manufactures food colorings.",
+            "C": "It will perform another taste test for Karabel Industries.",
+            "D": "It supplies ice cream to Preston Grocers."
+          },
+          "answer": "C",
+          "explanation": "Ms. Kerluke says 'We will also need to get some new flavours to Fator Labs no later than 1 March' — implying Fator Labs will conduct another taste test on new flavours. The 92 participants are taste testers, not employees. Fator Labs does not manufacture colorings or supply Preston Grocers."
+        },
+        {
+          "id": "ets1-p7-176-q4",
+          "question": "Based on the survey form, what flavor will Karabel Industries most likely make adjustments to?",
+          "options": {
+            "A": "Lemon",
+            "B": "Mango",
+            "C": "Salted Caramel",
+            "D": "Peanut Brittle"
+          },
+          "answer": "D",
+          "explanation": "Ms. Kerluke mentions 'There is one flavour we may be able to work with if we make a few adjustments, as suggested by most of our taste testers.' Participant 54's comment specifically says Peanut Brittle 'has the most potential' with specific suggestions (chocolate swirls or brownie bits). Peanut Brittle also has the highest taste (3) and texture (4) scores."
+        },
+        {
+          "id": "ets1-p7-176-q5",
+          "question": "What can be concluded about participant number 54?",
+          "options": {
+            "A": "The participant purchased several containers of ice cream.",
+            "B": "The participant is between the ages of 25 and 40.",
+            "C": "The participant regularly takes consumer surveys.",
+            "D": "The participant prefers fruit-flavored ice cream."
+          },
+          "answer": "B",
+          "explanation": "Ms. Kerluke states participants are 'in our target market of consumers ages 25 through 40.' Participant 54 is part of this group, so they are between 25 and 40. Option D is contradicted by the comment 'I did not care for them at all' about fruit-flavoured ice creams. Options A and C are not stated."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-181",
+      "passage": "Create Great Web Page\n\nCreate Great, an Ontario-based creative agency with a diverse range of global clients in the fashion industry, is seeking a copywriter who is passionate about fashion, understands market trends, and handles digital tools with ease.\n\nThe ideal candidate will be someone who works well in a fast-paced environment with team members from international backgrounds. The copywriter will collaborate with the creative team to develop brand strategies that suit customer needs and with the marketing team to ensure the success of brand-based publicity campaigns for current and prospective clients. As remote work is permitted for copywriters, residence in Canada is not required.\n\nTo apply, send your cover letter and résumé to the director of our creative team, Fran Benjamin, Create Great, 838 Colbert Street, London, ON N6B 3P5. Application deadline: August 5.\n\n---\n\nAnnie Smith\n4810 South Bryant Street\nPortland, OR 97206\n\nAugust 6\n\nFran Benjamin\nCreate Great\n838 Colbert Street\nLondon, ON N6B 3P5\n\nDear Ms. Benjamin,\n\nI am writing to apply for the copywriter position at Create Great. As an expert fashion designer who also has writing experience, I believe I would be a valuable addition to your team. Enclosed please find my résumé.\n\nI have a decade of experience as the lead designer for women's collections at MODA, a clothing line in Portland. I oversee the design production process from initial market research to finished product. In my role, I work in close partnership with the marketing and production teams.\n\nIn addition, for the last five years, I have been maintaining my own blog. My posts focus on trends in women's fashion and how to make clothing and cosmetics more sustainable. What started as a hobby has now attracted paying advertisers and over 15,000 followers. Visit www.medesheen.com for examples of my writing.\n\nThank you for considering my application.\n\nSincerely,\nAnnie Smith\nEnclosure",
+      "questions": [
+        {
+          "id": "ets1-p7-181-q1",
+          "question": "According to the Web page, what will the job recipient be able to do?",
+          "options": {
+            "A": "Work remotely",
+            "B": "Manage a team",
+            "C": "Travel internationally",
+            "D": "Relocate to Canada"
+          },
+          "answer": "A",
+          "explanation": "The web page states: 'As remote work is permitted for copywriters, residence in Canada is not required.' This confirms the position allows remote work. Option D is the opposite of what is stated. Options B and C are not mentioned as benefits."
+        },
+        {
+          "id": "ets1-p7-181-q2",
+          "question": "On the Web page, the word \"suit\" in paragraph 2, line 4, is closest in meaning to",
+          "options": {
+            "A": "adapt",
+            "B": "determine",
+            "C": "invest",
+            "D": "satisfy"
+          },
+          "answer": "D",
+          "explanation": "In 'develop brand strategies that suit customer needs,' 'suit' means to meet or fulfill — i.e., strategies that satisfy what customers need. 'Adapt' implies changing something, 'determine' means to decide, and 'invest' means to commit resources."
+        },
+        {
+          "id": "ets1-p7-181-q3",
+          "question": "What is indicated about Ms. Smith?",
+          "options": {
+            "A": "She has already met Ms. Benjamin.",
+            "B": "She has worked as a copywriter.",
+            "C": "She missed an application deadline.",
+            "D": "She forgot to submit a required document."
+          },
+          "answer": "C",
+          "explanation": "The application deadline was August 5, but Ms. Smith's letter is dated August 6 — one day late. Options A and B are not stated. Option D is wrong — she writes 'Enclosed please find my résumé,' indicating the résumé is included."
+        },
+        {
+          "id": "ets1-p7-181-q4",
+          "question": "According to the letter, what is one of Ms. Smith's responsibilities at MODA?",
+          "options": {
+            "A": "Hiring fashion designers",
+            "B": "Writing drafts of advertisements",
+            "C": "Managing a production process",
+            "D": "Researching sustainable clothing options"
+          },
+          "answer": "C",
+          "explanation": "Ms. Smith writes: 'I oversee the design production process from initial market research to finished product.' Overseeing the design production process = managing a production process. Options A, B, and D are not stated as her responsibilities at MODA."
+        },
+        {
+          "id": "ets1-p7-181-q5",
+          "question": "What most likely is Medesheen?",
+          "options": {
+            "A": "A brand of cosmetics",
+            "B": "A fashion blog",
+            "C": "An online magazine",
+            "D": "An advertising agency"
+          },
+          "answer": "B",
+          "explanation": "Ms. Smith writes that she has maintained 'my own blog' for five years, with posts on 'trends in women's fashion,' and directs readers to www.medesheen.com 'for examples of my writing.' Medesheen is the URL of her personal fashion blog. It is not a cosmetics brand, magazine, or agency."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-186",
+      "passage": "From: Akihito Nakashima a.nakashima@gilchristshipping.com\nTo: Fowler Office Supplies support@fowlerofficesupplies.com\nSubject: Order B19849\nDate: August 19\n\nTo Whom It May Concern,\n\nYesterday, I purchased some office supplies on your Web site. I received an e-mail receipt, but the costs are not itemized on it. To satisfy a new company policy, I must give my supervisor a receipt with the charges for each item listed separately. Could you e-mail me such a receipt? If not, is it possible for me to get this information myself from your Web site? Finally, can confirmations for future orders possibly be sent to more than one e-mail address? It would be ideal for my supervisor to automatically receive one.\n\nThank you,\nAkihito Nakashima, Executive Assistant\nGilchrist Shipping\n\n---\n\nFrom: Fowler Office Supplies support@fowlerofficesupplies.com\nTo: Akihito Nakashima a.nakashima@gilchristshipping.com\nSubject: RE: Order B19849\nDate: August 19\nAttachment: B19849\n\nDear Mr. Nakashima,\n\nAttached is the receipt you requested. In apology for the inconvenience, we will provide you with 10 percent off the total price of your next order. To view a full description of any previous order, first log in to your account on our Web site, go to the \"My Orders\" tab, and then click on any order number.\n\nI noticed that included in each of your last few orders was an identical order for ten of a particular item. You should know that we will reduce the price for that item by 5 percent if you mark this as a recurring order. To do this, simply check the \"Recurring Order\" box on the online order form.\n\nAs for your final query, this is not possible right now. However, I will share the idea with our technical team.\n\nAll the best,\nCameron Higgins, Customer Relations\nFowler Office Supplies\n\n---\n\nReceipt — Order B19849\n\nItem              | Price             | Quantity | Total\nPrinter paper     | $8.00/500 sheets  |    10    | $80.00\nToner (black)     | $50.00/cartridge  |     1    | $50.00\nGel pens (blue)   | $5.00/8-pack      |     3    | $15.00\nStaples           | $3.50/box         |     2    | $7.00\nGRAND TOTAL                                       $152.00\n\nReturn Policy: Unopened merchandise may be returned by mail or in one of our stores within 60 days of purchase. For returns by mail, log in to your account to print a shipping label. For in-store returns, bring the item and the order number to any Fowler Office Supplies location.",
+      "questions": [
+        {
+          "id": "ets1-p7-186-q1",
+          "question": "Why did Mr. Nakashima send the e-mail?",
+          "options": {
+            "A": "He did not receive an item he ordered.",
+            "B": "He was mistakenly charged twice for an item.",
+            "C": "He received a receipt that was not detailed enough.",
+            "D": "He did not get a confirmation e-mail for a purchase he made."
+          },
+          "answer": "C",
+          "explanation": "Mr. Nakashima writes: 'I received an e-mail receipt, but the costs are not itemized on it.' He needs a receipt with each item's charges listed separately — the one he received lacked that detail. Options A, B, and D do not match his stated reason."
+        },
+        {
+          "id": "ets1-p7-186-q2",
+          "question": "According to the second e-mail, what will Mr. Nakashima receive with his next order?",
+          "options": {
+            "A": "A catalog",
+            "B": "A free pen",
+            "C": "A printed receipt",
+            "D": "A price discount"
+          },
+          "answer": "D",
+          "explanation": "Mr. Higgins writes: 'we will provide you with 10 percent off the total price of your next order.' This is a price discount as an apology. No catalog, free pen, or printed receipt is offered."
+        },
+        {
+          "id": "ets1-p7-186-q3",
+          "question": "For what item does Mr. Higgins suggest that Mr. Nakashima select \"Recurring Order\"?",
+          "options": {
+            "A": "Printer paper",
+            "B": "Toner",
+            "C": "Gel pens",
+            "D": "Staples"
+          },
+          "answer": "A",
+          "explanation": "Mr. Higgins notes 'an identical order for ten of a particular item' in each of the last few orders. Looking at the receipt, printer paper is the only item ordered in a quantity of ten. The other items were ordered in quantities of one, two, or three."
+        },
+        {
+          "id": "ets1-p7-186-q4",
+          "question": "What does Mr. Higgins agree to have his technical team look into?",
+          "options": {
+            "A": "Improving the Web site's response rate",
+            "B": "Providing an option to send receipts to multiple e-mail addresses",
+            "C": "Placing a link to customers' order history on the home page",
+            "D": "Making return labels printable from any device"
+          },
+          "answer": "B",
+          "explanation": "Mr. Nakashima asked whether 'confirmations for future orders possibly be sent to more than one e-mail address.' Mr. Higgins replies: 'this is not possible right now. However, I will share the idea with our technical team.' This matches Option B."
+        },
+        {
+          "id": "ets1-p7-186-q5",
+          "question": "What is needed to return an item at a Fowler Office Supplies store?",
+          "options": {
+            "A": "The original receipt",
+            "B": "A credit card number",
+            "C": "A confirmation e-mail",
+            "D": "The order number"
+          },
+          "answer": "D",
+          "explanation": "The return policy states: 'For in-store returns, bring the item and the order number to any Fowler Office Supplies location.' The order number is explicitly required. The original receipt, a credit card, or a confirmation e-mail are not listed as requirements."
+        }
+      ]
+    },
+    {
+      "id": "ets1-p7-191",
+      "passage": "Crawford and Duval Opens Brick-and-Mortar Stores\n\nHONG KONG (18 February) — Crawford and Duval, the online retailer known for its handcrafted blankets, decorative pillows, and other household goods, has established four brick-and-mortar stores in Hong Kong. Last Monday, the company celebrated the grand opening of boutique stores in Causeway Bay, Discovery Bay, and Sheung Wan in addition to a large department store in Central District. While the boutique stores carry the most popular of the small household goods for which Crawford and Duval is famous, the Central District location also boasts an indoor plant department and an on-site cafe that features specialty coffees, teas, and light snacks. Moreover, it has a much more extensive selection of the merchandise than what is available through the company's Web site.\n\n---\n\nCrawford and Duval Web Site\n\nCrawford and Duval comes to our loyal shoppers in Hong Kong!\n\nCrawford and Duval is pleased to announce the opening of its first brick-and-mortar stores in the following locations: Causeway Bay, Discovery Bay, Sheung Wan, and Central District.\n\nSince the launch of our online store five years ago, we have helped you to create the living space of your dreams. Now we make it even easier to decorate your home. Each location has an interior designer on staff, so you can consult with an expert in person while you browse our popular items.\n\nAll locations are convenient to public transportation. Our Central District location offers free parking in its attached car park.\n\nAs part of our grand-opening celebration, shoppers who visit one of our stores before 1 March will receive a gift card for HK$70 to use during their visit.\n\nMembers of our online Frequent Purchase Club will receive the same benefits in our stores, including a 10 percent discount on purchases of HK$500 or more.\n\n---\n\nCustomer Receipt\n\nItem                               | Price\nBamboo table lamp                  | HK$1,450.00\nDecorative cushions, set of two    | HK$750.00\nAloe plant in a 7.5-litre planter  | HK$300.00\nMachine-washable wool blanket      | HK$2,000.00\nSub Total                          | HK$4,500.00\nLess 10%                           | HK$450.00\nTOTAL                              | HK$4,050.00\nCash\nGift card number: [blank]\nCredit card number: ***********5598\nName on the credit card: Mei-Lin Fong\n\nStop at our in-store cafe for a treat!",
+      "questions": [
+        {
+          "id": "ets1-p7-191-q1",
+          "question": "What is the purpose of the article?",
+          "options": {
+            "A": "To compare locally made products",
+            "B": "To announce store openings",
+            "C": "To list changes to a Web site",
+            "D": "To review a cafe"
+          },
+          "answer": "B",
+          "explanation": "The article's headline is 'Crawford and Duval Opens Brick-and-Mortar Stores' and its content describes the locations and features of the new stores. Options A, C, and D are not the purpose of the article."
+        },
+        {
+          "id": "ets1-p7-191-q2",
+          "question": "What does the Web site indicate about Crawford and Duval?",
+          "options": {
+            "A": "It has store locations around the world.",
+            "B": "It has been in business for ten years.",
+            "C": "It employs interior designers.",
+            "D": "It offers free parking at all of its stores."
+          },
+          "answer": "C",
+          "explanation": "The Web site states: 'Each location has an interior designer on staff.' Option A is not stated — the stores are only in Hong Kong. Option B is wrong — the online store launched five years ago, not ten. Option D is wrong — free parking is only offered at the Central District location."
+        },
+        {
+          "id": "ets1-p7-191-q3",
+          "question": "According to the receipt, what is indicated about the blanket?",
+          "options": {
+            "A": "It can be washed by machine.",
+            "B": "It is made of cotton.",
+            "C": "It is queen-sized.",
+            "D": "It comes in a set with pillows."
+          },
+          "answer": "A",
+          "explanation": "The receipt lists 'Machine-washable wool blanket' — the name explicitly states it can be washed by machine. Option B is wrong: it is made of wool, not cotton. Options C and D are not mentioned on the receipt."
+        },
+        {
+          "id": "ets1-p7-191-q4",
+          "question": "Where most likely did Ms. Fong make her purchase?",
+          "options": {
+            "A": "On a Web site",
+            "B": "In a boutique shop",
+            "C": "At a cafe",
+            "D": "In a department store"
+          },
+          "answer": "D",
+          "explanation": "The receipt includes an 'Aloe plant in a 7.5-litre planter.' The article states that only the Central District location has 'an indoor plant department.' The Central District store is the large department store. Boutique stores carry only small household goods; plants are exclusive to the department store."
+        },
+        {
+          "id": "ets1-p7-191-q5",
+          "question": "What is suggested about Ms. Fong?",
+          "options": {
+            "A": "She often buys food from Crawford and Duval.",
+            "B": "She is a member of the Frequent Purchase Club.",
+            "C": "She applied a gift card to her purchase.",
+            "D": "She shopped during a grand-opening event."
+          },
+          "answer": "B",
+          "explanation": "Ms. Fong's total is HK$4,500 and she received a 10% discount (HK$450). The Web site states the 10% discount is for 'Members of our online Frequent Purchase Club' on purchases of HK$500 or more. The gift card number field is blank, so she did not use a gift card (ruling out C). Option D cannot be confirmed from the receipt alone."
         }
       ]
     }
