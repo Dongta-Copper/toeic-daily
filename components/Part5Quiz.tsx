@@ -38,7 +38,7 @@ export default function Part5Quiz({ questions: allQuestions, part }: { questions
   const answered = Object.keys(selected).length
 
   function handleSubmit() {
-    if (answered === 0) return
+    if (!pack || answered === 0) return
     const finalScore = pack.filter((q) => selected[q.id] === q.answer).length
     saveSessionLocal(part, finalScore, pack.length)
     setSubmitted(true)

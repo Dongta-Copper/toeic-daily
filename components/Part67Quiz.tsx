@@ -41,13 +41,14 @@ export default function Part67Quiz({ passages: allPassages, part }: { passages: 
   const score = current.questions.filter((q) => selected[q.id] === q.answer).length
 
   function handleSubmit() {
+    if (!current) return
     const finalScore = current.questions.filter((q) => selected[q.id] === q.answer).length
     saveSessionLocal(part, finalScore, current.questions.length)
     setSubmitted(true)
   }
 
   function handleNewPack() {
-    setCurrent(randomPassage(allPassages, current.id))
+    setCurrent(randomPassage(allPassages, current?.id))
     setSelected({})
     setSubmitted(false)
   }
