@@ -1,0 +1,176 @@
+{
+  "part5": [
+    {
+      "id": "p5-001",
+      "question": "The marketing team _____ the new campaign strategy at yesterday's meeting.",
+      "options": {
+        "A": "present",
+        "B": "presented",
+        "C": "will present",
+        "D": "presenting"
+      },
+      "answer": "B",
+      "explanation": "The time adverb 'yesterday' signals simple past tense. 'Presented' is the correct simple past form. 'Present' is base form, 'will present' is future, and 'presenting' needs an auxiliary verb."
+    },
+    {
+      "id": "p5-002",
+      "question": "All employees are required to submit their expense reports _____ the end of each month.",
+      "options": {
+        "A": "until",
+        "B": "during",
+        "C": "by",
+        "D": "within"
+      },
+      "answer": "C",
+      "explanation": "'By' expresses a deadline — no later than a specific point in time. 'By the end of the month' is the standard idiomatic phrase. 'Until' means continuously up to a point. 'During' and 'within' do not fit this deadline context."
+    },
+    {
+      "id": "p5-003",
+      "question": "The CEO was _____ impressed by the team's performance that she decided to give everyone a bonus.",
+      "options": {
+        "A": "so",
+        "B": "such",
+        "C": "very",
+        "D": "too"
+      },
+      "answer": "A",
+      "explanation": "The structure 'so + adjective + that' expresses result. 'Such' pairs with nouns ('such a great performance that...'). 'Very' and 'too' do not work with a 'that' result clause."
+    },
+    {
+      "id": "p5-004",
+      "question": "The new software has _____ the way our team collaborates on projects.",
+      "options": {
+        "A": "transformed",
+        "B": "transformation",
+        "C": "transforming",
+        "D": "transformative"
+      },
+      "answer": "A",
+      "explanation": "The sentence needs a past participle after 'has' to form present perfect tense. 'Transformed' is the correct past participle. 'Transformation' is a noun, 'transforming' would need 'been', and 'transformative' is an adjective."
+    },
+    {
+      "id": "p5-005",
+      "question": "Please ensure _____ all documents are submitted before the deadline.",
+      "options": {
+        "A": "who",
+        "B": "which",
+        "C": "that",
+        "D": "what"
+      },
+      "answer": "C",
+      "explanation": "'Ensure that' is the correct structure followed by a noun clause. 'That' introduces the object clause. 'Who', 'which', and 'what' are relative or interrogative pronouns and do not fit the 'ensure + clause' structure."
+    }
+  ],
+  "part6": [
+    {
+      "id": "p6-001",
+      "passage": "MEMORANDUM\n\nTo: All Department Heads\nFrom: James Chen, Director of Operations\nDate: June 3\nSubject: Annual Performance Review Process\n\nThis memo is to inform you that the annual performance review period will begin on June 15. All managers are ---(1)--- to complete evaluations for their direct reports by July 10.\n\nAs a reminder, the evaluation form has been updated this year to include a new section on teamwork and collaboration. Please download the ---(2)--- version from the company intranet before starting the evaluations.\n\nIf you have any questions about the evaluation process, please contact the Human Resources Department. ---(3)---. We appreciate your cooperation and look forward to recognizing the exceptional contributions of our team members.\n\nThank you for your time and commitment to this important process.\n\n---(4)---,\nJames Chen\nDirector of Operations",
+      "questions": [
+        {
+          "id": "p6-001-q1",
+          "question": "(1) All managers are _______ to complete evaluations for their direct reports by July 10.",
+          "options": {
+            "A": "requested",
+            "B": "requesting",
+            "C": "request",
+            "D": "requests"
+          },
+          "answer": "A",
+          "explanation": "'Are requested' is the passive voice construction meaning 'are expected/asked'. The subject 'managers' receives the action. 'Requesting' (active) would change the meaning, and 'request'/'requests' are not grammatically valid after 'are' in this structure."
+        },
+        {
+          "id": "p6-001-q2",
+          "question": "(2) Please download the _______ version from the company intranet.",
+          "options": {
+            "A": "latest",
+            "B": "late",
+            "C": "later",
+            "D": "lately"
+          },
+          "answer": "A",
+          "explanation": "'Latest' (superlative of 'late') means the most recent version — the exact meaning needed here. 'Late' means delayed or near the end. 'Later' is a comparative adverb. 'Lately' is an adverb meaning recently and cannot modify a noun."
+        },
+        {
+          "id": "p6-001-q3",
+          "question": "(3) Which sentence best fits this position in the memo?",
+          "options": {
+            "A": "HR will hold training sessions on June 10 to walk managers through the new form.",
+            "B": "Employees are encouraged to review their own performance before meeting with managers.",
+            "C": "The company will announce the results of the review in August.",
+            "D": "Performance bonuses will not be affected by this year's reviews."
+          },
+          "answer": "A",
+          "explanation": "The surrounding sentences mention that HR can be contacted for questions. A training session offered by HR directly supports that, providing a concrete next step. The other options introduce unrelated or out-of-place topics."
+        },
+        {
+          "id": "p6-001-q4",
+          "question": "(4) Which closing is most appropriate for this memo?",
+          "options": {
+            "A": "Sincerely",
+            "B": "Best regards",
+            "C": "Yours faithfully",
+            "D": "With appreciation"
+          },
+          "answer": "B",
+          "explanation": "'Best regards' is a professional, standard closing for internal business correspondence. 'Sincerely' is used in formal letters to external parties. 'Yours faithfully' is British formal usage for letters to unknown recipients. 'With appreciation' is non-standard."
+        }
+      ]
+    }
+  ],
+  "part7": [
+    {
+      "id": "p7-001",
+      "passage": "From: Linda Park <lpark@globaltech.com>\nTo: Michael Torres <m.torres@globaltech.com>\nDate: Wednesday, May 28\nSubject: Re: Q3 Budget Proposal\n\nMichael,\n\nThank you for sending over the Q3 budget proposal. I've reviewed it carefully and have a few thoughts.\n\nOverall, the figures look reasonable, but I'm concerned about the allocation for the marketing department. The current proposal allocates $45,000 for digital advertising, which is 20% lower than what was spent in Q2. Given that we're launching two new products in Q3, I believe this budget should be increased to at least $55,000 to ensure adequate market exposure.\n\nAdditionally, I noticed that the travel expenses section does not account for the international trade show in Singapore scheduled for August. Attendance at this event is critical for our expansion plans in Southeast Asia. I estimate an additional $8,000 will be needed to cover flights, accommodation, and registration fees for a team of three.\n\nPlease revise the proposal to include these adjustments and resubmit by Friday, June 1. I would also like to schedule a 30-minute call next week to discuss the proposal in more detail before it goes to the board.\n\nBest regards,\nLinda Park\nVice President, Finance",
+      "questions": [
+        {
+          "id": "p7-001-q1",
+          "question": "What is the main purpose of this email?",
+          "options": {
+            "A": "To reject the Q3 budget proposal entirely",
+            "B": "To request revisions to a budget proposal",
+            "C": "To announce a new product launch",
+            "D": "To invite Michael Torres to a trade show"
+          },
+          "answer": "B",
+          "explanation": "Linda reviews the proposal and requests specific changes: an increased marketing budget and additional travel expenses. She does not reject it — she says 'the figures look reasonable.' The product launch and trade show are context, not the email's purpose."
+        },
+        {
+          "id": "p7-001-q2",
+          "question": "How much does Linda Park suggest should be allocated for digital advertising?",
+          "options": {
+            "A": "$45,000",
+            "B": "$36,000",
+            "C": "$55,000",
+            "D": "$63,000"
+          },
+          "answer": "C",
+          "explanation": "The email states: 'I believe this budget should be increased to at least $55,000.' The current proposal is $45,000 (A). $36,000 would be 20% lower than $45,000. $63,000 is never mentioned."
+        },
+        {
+          "id": "p7-001-q3",
+          "question": "Why does Linda Park mention the Singapore trade show?",
+          "options": {
+            "A": "To suggest it should be cancelled to reduce costs",
+            "B": "To explain why the marketing budget needs to increase",
+            "C": "To point out that travel expenses were omitted from the proposal",
+            "D": "To inform Michael Torres about the company's expansion plans"
+          },
+          "answer": "C",
+          "explanation": "Linda mentions Singapore to highlight that 'the travel expenses section does not account for the international trade show.' The issue is that this cost was left out of the budget — a separate concern from the marketing budget increase."
+        },
+        {
+          "id": "p7-001-q4",
+          "question": "What does Linda Park ask Michael Torres to do by June 1?",
+          "options": {
+            "A": "Schedule a meeting with the board",
+            "B": "Submit the original budget proposal",
+            "C": "Resubmit the revised budget proposal",
+            "D": "Confirm attendance at the Singapore trade show"
+          },
+          "answer": "C",
+          "explanation": "The email states: 'Please revise the proposal to include these adjustments and resubmit by Friday, June 1.' The board meeting and the 30-minute call are separate items with no June 1 deadline."
+        }
+      ]
+    }
+  ]
+}
