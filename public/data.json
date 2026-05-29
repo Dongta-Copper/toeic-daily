@@ -835,6 +835,318 @@
           "explanation": "'Best regards' is a professional, standard closing for internal business correspondence. 'Sincerely' is used in formal letters to external parties. 'Yours faithfully' is British formal usage for letters to unknown recipients. 'With appreciation' is non-standard."
         }
       ]
+    },
+    {
+      "id": "t4-p6-001",
+      "passage": "D-Zine Pop\n\nD-Zine Pop is your source for information about the latest ----(1)---- in the world of fashion. What started as a social media experiment ----(2)---- into a content platform with subscribers in seventeen countries worldwide. We are constantly adding features to improve our user experience and share what apparel and clothing accessories are popular right now. We also make periodic updates to our terms of service. Subscribers' ----(3)---- access to content is contingent upon consenting to these terms; therefore, we encourage you to review and accept them at dzinepop.com/privacy. Contact our customer service team at support@dzinepop.com if you have any questions. ----(4)----.",
+      "questions": [
+        {
+          "id": "t4-p6-001-q1",
+          "question": "(1) D-Zine Pop is your source for information about the latest _______ in the world of fashion.",
+          "options": { "A": "controversies", "B": "consumers", "C": "trends", "D": "versions" },
+          "answer": "C",
+          "explanation": "'Trends' collocates naturally with 'fashion' — 'fashion trends' is a fixed phrase. 'Controversies' and 'versions' don't fit the context of a fashion information source. 'Consumers' refers to people, not information topics."
+        },
+        {
+          "id": "t4-p6-001-q2",
+          "question": "(2) What started as a social media experiment _______ into a content platform.",
+          "options": { "A": "evolving", "B": "evolution", "C": "will be evolving", "D": "has evolved" },
+          "answer": "D",
+          "explanation": "'Has evolved' (present perfect) describes a change that started in the past and has resulted in the current state. 'Evolving' and 'will be evolving' are progressive forms needing an auxiliary. 'Evolution' is a noun, not a verb."
+        },
+        {
+          "id": "t4-p6-001-q3",
+          "question": "(3) Subscribers' _______ access to content is contingent upon consenting to these terms.",
+          "options": { "A": "continue", "B": "continued", "C": "continuation", "D": "continues" },
+          "answer": "C",
+          "explanation": "A possessive noun ('Subscribers'') needs a noun as the head of the noun phrase. 'Continuation' is the only noun among the options. 'Continued' could be an adjective but 'continuation' more precisely names the ongoing state as a concept."
+        },
+        {
+          "id": "t4-p6-001-q4",
+          "question": "(4) Which sentence best fits at the end of the notice?",
+          "options": {
+            "A": "Representatives are available 24 hours a day to assist you.",
+            "B": "The changes made to our user privacy policy are no longer effective.",
+            "C": "Fresh content is accessible through phone and desktop apps.",
+            "D": "We are no longer offering a discounted rate if you renew your subscription."
+          },
+          "answer": "A",
+          "explanation": "The preceding sentence directs readers to contact customer service with questions. Option A continues this idea by assuring customers that help is always available. Options B and D contradict the positive tone of the notice. Option C is off-topic."
+        }
+      ]
+    },
+    {
+      "id": "t4-p6-002",
+      "passage": "Rescue your device with Phone Tune-Up\n\nIs your smartphone screen scratched or cracked? ----(1)----? Do your apps freeze or crash? The experts at Phone Tune-Up can help! We use nothing but the best quality parts to ----(2)---- your mobile phone. Let our certified technicians save you the time and expense involved in replacing your phone with a new one. When we are ----(3)----, you will think your old phone is brand new. To make an appointment, call 604-555-0198 or visit www.phonetuneup.com. Same-day service is often available ----(4)---- needed parts are in stock.",
+      "questions": [
+        {
+          "id": "t4-p6-002-q1",
+          "question": "(1) Which question best fits this position in the advertisement?",
+          "options": {
+            "A": "Does your printer need frequent ink refills?",
+            "B": "Does it take all day for your battery to recharge?",
+            "C": "Do you want to complete a short survey?",
+            "D": "Do you pay too much for your data plan?"
+          },
+          "answer": "B",
+          "explanation": "The ad lists smartphone hardware problems (scratched screen, freezing apps). A slow-charging battery is a direct, common hardware issue that fits this list. Printer ink refills, surveys, and data plans are unrelated to phone repair services."
+        },
+        {
+          "id": "t4-p6-002-q2",
+          "question": "(2) We use nothing but the best quality parts to _______ your mobile phone.",
+          "options": { "A": "remove", "B": "borrow", "C": "examine", "D": "repair" },
+          "answer": "D",
+          "explanation": "The entire advertisement is about fixing damaged phones. 'Repair' is the only verb that fits — a repair shop uses parts to fix devices. 'Remove' and 'examine' don't complete the service, and 'borrow' makes no sense in this context."
+        },
+        {
+          "id": "t4-p6-002-q3",
+          "question": "(3) When we are _______, you will think your old phone is brand new.",
+          "options": { "A": "trained", "B": "available", "C": "done", "D": "dismissed" },
+          "answer": "C",
+          "explanation": "'When we are done' is the natural phrase meaning 'after we finish the work.' 'Done' refers to the completion of the repair job. 'Trained' and 'available' don't convey completion. 'Dismissed' has a negative connotation (being let go)."
+        },
+        {
+          "id": "t4-p6-002-q4",
+          "question": "(4) Same-day service is often available _______ needed parts are in stock.",
+          "options": { "A": "whose", "B": "must", "C": "if", "D": "of" },
+          "answer": "C",
+          "explanation": "'If' introduces a conditional clause: same-day service is possible on the condition that parts are available. 'Whose' is a relative pronoun for possession. 'Must' is a modal verb. 'Of' is a preposition — none of these can connect two clauses here."
+        }
+      ]
+    },
+    {
+      "id": "t4-p6-003",
+      "passage": "FOR IMMEDIATE RELEASE\n\nSACRAMENTO (July 28)—The Sacramento-based supermarket chain Hsing Market announced today that it is opening a branch ----(1)---- in San Jose in October. It will occupy the building that once housed the Watson Office Superstore located at 1539 West Oak Street, which closed last year.\n\nHsing Market CEO Alice Tran said, \"We are very excited to ----(2)---- open a store in San Jose. ----(3)----. When the Watson building became available, we jumped on the opportunity to move in.\"\n\nAs a neighborhood grocery store, Hsing Market prides itself on hiring applicants from the local community. Approximately 75 percent of all employees live within two miles of the store where they ----(4)----.",
+      "questions": [
+        {
+          "id": "t4-p6-003-q1",
+          "question": "(1) It is opening a branch _______ in San Jose in October.",
+          "options": { "A": "location", "B": "locate", "C": "to locate", "D": "locating" },
+          "answer": "A",
+          "explanation": "A 'branch location' is a standard compound noun meaning a specific physical site of a business. 'Location' as a noun modifies 'branch.' The other forms are verbs/infinitives, which cannot follow 'branch' in this noun phrase."
+        },
+        {
+          "id": "t4-p6-003-q2",
+          "question": "(2) We are very excited to _______ open a store in San Jose.",
+          "options": { "A": "finally", "B": "instead", "C": "likewise", "D": "suddenly" },
+          "answer": "A",
+          "explanation": "'Finally' implies the company has been wanting to open in San Jose for a long time. This is supported by the next blank (sentence about 'having eyes on the city for some time'). 'Instead' and 'likewise' are contrast/comparison adverbs; 'suddenly' implies unexpectedness."
+        },
+        {
+          "id": "t4-p6-003-q3",
+          "question": "(3) Which sentence best fits this position in the press release?",
+          "options": {
+            "A": "The store features a variety of fresh and prepared foods.",
+            "B": "We hope that you will be able to join us at our grand-opening celebration.",
+            "C": "We have had our eyes on the city for quite some time.",
+            "D": "Our corporate headquarters will be renovated soon."
+          },
+          "answer": "C",
+          "explanation": "The CEO expresses excitement about 'finally' opening in San Jose. Option C — 'eyes on the city for some time' — explains WHY 'finally' is used and directly leads into the next sentence about seizing the Watson building opportunity."
+        },
+        {
+          "id": "t4-p6-003-q4",
+          "question": "(4) Approximately 75 percent of all employees live within two miles of the store where they _______.",
+          "options": { "A": "save", "B": "work", "C": "shop", "D": "register" },
+          "answer": "B",
+          "explanation": "The paragraph discusses employees — people hired to work at the store. 'Where they work' refers to the store as their workplace. 'Shop' could apply to customers; 'save' and 'register' do not relate to the employment context."
+        }
+      ]
+    },
+    {
+      "id": "t4-p6-004",
+      "passage": "About Leafi Cloth\n\nTropick Textiles recently expanded the ----(1)---- of fabrics available on the market. In its quest to introduce environmentally friendly alternatives to cotton and other traditional fibers, the company ----(2)---- a new fiber made from materials that are typically discarded. Tropick Textiles takes banana and pineapple leaves and combines them with bamboo fibers to create Leafi Cloth. The plants' leaves are ordinarily disposed of ----(3)---- the fruit is harvested. Tropick Textiles' process prevents many leaves from entering a landfill, converting them instead into usable material. ----(4)----.",
+      "questions": [
+        {
+          "id": "t4-p6-004-q1",
+          "question": "(1) Tropick Textiles recently expanded the _______ of fabrics available on the market.",
+          "options": { "A": "range", "B": "expense", "C": "strength", "D": "appearance" },
+          "answer": "A",
+          "explanation": "'Range of fabrics' means the variety or selection — a standard business collocation ('expand the range'). 'Expense' means cost. 'Strength' refers to physical durability. 'Appearance' means looks — none of the others describe a variety of products."
+        },
+        {
+          "id": "t4-p6-004-q2",
+          "question": "(2) The company _______ a new fiber made from materials that are typically discarded.",
+          "options": { "A": "are developed", "B": "has developed", "C": "will develop", "D": "to develop" },
+          "answer": "B",
+          "explanation": "The subject 'the company' is singular, so 'has developed' (present perfect, third person singular) is correct. The present perfect fits because this development has been completed and is relevant now. 'Are developed' is plural passive. 'Will develop' is future. 'To develop' is an infinitive."
+        },
+        {
+          "id": "t4-p6-004-q3",
+          "question": "(3) The plants' leaves are ordinarily disposed of _______ the fruit is harvested.",
+          "options": { "A": "now", "B": "thus", "C": "even", "D": "once" },
+          "answer": "D",
+          "explanation": "'Once the fruit is harvested' means 'after/as soon as the fruit is harvested' — a time conjunction showing sequence. 'Now' is an adverb of time, not a conjunction. 'Thus' means therefore (cause-effect). 'Even' is used for emphasis, not time."
+        },
+        {
+          "id": "t4-p6-004-q4",
+          "question": "(4) Which sentence best concludes this passage?",
+          "options": {
+            "A": "The resulting durable fabric is a suitable substitute for cotton cloth.",
+            "B": "Inquiries regarding Leafi Cloth were directed to the sales department.",
+            "C": "Tropick Textiles will celebrate its one-hundredth anniversary this year.",
+            "D": "Manufacturing costs have been increasing for Tropick Textiles lately."
+          },
+          "answer": "A",
+          "explanation": "The passage describes how waste leaves are converted into usable Leafi Cloth fabric. A strong conclusion should affirm the end product's value. Option A does this by stating the fabric is durable and a viable cotton substitute. Other options are off-topic or contradict the positive environmental message."
+        }
+      ]
+    },
+    {
+      "id": "t9-p6-001",
+      "passage": "Sky Air First Pass\n\nThank you for flying Sky Air First with ----(1)----. We hope you enjoy your flight.\n\nYou can take advantage of our best prices on future flights ----(2)---- purchasing a Sky Air First Pass. For a ----(3)---- annual fee, you will get special discounts, seat upgrades, and the use of our exclusive travelers' lounge. ----(4)----. Ask your flight attendant for more information and an application.",
+      "questions": [
+        {
+          "id": "t9-p6-001-q1",
+          "question": "(1) Thank you for flying Sky Air First with _______.",
+          "options": { "A": "them", "B": "theirs", "C": "us", "D": "ours" },
+          "answer": "C",
+          "explanation": "The notice is written by Sky Air First, addressing the passenger. 'Flying with us' is the standard phrase used by a company referring to itself. 'Them/theirs' refers to a third party. 'Ours' is a possessive pronoun, not used in this structure."
+        },
+        {
+          "id": "t9-p6-001-q2",
+          "question": "(2) You can take advantage of our best prices on future flights _______ purchasing a Sky Air First Pass.",
+          "options": { "A": "at", "B": "on", "C": "by", "D": "to" },
+          "answer": "C",
+          "explanation": "'By + gerund' expresses the method or means of achieving something: 'by purchasing' = through the act of purchasing. 'At purchasing' and 'on purchasing' are not standard English preposition-gerund combinations in this context."
+        },
+        {
+          "id": "t9-p6-001-q3",
+          "question": "(3) For a _______ annual fee, you will get special discounts, seat upgrades, and lounge access.",
+          "options": { "A": "lowers", "B": "low", "C": "lowly", "D": "lowest" },
+          "answer": "B",
+          "explanation": "'Low' is the correct adjective to modify the noun 'fee,' implying the price is affordable. 'Lowers' is a verb (third person singular). 'Lowly' means humble or of inferior status (used for people/rank). 'Lowest' (superlative) would require a comparison context."
+        },
+        {
+          "id": "t9-p6-001-q4",
+          "question": "(4) Which sentence best fits this position in the notice?",
+          "options": {
+            "A": "We hope you will fly Sky Air First again.",
+            "B": "You will also get priority boarding.",
+            "C": "Please find your seat immediately.",
+            "D": "The flight delay will be minimal."
+          },
+          "answer": "B",
+          "explanation": "The sentence lists benefits of the First Pass (discounts, upgrades, lounge). Option B adds another benefit — priority boarding — continuing the list. Option A is a closing remark. Options C and D are unrelated in-flight announcements."
+        }
+      ]
+    },
+    {
+      "id": "t9-p6-002",
+      "passage": "CJOK Radio Show Welcomes New Staff\n\nQUEENSVILLE (7 July)—Local radio station CJOK announced Katherine Dees as the new producer of the popular show Out and About in Queensville. Ms. Dees is now ----(1)---- for coordinating schedules, booking guests for the show, and managing media relations.\n\n----(2)----, the station hired sound editor Virginia Thacker and production assistant Reggie Dietrich to support Ms. Dees in her new role. ----(3)----.\n\nOut and About in Queensville, which has been airing for 30 years, is performed live weekly from September to May in the Orpheum Theater in downtown Queensville. The show ----(4)---- musical guests, writers, and storytellers for an hour of weekly programming.",
+      "questions": [
+        {
+          "id": "t9-p6-002-q1",
+          "question": "(1) Ms. Dees is now _______ for coordinating schedules, booking guests, and managing media relations.",
+          "options": { "A": "responsive", "B": "responsibly", "C": "responding", "D": "responsible" },
+          "answer": "D",
+          "explanation": "'Responsible for + gerund' is the standard collocation meaning having the duty to do something. 'Responsive' means reacting quickly (followed by 'to'). 'Responsibly' is an adverb modifying a verb. 'Responding' is a present participle needing an auxiliary."
+        },
+        {
+          "id": "t9-p6-002-q2",
+          "question": "(2) _______, the station hired sound editor Virginia Thacker and production assistant Reggie Dietrich.",
+          "options": { "A": "Even so", "B": "In fact", "C": "For example", "D": "In addition" },
+          "answer": "D",
+          "explanation": "'In addition' adds more information of the same type — the station made further hires beyond Ms. Dees. 'Even so' signals a contrast. 'In fact' emphasizes or corrects. 'For example' introduces an illustration — none of these fit adding a parallel hiring announcement."
+        },
+        {
+          "id": "t9-p6-002-q3",
+          "question": "(3) Which sentence best fits this position in the article?",
+          "options": {
+            "A": "CJOK was founded 60 years ago.",
+            "B": "These recent hires follow the retirement of producer Ed Evans.",
+            "C": "Ms. Dees was born and raised in Cedarburg.",
+            "D": "CJOK has more than one popular show in its lineup."
+          },
+          "answer": "B",
+          "explanation": "The paragraph discusses the new hires at CJOK. Option B explains the reason behind all these hirings — they replaced a retiring producer — giving the article important context and coherence. The other options introduce unrelated biographical or general facts."
+        },
+        {
+          "id": "t9-p6-002-q4",
+          "question": "(4) The show _______ musical guests, writers, and storytellers for an hour of weekly programming.",
+          "options": { "A": "gives", "B": "marks", "C": "features", "D": "holds" },
+          "answer": "C",
+          "explanation": "'Features' means to prominently include or showcase. 'The show features guests' is a standard media collocation. 'Gives' is too vague. 'Marks' means to celebrate or indicate. 'Holds' means to contain or organize — none fit as naturally as 'features' here."
+        }
+      ]
+    },
+    {
+      "id": "t9-p6-003",
+      "passage": "To: Sandra Barga sbarga97@hjmail.ca\nFrom: Artie Romanche service@northwestbags.ca\nDate: 12 July\nSubject: Order number 71280\n\nDear Ms. Barga:\n\nWe received your recent order asking for your name to be stitched on a Klamath Kool handbag.\n\nWe are, ----(1)----, eager to complete your order. Unfortunately, our seamstress who fulfills personalisation requirements will be on leave for the next three days. We wanted to let you know that her ----(2)---- will cause a delay in shipping your bag.\n\n----(3)---- for the wait, we would like to offer you a 10 percent discount on your current order. Or, if you prefer, you can opt for free personalisation on your next order. ----(4)----. At Northwest Bags, we strive for 100 percent customer satisfaction!\n\nSincerely,\nArtie Romanche\nCustomer Service Representative, Northwest Bags",
+      "questions": [
+        {
+          "id": "t9-p6-003-q1",
+          "question": "(1) We are, _______, eager to complete your order.",
+          "options": { "A": "still", "B": "besides", "C": "of course", "D": "nevertheless" },
+          "answer": "C",
+          "explanation": "'Of course' reassures the customer that the company is naturally and certainly willing to fulfill the order — a polite emphasis of commitment. 'Still' and 'nevertheless' signal contrast (yet there's no opposition here). 'Besides' adds information, not reassurance."
+        },
+        {
+          "id": "t9-p6-003-q2",
+          "question": "(2) Her _______ will cause a delay in shipping your bag.",
+          "options": { "A": "absence", "B": "arrival", "C": "request", "D": "investigation" },
+          "answer": "A",
+          "explanation": "The preceding sentence states the seamstress 'will be on leave' (away from work). Her 'absence' — being away — is the direct cause of the delay. 'Arrival' is the opposite. 'Request' and 'investigation' are unrelated to being on leave."
+        },
+        {
+          "id": "t9-p6-003-q3",
+          "question": "(3) _______ for the wait, we would like to offer you a 10 percent discount.",
+          "options": { "A": "Compensated", "B": "To compensate", "C": "For compensating", "D": "It is compensation" },
+          "answer": "B",
+          "explanation": "'To compensate for the wait' is a purpose infinitive phrase — the discount is given in order to make up for the delay. 'Compensated' is past participle (needs subject). 'For compensating' would need a subject. 'It is compensation' is a full clause, not a modifier."
+        },
+        {
+          "id": "t9-p6-003-q4",
+          "question": "(4) Which sentence best fits this position in the email?",
+          "options": {
+            "A": "The choice is yours.",
+            "B": "We appreciate your review.",
+            "C": "The bag will look great with your initials on it.",
+            "D": "We are the only local retailer offering custom services."
+          },
+          "answer": "A",
+          "explanation": "The preceding sentences offer the customer two options (discount on current order OR free personalisation on next order). 'The choice is yours' directly acknowledges that the customer gets to decide. Options B, C, and D are off-topic at this point in the email."
+        }
+      ]
+    },
+    {
+      "id": "t9-p6-004",
+      "passage": "Sehelec Announces Wind-Solar Hybrid Project\n\nMUMBAI (15 March)—Sehelec Ltd. announced it will begin construction on a 500-megawatt wind-solar hybrid power ----(1)---- outside of Bangalore, India. ----(2)----. Sehelec expects to begin operations within 24 months, and it will sell the power to Indian energy giant Novaseon Industries.\n\n\"Our contract with Novaseon to provide ----(3)---- power moves us closer to our long-term corporate goal,\" said Sumit Varma, CEO of Sehelec. \"Our objective is to achieve a capacity of 20 gigawatts within five years. Doing so will make us one of India's largest green power companies. And that, in turn, will help the country ----(4)---- its carbon-reduction target.\"",
+      "questions": [
+        {
+          "id": "t9-p6-004-q1",
+          "question": "(1) Sehelec will begin construction on a 500-megawatt wind-solar hybrid power _______.",
+          "options": { "A": "plant", "B": "planter", "C": "planting", "D": "planted" },
+          "answer": "A",
+          "explanation": "A 'power plant' is the standard compound noun for a facility that generates electricity. 'Planter' means a container for plants. 'Planting' and 'planted' are verb forms — neither can function as the head noun of 'power ___' in this context."
+        },
+        {
+          "id": "t9-p6-004-q2",
+          "question": "(2) Which sentence best fits this position in the article?",
+          "options": {
+            "A": "Windy conditions can cause damage to tall buildings.",
+            "B": "The facility will consist of a mix of solar panels and wind turbines.",
+            "C": "Electric vehicles have fewer emissions than other vehicles have.",
+            "D": "The pace of upgrades to India's power grid slowed slightly this year."
+          },
+          "answer": "B",
+          "explanation": "The preceding sentence announces a 'wind-solar hybrid' project. Option B immediately explains what that means (solar panels and wind turbines), giving the reader essential detail about the facility. The other options are off-topic or unrelated to the specific project announcement."
+        },
+        {
+          "id": "t9-p6-004-q3",
+          "question": "(3) Our contract with Novaseon to provide _______ power moves us closer to our long-term goal.",
+          "options": { "A": "renew", "B": "renewers", "C": "renewable", "D": "to renew" },
+          "answer": "C",
+          "explanation": "'Renewable power' (adjective + noun) is the fixed phrase for power from sustainable sources like wind and solar. 'Renew' and 'to renew' are verb forms. 'Renewers' is a noun referring to people who renew — none can modify 'power' as an adjective."
+        },
+        {
+          "id": "t9-p6-004-q4",
+          "question": "(4) That will help the country _______ its carbon-reduction target.",
+          "options": { "A": "understand", "B": "explain", "C": "block", "D": "reach" },
+          "answer": "D",
+          "explanation": "'Reach a target' is the standard collocation meaning to achieve a goal. The context is positive — green energy helping India meet its environmental commitments. 'Block' is the opposite meaning. 'Understand' and 'explain' are cognitive verbs, not achievement verbs."
+        }
+      ]
     }
   ],
   "part7": [
