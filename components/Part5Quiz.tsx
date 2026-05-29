@@ -40,7 +40,14 @@ export default function Part5Quiz({ questions: allQuestions, part }: { questions
   function handleSubmit() {
     if (!pack || answered === 0) return
     const finalScore = pack.filter((q) => selected[q.id] === q.answer).length
-    saveSessionLocal(part, finalScore, pack.length)
+    const results = pack.map((q) => ({
+      questionId: q.id,
+      question: q.question,
+      userAnswer: selected[q.id] ?? '',
+      correctAnswer: q.answer,
+      isCorrect: selected[q.id] === q.answer,
+    }))
+    saveSessionLocal(part, finalScore, pack.length, results)
     setSubmitted(true)
   }
 

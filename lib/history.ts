@@ -1,16 +1,30 @@
 'use client'
 
+export type QuestionResult = {
+  questionId: string
+  question: string
+  userAnswer: string
+  correctAnswer: string
+  isCorrect: boolean
+}
+
 export type Session = {
   id: number
   part: number
   score: number
   total: number
   createdAt: string
+  results: QuestionResult[]
 }
 
 const KEY = 'toeic_history'
 
-export function saveSessionLocal(part: number, score: number, total: number): void {
+export function saveSessionLocal(
+  part: number,
+  score: number,
+  total: number,
+  results: QuestionResult[]
+): void {
   const sessions = getSessionsLocal()
   const next: Session = {
     id: Date.now(),
@@ -18,6 +32,7 @@ export function saveSessionLocal(part: number, score: number, total: number): vo
     score,
     total,
     createdAt: new Date().toISOString(),
+    results,
   }
   localStorage.setItem(KEY, JSON.stringify([next, ...sessions]))
 }

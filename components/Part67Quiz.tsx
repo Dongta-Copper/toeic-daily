@@ -43,7 +43,14 @@ export default function Part67Quiz({ passages: allPassages, part }: { passages: 
   function handleSubmit() {
     if (!current) return
     const finalScore = current.questions.filter((q) => selected[q.id] === q.answer).length
-    saveSessionLocal(part, finalScore, current.questions.length)
+    const results = current.questions.map((q) => ({
+      questionId: q.id,
+      question: q.question,
+      userAnswer: selected[q.id] ?? '',
+      correctAnswer: q.answer,
+      isCorrect: selected[q.id] === q.answer,
+    }))
+    saveSessionLocal(part, finalScore, current.questions.length, results)
     setSubmitted(true)
   }
 
