@@ -3,9 +3,11 @@
 export type QuestionResult = {
   questionId: string
   question: string
+  options: { A: string; B: string; C: string; D: string }
   userAnswer: string
   correctAnswer: string
   isCorrect: boolean
+  explanation: string
 }
 
 export type Session = {

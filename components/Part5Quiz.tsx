@@ -43,9 +43,11 @@ export default function Part5Quiz({ questions: allQuestions, part }: { questions
     const results = pack.map((q) => ({
       questionId: q.id,
       question: q.question,
+      options: q.options,
       userAnswer: selected[q.id] ?? '',
       correctAnswer: q.answer,
       isCorrect: selected[q.id] === q.answer,
+      explanation: q.explanation,
     }))
     saveSessionLocal(part, finalScore, pack.length, results)
     setSubmitted(true)
