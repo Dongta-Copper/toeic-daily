@@ -59,6 +59,726 @@
       },
       "answer": "C",
       "explanation": "'Ensure that' is the correct structure followed by a noun clause. 'That' introduces the object clause. 'Who', 'which', and 'what' are relative or interrogative pronouns and do not fit the 'ensure + clause' structure."
+    },
+    {
+      "id": "t4-001",
+      "question": "Mr. Barrientos has worked at the company _______ six years.",
+      "options": {
+        "A": "for",
+        "B": "since",
+        "C": "with",
+        "D": "lately"
+      },
+      "answer": "A",
+      "explanation": "'For + time period' is used with the present perfect to express duration. 'Since' requires a starting point (e.g., since 2019). 'With' and 'lately' do not express duration."
+    },
+    {
+      "id": "t4-002",
+      "question": "The staff cafeteria stops _______ lunch at 2:00 P.M.",
+      "options": {
+        "A": "taking",
+        "B": "buying",
+        "C": "serving",
+        "D": "working"
+      },
+      "answer": "C",
+      "explanation": "'Stop + gerund' means to cease an activity. 'Serving lunch' = providing/offering lunch service. 'Taking', 'buying', and 'working' do not collocate naturally here."
+    },
+    {
+      "id": "t4-003",
+      "question": "The annual report will be ready after _______ make the necessary revisions.",
+      "options": {
+        "A": "I",
+        "B": "me",
+        "C": "myself",
+        "D": "my"
+      },
+      "answer": "A",
+      "explanation": "'After' here is a conjunction introducing a clause, so a subject pronoun is needed: 'after I make'. 'Me' is an object pronoun, 'myself' is reflexive, and 'my' is possessive."
+    },
+    {
+      "id": "t4-004",
+      "question": "Mr. Louden was offered a full-time position at Fortelio Corporation _______ a division manager.",
+      "options": {
+        "A": "about",
+        "B": "as",
+        "C": "after",
+        "D": "around"
+      },
+      "answer": "B",
+      "explanation": "'As + role/title' means in the capacity of. 'A position as a division manager' = in the role of division manager. No other option fits this structure."
+    },
+    {
+      "id": "t4-005",
+      "question": "Kennedy Sports will _______ its end-of-season sale through the month of January.",
+      "options": {
+        "A": "continuing",
+        "B": "continued",
+        "C": "continues",
+        "D": "continue"
+      },
+      "answer": "D",
+      "explanation": "'Will + base form' is the rule for future tense. 'Continuing' and 'continued' cannot follow 'will'. 'Continues' is third-person singular present and is not used with 'will'."
+    },
+    {
+      "id": "t4-006",
+      "question": "Ms. Najjar is going to give a presentation _______ workplace regulations at noon.",
+      "options": {
+        "A": "near",
+        "B": "to",
+        "C": "past",
+        "D": "on"
+      },
+      "answer": "D",
+      "explanation": "'Presentation on + topic' is the standard collocation. 'A presentation on workplace regulations' = a talk about that subject. 'Near', 'to', and 'past' are location or movement prepositions."
+    },
+    {
+      "id": "t4-007",
+      "question": "Mr. Telguld submitted the _______ surveys before the monthly board meeting.",
+      "options": {
+        "A": "completely",
+        "B": "completed",
+        "C": "completing",
+        "D": "completes"
+      },
+      "answer": "B",
+      "explanation": "A past participle used as an adjective modifies the noun 'surveys'. 'Completed surveys' = surveys that have been finished. 'Completely' is an adverb, 'completing' needs an auxiliary verb, and 'completes' is a finite verb."
+    },
+    {
+      "id": "t4-008",
+      "question": "Travel funds are available to student presenters coming to the conference from a significant _______.",
+      "options": {
+        "A": "location",
+        "B": "amount",
+        "C": "reason",
+        "D": "distance"
+      },
+      "answer": "D",
+      "explanation": "'From a significant distance' means from far away — a common collocation. 'Location' and 'reason' do not fit with 'from' in this travel context. 'Amount' refers to countable quantities, not travel."
+    },
+    {
+      "id": "t4-009",
+      "question": "Ms. Okada is _______ a new social media campaign at the request of our office manager.",
+      "options": {
+        "A": "organize",
+        "B": "organized",
+        "C": "organizing",
+        "D": "organization"
+      },
+      "answer": "C",
+      "explanation": "Present continuous 'is + -ing' describes an action in progress. 'Is organizing' fits the structure. 'Organize' is a base verb, 'organized' is past tense or adjective, and 'organization' is a noun."
+    },
+    {
+      "id": "t4-010",
+      "question": "The speaker will offer five tips for making wise purchasing _______.",
+      "options": {
+        "A": "items",
+        "B": "decisions",
+        "C": "values",
+        "D": "remedies"
+      },
+      "answer": "B",
+      "explanation": "'Purchasing decisions' is a standard business collocation meaning choices made when buying. 'Items' = goods, 'values' = principles, 'remedies' = solutions — none collocate with 'purchasing' in this context."
+    },
+    {
+      "id": "t4-011",
+      "question": "Please log on to your online checking account _______ the next 30 days in order to keep it active.",
+      "options": {
+        "A": "within",
+        "B": "how",
+        "C": "whether",
+        "D": "and"
+      },
+      "answer": "A",
+      "explanation": "'Within + time period' means before the end of that period. 'Within the next 30 days' = no later than 30 days from now. 'How', 'whether', and 'and' are conjunctions and cannot connect a time phrase here."
+    },
+    {
+      "id": "t4-012",
+      "question": "The Bradyville Inn _______ live jazz music in the dining area on Friday evenings.",
+      "options": {
+        "A": "features",
+        "B": "marks",
+        "C": "sounds",
+        "D": "collects"
+      },
+      "answer": "A",
+      "explanation": "'Features' means to include something as a notable attraction. 'The inn features jazz music' = the inn offers jazz as a highlight. 'Marks' (commemorates), 'sounds', and 'collects' do not fit."
+    },
+    {
+      "id": "t4-013",
+      "question": "Leeann's Organic Fruit Spreads can be purchased _______ from the company's Web site.",
+      "options": {
+        "A": "direction",
+        "B": "directly",
+        "C": "directness",
+        "D": "directed"
+      },
+      "answer": "B",
+      "explanation": "An adverb is needed to modify the verb 'purchased'. 'Directly' means straight from the source, without intermediaries. 'Direction' and 'directness' are nouns; 'directed' is a verb or adjective."
+    },
+    {
+      "id": "t4-014",
+      "question": "_______ the event organizers' best efforts, they have been unable to attract enough volunteers this spring.",
+      "options": {
+        "A": "Behind",
+        "B": "Versus",
+        "C": "Among",
+        "D": "Despite"
+      },
+      "answer": "D",
+      "explanation": "'Despite + noun phrase' means in spite of something. 'Despite their best efforts' = even though they tried hard. This expresses contrast. 'Behind', 'versus', and 'among' do not convey this contrast."
+    },
+    {
+      "id": "t4-015",
+      "question": "Mr. Perez _______ as an industrial engineer at Gaberly Logistics for almost twenty years.",
+      "options": {
+        "A": "employs",
+        "B": "to be employed",
+        "C": "is employing",
+        "D": "has been employed"
+      },
+      "answer": "D",
+      "explanation": "Present perfect passive 'has been employed' expresses an action that began in the past and continues to the present. 'For almost twenty years' confirms the duration. The passive is needed since Mr. Perez receives the employment."
+    },
+    {
+      "id": "t4-016",
+      "question": "Soon after Ms. Manilla was hired, the sales department's productivity began to increase _______.",
+      "options": {
+        "A": "mainly",
+        "B": "respectively",
+        "C": "noticeably",
+        "D": "closely"
+      },
+      "answer": "C",
+      "explanation": "'Noticeably' means in a clearly visible or measurable way. 'Increased noticeably' = the increase was easy to observe. 'Mainly' (primarily), 'respectively' (in the order mentioned), and 'closely' (nearly/carefully) do not fit."
+    },
+    {
+      "id": "t4-017",
+      "question": "Small businesses _______ participate in the Get Ahead program will receive marketing tools to help them attract customers.",
+      "options": {
+        "A": "that",
+        "B": "they",
+        "C": "what",
+        "D": "whoever"
+      },
+      "answer": "A",
+      "explanation": "'That' is a relative pronoun introducing a relative clause modifying 'small businesses'. 'Businesses that participate' = businesses which participate. 'They' is a personal pronoun, 'what' doesn't modify a noun, and 'whoever' refers to people."
+    },
+    {
+      "id": "t4-018",
+      "question": "Our copy editors will review the manuscript _______ will not return it until the end of next week.",
+      "options": {
+        "A": "or",
+        "B": "once",
+        "C": "either",
+        "D": "but"
+      },
+      "answer": "D",
+      "explanation": "'But' is a coordinating conjunction that contrasts two ideas: they will review it BUT will not return it quickly. 'Or' implies alternatives, 'once' means after a condition is met, and 'either' must pair with 'or'."
+    },
+    {
+      "id": "t4-019",
+      "question": "Mira Kumar was probably the _______ of all the interns at Kolbry Media last summer.",
+      "options": {
+        "A": "ambitious",
+        "B": "most ambitious",
+        "C": "ambitiously",
+        "D": "more ambitiously"
+      },
+      "answer": "B",
+      "explanation": "'The most ambitious' is the superlative, used when comparing more than two. 'Of all the interns' confirms a superlative is needed. 'More ambitiously' would be comparative, and 'ambitiously' is an adverb that cannot follow 'the'."
+    },
+    {
+      "id": "t4-020",
+      "question": "Orbin's Fish Company expanded to a total of 26 stores _______ its takeover of a rival chain.",
+      "options": {
+        "A": "whenever",
+        "B": "toward",
+        "C": "following",
+        "D": "usually"
+      },
+      "answer": "C",
+      "explanation": "'Following' used as a preposition means 'after'. 'Following the takeover' = after the takeover occurred. This is common formal business English. 'Whenever' is a conjunction, 'toward' shows direction, and 'usually' is an adverb."
+    },
+    {
+      "id": "t4-021",
+      "question": "Ms. Cartwright told her team members that she wanted _______ to streamline the company's assembly process.",
+      "options": {
+        "A": "theirs",
+        "B": "they",
+        "C": "them",
+        "D": "themselves"
+      },
+      "answer": "C",
+      "explanation": "The structure 'want + object + to infinitive' requires an object pronoun. 'Wanted them to streamline' = she wanted her team to do it. 'Theirs' is possessive, 'they' is a subject pronoun, and 'themselves' is reflexive."
+    },
+    {
+      "id": "t4-022",
+      "question": "Rupert's Food Service uses _______ technology to track all of its shipments.",
+      "options": {
+        "A": "strict",
+        "B": "numerous",
+        "C": "advanced",
+        "D": "crowded"
+      },
+      "answer": "C",
+      "explanation": "'Advanced technology' is a standard business collocation meaning cutting-edge or state-of-the-art technology. 'Strict' (rule-based), 'numerous' (many, modifies count nouns), and 'crowded' (too many people) do not fit."
+    },
+    {
+      "id": "t4-023",
+      "question": "Our app includes a _______ so that users can determine whether they are within their budget goals.",
+      "options": {
+        "A": "calculator",
+        "B": "calculated",
+        "C": "calculating",
+        "D": "calculations"
+      },
+      "answer": "A",
+      "explanation": "A noun is needed after the article 'a'. 'Calculator' = a computing tool — fits the context of checking budget goals. 'Calculated' is an adjective or past participle, 'calculating' is a gerund or adjective, and 'calculations' is plural."
+    },
+    {
+      "id": "t4-024",
+      "question": "To _______ that its facilities are cleaned every day, the Selboa Company has hired more janitors.",
+      "options": {
+        "A": "ensure",
+        "B": "affect",
+        "C": "provide",
+        "D": "secure"
+      },
+      "answer": "A",
+      "explanation": "'Ensure that + clause' means to make certain that something happens. 'To ensure that facilities are cleaned' is a common formal expression. 'Affect' (to influence), 'provide' (to supply), and 'secure' do not collocate with 'that + clause' here."
+    },
+    {
+      "id": "t4-025",
+      "question": "During his term as a legislator, Jeremy Moran _______ promoted public awareness of the need for infrastructure improvements.",
+      "options": {
+        "A": "act",
+        "B": "action",
+        "C": "active",
+        "D": "actively"
+      },
+      "answer": "D",
+      "explanation": "An adverb is needed to modify the verb 'promoted'. 'Actively promoted' = promoted with energy and engagement. 'Act' and 'action' are nouns or verbs; 'active' is an adjective and cannot modify a verb."
+    },
+    {
+      "id": "t4-026",
+      "question": "Pyxie Print's business is so new that we need to explain the full range of our services to _______ clients.",
+      "options": {
+        "A": "trained",
+        "B": "potential",
+        "C": "elected",
+        "D": "paid"
+      },
+      "answer": "B",
+      "explanation": "'Potential clients' means prospective clients — people who might become customers. Since the business is new, explaining to prospective clients makes sense. 'Trained', 'elected', and 'paid' do not describe unexposed, new clients."
+    },
+    {
+      "id": "t4-027",
+      "question": "Phone orders that are _______ to local stores by 11:00 A.M. are eligible for same-day pickup.",
+      "options": {
+        "A": "submitted",
+        "B": "submission",
+        "C": "submitting",
+        "D": "submits"
+      },
+      "answer": "A",
+      "explanation": "A past participle is needed in the relative clause 'orders that are _______'. 'Submitted' forms the passive: 'orders that are submitted'. 'Submission' is a noun, 'submitting' is active, and 'submits' is third-person singular present."
+    },
+    {
+      "id": "t4-028",
+      "question": "An Oswald Hardware associate will _______ place an order for customers who need larger quantities than what is in stock.",
+      "options": {
+        "A": "slightly",
+        "B": "wholly",
+        "C": "busily",
+        "D": "gladly"
+      },
+      "answer": "D",
+      "explanation": "'Gladly' means willingly and with pleasure. 'Will gladly place an order' = the associate is happy to help. 'Slightly' (a little), 'wholly' (completely), and 'busily' (in a busy manner) do not convey this helpful willingness."
+    },
+    {
+      "id": "t4-029",
+      "question": "Mia Daushvili performed with the Bayhead Orchestra on Monday evening, _______ her virtuosic skills on the piccolo.",
+      "options": {
+        "A": "displays",
+        "B": "had displayed",
+        "C": "displaying",
+        "D": "was displayed"
+      },
+      "answer": "C",
+      "explanation": "A participial phrase (present participle) is used to add information about the main clause. 'Displaying her skills' describes what she was doing while performing. 'Displays' is a finite verb; 'had displayed' is past perfect; 'was displayed' is passive."
+    },
+    {
+      "id": "t4-030",
+      "question": "When reviewing applicants for the clerk position, Ms. Ng will consider both education and _______ experience.",
+      "options": {
+        "A": "prior",
+        "B": "quick",
+        "C": "lean",
+        "D": "calm"
+      },
+      "answer": "A",
+      "explanation": "'Prior experience' means previous or past work experience — a standard hiring criterion. 'Both education and prior experience' is a common HR phrase. 'Quick', 'lean', and 'calm' describe manner or appearance, not the relevance of experience."
+    },
+    {
+      "id": "t9-001",
+      "question": "Mr. Liu is known for negotiating employee disputes _______.",
+      "options": {
+        "A": "calm",
+        "B": "calmly",
+        "C": "calmest",
+        "D": "calmness"
+      },
+      "answer": "B",
+      "explanation": "An adverb is needed to modify the gerund 'negotiating'. 'Calmly' describes the manner in which he negotiates. 'Calm' is an adjective, 'calmest' is a superlative adjective, and 'calmness' is a noun."
+    },
+    {
+      "id": "t9-002",
+      "question": "The city is accepting proposals for the redesign of Oshida Public Park _______ January 25.",
+      "options": {
+        "A": "when",
+        "B": "until",
+        "C": "a few",
+        "D": "whether"
+      },
+      "answer": "B",
+      "explanation": "'Until + date' means up to and including a deadline. 'Accepting proposals until January 25' = the submission window closes on that date. 'When' introduces a time clause, 'a few' is a quantity phrase, and 'whether' introduces alternatives."
+    },
+    {
+      "id": "t9-003",
+      "question": "Sales _______ maintain client files and provide logistical support.",
+      "options": {
+        "A": "assists",
+        "B": "assisted",
+        "C": "assisting",
+        "D": "assistants"
+      },
+      "answer": "D",
+      "explanation": "'Sales assistants' forms the compound noun subject of the sentence. The plural verb 'maintain' matches 'assistants'. The other options are verb forms that would make 'Sales' a singular subject — creating a subject-verb mismatch."
+    },
+    {
+      "id": "t9-004",
+      "question": "Tonight at Harbor Falls Library, writer Delroy Greene will be _______ stories from his childhood in Jamaica.",
+      "options": {
+        "A": "dividing",
+        "B": "sharing",
+        "C": "using",
+        "D": "awarding"
+      },
+      "answer": "B",
+      "explanation": "'Sharing stories' = telling or narrating personal experiences — what authors do at library events. 'Dividing' (splitting), 'using' (employing), and 'awarding' (giving a prize) do not fit the context of an author speaking at a library."
+    },
+    {
+      "id": "t9-005",
+      "question": "Mr. Kam has invited all staff members to attend _______ retirement party.",
+      "options": {
+        "A": "he",
+        "B": "his",
+        "C": "him",
+        "D": "himself"
+      },
+      "answer": "B",
+      "explanation": "A possessive adjective is needed to modify the noun 'retirement party'. 'His retirement party' = the party celebrating his retirement. 'He' is a subject pronoun, 'him' is an object pronoun, and 'himself' is reflexive."
+    },
+    {
+      "id": "t9-006",
+      "question": "Stanley Point Theater in downtown Detroit will produce four plays and three _______ next season.",
+      "options": {
+        "A": "actors",
+        "B": "audiences",
+        "C": "tickets",
+        "D": "musicals"
+      },
+      "answer": "D",
+      "explanation": "'Musicals' is parallel to 'plays' — both are types of theatrical productions. The theater produces shows, so 'musicals' completes the list. 'Actors' (performers), 'audiences' (viewers), and 'tickets' (entry passes) are not types of productions."
+    },
+    {
+      "id": "t9-007",
+      "question": "There is enough money _______ in the budget to cover travel expenses.",
+      "options": {
+        "A": "remains",
+        "B": "remainder",
+        "C": "remained",
+        "D": "remaining"
+      },
+      "answer": "D",
+      "explanation": "A present participle is used as a postpositive adjective modifying 'money'. 'Money remaining in the budget' = money that is left over. 'Remains' is a finite verb, 'remainder' is a noun, and 'remained' is past tense."
+    },
+    {
+      "id": "t9-008",
+      "question": "Romm Industries staff trained nine new associates who were hired _______ the same day.",
+      "options": {
+        "A": "as",
+        "B": "into",
+        "C": "on",
+        "D": "once"
+      },
+      "answer": "C",
+      "explanation": "'On + specific day' is the correct preposition for a point in time. 'Hired on the same day' = employed on that particular day. 'As' introduces a role, 'into' shows movement, and 'once' is a temporal conjunction."
+    },
+    {
+      "id": "t9-009",
+      "question": "Taylor Kanagawa wrote several books on effective team management _______ his 40-year career at Sapp Publishers Ltd.",
+      "options": {
+        "A": "between",
+        "B": "while",
+        "C": "beside",
+        "D": "during"
+      },
+      "answer": "D",
+      "explanation": "'During + noun phrase' means throughout a period of time. 'During his career' = at various points across his career. 'Between' requires two points, 'while' needs a verb clause, and 'beside' means next to."
+    },
+    {
+      "id": "t9-010",
+      "question": "The community clinic project is designed to improve health _______ in isolated areas.",
+      "options": {
+        "A": "outcomes",
+        "B": "reasons",
+        "C": "corrections",
+        "D": "grades"
+      },
+      "answer": "A",
+      "explanation": "'Health outcomes' is a standard public health term for results of health interventions. 'Reasons' (causes), 'corrections' (fixes), and 'grades' (scores) do not collocate with 'health' in this context."
+    },
+    {
+      "id": "t9-011",
+      "question": "Jingshen Airlines announced that it will be hiring 200 _______ employees next year.",
+      "options": {
+        "A": "add",
+        "B": "adding",
+        "C": "additional",
+        "D": "additionally"
+      },
+      "answer": "C",
+      "explanation": "An adjective is needed to modify the noun 'employees'. 'Additional employees' = more employees beyond the current workforce. 'Add' is a verb, 'adding' is a gerund or present participle, and 'additionally' is an adverb."
+    },
+    {
+      "id": "t9-012",
+      "question": "The customer was impressed by how _______ Mr. Schmid operated the complicated machinery.",
+      "options": {
+        "A": "skillfully",
+        "B": "primarily",
+        "C": "obviously",
+        "D": "richly"
+      },
+      "answer": "A",
+      "explanation": "'Skillfully' means with great expertise. 'Operated skillfully' = performed the operation with mastery. 'Primarily' (mainly), 'obviously' (clearly), and 'richly' (abundantly) do not describe technical competence."
+    },
+    {
+      "id": "t9-013",
+      "question": "Staff are invited to participate in a _______ of social events during the first week of May.",
+      "options": {
+        "A": "series",
+        "B": "status",
+        "C": "theory",
+        "D": "guest"
+      },
+      "answer": "A",
+      "explanation": "'A series of events' is a fixed expression meaning a sequence or collection of events. This is a standard TOEIC collocation. 'Status' (rank or condition), 'theory' (hypothesis), and 'guest' (visitor) do not fit."
+    },
+    {
+      "id": "t9-014",
+      "question": "The contract states that Solcus Corporation will be _______ for any costs resulting from work delays.",
+      "options": {
+        "A": "accountable",
+        "B": "manageable",
+        "C": "knowledgeable",
+        "D": "flexible"
+      },
+      "answer": "A",
+      "explanation": "'Accountable for' means legally responsible for. This is the standard contractual expression. 'Manageable' (easy to handle), 'knowledgeable' (well-informed), and 'flexible' do not match the 'for costs' legal structure."
+    },
+    {
+      "id": "t9-015",
+      "question": "Author Minh Phan's latest novel was _______ influenced by Vietnamese folk stories.",
+      "options": {
+        "A": "heavy",
+        "B": "heavily",
+        "C": "heaviest",
+        "D": "heavier"
+      },
+      "answer": "B",
+      "explanation": "An adverb is needed to modify the past participle 'influenced'. 'Heavily influenced' = strongly or significantly influenced. 'Heavy' is an adjective, 'heaviest' is a superlative adjective, and 'heavier' is a comparative adjective."
+    },
+    {
+      "id": "t9-016",
+      "question": "Tourists are expected to flock to the Sorachi Discovery Museum when it opens _______ in Mikasa, Hokkaido.",
+      "options": {
+        "A": "soon",
+        "B": "as",
+        "C": "almost",
+        "D": "initial"
+      },
+      "answer": "A",
+      "explanation": "'Opens soon' = will open in the near future. The context is anticipation about a new museum. 'As' is a conjunction or preposition, 'almost' means not quite yet, and 'initial' is an adjective that needs a noun."
+    },
+    {
+      "id": "t9-017",
+      "question": "The factory floor is divided into four _______ sections: one for each stage of product assembly.",
+      "options": {
+        "A": "previous",
+        "B": "eligible",
+        "C": "distinct",
+        "D": "installed"
+      },
+      "answer": "C",
+      "explanation": "'Distinct sections' means clearly separate and different sections. The colon explanation confirms they are truly separate (one per assembly stage). 'Previous' (former), 'eligible' (qualified), and 'installed' (fixed in place) do not fit."
+    },
+    {
+      "id": "t9-018",
+      "question": "Handouts for the afternoon seminar must be prepared _______ the lunch break.",
+      "options": {
+        "A": "down",
+        "B": "beside",
+        "C": "before",
+        "D": "off"
+      },
+      "answer": "C",
+      "explanation": "'Before + event' means prior to that point in time. 'Prepared before the lunch break' = ready ahead of the break. 'Down', 'beside', and 'off' are prepositions of position or direction, not of time."
+    },
+    {
+      "id": "t9-019",
+      "question": "Chat Mobile will determine, based on end-of-the-year sales numbers, _______ the company will open any additional stores.",
+      "options": {
+        "A": "whether",
+        "B": "who",
+        "C": "since",
+        "D": "that"
+      },
+      "answer": "A",
+      "explanation": "'Determine whether' introduces an indirect yes/no question. 'Whether the company will open stores' = if or not they will. 'Who' is for people, 'since' is causal or temporal, and 'that' introduces a known fact rather than a decision."
+    },
+    {
+      "id": "t9-020",
+      "question": "The red line will _______ only express stops from Finn Street to Boone Street on weekends.",
+      "options": {
+        "A": "made",
+        "B": "makes",
+        "C": "make",
+        "D": "making"
+      },
+      "answer": "C",
+      "explanation": "'Will + base form (infinitive)' is required for future tense. 'Will make' is correct. 'Made' is past tense, 'makes' is third-person present tense, and 'making' would need 'be' before it."
+    },
+    {
+      "id": "t9-021",
+      "question": "The company's latest video game, Hunting for Treasure, has been praised _______ by reviewers.",
+      "options": {
+        "A": "enthusiastically",
+        "B": "enthusiastic",
+        "C": "enthusiasm",
+        "D": "enthusiast"
+      },
+      "answer": "A",
+      "explanation": "An adverb is needed to modify the passive verb 'praised'. 'Praised enthusiastically' = praised with great excitement and approval. 'Enthusiastic' is an adjective, 'enthusiasm' is a noun, and 'enthusiast' is a noun meaning a devoted fan."
+    },
+    {
+      "id": "t9-022",
+      "question": "During the off-season, the Great Mountain Amusement Park operates on _______ hours.",
+      "options": {
+        "A": "reduced",
+        "B": "employed",
+        "C": "slow",
+        "D": "busy"
+      },
+      "answer": "A",
+      "explanation": "'Reduced hours' means fewer operating hours than normal — a common phrase for seasonal businesses. 'Employed hours' is not a standard phrase, 'slow' describes pace not a schedule, and 'busy hours' contradicts the off-season context."
+    },
+    {
+      "id": "t9-023",
+      "question": "The construction project will _______ 30 residential units and 10 commercial spaces.",
+      "options": {
+        "A": "overall",
+        "B": "first",
+        "C": "about",
+        "D": "include"
+      },
+      "answer": "D",
+      "explanation": "'Include' means to contain or consist of certain components. 'Will include 30 residential units' = the project will have those units. 'Overall', 'first', and 'about' are adverbs or prepositions and cannot serve as the main verb."
+    },
+    {
+      "id": "t9-024",
+      "question": "Ms. Pham's employment contract cannot be finalized _______ her starting salary is still being negotiated.",
+      "options": {
+        "A": "once",
+        "B": "because",
+        "C": "after",
+        "D": "until"
+      },
+      "answer": "B",
+      "explanation": "'Because' introduces the reason or cause. The contract cannot be finalized for the reason that the salary is still under discussion. 'Once' and 'after' imply completion of an action, and 'until' conflicts with 'still being negotiated'."
+    },
+    {
+      "id": "t9-025",
+      "question": "Office supplies are available in our resources cabinet for _______ who needs them.",
+      "options": {
+        "A": "anyone",
+        "B": "whichever",
+        "C": "such",
+        "D": "more"
+      },
+      "answer": "A",
+      "explanation": "'For anyone who' = for whoever (an indefinite person). 'Anyone who needs them' is a standard phrase meaning any person who needs supplies. 'Whichever' refers to things or choices, 'such' is a determiner, and 'more' is a comparative."
+    },
+    {
+      "id": "t9-026",
+      "question": "Through its network of local agents, new housing start-up Philocenia intends to _______ the rental sector.",
+      "options": {
+        "A": "exercise",
+        "B": "indicate",
+        "C": "participate",
+        "D": "revolutionize"
+      },
+      "answer": "D",
+      "explanation": "'Revolutionize' means to completely transform or disrupt an industry. Start-ups are commonly described as wanting to revolutionize their sector. 'Exercise' (practice), 'indicate' (point out), and 'participate' (take part) are too weak here."
+    },
+    {
+      "id": "t9-027",
+      "question": "Rapid Books has the payroll solutions every company needs, allowing users _______ invoices in three easy steps.",
+      "options": {
+        "A": "sent",
+        "B": "have sent",
+        "C": "sending",
+        "D": "to send"
+      },
+      "answer": "D",
+      "explanation": "The structure 'allow + object + to infinitive' requires the to-infinitive. 'Allowing users to send invoices' = enabling users to send. 'Sent' is past participle, 'have sent' is present perfect, and 'sending' is a gerund (not standard after 'allow + object')."
+    },
+    {
+      "id": "t9-028",
+      "question": "Epky Electronics will open eight additional retail stores _______ the next two years.",
+      "options": {
+        "A": "above",
+        "B": "behind",
+        "C": "about",
+        "D": "within"
+      },
+      "answer": "D",
+      "explanation": "'Within the next two years' means before the end of that two-year period. This is a common business time expression. 'Above' and 'behind' are positional prepositions, and 'about' means approximately — not a time boundary expression."
+    },
+    {
+      "id": "t9-029",
+      "question": "The three-day workshop focuses on the public speaking _______ that are central to delivering memorable presentations.",
+      "options": {
+        "A": "strategies",
+        "B": "strategized",
+        "C": "strategically",
+        "D": "strategic"
+      },
+      "answer": "A",
+      "explanation": "A noun is needed as the head of the noun phrase 'the public speaking _______'. 'Strategies that are central to...' = methods or approaches. 'Strategized' is a verb, 'strategically' is an adverb, and 'strategic' is an adjective — none can head a noun phrase."
+    },
+    {
+      "id": "t9-030",
+      "question": "Critics agree that the movie An Unusual Introduction _______ combines computer-generated images and live action.",
+      "options": {
+        "A": "seamlessly",
+        "B": "collectively",
+        "C": "factually",
+        "D": "distantly"
+      },
+      "answer": "A",
+      "explanation": "'Seamlessly' means smoothly, without any visible transitions or joints. 'Seamlessly combines' is common film criticism language. 'Collectively' (as a group), 'factually' (based on facts), and 'distantly' (from a distance) do not describe how visual styles blend."
     }
   ],
   "part6": [
