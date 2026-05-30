@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { saveSessionLocal } from '@/lib/history'
+import { saveSession } from '@/lib/history'
 import { ChevronLeft, ChevronRight, CheckCircle, XCircle, RefreshCw } from 'lucide-react'
 
 type SubQuestion = {
@@ -40,7 +40,7 @@ export default function Part67Quiz({ passages: allPassages, part }: { passages: 
   const answered = Object.keys(selected).length
   const score = current.questions.filter((q) => selected[q.id] === q.answer).length
 
-  function handleSubmit() {
+  async function handleSubmit() {
     if (!current) return
     const finalScore = current.questions.filter((q) => selected[q.id] === q.answer).length
     const results = current.questions.map((q) => ({
@@ -52,8 +52,8 @@ export default function Part67Quiz({ passages: allPassages, part }: { passages: 
       isCorrect: selected[q.id] === q.answer,
       explanation: q.explanation,
     }))
-    saveSessionLocal(part, finalScore, current.questions.length, results)
     setSubmitted(true)
+    await saveSession(part, finalScore, current.questions.length, results)
   }
 
   function handleNewPack() {

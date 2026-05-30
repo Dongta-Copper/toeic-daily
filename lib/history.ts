@@ -1,5 +1,3 @@
-'use client'
-
 export type QuestionResult = {
   questionId: string
   question: string
@@ -19,16 +17,13 @@ export type Session = {
   results: QuestionResult[]
 }
 
-const KEY = 'toeic_history'
-
-export function saveSessionLocal(
+export async function saveSession(
   part: number,
   score: number,
   total: number,
   results: QuestionResult[]
-): void {
-  const sessions = getSessionsLocal()
-  const next: Session = {
+): Promise<void> {
+  const session: Session = {
     id: Date.now(),
     part,
     score,
@@ -36,14 +31,23 @@ export function saveSessionLocal(
     createdAt: new Date().toISOString(),
     results,
   }
-  localStorage.setItem(KEY, JSON.stringify([next, ...sessions]))
+  await fetch('/api/sessions', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(session),
+  })
 }
 
-export function getSessionsLocal(): Session[] {
-  if (typeof window === 'undefined') return []
+export async function getSessions(): Promise<Session[]> {
   try {
-    return JSON.parse(localStorage.getItem(KEY) ?? '[]')
+    const res = await fetch('/api/sessions', { cache: 'no-store' })
+    if (!res.ok) return []
+    return res.json()
   } catch {
     return []
   }
+}
+
+export async function clearSessions(): Promise<void> {
+  await fetch('/api/sessions', { method: 'DELETE' })
 }

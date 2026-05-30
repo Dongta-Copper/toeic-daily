@@ -10,10 +10,9 @@ import {
   XCircle,
   X,
   BookOpen,
+  Loader2,
 } from 'lucide-react'
-import { getSessionsLocal, type Session, type QuestionResult } from '@/lib/history'
-
-const KEY = 'toeic_history'
+import { getSessions, clearSessions, type Session, type QuestionResult } from '@/lib/history'
 
 // ─── Overview card per part ────────────────────────────────────────────────────
 
@@ -54,7 +53,6 @@ function ReviewModal({ session, onClose }: { session: Session; onClose: () => vo
   const correct = session.results.filter((r) => r.isCorrect).length
   const wrong = session.results.filter((r) => !r.isCorrect).length
 
-  // Close on backdrop click
   function handleBackdrop(e: React.MouseEvent<HTMLDivElement>) {
     if (e.target === e.currentTarget) onClose()
   }
@@ -65,7 +63,6 @@ function ReviewModal({ session, onClose }: { session: Session; onClose: () => vo
       onClick={handleBackdrop}
     >
       <div className="bg-white rounded-xl w-full max-w-2xl shadow-xl">
-        {/* Modal header */}
         <div className="flex items-start justify-between p-6 border-b border-gray-100">
           <div>
             <div className="flex items-center gap-3 mb-2">
@@ -98,15 +95,11 @@ function ReviewModal({ session, onClose }: { session: Session; onClose: () => vo
               </div>
             </div>
           </div>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-900 transition-colors p-1"
-          >
+          <button onClick={onClose} className="text-gray-400 hover:text-gray-900 transition-colors p-1">
             <X className="w-5 h-5" />
           </button>
         </div>
 
-        {/* Questions */}
         <div className="p-6 space-y-8">
           {session.results.map((r, i) => (
             <ReviewQuestion key={r.questionId} result={r} index={i} />
@@ -122,7 +115,6 @@ function ReviewQuestion({ result: r, index }: { result: QuestionResult; index: n
 
   return (
     <div className="relative">
-      {/* Correct/wrong indicator */}
       <div className="flex items-start gap-3 mb-3">
         <div className="flex-shrink-0 mt-0.5">
           {r.isCorrect
@@ -136,7 +128,6 @@ function ReviewQuestion({ result: r, index }: { result: QuestionResult; index: n
         </p>
       </div>
 
-      {/* Options */}
       {hasOptions ? (
         <div className="ml-7 space-y-2">
           {(['A', 'B', 'C', 'D'] as const).map((opt) => {
@@ -144,13 +135,9 @@ function ReviewQuestion({ result: r, index }: { result: QuestionResult; index: n
             const isUserWrong = r.userAnswer === opt && !r.isCorrect
 
             let cls = 'flex items-start gap-3 px-3 py-2.5 rounded-md border text-sm '
-            if (isCorrect) {
-              cls += 'border-green-500 bg-green-50'
-            } else if (isUserWrong) {
-              cls += 'border-red-400 bg-red-50'
-            } else {
-              cls += 'border-gray-100 opacity-50'
-            }
+            if (isCorrect) cls += 'border-green-500 bg-green-50'
+            else if (isUserWrong) cls += 'border-red-400 bg-red-50'
+            else cls += 'border-gray-100 opacity-50'
 
             return (
               <div key={opt} className={cls}>
@@ -160,18 +147,13 @@ function ReviewQuestion({ result: r, index }: { result: QuestionResult; index: n
                 <span className={isCorrect ? 'text-green-800 font-medium' : isUserWrong ? 'text-red-700' : 'text-gray-500'}>
                   {r.options[opt]}
                 </span>
-                {isCorrect && (
-                  <span className="ml-auto flex-shrink-0 text-xs text-green-600 font-medium">✓ Đúng</span>
-                )}
-                {isUserWrong && (
-                  <span className="ml-auto flex-shrink-0 text-xs text-red-500 font-medium">✗ Bạn chọn</span>
-                )}
+                {isCorrect && <span className="ml-auto flex-shrink-0 text-xs text-green-600 font-medium">✓ Đúng</span>}
+                {isUserWrong && <span className="ml-auto flex-shrink-0 text-xs text-red-500 font-medium">✗ Bạn chọn</span>}
               </div>
             )
           })}
         </div>
       ) : (
-        /* Fallback for old sessions without options saved */
         <div className="ml-7 flex items-center gap-4 text-sm">
           {r.userAnswer
             ? <span className={r.isCorrect ? 'text-green-600' : 'text-red-500'}>
@@ -185,7 +167,6 @@ function ReviewQuestion({ result: r, index }: { result: QuestionResult; index: n
         </div>
       )}
 
-      {/* Explanation */}
       {r.explanation && (
         <div className="ml-7 mt-3 p-3 bg-gray-50 rounded-md border-l-2 border-gray-300">
           <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-1">Giải thích</p>
@@ -240,21 +221,24 @@ function SessionCard({ session, onReview }: { session: Session; onReview: () => 
 
 export default function HistoryPage() {
   const [sessions, setSessions] = useState<Session[]>([])
+  const [loading, setLoading] = useState(true)
   const [reviewing, setReviewing] = useState<Session | null>(null)
 
   useEffect(() => {
-    setSessions(getSessionsLocal())
+    getSessions().then((data) => {
+      setSessions(data)
+      setLoading(false)
+    })
   }, [])
 
-  function clearHistory() {
-    localStorage.removeItem(KEY)
+  async function handleClear() {
+    await clearSessions()
     setSessions([])
   }
 
   return (
     <>
       <div className="max-w-2xl mx-auto px-6 py-12 w-full">
-        {/* Page header */}
         <div className="mb-10">
           <Link
             href="/"
@@ -270,7 +254,7 @@ export default function HistoryPage() {
             </div>
             {sessions.length > 0 && (
               <button
-                onClick={clearHistory}
+                onClick={handleClear}
                 className="flex items-center gap-1.5 text-xs text-gray-400 hover:text-red-500 transition-colors pb-1"
               >
                 <Trash2 className="w-3 h-3" />
@@ -294,7 +278,12 @@ export default function HistoryPage() {
         </div>
 
         {/* Session list */}
-        {sessions.length === 0 ? (
+        {loading ? (
+          <div className="flex items-center justify-center py-20 text-gray-400">
+            <Loader2 className="w-5 h-5 animate-spin mr-2" />
+            <span className="text-sm">Đang tải...</span>
+          </div>
+        ) : sessions.length === 0 ? (
           <div className="text-center py-20 border border-dashed border-gray-200 rounded-lg">
             <p className="text-sm text-gray-400">Chưa có session nào.</p>
             <p className="text-xs text-gray-400 mt-1">Hoàn thành một bài quiz để xem kết quả ở đây.</p>
@@ -317,7 +306,6 @@ export default function HistoryPage() {
         )}
       </div>
 
-      {/* Review modal */}
       {reviewing && (
         <ReviewModal session={reviewing} onClose={() => setReviewing(null)} />
       )}
