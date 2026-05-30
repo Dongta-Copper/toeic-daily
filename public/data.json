@@ -989,6 +989,216 @@
       "options": { "A": "honor", "B": "to honor", "C": "will honor", "D": "will be honored" },
       "answer": "B",
       "explanation": "'Dinner to honor someone' uses the to-infinitive to express purpose — the dinner's purpose is honoring Ms. Howell. Bare 'honor' needs a subject, while 'will honor' and 'will be honored' are finite clauses that cannot function as adjective phrases modifying 'dinner'."
+    },
+    {
+      "id": "ets2-p5-101",
+      "question": "___ your order is being processed, please call customer service with any questions.",
+      "options": { "A": "Still", "B": "Either", "C": "While", "D": "Also" },
+      "answer": "C",
+      "explanation": "'While your order is being processed' introduces a concurrent time clause — during the processing period. 'Still' is an adverb, 'either' presents alternatives, and 'also' is additive — none can introduce a subordinate adverbial clause."
+    },
+    {
+      "id": "ets2-p5-102",
+      "question": "ABC Truck Supplies has the ___ selection of mufflers in the state.",
+      "options": { "A": "natural", "B": "widest", "C": "overall", "D": "positive" },
+      "answer": "B",
+      "explanation": "'The widest selection' is a superlative form used to compare one company's range against all others in the state. 'Natural' and 'positive' are unrelated to range of choice; 'overall' means in total but does not express a comparison."
+    },
+    {
+      "id": "ets2-p5-103",
+      "question": "Sharswood Landscaping has received dozens of five-star ___ for its work.",
+      "options": { "A": "reviews", "B": "reviewer", "C": "reviewed", "D": "reviewing" },
+      "answer": "A",
+      "explanation": "A plural noun is needed as the object of 'received'. 'Five-star reviews' = high-rating evaluations of a business's work. 'Reviewer' is singular and refers to a person. 'Reviewed' and 'reviewing' are verb forms — neither can serve as the object here."
+    },
+    {
+      "id": "ets2-p5-104",
+      "question": "Dr. Cho will visit the Teledarr Lab during the annual open house, since ___ may not have another chance to see it.",
+      "options": { "A": "hers", "B": "she", "C": "her", "D": "herself" },
+      "answer": "B",
+      "explanation": "A subject pronoun is needed to head the clause 'since ___ may not have another chance.' 'She' refers back to Dr. Cho. 'Her' is an object pronoun, 'hers' is a possessive pronoun, and 'herself' is reflexive — none can be a clause subject."
+    },
+    {
+      "id": "ets2-p5-105",
+      "question": "Dorn Department Store decided to ___ its already large selection of housewares.",
+      "options": { "A": "create", "B": "enforce", "C": "apply", "D": "expand" },
+      "answer": "D",
+      "explanation": "'Expand a selection' = make it larger and more varied. Since the selection is described as 'already large,' expanding continues its growth. 'Create' implies starting from nothing, 'enforce' means to apply rules, and 'apply' does not collocate with 'selection'."
+    },
+    {
+      "id": "ets2-p5-106",
+      "question": "We ___ that you bring a portfolio of work samples to the interview.",
+      "options": { "A": "was asking", "B": "having asked", "C": "ask", "D": "asks" },
+      "answer": "C",
+      "explanation": "The subject 'we' requires a plural verb. 'Ask' (base form) is the correct plural present tense. 'Was asking' uses a singular auxiliary, 'having asked' is a perfect participle not a main verb, and 'asks' is third-person singular."
+    },
+    {
+      "id": "ets2-p5-107",
+      "question": "Members of the Bold Stone Farm Store receive ___ discounts on all purchases.",
+      "options": { "A": "depth", "B": "deepen", "C": "deep", "D": "deeply" },
+      "answer": "C",
+      "explanation": "An adjective is needed to modify the noun 'discounts'. 'Deep discounts' is a fixed business phrase meaning significant price reductions. 'Depth' is a noun, 'deepen' is a verb, and 'deeply' is an adverb — none can directly modify a noun."
+    },
+    {
+      "id": "ets2-p5-108",
+      "question": "If your plans change, please contact us at least 24 hours before the time of your ___.",
+      "options": { "A": "reserved", "B": "reservation", "C": "reservable", "D": "reserve" },
+      "answer": "B",
+      "explanation": "After the possessive 'your', a noun is needed. 'Reservation' = a booking or appointment. 'Reserved' is an adjective or past participle, 'reservable' is an adjective meaning available to be reserved, and 'reserve' as a noun has a different meaning (a stock or natural area)."
+    },
+    {
+      "id": "ets2-p5-109",
+      "question": "Hold the tomato seedling gently by the stem in order to avoid harming ___ roots.",
+      "options": { "A": "its", "B": "at", "C": "that", "D": "in" },
+      "answer": "A",
+      "explanation": "A possessive pronoun is needed to modify 'roots', referring back to the seedling. 'Its roots' = the roots belonging to the seedling. 'At', 'that', and 'in' are not possessive forms and cannot modify a noun."
+    },
+    {
+      "id": "ets2-p5-110",
+      "question": "At the registration table, be sure to collect your name tag ___ entering the conference.",
+      "options": { "A": "very", "B": "often", "C": "always", "D": "before" },
+      "answer": "D",
+      "explanation": "'Before entering the conference' = prior to going in — a time relation showing the name tag must be collected first. 'Very' is an intensifier, 'often' implies frequency, and 'always' means at all times — none establish a sequence between collecting and entering."
+    },
+    {
+      "id": "ets2-p5-111",
+      "question": "Maihama vehicles include an extended ___ to cover engine repairs.",
+      "options": { "A": "record", "B": "operation", "C": "budget", "D": "warranty" },
+      "answer": "D",
+      "explanation": "An 'extended warranty' is a standard term for a service agreement that covers repairs beyond the original period. 'Record' refers to documented history, 'operation' refers to functioning, and 'budget' refers to finances — none describe a repair coverage plan."
+    },
+    {
+      "id": "ets2-p5-112",
+      "question": "The hotel's new Web site features an ___ collection of high-quality images.",
+      "options": { "A": "absolute", "B": "efficient", "C": "impressive", "D": "undefeated" },
+      "answer": "C",
+      "explanation": "'An impressive collection' = a notable, admirable set of images — a natural way to describe high-quality hotel photography. 'Absolute' means complete/total, 'efficient' relates to productivity, and 'undefeated' is used for competition — none describe a quality image gallery."
+    },
+    {
+      "id": "ets2-p5-113",
+      "question": "On behalf of everyone at Uniontown Bank, we ___ thank you for your continued patronage.",
+      "options": { "A": "deservedly", "B": "commonly", "C": "sincerely", "D": "perfectly" },
+      "answer": "C",
+      "explanation": "'We sincerely thank you' is the standard formal expression of genuine gratitude in business correspondence. 'Deservedly' means as deserved, 'commonly' means usually, and 'perfectly' means flawlessly — none are standard collocations with 'thank you' in formal letters."
+    },
+    {
+      "id": "ets2-p5-114",
+      "question": "Fragile equipment must be stored in a secure location so that nothing is ___ damaged.",
+      "options": { "A": "accident", "B": "accidents", "C": "accidental", "D": "accidentally" },
+      "answer": "D",
+      "explanation": "An adverb is needed to modify the past participle 'damaged'. 'Accidentally damaged' = damaged by mistake, not intentionally. 'Accident' and 'accidents' are nouns; 'accidental' is an adjective — none can modify a verb or participle."
+    },
+    {
+      "id": "ets2-p5-115",
+      "question": "Ms. Sampson will not arrive at the convention ___ after our team's presentation.",
+      "options": { "A": "until", "B": "lately", "C": "from", "D": "when" },
+      "answer": "A",
+      "explanation": "'Will not arrive until after' expresses that she arrives only after the presentation ends — the presentation happens first. 'Lately' means recently, 'from' is a starting-point preposition, and 'when' does not fit the negative-until structure."
+    },
+    {
+      "id": "ets2-p5-116",
+      "question": "The community picnic will be held ___ the park behind the Seltzer Public Library.",
+      "options": { "A": "in", "B": "all", "C": "for", "D": "here" },
+      "answer": "A",
+      "explanation": "'Held in the park' = taking place at that location. 'In' is the standard preposition for events occurring within an outdoor space. 'All' is a determiner, 'for' indicates purpose or duration, and 'here' is an adverb — none express the location of the event."
+    },
+    {
+      "id": "ets2-p5-117",
+      "question": "The new hires ___ for an orientation on May 10 at 9:00 A.M.",
+      "options": { "A": "to be gathering", "B": "will gather", "C": "gathering", "D": "to gather" },
+      "answer": "B",
+      "explanation": "'Will gather' is the correct future tense for a scheduled event. The sentence has 'The new hires' as the subject and needs a finite verb. 'To be gathering' and 'to gather' are non-finite infinitive forms; 'gathering' is a participle that needs an auxiliary verb."
+    },
+    {
+      "id": "ets2-p5-118",
+      "question": "When Mr. Young approached the desk, the receptionist ___ offered him a seat in the waiting room.",
+      "options": { "A": "politely", "B": "polite", "C": "politeness", "D": "politest" },
+      "answer": "A",
+      "explanation": "An adverb is needed to modify the verb 'offered'. 'Politely offered' describes how the receptionist acted. 'Polite' is an adjective, 'politeness' is a noun, and 'politest' is a superlative adjective — none can modify a verb."
+    },
+    {
+      "id": "ets2-p5-119",
+      "question": "Members of the Marvale marketing team claimed that ___ was the best design for the new corporate logo.",
+      "options": { "A": "they", "B": "them", "C": "theirs", "D": "their" },
+      "answer": "C",
+      "explanation": "'Theirs was the best design' uses a possessive pronoun as the subject of a clause, replacing 'their design'. 'They' is a subject pronoun but cannot mean 'their design', 'them' is an object pronoun, and 'their' needs a following noun."
+    },
+    {
+      "id": "ets2-p5-120",
+      "question": "The new Kitsuna video camera is currently on sale for $375, not ___ tax.",
+      "options": { "A": "excepting", "B": "alongside", "C": "within", "D": "including" },
+      "answer": "D",
+      "explanation": "'Not including tax' means the sale price of $375 does not cover tax — tax is additional. 'Including' is the standard preposition in pricing contexts. 'Excepting' is non-standard here, 'alongside' means beside, and 'within' refers to limits."
+    },
+    {
+      "id": "ets2-p5-121",
+      "question": "All associates are ___ to follow the standard operating procedures outlined in the handbook.",
+      "options": { "A": "concerned", "B": "tended", "C": "maintained", "D": "expected" },
+      "answer": "D",
+      "explanation": "'Are expected to follow' = are required or obliged to comply. This is a standard passive construction for workplace obligations. 'Concerned' means worried or relevant, 'tended' means cared for, and 'maintained' means kept in condition — none express an obligation."
+    },
+    {
+      "id": "ets2-p5-122",
+      "question": "This month Framley Publishing House is embarking on its ___ expansion so far.",
+      "options": { "A": "ambitiously", "B": "most ambitiously", "C": "ambition", "D": "most ambitious" },
+      "answer": "D",
+      "explanation": "A superlative adjective is needed to modify the noun 'expansion'. 'Most ambitious expansion' = the biggest and boldest expansion to date, using the superlative triggered by 'so far'. 'Ambitiously' and 'most ambitiously' are adverbs; 'ambition' is a noun."
+    },
+    {
+      "id": "ets2-p5-123",
+      "question": "After months of collaboration, Matricks Technology's software developers ___ released a top-quality product.",
+      "options": { "A": "profoundly", "B": "overly", "C": "finally", "D": "intensely" },
+      "answer": "C",
+      "explanation": "'Finally released' = at last completed, after a prolonged effort. 'After months of collaboration' signals the long wait, so 'finally' is the logical adverb. 'Profoundly' and 'intensely' describe depth or strength; 'overly' means excessively — none indicate that the release came after a long wait."
+    },
+    {
+      "id": "ets2-p5-124",
+      "question": "Tickets are valid for one-time access and do not allow for ___ into the venue.",
+      "options": { "A": "duplication", "B": "reentry", "C": "permission", "D": "turnover" },
+      "answer": "B",
+      "explanation": "'Reentry' = the act of entering again after leaving. 'One-time access' means no reentry is permitted. 'Duplication' means copying, 'permission' means authorization, and 'turnover' refers to staff or inventory change — none describe entering a venue a second time."
+    },
+    {
+      "id": "ets2-p5-125",
+      "question": "We hired Okafor Construction to do the renovation ___ it was not the lowest bidder on the project.",
+      "options": { "A": "if only", "B": "alternatively", "C": "whereas", "D": "even though" },
+      "answer": "D",
+      "explanation": "'Even though it was not the lowest bidder' expresses a concession — the company was hired despite not offering the cheapest price. 'If only' expresses a wish, 'alternatively' introduces another option, and 'whereas' draws a contrast without the concessive meaning."
+    },
+    {
+      "id": "ets2-p5-126",
+      "question": "The first ___ of the training will introduce staff to certain workplace responsibilities.",
+      "options": { "A": "part", "B": "parted", "C": "parting", "D": "partial" },
+      "answer": "A",
+      "explanation": "A noun is needed after 'The first'. 'The first part of the training' = the initial section or module. 'Parted' is a past participle/adjective, 'parting' is a gerund or adjective, and 'partial' is an adjective — none function as a noun head of this phrase."
+    },
+    {
+      "id": "ets2-p5-127",
+      "question": "According to industry ___, Ghira Company plans to relocate its headquarters to Australia.",
+      "options": { "A": "reported", "B": "reportedly", "C": "reporter", "D": "reports" },
+      "answer": "D",
+      "explanation": "'According to industry reports' = as stated in news or publications from the industry. 'Reports' (plural noun) is the object of the preposition 'to'. 'Reported' is a past verb or adjective, 'reportedly' is an adverb, and 'reporter' is a person — none fit as the object of 'to'."
+    },
+    {
+      "id": "ets2-p5-128",
+      "question": "Next month, the Kneath House will host an exhibition of ___ furniture and clothing from the eighteenth century.",
+      "options": { "A": "authentic", "B": "authentically", "C": "authenticate", "D": "authenticity" },
+      "answer": "A",
+      "explanation": "An adjective is needed to modify the nouns 'furniture and clothing'. 'Authentic furniture' = genuine historical items, not reproductions. 'Authentically' is an adverb, 'authenticate' is a verb, and 'authenticity' is a noun — none can directly modify a noun."
+    },
+    {
+      "id": "ets2-p5-129",
+      "question": "PKTM's regional managers serve ___ the direction of the vice president.",
+      "options": { "A": "among", "B": "under", "C": "behind", "D": "opposite" },
+      "answer": "B",
+      "explanation": "'Serve under the direction of' = work in a subordinate role following that person's guidance. This is a standard hierarchical expression. 'Among' means within a group, 'behind' means at the rear, and 'opposite' means across from — none express a management reporting relationship."
+    },
+    {
+      "id": "ets2-p5-130",
+      "question": "___ a recent surge in demand, Vanita's Catering is hiring four additional servers.",
+      "options": { "A": "Everywhere", "B": "Possibly", "C": "In total", "D": "Owing to" },
+      "answer": "D",
+      "explanation": "'Owing to a recent surge in demand' = because of increased demand — a causal preposition phrase that explains why the hiring is happening. 'Everywhere' is a place adverb, 'possibly' expresses uncertainty, and 'in total' sums up a quantity — none introduce a cause."
     }
   ],
   "part6": [
@@ -1472,6 +1682,162 @@
           "options": { "A": "us", "B": "you", "C": "we", "D": "these" },
           "answer": "A",
           "explanation": "The object pronoun 'us' refers to Kenneth and Jang-Ho together — the agreement benefits both parties. 'You' refers only to Jang-Ho. 'We' is a subject pronoun and cannot be the object of 'serve'. 'These' refers to things, not the two people involved."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p6-131",
+      "passage": "To: All Staff\nFrom: Yoreli Costa\nDate: February 15\nSubject: Florence Shawn\n\nHi Everyone,\n\nI have news to share about a ---131--- in the human resources department. After nearly twenty years with Cometti Creative, Florence Shawn has decided to retire from the position of director of human resources.\n\nOur current senior manager of human resources, Makoto Ichise, will replace Ms. Shawn when she retires. Ms. Shawn ---132--- Mr. Ichise since he joined the company five years ago.\n\nMs. Shawn's ---133--- day will be February 22. A retirement party will be held for her on that day at 4:00 P.M. in the Terey Lobby. ---134---\n\nBest,\nYoreli Costa\nDirector of Operations, Cometti Creative",
+      "questions": [
+        {
+          "id": "ets2-p6-131-q1",
+          "question": "(131) I have news to share about a _______ in the human resources department.",
+          "options": { "A": "difference", "B": "strategy", "C": "change", "D": "practice" },
+          "answer": "C",
+          "explanation": "'A change in the department' = a significant shift in personnel or structure. The email then reveals Ms. Shawn's retirement, which is a staffing change. 'Difference' implies a comparison, 'strategy' is a plan, and 'practice' is a routine — none refer to a personnel development."
+        },
+        {
+          "id": "ets2-p6-131-q2",
+          "question": "(132) Ms. Shawn _______ Mr. Ichise since he joined the company five years ago.",
+          "options": { "A": "mentors", "B": "is mentoring", "C": "will mentor", "D": "has been mentoring" },
+          "answer": "D",
+          "explanation": "'Has been mentoring' (present perfect continuous) expresses an action that began in the past and has continued up to now — fitting perfectly with 'since he joined five years ago.' 'Mentors' and 'is mentoring' don't combine with 'since' to show duration. 'Will mentor' is future."
+        },
+        {
+          "id": "ets2-p6-131-q3",
+          "question": "(133) Ms. Shawn's _______ day will be February 22.",
+          "options": { "A": "last", "B": "original", "C": "flexible", "D": "alternate" },
+          "answer": "A",
+          "explanation": "'Last day' = the final day of employment — standard phrasing for a retiring or departing employee. 'Original' refers to something from the beginning, 'flexible' means adaptable, and 'alternate' means every other one — none describe a final day of work."
+        },
+        {
+          "id": "ets2-p6-131-q4",
+          "question": "(134) Which sentence best fits this position in the e-mail?",
+          "options": {
+            "A": "Cometti Creative will hire a replacement soon.",
+            "B": "We hope that you can all attend to wish her well.",
+            "C": "Ms. Shawn was the first director of human resources at Cometti Creative.",
+            "D": "The first project will be the creation of a talent development program."
+          },
+          "answer": "B",
+          "explanation": "The preceding sentence announces the retirement party time and location. Naturally, the next sentence invites staff to attend and wish Ms. Shawn well. Option A shifts to hiring, which contradicts the mention of Mr. Ichise as the replacement. Options C and D are off-topic."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p6-135",
+      "passage": "Lovitt Real Estate\n\nHelping Manitoba Families Find their Dream Homes\n\nManuel Lovitt, of Lovitt Real Estate, has been selling real estate for over 17 years. Mr. Lovitt, ---135---, and his award-winning team ---136--- in homes for families in the Winnipeg, Brandon, and Dauphin areas. They know about the schools, parks, services, transportation, and activities that enhance family life in the area where you want to reside. ---137---\n\nContact Lovitt Real Estate today and let the team guide you ---138--- the home of your dreams. They will listen to your needs, negotiate on your behalf, and get you the best home for your hard-earned money.\n\nCall 431-555-0168 to speak to an agent or visit www.lovittrealestate.ca for more information.",
+      "questions": [
+        {
+          "id": "ets2-p6-135-q1",
+          "question": "(135) Mr. Lovitt, _______, and his award-winning team specialize in homes for families.",
+          "options": { "A": "own", "B": "owned", "C": "owner", "D": "owning" },
+          "answer": "C",
+          "explanation": "'Owner' is used as an appositive noun identifying Mr. Lovitt's role in the company. 'Mr. Lovitt, owner, and his team...' = Mr. Lovitt who is the owner. 'Own' and 'owned' are verbs; 'owning' is a participle — none function as an appositive noun in this structure."
+        },
+        {
+          "id": "ets2-p6-135-q2",
+          "question": "(136) Mr. Lovitt, owner, and his award-winning team _______ in homes for families in the Winnipeg, Brandon, and Dauphin areas.",
+          "options": { "A": "practice", "B": "specialize", "C": "report", "D": "purchase" },
+          "answer": "B",
+          "explanation": "'Specialize in homes for families' = focus expertise on family real estate in that region. 'Specialize in' is the standard collocation for areas of professional focus. 'Practice' and 'report' don't take 'in' in this context; 'purchase' means to buy, not provide a service."
+        },
+        {
+          "id": "ets2-p6-135-q3",
+          "question": "(137) Which sentence best fits this position in the advertisement?",
+          "options": {
+            "A": "They can arrange transportation for your local elementary school.",
+            "B": "That is because they live in the communities they serve.",
+            "C": "They will be closed for the summer but will be back soon.",
+            "D": "Therefore, they can help you with all your banking needs."
+          },
+          "answer": "B",
+          "explanation": "The preceding sentence says the team 'know about the schools, parks, services, transportation, and activities' of the local area. Option B explains why they have this knowledge — they live in those communities. Options A, C, and D introduce unrelated or contradictory information."
+        },
+        {
+          "id": "ets2-p6-135-q4",
+          "question": "(138) Contact Lovitt Real Estate today and let the team guide you _______ the home of your dreams.",
+          "options": { "A": "toward", "B": "fixing", "C": "because", "D": "along" },
+          "answer": "A",
+          "explanation": "'Guide you toward the home of your dreams' = lead you in the direction of finding your ideal home. 'Toward' expresses movement or direction to a goal. 'Fixing' is a gerund meaning repairing, 'because' introduces a reason clause, and 'along' does not convey movement toward a goal."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p6-139",
+      "passage": "Welcome to \"Distributing Your Savings.\" This slide ---139--- is the third of a twelve-segment series. ---140--- This series provides only ---141--- advice. It should not replace the guidance of your investment planner. The series has been developed as background material to help you ask key questions when ---142--- with your investment planner. We hope you find this information helpful.\n\nSwainson-Gray Investments",
+      "questions": [
+        {
+          "id": "ets2-p6-139-q1",
+          "question": "(139) This slide _______ is the third of a twelve-segment series.",
+          "options": { "A": "presenting", "B": "presents", "C": "presentation", "D": "presented" },
+          "answer": "C",
+          "explanation": "A noun is needed after 'This slide' to form a compound noun phrase as the subject. 'Slide presentation' = a set of slides shown to an audience. 'Presenting' and 'presented' are verb forms; 'presents' is a finite verb and would make 'This slide' the subject of an incomplete sentence."
+        },
+        {
+          "id": "ets2-p6-139-q2",
+          "question": "(140) Which sentence best fits this position in the text?",
+          "options": {
+            "A": "You are encouraged to visit our office for a free portfolio review.",
+            "B": "The series is designed to help you make informed financial decisions.",
+            "C": "Please fill out the paperwork before your appointment.",
+            "D": "Your responses will help us serve you better in the future."
+          },
+          "answer": "B",
+          "explanation": "The surrounding text introduces the series and explains what it provides. Option B describes the purpose of the series — helping the audience make informed decisions — which fits naturally between the series introduction and the explanation of its limitations. Options A, C, and D are off-topic."
+        },
+        {
+          "id": "ets2-p6-139-q3",
+          "question": "(141) This series provides only _______ advice.",
+          "options": { "A": "regional", "B": "expensive", "C": "supplemental", "D": "playful" },
+          "answer": "C",
+          "explanation": "'Supplemental advice' = additional information that supplements but does not replace professional guidance. The next sentence confirms this: 'It should not replace the guidance of your investment planner.' 'Regional' relates to geography, 'expensive' to cost, and 'playful' to tone — none fit this context."
+        },
+        {
+          "id": "ets2-p6-139-q4",
+          "question": "(142) The series helps you ask key questions when _______ with your investment planner.",
+          "options": { "A": "consulting", "B": "prescribing", "C": "listing", "D": "following" },
+          "answer": "A",
+          "explanation": "'When consulting with your investment planner' = during meetings or discussions with your planner. 'Consult with someone' is the standard phrase for seeking professional advice. 'Prescribing' relates to medicine, 'listing' means enumerating, and 'following' means coming after — none describe meeting with an advisor."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p6-143",
+      "passage": "To: Dana Paulwell\nFrom: Silas Laveau\nDate: August 22\nSubject: My input\nAttachment: Article\n\nDear Dr. Paulwell,\n\nThis message is in response to yesterday's staff meeting, particularly the discussion on how certain aspects of the clinic may affect our work and mission. ---143---\n\nCurrently, the vending machines in the hall outside our waiting room are stocked with sugary and salty products such as soft drinks and chips. As a health care provider, we ---144--- beverages and snacks that show our commitment to wellness. ---145--- our mission is focused on good health.\n\nI have attached an article about actions that medical centers like ours are taking to improve their hospitality stations. I hope you find it ---146--- It details some easy and cost-effective changes we could consider.\n\nKind regards,\nSilas Laveau",
+      "questions": [
+        {
+          "id": "ets2-p6-143-q1",
+          "question": "(143) Which sentence best fits this position in the e-mail?",
+          "options": {
+            "A": "I thought it went on longer than was necessary.",
+            "B": "I wish we had been informed about it sooner.",
+            "C": "I would like to make a suggestion on this topic.",
+            "D": "I would be honored to lead a follow-up session."
+          },
+          "answer": "C",
+          "explanation": "The email is Silas Laveau's specific recommendation about vending machine content. Option C ('I would like to make a suggestion on this topic') serves as a topic sentence announcing the suggestion that follows. Options A and B are complaints, not constructive input. Option D offers to lead a session, which doesn't match what the email actually does."
+        },
+        {
+          "id": "ets2-p6-143-q2",
+          "question": "(144) As a health care provider, we _______ beverages and snacks that show our commitment to wellness.",
+          "options": { "A": "will offer", "B": "have offered", "C": "were offering", "D": "should be offering" },
+          "answer": "D",
+          "explanation": "'Should be offering' expresses an obligation or expectation that is currently not being met — the clinic ought to provide healthy options but currently does not (as shown by the sugary vending machine contents). The other tenses do not convey this sense of current unfulfilled duty."
+        },
+        {
+          "id": "ets2-p6-143-q3",
+          "question": "(145) _______ our mission is focused on good health.",
+          "options": { "A": "After all", "B": "By the way", "C": "In the meantime", "D": "On the other hand" },
+          "answer": "A",
+          "explanation": "'After all, our mission is focused on good health' provides justification for the previous statement — the clinic should offer healthy options because its mission is health. 'After all' introduces a clinching reason. 'By the way' is tangential, 'in the meantime' is temporal, and 'on the other hand' signals contrast."
+        },
+        {
+          "id": "ets2-p6-143-q4",
+          "question": "(146) I hope you find it _______.",
+          "options": { "A": "useful", "B": "eventful", "C": "profitable", "D": "comfortable" },
+          "answer": "A",
+          "explanation": "'I hope you find it useful' = I hope the article is helpful to you. 'Useful' is the standard word for information or material that serves a practical purpose. 'Eventful' means full of events, 'profitable' means financially beneficial, and 'comfortable' describes physical ease — none describe how informative an article is."
         }
       ]
     }
@@ -2104,6 +2470,420 @@
           },
           "answer": "B",
           "explanation": "Ms. Fong's total is HK$4,500 and she received a 10% discount (HK$450). The Web site states the 10% discount is for 'Members of our online Frequent Purchase Club' on purchases of HK$500 or more. The gift card number field is blank, so she did not use a gift card (ruling out C). Option D cannot be confirmed from the receipt alone."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-147",
+      "passage": "Medillo Shoes Celebrates Twenty Years in Cape Town!\n246 Breda Place, Wynberg, Cape Town 7800\n021 555 0149 | www.medilloshoes.co.za\n\nDoes your job require you to stand all day long? Get the support you need! At Medillo Shoes, we specialise in comfortable, supportive footwear that is stylish and suitable for any business or medical setting.\n\nVisit us on 10 May to receive 20 percent off your purchase of one or more pairs of shoes during this anniversary event. Should you need assistance finding the best shoes for your professional needs, our footwear specialists will be on hand to help. Schedule a free consultation at www.medilloshoes.co.za to avoid a long wait.",
+      "questions": [
+        {
+          "id": "ets2-p7-147-q1",
+          "question": "What will happen at Medillo Shoes on May 10?",
+          "options": {
+            "A": "All shoes will be discounted.",
+            "B": "Shop assistants will be hired.",
+            "C": "A shoe style will be discontinued.",
+            "D": "Operational hours will be extended."
+          },
+          "answer": "A",
+          "explanation": "The advertisement offers '20 percent off your purchase of one or more pairs of shoes during this anniversary event' on May 10. This discount applies to any shoes purchased that day. Options B, C, and D are not mentioned in the advertisement."
+        },
+        {
+          "id": "ets2-p7-147-q2",
+          "question": "What is indicated about Medillo Shoes?",
+          "options": {
+            "A": "It has been in business for ten years.",
+            "B": "It specializes in athletic footwear.",
+            "C": "It is located next to a medical center.",
+            "D": "It allows customers to make appointments."
+          },
+          "answer": "D",
+          "explanation": "The advertisement states: 'Schedule a free consultation at www.medilloshoes.co.za to avoid a long wait.' Scheduling a consultation = making an appointment. Option A is wrong — the ad celebrates twenty years. Option B is wrong — the focus is business/medical settings, not athletic. Option C is not stated."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-151",
+      "passage": "CITY OF BRYANTON\nBuilding Permit Office\n\nNotice for residents and contractors working in Bryanton\n\nBeginning on Monday, July 1, the City of Bryanton's Building Permit Office, located at 912 Fir Avenue, will be open from Monday to Thursday, 9:00 A.M. to 5:00 P.M. Applications for permits will no longer be accepted on Fridays or Saturdays. The average processing time for permit applications will remain three business days. With this change, the city will lower its operating costs while maintaining its high standards of service for residents.",
+      "questions": [
+        {
+          "id": "ets2-p7-151-q1",
+          "question": "What change is the Building Permit Office making?",
+          "options": {
+            "A": "It is moving to a new location.",
+            "B": "It is simplifying the permit application process.",
+            "C": "It is reducing the number of days it will accept permit applications.",
+            "D": "It is increasing the processing time for permit applications."
+          },
+          "answer": "C",
+          "explanation": "The notice states that 'applications for permits will no longer be accepted on Fridays or Saturdays,' reducing operating days from five or six to four (Monday–Thursday). Option A is wrong — the address 912 Fir Avenue remains. Option D is wrong — processing time stays at three days."
+        },
+        {
+          "id": "ets2-p7-151-q2",
+          "question": "According to the notice, why is the change being made?",
+          "options": {
+            "A": "To save the city money",
+            "B": "To attract more residents",
+            "C": "To improve the quality of service",
+            "D": "To decrease the number of new permit applications"
+          },
+          "answer": "A",
+          "explanation": "The notice states: 'With this change, the city will lower its operating costs.' Lowering operating costs = saving money. The quality of service is mentioned as something that will be maintained, not improved. Options B and D are not stated."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-153",
+      "passage": "River Thames Tours\n\nThank you for reserving a River Thames tour with us. We are eager to welcome you aboard. Each tour lasts 3 hours. Your tour includes a luncheon served at 1:00 P.M. Please consult our Web site for a menu. Should you have any dietary restrictions and like to request a special meal, please contact our customer experience manager, Martin Torma, at least 48 hours prior to your tour.\n\nThis reservation also entitles you to a 10 percent discount on a walking tour by Edgerton Walking Tours—just provide your confirmation code when booking.\n\nName: Lewis Califf\nPurchase Date: 18 April\nConfirmation Code: H102057\nTour Start: 1 May, 11:30 A.M.\nQuantity: 4\nTotal: £180.00\nPayment: Credit card ending in 1037\n\nPlease note: Boarding ends 10 minutes before departure time. Tours cannot be rescheduled.",
+      "questions": [
+        {
+          "id": "ets2-p7-153-q1",
+          "question": "What is indicated about the river tour?",
+          "options": {
+            "A": "It is one hour long.",
+            "B": "It comes with a meal.",
+            "C": "It can be rescheduled.",
+            "D": "It sells out quickly."
+          },
+          "answer": "B",
+          "explanation": "The receipt states: 'Your tour includes a luncheon served at 1:00 P.M.' — a meal is included. Option A is wrong — the tour lasts 3 hours. Option C is directly contradicted by 'Tours cannot be rescheduled.' Option D is not mentioned."
+        },
+        {
+          "id": "ets2-p7-153-q2",
+          "question": "How many tickets did Mr. Califf purchase?",
+          "options": { "A": "1", "B": "3", "C": "4", "D": "7" },
+          "answer": "C",
+          "explanation": "The receipt shows 'Quantity: 4' — Mr. Califf purchased four tickets. The total of £180 divided by 4 equals £45 per ticket, which is consistent. Options A, B, and D do not match the stated quantity."
+        },
+        {
+          "id": "ets2-p7-153-q3",
+          "question": "How can customers receive a discount on a walking tour?",
+          "options": {
+            "A": "By making a reservation online",
+            "B": "By paying with a credit card",
+            "C": "By requesting a coupon from the captain",
+            "D": "By mentioning a confirmation code"
+          },
+          "answer": "D",
+          "explanation": "The receipt states: 'This reservation also entitles you to a 10 percent discount on a walking tour by Edgerton Walking Tours—just provide your confirmation code when booking.' Providing the confirmation code is the required action. Options A, B, and C are not mentioned as ways to obtain the discount."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-156",
+      "passage": "Michiko Saunders [8:06 A.M.]: Hi, Jacob. Are you on your way to the office?\nJacob Kwon [8:08 A.M.]: Yes. I should be there in about 25 minutes.\nMichiko Saunders [8:10 A.M.]: OK. I was just starting to print out the design proposal for the Dansby Group, but we've run out of paper. And we don't have another delivery of it coming until Wednesday.\nJacob Kwon [8:12 A.M.]: I see an office supply store across the street. It just opened for the day.\nMichiko Saunders [8:13 A.M.]: Fantastic. Three packs of paper should be enough.\nJacob Kwon [8:15 A.M.]: OK. By the way, when will the representatives from the Dansby Group be coming to our office? I could also pick up some coffee and snacks for that meeting.",
+      "questions": [
+        {
+          "id": "ets2-p7-156-q1",
+          "question": "At 8:12 A.M., what does Mr. Kwon most likely mean when he writes, \"I see an office supply store across the street\"?",
+          "options": {
+            "A": "He needs help finding a building.",
+            "B": "He can purchase some paper.",
+            "C": "He will look for a new printer.",
+            "D": "He is going to negotiate a delivery schedule."
+          },
+          "answer": "B",
+          "explanation": "Ms. Saunders just said they have run out of paper. Mr. Kwon immediately responds by noting a nearby open office supply store — implying he can stop and buy paper on his way to the office. Ms. Saunders confirms this interpretation by saying 'Fantastic. Three packs of paper should be enough.'"
+        },
+        {
+          "id": "ets2-p7-156-q2",
+          "question": "What will Ms. Saunders most likely do next?",
+          "options": {
+            "A": "Reschedule a meeting",
+            "B": "Prepare some refreshments",
+            "C": "Check on an arrival time",
+            "D": "Revise a design proposal"
+          },
+          "answer": "C",
+          "explanation": "Mr. Kwon's final message asks 'when will the representatives from the Dansby Group be coming to our office?' — a question directed at Ms. Saunders. Her most likely next action is to check and reply with the arrival time. Options A, B, and D are not prompted by the final message."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-158",
+      "passage": "Kipbank Business Services\n548 Sycamore Lake Road\nGreen Bay, WI 54301\n\nApril 2\n\nMadeline Omar\nPassionflower Interior Design\n1556 Deer Run Road\nGreen Bay, WI 54301\n\nDear Ms. Omar,\n\nA business owner's days are filled with juggling the wants, needs, and demands of customers, staff, and suppliers. — [1] —\n\nLet Kipbank find the right solutions for your small business so that you can focus on your products and people. Kipbank offers checking accounts, corporate credit cards, business loans, and payroll and bookkeeping services. — [2] —. This fall, we will also add financial planners to our team to help you and your employees plan for your futures.\n\nWith our corporate credit cards, Kipbank customers can take advantage of money-saving offers from selected hotel, office supply, and air travel partners. — [3] —. These deals are automatically applied to qualified purchases. And the business owner can place spending limits on each card. — [4] —.\n\nPlease call us at 920-555-0122 to set up an appointment or just stop by when it is convenient. We look forward to meeting you and providing your enterprise with superior service.\n\nSincerely,\nThomas Piskorski, Kipbank Customer Concierge",
+      "questions": [
+        {
+          "id": "ets2-p7-158-q1",
+          "question": "What is suggested about Ms. Omar?",
+          "options": {
+            "A": "She is an accountant.",
+            "B": "She works for Mr. Piskorski.",
+            "C": "She operates a small company.",
+            "D": "She is a Kipbank customer."
+          },
+          "answer": "C",
+          "explanation": "The letter is addressed to Ms. Omar at 'Passionflower Interior Design' and offers services for her 'small business.' The phrase 'let Kipbank find the right solutions for your small business' confirms she runs a small company. She is a prospective, not current, customer, so D is wrong."
+        },
+        {
+          "id": "ets2-p7-158-q2",
+          "question": "What is stated about the credit cards?",
+          "options": {
+            "A": "They come in a variety of colors.",
+            "B": "They require an annual fee.",
+            "C": "They include discounts on certain purchases.",
+            "D": "They can be used to buy personal items."
+          },
+          "answer": "C",
+          "explanation": "The letter states that credit card holders 'can take advantage of money-saving offers from selected hotel, office supply, and air travel partners.' Money-saving offers on specific purchases = discounts on certain purchases. Options A, B, and D are not mentioned."
+        },
+        {
+          "id": "ets2-p7-158-q3",
+          "question": "In which of the positions marked [1], [2], [3], and [4] does the following sentence best belong? \"Everyday financial details only add more distractions.\"",
+          "options": { "A": "[1]", "B": "[2]", "C": "[3]", "D": "[4]" },
+          "answer": "A",
+          "explanation": "Position [1] follows 'A business owner's days are filled with juggling the wants, needs, and demands of customers, staff, and suppliers.' The inserted sentence adds another burden — financial details as distractions — reinforcing the opening theme that owners are overwhelmed. Positions [2], [3], and [4] are within specific service descriptions and do not benefit from this general statement."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-161",
+      "passage": "OTTAWA (22 May) — Waldenstone Business Review has added a new category to its esteemed international business awards this year. The Waldenstone Corporate Prize is awarded to a business with the foresight to develop strategies that help ensure the company's long-term viability.\n\nThis year's award was presented to Carila Corporation, a major player in the electronics sector. Under the direction of CEO Atsak Kakar, Carila Corporation went from near bankruptcy to a high level of profitability in just three years.\n\n\"Winning this award was very gratifying, not just for me but for the entire company,\" Mr. Kakar said upon receiving the award. \"Everyone has worked extremely hard to get this company back on solid financial ground. The long-term solution has brought exceptional value to our shareholders.\"",
+      "questions": [
+        {
+          "id": "ets2-p7-161-q1",
+          "question": "What is the purpose of the article?",
+          "options": {
+            "A": "To profile a newly opened business",
+            "B": "To analyze a trend in the electronics industry",
+            "C": "To highlight a company's achievement",
+            "D": "To discuss changes to an employment contract"
+          },
+          "answer": "C",
+          "explanation": "The article reports on Carila Corporation winning the Waldenstone Corporate Prize, describing the company's turnaround from near bankruptcy to profitability. This is a report on the company's achievement. Options A, B, and D do not reflect the article's content."
+        },
+        {
+          "id": "ets2-p7-161-q2",
+          "question": "What is suggested about Carila Corporation?",
+          "options": {
+            "A": "It no longer develops electronics.",
+            "B": "It was once a struggling business.",
+            "C": "It has been unable to attract more clients.",
+            "D": "It is seeking to replace its CEO."
+          },
+          "answer": "B",
+          "explanation": "The article states Carila Corporation 'went from near bankruptcy to a high level of profitability in just three years.' Near bankruptcy = a struggling business. Option A is wrong — it is still in the electronics sector. Options C and D are not supported by the text."
+        },
+        {
+          "id": "ets2-p7-161-q3",
+          "question": "The word \"solution\" in paragraph 3, line 6, is closest in meaning to",
+          "options": { "A": "mixture", "B": "proof", "C": "statement", "D": "answer" },
+          "answer": "D",
+          "explanation": "In 'The long-term solution has brought exceptional value,' 'solution' refers to the approach or answer to the company's financial problems. 'Answer' most closely captures this meaning. 'Mixture' is a chemical term, 'proof' means evidence, and 'statement' means a declaration — none mean an approach to solving a problem."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-164",
+      "passage": "Comnbolt is for Everyone!\n\nAs a Comnbolt customer, you've come to expect the best in reliable high-speed Internet, straightforward pricing options, and top-notch customer service from friendly professionals who are responsive to your every need. — [1] —. Unlike the competition, we promise to never lock you into inflexible contracts or suddenly raise your monthly bill without notice.\n\nAt Comnbolt, we know you have options when it comes to choosing an Internet service provider. — [2] —. To show our gratitude for your loyalty, we are offering a special limited-time referral bonus.\n\nThe way it works is simple. — [3] —. You can use e-mail, social media, or even text messages to tell everyone about Comnbolt. When a new user signs up using your code, each of you will receive a monetary credit. Receive $10 when new referrals sign up for a monthly plan at $45 and receive $20 for a plan costing $60 per month. The best news? — [4] —. There is no limit to the credits; the more people you sign up, the more money you get.\n\nYour unique code is XA4R177.",
+      "questions": [
+        {
+          "id": "ets2-p7-164-q1",
+          "question": "What Comnbolt benefit does the advertisement mention?",
+          "options": {
+            "A": "Its low prices",
+            "B": "Its excellent customer service",
+            "C": "Its lifetime contracts",
+            "D": "Its convenient installation schedule"
+          },
+          "answer": "B",
+          "explanation": "The advertisement specifically mentions 'top-notch customer service from friendly professionals who are responsive to your every need.' This directly describes excellent customer service. Option C is wrong — the ad promises no inflexible contracts. Options A and D are not stated as key benefits."
+        },
+        {
+          "id": "ets2-p7-164-q2",
+          "question": "What is the maximum amount a customer can earn when one referred person signs up for service?",
+          "options": { "A": "$10.00", "B": "$20.00", "C": "$45.00", "D": "$60.00" },
+          "answer": "B",
+          "explanation": "The advertisement offers '$10 when new referrals sign up for a monthly plan at $45' and '$20 for a plan costing $60 per month.' The highest credit per referral is $20 (for the $60/month plan). Options C and D are plan prices, not credit amounts; $10 is the lower credit."
+        },
+        {
+          "id": "ets2-p7-164-q3",
+          "question": "What is true about the Comnbolt promotion?",
+          "options": {
+            "A": "It may not be posted on social media.",
+            "B": "It does not provide credit for more than three referrals.",
+            "C": "It is expected to run for a full year.",
+            "D": "It rewards both new and existing customers."
+          },
+          "answer": "D",
+          "explanation": "The ad states 'when a new user signs up using your code, each of you will receive a monetary credit' — both the existing customer (referrer) and the new user receive a credit. Option A is wrong — social media is explicitly allowed. Option B is wrong — 'There is no limit to the credits.' Option C is not stated."
+        },
+        {
+          "id": "ets2-p7-164-q4",
+          "question": "In which of the positions marked [1], [2], [3], or [4] does the following sentence best belong? \"Just share your unique referral code with friends and family.\"",
+          "options": { "A": "[1]", "B": "[2]", "C": "[3]", "D": "[4]" },
+          "answer": "C",
+          "explanation": "Position [3] follows 'The way it works is simple.' The inserted sentence immediately explains how — by sharing the referral code. The sentences that follow elaborate on the ways to share (e-mail, social media, text). This logical sequence makes [3] the correct position."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-168",
+      "passage": "Sarah's Catering – What You Serve Matters\n\nSarah's Catering is a family-owned-and-operated company. The company was founded ten years ago with a mission to provide the highest quality catering services in our community. We work closely with local growers and use only the freshest ingredients. Our menu items can be adapted to the client's taste or dietary needs. For example, we can prepare vegetarian, vegan, and gluten-free options.\n\nWe provide catering for birthday parties, wedding receptions, corporate meetings, business holiday parties, and many other types of events. From planning the menu and preparing your food to engaging servers and cleanup staff for the event, Sarah's Catering has it covered.\n\nSarah's Catering can cater lunches in your office for a minimum of twenty people. We offer delicious options to make your group's meal a satisfying experience.\n\nWe're here to serve you! Ordering is fast and simple. Visit www.sarahscatering.com/quote to request a cost estimate for your next event.\n\nWhat people are saying\n\n\"Sarah's Catering was very easy to work with, and the food was delicious! Everyone in the office commented on how good the food was.\" — Glen Liu, Perkins Real Estate\n\"All the food was perfect, and the staff was the best.\" — Annie Pierce, Kania Marketing, Inc.",
+      "questions": [
+        {
+          "id": "ets2-p7-168-q1",
+          "question": "What is indicated about Sarah's Catering?",
+          "options": {
+            "A": "It uses locally sourced products.",
+            "B": "It is twenty years old.",
+            "C": "It specializes mainly in weddings.",
+            "D": "It has an on-site dining room."
+          },
+          "answer": "A",
+          "explanation": "The web page states: 'We work closely with local growers and use only the freshest ingredients.' Working with local growers = using locally sourced products. Option B is wrong — the company is ten years old. Option C is wrong — weddings are just one of many event types. Option D is not mentioned."
+        },
+        {
+          "id": "ets2-p7-168-q2",
+          "question": "The word \"taste\" in paragraph 1, line 4, is closest in meaning to",
+          "options": { "A": "preference", "B": "sample", "C": "experience", "D": "flavor" },
+          "answer": "A",
+          "explanation": "In 'adapted to the client's taste or dietary needs,' 'taste' means the client's personal preference or liking. 'Preference' captures this meaning. 'Sample' means a small portion, 'experience' refers to events undergone, and 'flavor' refers to food taste specifically — but here it means general preference, not the flavor of a dish."
+        },
+        {
+          "id": "ets2-p7-168-q3",
+          "question": "What is mentioned as a service provided by Sarah's Catering?",
+          "options": {
+            "A": "Entertainment planning",
+            "B": "Cooking demonstrations",
+            "C": "Cleanup after meals",
+            "D": "Rentals of tables and chairs"
+          },
+          "answer": "C",
+          "explanation": "The web page states: 'From planning the menu and preparing your food to engaging servers and cleanup staff for the event, Sarah's Catering has it covered.' Cleanup staff = cleanup after meals is included. Options A, B, and D are not mentioned as services."
+        },
+        {
+          "id": "ets2-p7-168-q4",
+          "question": "Who most likely is Mr. Liu?",
+          "options": {
+            "A": "An employee of Sarah's Catering",
+            "B": "A professional event manager",
+            "C": "A customer of Sarah's Catering",
+            "D": "An assistant at a marketing firm"
+          },
+          "answer": "C",
+          "explanation": "Mr. Liu's testimonial appears in the 'What people are saying' section — he is one of Sarah's Catering's satisfied clients. He is identified as being from Perkins Real Estate, not from Sarah's Catering or a marketing firm, ruling out Options A and D."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-172",
+      "passage": "Marcus Steuber [10:41 A.M.]: Are we still planning to have the author video conference today? I haven't yet received a meeting invitation.\nBrinda Rajan [10:42 A.M.]: I do have the meeting on my calendar. Let me forward it to you; it appears our editorial assistant didn't include you.\nMarcus Steuber [10:43 A.M.]: Thanks, I just received it. The timing doesn't work for me, though. I have an appointment with Hazel Luong to discuss the printing issues at our Singapore plant.\nBrinda Rajan [10:44 A.M.]: Could you postpone that? The new author we're working with really needs your guidance on the final book design and formatting. You're our most knowledgeable production editor.\nMarcus Steuber [10:45 A.M.]: Let me check with my supervisor. I'll add Mr. Borg to our chat.\nJoshua Borg [10:47 A.M.]: Hi, team. Marcus, you should prioritize your appointment with Hazel. I'll be visiting the plant next week, and we need to have some viable solutions before then.\nBrinda Rajan [10:48 A.M.]: OK, I'll contact Ms. Benoit to find out if she can meet later in the day, then.\nMarcus Steuber [10:48 A.M.]: That would work. I'm free between 4 and 6 P.M.",
+      "questions": [
+        {
+          "id": "ets2-p7-172-q1",
+          "question": "Why does Mr. Steuber write to Ms. Rajan?",
+          "options": {
+            "A": "To invite her to a professional event",
+            "B": "To check on the status of a meeting",
+            "C": "To make travel plans for a business trip",
+            "D": "To ask about an assistant's performance"
+          },
+          "answer": "B",
+          "explanation": "Mr. Steuber's opening message is 'Are we still planning to have the author video conference today? I haven't yet received a meeting invitation.' He is checking whether the meeting is still happening and why he hasn't received the invite. This is checking on the status of a meeting."
+        },
+        {
+          "id": "ets2-p7-172-q2",
+          "question": "At 10:45 A.M., what does Mr. Steuber most likely mean when he writes, \"Let me check with my supervisor\"?",
+          "options": {
+            "A": "He needs final approval on a book design.",
+            "B": "He would like advice on changing an appointment.",
+            "C": "He requires access to the corporate calendar.",
+            "D": "He is uncertain how to add team members to the chat."
+          },
+          "answer": "B",
+          "explanation": "Ms. Rajan asked Mr. Steuber to postpone his meeting with Hazel Luong. Mr. Steuber responds by checking with his supervisor about whether he can change that appointment. He then adds Mr. Borg (his supervisor) to the chat for guidance on the scheduling conflict."
+        },
+        {
+          "id": "ets2-p7-172-q3",
+          "question": "Who most likely is Ms. Benoit?",
+          "options": {
+            "A": "A writer",
+            "B": "A designer",
+            "C": "A production editor",
+            "D": "A printing plant supervisor"
+          },
+          "answer": "A",
+          "explanation": "Ms. Rajan says 'I'll contact Ms. Benoit to find out if she can meet later in the day' — referring to the video conference that was described as being with 'the new author we're working with.' Ms. Benoit is the new author who needs guidance on book design and formatting."
+        },
+        {
+          "id": "ets2-p7-172-q4",
+          "question": "What will Ms. Rajan probably do next?",
+          "options": {
+            "A": "Suggest solutions to a printing issue",
+            "B": "Arrange to visit the Singapore plant",
+            "C": "Attend a meeting with Ms. Luong",
+            "D": "Reschedule a video conference"
+          },
+          "answer": "D",
+          "explanation": "Ms. Rajan's last message is 'I'll contact Ms. Benoit to find out if she can meet later in the day.' Ms. Benoit is the author for the video conference, and contacting her to arrange a later meeting = rescheduling the video conference. Options A and B relate to the printing issue, which is Mr. Steuber's concern, not Ms. Rajan's."
+        }
+      ]
+    },
+    {
+      "id": "ets2-p7-186",
+      "passage": "Westwood Library — Notice\n\nThe Westwood Library is excited to announce the start of a book club, which is open to all library members. The club will meet on the last Thursday of each month, from 7:00 to 9:00 P.M. in the Harrison Meeting Room, to discuss a book chosen by one of our professional staff. From January to June, we will read recently published nonfiction works, and from July to December, we will focus on contemporary fiction titles. For more information, visit www.westwoodlibrary.org or speak with the staff at the circulation desk.\n\n---\n\nBook Club Web Page\n\nWe hope you will join us for the book club on the last Thursday of each month at 7:00 P.M.! Below are the titles selected for the first half of the year.\n\nJanuary: Wild Open Range by Jaxon McDonald\nFebruary: The Journey of a Song by Lucy Xi\nMarch: Due North: Adventures in Alaska's Northern Territory by Isabel Beck\nApril: The Art of Mindful Carpentry by Peter Landers\nMay: Mary Swan: A Legend Before Her Time by Kai Noble\nJune: To Be Announced\n\n---\n\nTo: Lisa Calle lcalle@worldmail.com\nFrom: Gail Frey gfrey@myemail.com\nDate: March 27\nSubject: Book club\n\nDear Ms. Calle,\n\nIt was delightful to see you leading the book club yesterday evening. Ms. Beck's Due North is lengthy, and it was a challenge to finish it before the meeting. However, I have to thank you for choosing that book because it revived my childhood interest in traveling to Alaska. In fact, I've already looked up some tours!\n\nThe club meeting was packed, and I hardly got to talk to you. We should catch up sometime soon. Perhaps we might try the new French restaurant on Looper Street. I hear it is amazing and reasonably priced.\n\nSincerely,\nGail Frey",
+      "questions": [
+        {
+          "id": "ets2-p7-186-q1",
+          "question": "What is the purpose of the notice?",
+          "options": {
+            "A": "To highlight some books in the library",
+            "B": "To announce a change in library hours",
+            "C": "To promote an activity at the library",
+            "D": "To introduce a new librarian"
+          },
+          "answer": "C",
+          "explanation": "The notice announces 'the start of a book club' and invites library members to join. Announcing and inviting members to a book club = promoting an activity. Option A describes only part of the web page. Options B and D are not mentioned."
+        },
+        {
+          "id": "ets2-p7-186-q2",
+          "question": "What is suggested about the book Wild Open Range?",
+          "options": {
+            "A": "It is a best-selling title.",
+            "B": "It is a work of nonfiction.",
+            "C": "It was published ten years ago.",
+            "D": "It is available at a discount for library members."
+          },
+          "answer": "B",
+          "explanation": "Wild Open Range is the January selection. The notice states that 'from January to June, we will read recently published nonfiction works.' Therefore, Wild Open Range is a nonfiction book. Options A, C, and D are not stated in any of the three texts."
+        },
+        {
+          "id": "ets2-p7-186-q3",
+          "question": "What author most likely wrote about a famous person?",
+          "options": {
+            "A": "Jaxon McDonald",
+            "B": "Lucy Xi",
+            "C": "Peter Landers",
+            "D": "Kai Noble"
+          },
+          "answer": "D",
+          "explanation": "Kai Noble's book is titled 'Mary Swan: A Legend Before Her Time' — the subtitle 'A Legend Before Her Time' strongly suggests a biography of a notable (famous) person named Mary Swan. The other titles (Wild Open Range, The Journey of a Song, The Art of Mindful Carpentry) do not suggest biographical content about a famous individual."
+        },
+        {
+          "id": "ets2-p7-186-q4",
+          "question": "What can be concluded about Ms. Calle?",
+          "options": {
+            "A": "She is a library staff member.",
+            "B": "She has written book reviews.",
+            "C": "She is Ms. Frey's supervisor.",
+            "D": "She favors historical fiction."
+          },
+          "answer": "A",
+          "explanation": "Ms. Frey writes: 'It was delightful to see you leading the book club yesterday evening.' The notice states that books are 'chosen by one of our professional staff.' Since Ms. Calle led the March session with Ms. Beck's Due North (March selection), she is one of the library's professional staff members."
+        },
+        {
+          "id": "ets2-p7-186-q5",
+          "question": "What does Ms. Frey indicate about the book she read?",
+          "options": {
+            "A": "It discussed a topic that was unfamiliar to her.",
+            "B": "It had parts that she thought were inaccurate.",
+            "C": "It was easy to read in the time available.",
+            "D": "It inspired her to explore an old interest."
+          },
+          "answer": "D",
+          "explanation": "Ms. Frey writes: 'it revived my childhood interest in traveling to Alaska. In fact, I've already looked up some tours!' Revived = restored an old interest. Option C is directly contradicted by 'it was a challenge to finish it before the meeting.' Options A and B are not supported by the text."
         }
       ]
     }
