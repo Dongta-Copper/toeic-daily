@@ -11,6 +11,7 @@ import {
   X,
   BookOpen,
   Loader2,
+  Sparkles,
 } from 'lucide-react'
 import { getSessions, clearSessions, type Session, type QuestionResult } from '@/lib/history'
 
@@ -223,6 +224,8 @@ export default function HistoryPage() {
   const [sessions, setSessions] = useState<Session[]>([])
   const [loading, setLoading] = useState(true)
   const [reviewing, setReviewing] = useState<Session | null>(null)
+  const [analysis, setAnalysis] = useState<string | null>(null)
+  const [analyzing, setAnalyzing] = useState(false)
 
   useEffect(() => {
     getSessions().then((data) => {
@@ -234,6 +237,25 @@ export default function HistoryPage() {
   async function handleClear() {
     await clearSessions()
     setSessions([])
+    setAnalysis(null)
+  }
+
+  async function handleAnalyze() {
+    setAnalyzing(true)
+    setAnalysis(null)
+    try {
+      const res = await fetch('/api/analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ sessions }),
+      })
+      const data = await res.json()
+      setAnalysis(data.analysis ?? data.error ?? 'Không có kết quả.')
+    } catch {
+      setAnalysis('Lỗi kết nối. Vui lòng thử lại.')
+    } finally {
+      setAnalyzing(false)
+    }
   }
 
   return (
@@ -276,6 +298,49 @@ export default function HistoryPage() {
             ))}
           </div>
         </div>
+
+        {/* AI Analysis */}
+        {sessions.length > 0 && (
+          <div className="mb-10">
+            <div className="flex items-center justify-between mb-4">
+              <p className="text-xs font-medium text-gray-400 uppercase tracking-widest flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                Phân tích AI
+              </p>
+              <button
+                onClick={handleAnalyze}
+                disabled={analyzing}
+                className="flex items-center gap-1.5 px-4 py-1.5 bg-gray-900 text-white text-xs font-medium rounded-md hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                {analyzing ? (
+                  <>
+                    <Loader2 className="w-3 h-3 animate-spin" />
+                    Đang phân tích...
+                  </>
+                ) : (
+                  <>
+                    <Sparkles className="w-3 h-3" />
+                    Phân tích điểm yếu
+                  </>
+                )}
+              </button>
+            </div>
+
+            {analysis && (
+              <div className="p-5 border border-gray-200 rounded-lg bg-gray-50">
+                <p className="text-sm text-gray-800 leading-relaxed whitespace-pre-wrap">{analysis}</p>
+              </div>
+            )}
+
+            {!analysis && !analyzing && (
+              <div className="p-5 border border-dashed border-gray-200 rounded-lg text-center">
+                <p className="text-xs text-gray-400">
+                  Click &quot;Phân tích điểm yếu&quot; để AI xem xét 10 session gần nhất và chỉ ra điểm cần cải thiện.
+                </p>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Session list */}
         {loading ? (
