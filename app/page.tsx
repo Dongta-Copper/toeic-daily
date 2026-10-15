@@ -71,6 +71,22 @@ export default async function Home() {
           </Link>
         ))}
       </div>
+
+      <div className="mt-12">
+        <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-3">Chế độ mới</p>
+        <Link
+          href="/situation"
+          className="group flex items-start justify-between p-6 border border-gray-200 rounded-lg hover:border-gray-900 transition-all duration-150"
+        >
+          <div className="flex-1 min-w-0 pr-4">
+            <span className="block text-sm font-medium text-gray-900 mb-2">Practice Situation</span>
+            <p className="text-xs text-gray-500 leading-relaxed">
+              10 câu mỗi ngày theo tình huống thực tế: công việc xây dựng, giao tiếp và câu phức kiểu IELTS.
+            </p>
+          </div>
+          <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-gray-900 flex-shrink-0 mt-0.5 transition-colors" />
+        </Link>
+      </div>
     </div>
   )
 }

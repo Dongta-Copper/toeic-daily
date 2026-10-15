@@ -1,12 +1,15 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
 import { BookOpen, History, LogOut, User } from 'lucide-react'
 import { isLoggedIn, logout } from '@/lib/auth'
 
 export default function Navbar() {
   const [loggedIn, setLoggedIn] = useState(false)
+  const pathname = usePathname()
+  const situationMode = pathname.startsWith('/situation')
 
   useEffect(() => {
     setLoggedIn(isLoggedIn())
@@ -25,8 +28,27 @@ export default function Navbar() {
           className="flex items-center gap-2 font-semibold tracking-tight text-gray-900 hover:text-gray-600 transition-colors"
         >
           <BookOpen className="w-4 h-4" />
-          TOEIC Practice
+          <span className="hidden sm:inline">TOEIC Practice</span>
         </Link>
+
+        <div className="flex items-center p-0.5 bg-gray-100 rounded-md text-sm">
+          <Link
+            href="/"
+            className={`px-3 py-1 rounded transition-colors ${
+              !situationMode ? 'bg-white text-gray-900 shadow-sm font-medium' : 'text-gray-500 hover:text-gray-900'
+            }`}
+          >
+            TOEIC
+          </Link>
+          <Link
+            href="/situation"
+            className={`px-3 py-1 rounded transition-colors ${
+              situationMode ? 'bg-white text-gray-900 shadow-sm font-medium' : 'text-gray-500 hover:text-gray-900'
+            }`}
+          >
+            Situation
+          </Link>
+        </div>
 
         <div className="flex items-center gap-4">
           <Link
