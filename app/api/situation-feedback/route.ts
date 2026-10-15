@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { generateJSON } from '@/lib/gemini'
 import { ERROR_TYPES, type Feedback, type Sentence } from '@/lib/situation'
 
+export const maxDuration = 120
+
 export async function POST(req: Request) {
   try {
     const { sentence, answer }: { sentence: Sentence; answer: string } = await req.json()
