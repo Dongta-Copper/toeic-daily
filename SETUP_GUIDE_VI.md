@@ -158,6 +158,21 @@ Toàn bộ nội dung nằm trong **một file**: `public/situation.csv` (mở b
 - Muốn thêm ngày 48, 49…: thêm dòng mới với `day` và `date` tương ứng.
 - Khi lưu từ Excel, chọn **CSV UTF-8** để không lỗi dấu tiếng Việt.
 
+**Cách 1 — Sửa nhanh trên trang GitHub (không cần cài gì, làm được trên điện thoại):**
+
+1. Mở https://github.com/Dongta-Copper/toeic-daily/blob/main/public/situation.csv (đăng nhập GitHub).
+2. Bấm biểu tượng **bút chì ✏️** (Edit this file) ở góc phải.
+3. Sửa chữ hoặc thêm dòng ở cuối file. Mỗi câu một dòng, câu có dấu phẩy thì phải đặt trong ngoặc kép `"..."`.
+4. Bấm **Commit changes…** → **Commit changes**.
+5. Chờ 1–2 phút, web tự cập nhật.
+
+**Cách 2 — Sửa nhiều bằng Excel trên máy:**
+
+1. Mở `C:\Users\vando\Desktop\toeic-daily\public\situation.csv` bằng Excel, sửa xong **Save As → CSV UTF-8**.
+2. Đưa lên mạng bằng 3 lệnh ở mục **Đưa lên mạng** bên dưới (hoặc nhờ Claude Code chạy giúp và kiểm tra file trước khi đẩy).
+
+> Nếu file CSV bị lỗi định dạng, những dòng lỗi sẽ không hiện trên web. Nhờ Claude kiểm tra file là cách an toàn nhất.
+
 ### Tiến độ được lưu ở đâu
 
 - Trên Vercel: lưu vào Vercel KV với key riêng `situation_progress` (không đụng dữ liệu TOEIC).
@@ -184,4 +199,4 @@ git commit -m "Add Practice Situation mode"
 git push
 ```
 
-Vercel tự động triển khai lên https://toeic-daily.vercel.app sau 1–2 phút.
+Vercel tự động triển khai lên https://toeic-daily-lac.vercel.app sau 1–2 phút.
