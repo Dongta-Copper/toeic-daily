@@ -124,8 +124,9 @@ export async function requestFeedback(s: Sentence, answer: string): Promise<Feed
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ sentence: s, answer }),
   })
-  if (!res.ok) throw new Error('feedback failed')
-  return res.json()
+  const data = await res.json()
+  if (!res.ok) throw new Error(data.detail ?? 'feedback failed')
+  return data
 }
 
 const ATTEMPTS_KEY = 'situation_attempts'

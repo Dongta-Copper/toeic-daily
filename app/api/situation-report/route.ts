@@ -65,6 +65,7 @@ Yêu cầu:
     return NextResponse.json(report)
   } catch (e) {
     console.error('Situation report error:', e)
-    return NextResponse.json({ error: 'AI chưa phân tích được. Vui lòng thử lại.' }, { status: 500 })
+    const detail = e instanceof Error ? e.message.slice(0, 300) : String(e)
+    return NextResponse.json({ error: `AI chưa phân tích được. Vui lòng thử lại. (${detail})` }, { status: 500 })
   }
 }

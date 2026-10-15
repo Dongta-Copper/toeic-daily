@@ -141,8 +141,9 @@ function SentenceCard({
         errors: fb.errors,
         at: new Date().toISOString(),
       })
-    } catch {
-      setError('AI chưa phản hồi được. Bạn vẫn có thể so với câu mẫu bên dưới, hoặc bấm Kiểm tra lại.')
+    } catch (e) {
+      const detail = e instanceof Error && e.message !== 'feedback failed' ? ` (${e.message})` : ''
+      setError(`AI chưa phản hồi được. Bạn vẫn có thể so với câu mẫu bên dưới, hoặc bấm Kiểm tra lại.${detail}`)
     } finally {
       setLoading(false)
     }

@@ -51,6 +51,7 @@ Quy tắc:
     return NextResponse.json(fb)
   } catch (e) {
     console.error('Situation feedback error:', e)
-    return NextResponse.json({ error: 'AI chưa phản hồi được. Vui lòng thử lại.' }, { status: 500 })
+    const detail = e instanceof Error ? e.message.slice(0, 300) : String(e)
+    return NextResponse.json({ error: 'AI chưa phản hồi được. Vui lòng thử lại.', detail }, { status: 500 })
   }
 }
