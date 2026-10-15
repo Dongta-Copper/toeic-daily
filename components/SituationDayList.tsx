@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { ArrowRight, CheckCircle } from 'lucide-react'
+import { ArrowRight, BarChart3, CheckCircle } from 'lucide-react'
 import { getProgress, todayDayNumber, type ProgressMap } from '@/lib/situation'
 
 type DaySummary = { day: number; date: string; topics: string[] }
@@ -38,7 +38,12 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
 
       <div className="mb-8">
         <div className="flex items-baseline justify-between mb-2">
-          <span className="text-sm text-gray-700">Đã hoàn thành</span>
+          <span className="text-sm text-gray-700">
+            Đã hoàn thành ·{' '}
+            <Link href="/situation/report" className="inline-flex items-center gap-1 text-gray-500 hover:text-gray-900 underline-offset-2 hover:underline">
+              <BarChart3 className="w-3.5 h-3.5" /> Báo cáo điểm yếu
+            </Link>
+          </span>
           <span className="text-sm font-medium text-gray-900 tabular-nums">{done}/{days.length} ngày</span>
         </div>
         <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">

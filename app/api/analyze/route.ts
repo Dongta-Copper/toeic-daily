@@ -42,7 +42,8 @@ Dựa vào các câu sai trên, hãy phân tích và trình bày theo đúng c�
 Trả lời hoàn toàn bằng tiếng Việt.`
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
-    const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' })
+    // gemini-1.5-flash has been retired; the "latest" alias follows Google's current Flash model.
+    const model = genAI.getGenerativeModel({ model: process.env.GEMINI_MODEL || 'gemini-flash-latest' })
     const result = await model.generateContent(prompt)
     const analysis = result.response.text()
 

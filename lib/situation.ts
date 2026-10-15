@@ -43,27 +43,121 @@ export function todayDayNumber(days: { day: number; date: string }[]): number | 
   return days.find((x) => x.date === today)?.day ?? null
 }
 
-// ─── Answer comparison ────────────────────────────────────────────────────────
+// ─── AI feedback ──────────────────────────────────────────────────────────────
 
-function normalize(word: string): string {
-  return word.toLowerCase().replace(/[^a-z0-9']/g, '')
+// Fixed list so mistakes can be counted per category in the weekly report.
+export const ERROR_TYPES: Record<string, string> = {
+  tense: 'Thì động từ',
+  passive: 'Câu bị động',
+  preposition: 'Giới từ',
+  article: 'Mạo từ (a/an/the)',
+  subject_verb_agreement: 'Hòa hợp chủ ngữ – động từ',
+  word_form: 'Từ loại',
+  word_choice: 'Chọn từ',
+  collocation: 'Kết hợp từ',
+  plural_countable: 'Số ít / số nhiều',
+  word_order: 'Trật tự từ',
+  missing_word: 'Thiếu từ',
+  conditional: 'Câu điều kiện',
+  relative_clause: 'Mệnh đề quan hệ',
+  linking: 'Liên từ / nối câu',
+  meaning: 'Sai ý so với câu gốc',
+  spelling: 'Chính tả',
+  punctuation: 'Dấu câu',
+  other: 'Khác',
 }
 
-/** Marks each word of the model sentence as matched if it appears in the user's answer. */
-export function compareAnswer(model: string, answer: string) {
-  const pool = new Map<string, number>()
-  for (const w of answer.split(/\s+/).map(normalize).filter(Boolean)) {
-    pool.set(w, (pool.get(w) ?? 0) + 1)
-  }
-  const words = model.split(/\s+/).map((text) => {
-    const key = normalize(text)
-    const left = pool.get(key) ?? 0
-    if (key && left > 0) pool.set(key, left - 1)
-    return { text, matched: !key || left > 0 }
+export type Verdict = 'correct' | 'minor' | 'incorrect'
+
+export type FeedbackError = {
+  wrong: string
+  correct: string
+  type: string // key of ERROR_TYPES
+  explanation: string
+}
+
+export type Feedback = {
+  verdict: Verdict
+  score: number // 0-10
+  summary: string
+  errors: FeedbackError[]
+  corrected: string
+  natural: { text: string; note: string }[]
+}
+
+export type Attempt = {
+  id: string // unique per attempt
+  sentenceId: string
+  day: number
+  vietnamese: string
+  model: string
+  answer: string
+  verdict: Verdict
+  score: number
+  errors: FeedbackError[]
+  at: string
+}
+
+export type WeaknessReport = {
+  overview: string
+  weaknesses: {
+    type: string
+    level: string
+    explanation: string
+    examples: { wrong: string; correct: string }[]
+    tips: string
+  }[]
+  studyPlan: string[]
+  practiceSentences: {
+    scenario: Scenario
+    english: string
+    vietnamese: string
+    topic: string
+    level: string
+    focus: string
+  }[]
+}
+
+export async function requestFeedback(s: Sentence, answer: string): Promise<Feedback> {
+  const res = await fetch('/api/situation-feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sentence: s, answer }),
   })
-  const scored = words.filter((w) => normalize(w.text))
-  const percent = scored.length ? Math.round((scored.filter((w) => w.matched).length / scored.length) * 100) : 0
-  return { words, percent }
+  if (!res.ok) throw new Error('feedback failed')
+  return res.json()
+}
+
+const ATTEMPTS_KEY = 'situation_attempts'
+
+function readLocalAttempts(): Attempt[] {
+  try {
+    return JSON.parse(localStorage.getItem(ATTEMPTS_KEY) ?? '[]')
+  } catch {
+    return []
+  }
+}
+
+export async function saveAttempt(attempt: Attempt): Promise<void> {
+  try {
+    localStorage.setItem(ATTEMPTS_KEY, JSON.stringify([attempt, ...readLocalAttempts()].slice(0, 2000)))
+  } catch {}
+  try {
+    await fetch('/api/situation-attempts', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(attempt),
+    })
+  } catch {}
+}
+
+export async function getAttempts(): Promise<Attempt[]> {
+  const byId = new Map(readLocalAttempts().map((a) => [a.id, a]))
+  try {
+    const res = await fetch('/api/situation-attempts', { cache: 'no-store' })
+    if (res.ok) for (const a of (await res.json()) as Attempt[]) byId.set(a.id, a)
+  } catch {}
+  return Array.from(byId.values()).sort((a, b) => b.at.localeCompare(a.at))
 }
 
 // ─── Progress (Vercel KV via API, with localStorage fallback) ─────────────────

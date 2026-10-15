@@ -2,17 +2,26 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { ArrowLeft, ArrowRight, Check, RotateCcw, Volume2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BarChart3, Check, Loader2, Pencil, RotateCcw, Sparkles, Volume2 } from 'lucide-react'
 import {
+  ERROR_TYPES,
   SCENARIO_META,
-  compareAnswer,
+  requestFeedback,
+  saveAttempt,
   saveDayProgress,
+  type Feedback,
   type Scenario,
   type Sentence,
   type SituationDay,
 } from '@/lib/situation'
 
 type Grade = 'remembered' | 'review'
+
+const VERDICT_STYLE = {
+  correct: { label: 'Đúng', cls: 'bg-green-50 text-green-700 border-green-200' },
+  minor: { label: 'Gần đúng', cls: 'bg-amber-50 text-amber-700 border-amber-200' },
+  incorrect: { label: 'Chưa đúng', cls: 'bg-red-50 text-red-700 border-red-200' },
+}
 
 function speak(text: string) {
   if (typeof window === 'undefined' || !window.speechSynthesis) return
@@ -23,18 +32,121 @@ function speak(text: string) {
   window.speechSynthesis.speak(u)
 }
 
+function SpeakButton({ text }: { text: string }) {
+  return (
+    <button
+      onClick={() => speak(text)}
+      className="flex-shrink-0 text-gray-400 hover:text-gray-900 transition-colors"
+      title="Nghe phát âm"
+    >
+      <Volume2 className="w-4 h-4" />
+    </button>
+  )
+}
+
+function AIFeedback({ fb }: { fb: Feedback }) {
+  const v = VERDICT_STYLE[fb.verdict] ?? VERDICT_STYLE.minor
+  return (
+    <div className="p-4 rounded-md border border-gray-200 space-y-4">
+      <div className="flex items-center gap-2">
+        <Sparkles className="w-4 h-4 text-gray-400" />
+        <span className={`px-2 py-0.5 rounded border text-xs font-medium ${v.cls}`}>{v.label}</span>
+        <span className="text-xs text-gray-500 tabular-nums">{fb.score}/10</span>
+      </div>
+      <p className="text-sm text-gray-700 leading-relaxed">{fb.summary}</p>
+
+      {fb.errors.length > 0 && (
+        <ul className="space-y-3">
+          {fb.errors.map((e, i) => (
+            <li key={i} className="text-sm">
+              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                <span className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-600">{ERROR_TYPES[e.type] ?? e.type}</span>
+                <span className="text-red-600 line-through">{e.wrong}</span>
+                <span className="text-gray-400">→</span>
+                <span className="text-green-700 font-medium">{e.correct}</span>
+              </div>
+              <p className="text-xs text-gray-500 leading-relaxed mt-1">{e.explanation}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {fb.verdict !== 'correct' && fb.corrected && (
+        <div>
+          <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-1">Câu của bạn sau khi sửa</p>
+          <div className="flex items-start justify-between gap-3">
+            <p className="text-sm text-gray-900">{fb.corrected}</p>
+            <SpeakButton text={fb.corrected} />
+          </div>
+        </div>
+      )}
+
+      {fb.natural.length > 0 && (
+        <div>
+          <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">Cách viết tự nhiên hơn</p>
+          <ul className="space-y-2">
+            {fb.natural.map((n, i) => (
+              <li key={i}>
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-sm text-gray-900">{n.text}</p>
+                  <SpeakButton text={n.text} />
+                </div>
+                <p className="text-xs text-gray-500 leading-relaxed">{n.note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  )
+}
+
 function SentenceCard({
   s,
+  day,
   grade,
   onGrade,
 }: {
   s: Sentence
+  day: number
   grade?: Grade
   onGrade: (g: Grade) => void
 }) {
   const [answer, setAnswer] = useState('')
   const [revealed, setRevealed] = useState(false)
-  const result = revealed ? compareAnswer(s.english, answer) : null
+  const [loading, setLoading] = useState(false)
+  const [feedback, setFeedback] = useState<Feedback | null>(null)
+  const [error, setError] = useState('')
+
+  async function check() {
+    setRevealed(true)
+    setFeedback(null)
+    setError('')
+    const text = answer.trim()
+    if (!text) return
+    setLoading(true)
+    try {
+      const fb = await requestFeedback(s, text)
+      setFeedback(fb)
+      onGrade(fb.verdict === 'correct' ? 'remembered' : 'review')
+      await saveAttempt({
+        id: `${s.id}-${Date.now()}`,
+        sentenceId: s.id,
+        day,
+        vietnamese: s.vietnamese,
+        model: s.english,
+        answer: text,
+        verdict: fb.verdict,
+        score: fb.score,
+        errors: fb.errors,
+        at: new Date().toISOString(),
+      })
+    } catch {
+      setError('AI chưa phản hồi được. Bạn vẫn có thể so với câu mẫu bên dưới, hoặc bấm Kiểm tra lại.')
+    } finally {
+      setLoading(false)
+    }
+  }
 
   return (
     <div className="p-5 border border-gray-200 rounded-lg">
@@ -52,48 +164,50 @@ function SentenceCard({
         value={answer}
         onChange={(e) => setAnswer(e.target.value)}
         onKeyDown={(e) => {
-          if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) setRevealed(true)
+          if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && !loading) check()
         }}
         rows={2}
+        readOnly={revealed && !error}
         placeholder="Viết câu tiếng Anh của bạn…"
-        className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent resize-y"
+        className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent resize-y read-only:bg-gray-50"
       />
 
-      {!revealed ? (
+      {!revealed || error ? (
         <button
-          onClick={() => setRevealed(true)}
-          className="mt-3 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 transition-colors"
+          onClick={check}
+          disabled={loading}
+          className="mt-3 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 disabled:opacity-40 transition-colors"
         >
           {answer.trim() ? 'Kiểm tra' : 'Xem câu mẫu'}
         </button>
       ) : (
+        <button
+          onClick={() => {
+            setRevealed(false)
+            setFeedback(null)
+          }}
+          className="mt-3 flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors"
+        >
+          <Pencil className="w-3.5 h-3.5" /> Viết lại
+        </button>
+      )}
+
+      {revealed && (
         <div className="mt-4 space-y-3">
-          <div className="p-4 bg-gray-50 rounded-md border-l-2 border-gray-300">
-            <div className="flex items-start justify-between gap-3">
-              <p className="text-sm leading-relaxed">
-                {result!.words.map((w, i) => (
-                  <span
-                    key={i}
-                    className={answer.trim() ? (w.matched ? 'text-green-700' : 'text-amber-600 font-medium') : 'text-gray-900'}
-                  >
-                    {w.text}{' '}
-                  </span>
-                ))}
-              </p>
-              <button
-                onClick={() => speak(s.english)}
-                className="flex-shrink-0 text-gray-400 hover:text-gray-900 transition-colors"
-                title="Nghe phát âm"
-              >
-                <Volume2 className="w-4 h-4" />
-              </button>
+          {loading && (
+            <div className="flex items-center gap-2 text-sm text-gray-500">
+              <Loader2 className="w-4 h-4 animate-spin" /> AI đang chấm câu của bạn…
             </div>
-            {answer.trim() && (
-              <p className="mt-2 text-xs text-gray-500">
-                Khớp <span className="font-medium text-gray-900 tabular-nums">{result!.percent}%</span> từ với câu mẫu
-                <span className="text-amber-600"> · màu cam = từ bạn còn thiếu</span>
-              </p>
-            )}
+          )}
+          {error && <p className="text-sm text-red-600">{error}</p>}
+          {feedback && <AIFeedback fb={feedback} />}
+
+          <div className="p-4 bg-gray-50 rounded-md border-l-2 border-gray-300">
+            <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-1">Câu mẫu</p>
+            <div className="flex items-start justify-between gap-3">
+              <p className="text-sm text-gray-900 leading-relaxed">{s.english}</p>
+              <SpeakButton text={s.english} />
+            </div>
             {s.notes && (
               <p className="mt-2 text-xs text-gray-500">
                 <span className="font-medium text-gray-400 uppercase tracking-widest mr-1">Note</span>
@@ -159,12 +273,20 @@ export default function SituationPractice({
 
   return (
     <div className="max-w-2xl mx-auto px-6 py-12 w-full">
-      <Link
-        href="/situation"
-        className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors mb-6"
-      >
-        <ArrowLeft className="w-3.5 h-3.5" /> Tất cả các ngày
-      </Link>
+      <div className="flex items-center justify-between mb-6">
+        <Link
+          href="/situation"
+          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors"
+        >
+          <ArrowLeft className="w-3.5 h-3.5" /> Tất cả các ngày
+        </Link>
+        <Link
+          href="/situation/report"
+          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors"
+        >
+          <BarChart3 className="w-3.5 h-3.5" /> Báo cáo
+        </Link>
+      </div>
 
       <div className="mb-10">
         <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
@@ -172,8 +294,8 @@ export default function SituationPractice({
         </p>
         <h1 className="text-2xl font-semibold text-gray-900">Practice Situation</h1>
         <p className="text-sm text-gray-500 mt-2">
-          Mẹo: gõ xong bấm <kbd className="px-1 py-0.5 border border-gray-200 rounded text-xs">Ctrl</kbd> +{' '}
-          <kbd className="px-1 py-0.5 border border-gray-200 rounded text-xs">Enter</kbd> để kiểm tra.
+          Gõ câu tiếng Anh rồi bấm <kbd className="px-1 py-0.5 border border-gray-200 rounded text-xs">Ctrl</kbd> +{' '}
+          <kbd className="px-1 py-0.5 border border-gray-200 rounded text-xs">Enter</kbd> — AI sẽ chấm câu của bạn và gợi ý cách viết tự nhiên hơn.
         </p>
       </div>
 
@@ -192,6 +314,7 @@ export default function SituationPractice({
                   <SentenceCard
                     key={s.id}
                     s={s}
+                    day={data.day}
                     grade={grades[s.id]}
                     onGrade={(g) => {
                       setGrades((prev) => ({ ...prev, [s.id]: g }))
@@ -232,7 +355,7 @@ export default function SituationPractice({
             >
               Hoàn thành ngày {data.day}
             </button>
-            <span className="text-xs text-gray-400 tabular-nums">{graded}/{total} câu đã tự chấm</span>
+            <span className="text-xs text-gray-400 tabular-nums">{graded}/{total} câu đã chấm</span>
           </div>
         )}
       </div>
