@@ -150,6 +150,13 @@ Bấm nút **Situation** trên thanh trên cùng (hoặc thẻ "Practice Situati
 
 > Lần đầu có thể bỏ trống ô nhập rồi bấm **Xem câu mẫu** để đọc – nghe trước, sau đó làm lại.
 
+### AI chấm câu & báo cáo điểm yếu (Google Gemini)
+
+- Gõ câu rồi bấm **Kiểm tra** → AI (Gemini) chấm **câu của bạn** (Đúng / Gần đúng / Chưa đúng, điểm /10), chỉ ra từng lỗi kèm loại ngữ pháp, đưa câu đã sửa và 2–3 **cách viết tự nhiên hơn** (có nút 🔊). Mất khoảng 10–20 giây.
+- Mỗi lần làm được ghi lại. Vào **Situation → Báo cáo điểm yếu** để xem thống kê 7/14/30 ngày và số lỗi theo loại.
+- Bấm **AI phân tích điểm yếu** (mất khoảng 1 phút) → nhận: điểm yếu chính, ví dụ sai/đúng, mẹo, kế hoạch tuần tới và **10 câu luyện mới nhắm đúng điểm yếu**. Bấm **Copy CSV** rồi dán vào cuối `public/situation.csv` (xem bên dưới) để thêm thành một ngày học mới.
+- Nếu thấy "AI chưa phản hồi được (… high demand …)": máy chủ Google đang quá tải tạm thời, đợi một lát rồi bấm Kiểm tra lại. Khóa AI nằm trong Vercel → Settings → Environment Variables → `GEMINI_API_KEY`.
+
 ### Sửa hoặc thêm câu
 
 Toàn bộ nội dung nằm trong **một file**: `public/situation.csv` (mở bằng Excel được).
