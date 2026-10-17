@@ -22,7 +22,7 @@ export default function Navbar() {
 
   return (
     <header className="border-b border-gray-200 bg-white flex-shrink-0">
-      <nav className="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between">
+      <nav className="max-w-5xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-2">
         <Link
           href="/"
           className="flex items-center gap-2 font-semibold tracking-tight text-gray-900 hover:text-gray-600 transition-colors"
@@ -34,7 +34,7 @@ export default function Navbar() {
         <div className="flex items-center p-0.5 bg-gray-100 rounded-md text-sm">
           <Link
             href="/"
-            className={`px-3 py-1 rounded transition-colors ${
+            className={`px-3 py-1.5 rounded transition-colors ${
               !situationMode ? 'bg-white text-gray-900 shadow-sm font-medium' : 'text-gray-500 hover:text-gray-900'
             }`}
           >
@@ -42,7 +42,7 @@ export default function Navbar() {
           </Link>
           <Link
             href="/situation"
-            className={`px-3 py-1 rounded transition-colors ${
+            className={`px-3 py-1.5 rounded transition-colors ${
               situationMode ? 'bg-white text-gray-900 shadow-sm font-medium' : 'text-gray-500 hover:text-gray-900'
             }`}
           >
@@ -50,24 +50,25 @@ export default function Navbar() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3 sm:gap-4">
           <Link
             href="/history"
-            className="flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors"
+            className="flex items-center gap-1.5 p-1 text-sm text-gray-500 hover:text-gray-900 transition-colors"
+            title="History"
           >
             <History className="w-4 h-4" />
-            History
+            <span className="hidden sm:inline">History</span>
           </Link>
 
           {loggedIn && (
             <>
-              <div className="flex items-center gap-1.5 text-sm text-gray-700">
+              <div className="hidden sm:flex items-center gap-1.5 text-sm text-gray-700">
                 <User className="w-4 h-4" />
                 <span className="font-medium">Dongta</span>
               </div>
               <button
                 onClick={handleLogout}
-                className="flex items-center gap-1.5 text-sm text-gray-400 hover:text-red-600 transition-colors"
+                className="flex items-center gap-1.5 p-1 text-sm text-gray-400 hover:text-red-600 transition-colors"
                 title="Đăng xuất"
               >
                 <LogOut className="w-4 h-4" />

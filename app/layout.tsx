@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
@@ -10,6 +10,13 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 export const metadata: Metadata = {
   title: 'TOEIC Practice',
   description: 'Practice TOEIC Parts 5, 6, and 7',
+  // Lets iPhone "Add to Home Screen" open the site full-screen like an app.
+  appleWebApp: { capable: true, title: 'English Daily', statusBarStyle: 'default' },
+  icons: { apple: '/app-icon/180' },
+}
+
+export const viewport: Viewport = {
+  themeColor: '#111827',
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -19,7 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AuthGuard>
           <Navbar />
           <StorageWarning />
-          <main className="flex-1 flex flex-col">{children}</main>
+          <main className="flex-1 flex flex-col pb-[env(safe-area-inset-bottom)]">{children}</main>
         </AuthGuard>
       </body>
     </html>

@@ -67,10 +67,10 @@ export default function SituationReport({ lastDay, lastDate }: { lastDay: number
 
   const report = saved?.report ?? null
 
-  // Weakness drills are excluded so practising a weakness does not inflate it in the report.
+  // Drills and reviews are excluded so re-practising a weakness does not inflate it in the report.
   const attempts = useMemo(() => {
     if (!all) return []
-    const daily = all.filter((a) => a.source !== 'drill')
+    const daily = all.filter((a) => !a.source || a.source === 'daily')
     if (!period) return daily
     const since = loadedAt - period * 86400000
     return daily.filter((a) => new Date(a.at).getTime() >= since)
@@ -117,7 +117,7 @@ export default function SituationReport({ lastDay, lastDate }: { lastDay: number
   const maxCount = stats.byType[0]?.[1] ?? 1
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12 w-full">
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-12 w-full">
       <Link
         href="/situation"
         className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors mb-6"

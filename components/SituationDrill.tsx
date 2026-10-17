@@ -14,6 +14,7 @@ import {
   type SavedReport,
   type Sentence,
 } from '@/lib/situation'
+import { scheduleFromLesson } from '@/lib/srs'
 
 type Grade = 'remembered' | 'review'
 
@@ -142,7 +143,7 @@ export default function SituationDrill({ initialFocus, reportId }: { initialFocu
   const label = focus ? ERROR_TYPES[focus] ?? focus : ''
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12 w-full">
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-12 w-full">
       <div className="flex items-center justify-between mb-6">
         <Link href="/situation" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors">
           <ArrowLeft className="w-3.5 h-3.5" /> Tất cả các ngày
@@ -258,7 +259,10 @@ export default function SituationDrill({ initialFocus, reportId }: { initialFocu
                           hint={it.hint}
                           focus={focus}
                           grade={grades[s.id]}
-                          onGrade={(g) => setGrades((prev) => ({ ...prev, [s.id]: g }))}
+                          onGrade={(g) => {
+                            setGrades((prev) => ({ ...prev, [s.id]: g }))
+                            scheduleFromLesson(s, g, focus)
+                          }}
                         />
                       )
                     })}

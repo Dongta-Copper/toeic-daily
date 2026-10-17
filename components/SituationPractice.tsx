@@ -14,6 +14,7 @@ import {
   type Sentence,
   type SituationDay,
 } from '@/lib/situation'
+import { scheduleFromLesson } from '@/lib/srs'
 
 type Grade = 'remembered' | 'review'
 
@@ -111,6 +112,7 @@ export function SentenceCard({
   wrongLabel,
   hint,
   focus,
+  source,
 }: {
   s: Sentence
   day: number
@@ -121,6 +123,7 @@ export function SentenceCard({
   wrongLabel?: string
   hint?: string
   focus?: string // set when the card is part of a weakness drill
+  source?: 'daily' | 'drill' | 'review'
 }) {
   const [answer, setAnswer] = useState('')
   const [revealed, setRevealed] = useState(false)
@@ -151,7 +154,7 @@ export function SentenceCard({
         score: fb.score,
         errors: fb.errors,
         at: new Date().toISOString(),
-        source: focus ? 'drill' : 'daily',
+        source: source ?? (focus ? 'drill' : 'daily'),
         focus,
       })
     } catch (e) {
@@ -199,17 +202,22 @@ export function SentenceCard({
         onKeyDown={(e) => {
           if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && !loading) check()
         }}
-        rows={2}
+        rows={3}
         readOnly={revealed && !error}
         placeholder="Viết câu tiếng Anh của bạn…"
-        className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent resize-y read-only:bg-gray-50"
+        // Phone keyboards would silently fix exactly the mistakes we want the AI to catch.
+        autoCorrect="off"
+        autoCapitalize="sentences"
+        spellCheck={false}
+        lang="en"
+        className="w-full border border-gray-300 rounded-md px-3 py-2 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent resize-y read-only:bg-gray-50"
       />
 
       {!revealed || error ? (
         <button
           onClick={check}
           disabled={loading}
-          className="mt-3 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 disabled:opacity-40 transition-colors"
+          className="mt-3 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 disabled:opacity-40 transition-colors"
         >
           {answer.trim() ? 'Kiểm tra' : 'Xem câu mẫu'}
         </button>
@@ -252,7 +260,7 @@ export function SentenceCard({
           <div className="flex items-center gap-2">
             <button
               onClick={() => onGrade('remembered')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md border text-sm transition-colors ${
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-md border text-sm transition-colors ${
                 grade === 'remembered'
                   ? 'border-green-500 bg-green-50 text-green-700'
                   : 'border-gray-300 text-gray-600 hover:border-gray-900'
@@ -262,7 +270,7 @@ export function SentenceCard({
             </button>
             <button
               onClick={() => onGrade('review')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-md border text-sm transition-colors ${
+              className={`flex items-center gap-1.5 px-4 py-2 rounded-md border text-sm transition-colors ${
                 grade === 'review'
                   ? 'border-amber-500 bg-amber-50 text-amber-700'
                   : 'border-gray-300 text-gray-600 hover:border-gray-900'
@@ -305,7 +313,7 @@ export default function SituationPractice({
   }
 
   return (
-    <div className="max-w-2xl mx-auto px-6 py-12 w-full">
+    <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-12 w-full">
       <div className="flex items-center justify-between mb-6">
         <Link
           href="/situation"
@@ -352,6 +360,7 @@ export default function SituationPractice({
                     onGrade={(g) => {
                       setGrades((prev) => ({ ...prev, [s.id]: g }))
                       setSaved(false)
+                      scheduleFromLesson(s, g)
                     }}
                   />
                 ))}

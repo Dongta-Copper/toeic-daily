@@ -96,7 +96,7 @@ export type Attempt = {
   score: number
   errors: FeedbackError[]
   at: string
-  source?: 'daily' | 'drill'
+  source?: 'daily' | 'drill' | 'review'
   focus?: string // ERROR_TYPES key practised in a drill
 }
 
