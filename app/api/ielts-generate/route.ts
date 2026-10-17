@@ -80,6 +80,9 @@ ${SCHEMA}`
       const problems = validateSection(section)
       const count = section.groups.reduce((n, g) => n + (g.questions?.length ?? 0), 0)
       if (count < 10) problems.push(`only ${count} questions; write 12–14`)
+      const words = section.texts.reduce((n, t) => n + t.paragraphs.reduce((m, p) => m + p.text.split(/\s+/).length, 0), 0)
+      const minWords = { 1: 350, 2: 450, 3: 700 }[number]
+      if (words < minWords) problems.push(`the text${number === 3 ? '' : 's'} total only ${words} words; write at least ${minWords} words`)
       if (!problems.length) return NextResponse.json({ section })
       prompt = `${prompt}\n\nYour previous draft had these problems:\n- ${problems.join('\n- ')}\n\nPrevious draft:\n${JSON.stringify(draft)}\n\nReturn a corrected version of the whole section in the same JSON shape.`
     }
