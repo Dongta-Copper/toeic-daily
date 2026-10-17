@@ -2,9 +2,10 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { ArrowRight, BarChart3, CheckCircle, Repeat, Target } from 'lucide-react'
+import { ArrowRight, BarChart3, CheckCircle, Layers, Repeat, Target } from 'lucide-react'
 import { getProgress, todayDayNumber, type ProgressMap } from '@/lib/situation'
 import { DAILY_LIMIT, dueItems, loadReviewItems } from '@/lib/srs'
+import { buildSession, loadBuiltinCards, phraseStates, userCards } from '@/lib/phrases'
 
 type DaySummary = { day: number; date: string; topics: string[] }
 
@@ -18,6 +19,7 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
   const [today, setToday] = useState<number | null>(null)
 
   const [due, setDue] = useState<number | null>(null)
+  const [cards, setCards] = useState<number | null>(null)
 
   useEffect(() => {
     getProgress().then((p) => {
@@ -25,6 +27,9 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
       setToday(todayDayNumber(days))
     })
     loadReviewItems().then((items) => setDue(Math.min(dueItems(items).length, DAILY_LIMIT)))
+    Promise.all([loadBuiltinCards(), userCards.getAll(), phraseStates.getAll()]).then(([b, u, s]) =>
+      setCards(buildSession([...u, ...b], s).queue.length)
+    )
   }, [days])
 
   const done = days.filter((d) => progress[d.day]).length
@@ -63,7 +68,7 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
         </Link>
       )}
 
-      <div className="grid grid-cols-3 gap-3 mb-10">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
         {[
           {
             href: '/situation/review',
@@ -71,6 +76,13 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
             title: 'Ôn hôm nay',
             sub: due === null ? '…' : due > 0 ? `${due} câu` : 'Đã xong',
             highlight: !!due,
+          },
+          {
+            href: '/situation/cards',
+            icon: Layers,
+            title: 'Thẻ cụm từ',
+            sub: cards === null ? '…' : cards > 0 ? `${cards} thẻ` : 'Đã xong',
+            highlight: !!cards,
           },
           { href: '/situation/drill', icon: Target, title: 'Luyện điểm yếu', sub: 'Theo AI', highlight: false },
           { href: '/situation/report', icon: BarChart3, title: 'Báo cáo', sub: 'Điểm yếu', highlight: false },

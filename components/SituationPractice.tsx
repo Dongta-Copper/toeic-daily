@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useState } from 'react'
-import { ArrowLeft, ArrowRight, BarChart3, Check, Loader2, Pencil, RotateCcw, Sparkles, Volume2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BarChart3, Check, Layers, Loader2, Pencil, RotateCcw, Sparkles, Volume2 } from 'lucide-react'
 import {
   ERROR_TYPES,
   SCENARIO_META,
@@ -15,6 +15,7 @@ import {
   type SituationDay,
 } from '@/lib/situation'
 import { scheduleFromLesson } from '@/lib/srs'
+import { generateCards, loadBuiltinCards, userCards } from '@/lib/phrases'
 
 type Grade = 'remembered' | 'review'
 
@@ -102,6 +103,74 @@ function AIFeedback({ fb }: { fb: Feedback }) {
   )
 }
 
+const PHRASE_ERROR_TYPES = new Set(['preposition', 'collocation', 'word_choice'])
+
+/** Turns phrase mistakes, or useful chunks of the model sentence, into phrase cards. */
+function SaveToCards({
+  s,
+  answer,
+  feedback,
+  attemptId,
+}: {
+  s: Sentence
+  answer: string
+  feedback: Feedback | null
+  attemptId: string
+}) {
+  const [busy, setBusy] = useState<'' | 'errors' | 'sentence'>('')
+  const [saved, setSaved] = useState<string[]>([])
+  const [message, setMessage] = useState('')
+  const phraseErrors = (feedback?.errors ?? []).filter((e) => PHRASE_ERROR_TYPES.has(e.type))
+
+  async function run(kind: 'errors' | 'sentence') {
+    setBusy(kind)
+    setMessage('')
+    try {
+      const existing = [...userCards.readLocal(), ...(await loadBuiltinCards())]
+      const cards = await generateCards(
+        kind === 'errors'
+          ? {
+              mode: 'errors',
+              errors: phraseErrors.map((e) => ({ ...e, context: answer.trim(), attemptId })),
+            }
+          : { mode: 'sentence', sentence: s.english, vietnamese: s.vietnamese },
+        existing
+      )
+      setSaved((prev) => [...prev, ...cards.map((c) => c.phrase)])
+      if (!cards.length) setMessage('Các cụm này đã có trong kho thẻ.')
+    } catch (e) {
+      setMessage(e instanceof Error ? e.message : 'AI chưa tạo được thẻ.')
+    } finally {
+      setBusy('')
+    }
+  }
+
+  const btn =
+    'flex items-center gap-1.5 px-3 py-1.5 rounded-md border border-dashed border-gray-300 text-xs text-gray-600 hover:border-gray-900 hover:text-gray-900 disabled:opacity-40'
+  return (
+    <div>
+      <div className="flex flex-wrap gap-2">
+        {phraseErrors.length > 0 && (
+          <button onClick={() => run('errors')} disabled={!!busy} className={btn}>
+            {busy === 'errors' ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Layers className="w-3.5 h-3.5" />}
+            Tạo thẻ từ lỗi này
+          </button>
+        )}
+        <button onClick={() => run('sentence')} disabled={!!busy} className={btn}>
+          {busy === 'sentence' ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Layers className="w-3.5 h-3.5" />}
+          Lưu cụm từ hay
+        </button>
+      </div>
+      {saved.length > 0 && (
+        <p className="mt-2 text-xs text-green-700">
+          Đã thêm vào <Link href="/situation/cards" className="underline">Thẻ cụm từ</Link>: {saved.join(' · ')}
+        </p>
+      )}
+      {message && <p className="mt-2 text-xs text-gray-500">{message}</p>}
+    </div>
+  )
+}
+
 export function SentenceCard({
   s,
   day,
@@ -131,6 +200,7 @@ export function SentenceCard({
   const [feedback, setFeedback] = useState<Feedback | null>(null)
   const [error, setError] = useState('')
   const [showHint, setShowHint] = useState(false)
+  const [attemptId, setAttemptId] = useState('')
 
   async function check() {
     setRevealed(true)
@@ -143,8 +213,10 @@ export function SentenceCard({
       const fb = await requestFeedback(s, text)
       setFeedback(fb)
       onGrade(fb.verdict === 'correct' ? 'remembered' : 'review')
+      const id = `${s.id}-${Date.now()}`
+      setAttemptId(id)
       await saveAttempt({
-        id: `${s.id}-${Date.now()}`,
+        id,
         sentenceId: s.id,
         day,
         vietnamese: s.vietnamese,
@@ -256,6 +328,8 @@ export function SentenceCard({
               </p>
             )}
           </div>
+
+          <SaveToCards s={s} answer={answer} feedback={feedback} attemptId={attemptId} />
 
           <div className="flex items-center gap-2">
             <button
