@@ -2,8 +2,16 @@
 
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowLeft, Copy, Loader2, Sparkles } from 'lucide-react'
-import { ERROR_TYPES, getAttempts, type Attempt, type WeaknessReport } from '@/lib/situation'
+import { ArrowLeft, ArrowRight, Copy, Loader2, Sparkles, Target } from 'lucide-react'
+import {
+  ERROR_TYPES,
+  getAttempts,
+  getSavedReports,
+  saveReport,
+  type Attempt,
+  type SavedReport,
+  type WeaknessReport,
+} from '@/lib/situation'
 
 const PERIODS = [
   { days: 7, label: '7 ngày' },
@@ -40,7 +48,8 @@ function toCsvRows(report: WeaknessReport, day: number, date: string): string {
 export default function SituationReport({ lastDay, lastDate }: { lastDay: number; lastDate: string }) {
   const [all, setAll] = useState<Attempt[] | null>(null)
   const [period, setPeriod] = useState(7)
-  const [report, setReport] = useState<WeaknessReport | null>(null)
+  const [reports, setReports] = useState<SavedReport[]>([])
+  const [saved, setSaved] = useState<SavedReport | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [copied, setCopied] = useState(false)
@@ -48,17 +57,23 @@ export default function SituationReport({ lastDay, lastDate }: { lastDay: number
   const [loadedAt, setLoadedAt] = useState(0)
 
   useEffect(() => {
-    getAttempts().then((list) => {
+    Promise.all([getAttempts(), getSavedReports()]).then(([list, savedReports]) => {
       setAll(list)
+      setReports(savedReports)
+      setSaved(savedReports[0] ?? null)
       setLoadedAt(Date.now())
     })
   }, [])
 
+  const report = saved?.report ?? null
+
+  // Weakness drills are excluded so practising a weakness does not inflate it in the report.
   const attempts = useMemo(() => {
     if (!all) return []
-    if (!period) return all
+    const daily = all.filter((a) => a.source !== 'drill')
+    if (!period) return daily
     const since = loadedAt - period * 86400000
-    return all.filter((a) => new Date(a.at).getTime() >= since)
+    return daily.filter((a) => new Date(a.at).getTime() >= since)
   }, [all, period, loadedAt])
 
   const stats = useMemo(() => {
@@ -73,7 +88,6 @@ export default function SituationReport({ lastDay, lastDate }: { lastDay: number
   async function analyze() {
     setLoading(true)
     setError('')
-    setReport(null)
     try {
       const res = await fetch('/api/situation-report', {
         method: 'POST',
@@ -82,7 +96,16 @@ export default function SituationReport({ lastDay, lastDate }: { lastDay: number
       })
       const data = await res.json()
       if (!res.ok) throw new Error(data.error)
-      setReport(data)
+      const entry: SavedReport = {
+        id: String(Date.now()),
+        createdAt: new Date().toISOString(),
+        periodDays: period,
+        attemptsCount: attempts.length,
+        report: data as WeaknessReport,
+      }
+      await saveReport(entry)
+      setReports((prev) => [entry, ...prev])
+      setSaved(entry)
     } catch (e) {
       setError(e instanceof Error && e.message ? e.message : 'AI chưa phân tích được. Vui lòng thử lại.')
     } finally {
@@ -111,10 +134,7 @@ export default function SituationReport({ lastDay, lastDate }: { lastDay: number
         {PERIODS.map((p) => (
           <button
             key={p.days}
-            onClick={() => {
-              setPeriod(p.days)
-              setReport(null)
-            }}
+            onClick={() => setPeriod(p.days)}
             className={`px-3 py-1 rounded transition-colors ${
               period === p.days ? 'bg-white text-gray-900 shadow-sm font-medium' : 'text-gray-500 hover:text-gray-900'
             }`}
@@ -169,7 +189,7 @@ export default function SituationReport({ lastDay, lastDate }: { lastDay: number
               className="flex items-center gap-2 px-6 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               {loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
-              {loading ? 'AI đang phân tích…' : 'AI phân tích điểm yếu'}
+              {loading ? 'AI đang phân tích…' : report ? 'AI phân tích lại' : 'AI phân tích điểm yếu'}
             </button>
             {stats.mistakes.length === 0 && (
               <p className="text-xs text-gray-500 mt-2">Không có câu sai trong khoảng thời gian này — rất tốt!</p>
@@ -177,11 +197,42 @@ export default function SituationReport({ lastDay, lastDate }: { lastDay: number
             {error && <p className="text-sm text-red-600 mt-3">{error}</p>}
           </section>
 
-          {report && (
+          {report && saved && (
             <div className="space-y-10 mb-12">
-              <p className="text-sm text-gray-700 leading-relaxed p-4 bg-gray-50 rounded-md border-l-2 border-gray-300">
-                {report.overview}
-              </p>
+              <div>
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-3">
+                  <p className="text-xs text-gray-500">
+                    Báo cáo lưu lúc {new Date(saved.createdAt).toLocaleString('vi-VN')} · {saved.attemptsCount} câu ·{' '}
+                    {saved.periodDays ? `${saved.periodDays} ngày` : 'tất cả'}
+                  </p>
+                  {reports.length > 1 && (
+                    <select
+                      value={saved.id}
+                      onChange={(e) => setSaved(reports.find((r) => r.id === e.target.value) ?? null)}
+                      className="text-xs border border-gray-300 rounded px-2 py-1 bg-white"
+                    >
+                      {reports.map((r) => (
+                        <option key={r.id} value={r.id}>
+                          {new Date(r.createdAt).toLocaleDateString('vi-VN')} · {r.attemptsCount} câu
+                        </option>
+                      ))}
+                    </select>
+                  )}
+                </div>
+                <p className="text-sm text-gray-700 leading-relaxed p-4 bg-gray-50 rounded-md border-l-2 border-gray-300">
+                  {report.overview}
+                </p>
+              </div>
+
+              <Link
+                href={`/situation/drill?report=${saved.id}`}
+                className="flex items-center justify-between p-5 bg-gray-900 text-white rounded-lg hover:bg-gray-700 transition-colors"
+              >
+                <span className="flex items-center gap-2 font-medium">
+                  <Target className="w-4 h-4" /> Luyện tập theo các điểm yếu này
+                </span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
 
               <section>
                 <h2 className="text-sm font-medium text-gray-900 mb-4">Điểm yếu chính</h2>
@@ -202,7 +253,13 @@ export default function SituationReport({ lastDay, lastDate }: { lastDay: number
                           </li>
                         ))}
                       </ul>
-                      <p className="text-xs text-gray-500 leading-relaxed">💡 {w.tips}</p>
+                      <p className="text-xs text-gray-500 leading-relaxed mb-3">💡 {w.tips}</p>
+                      <Link
+                        href={`/situation/drill?report=${saved.id}&focus=${w.type}`}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-gray-300 rounded-md text-sm text-gray-700 hover:border-gray-900 hover:text-gray-900 transition-colors"
+                      >
+                        <Target className="w-3.5 h-3.5" /> Luyện điểm này
+                      </Link>
                     </div>
                   ))}
                 </div>

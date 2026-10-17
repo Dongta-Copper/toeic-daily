@@ -101,22 +101,33 @@ function AIFeedback({ fb }: { fb: Feedback }) {
   )
 }
 
-function SentenceCard({
+export function SentenceCard({
   s,
   day,
   grade,
   onGrade,
+  label,
+  wrong,
+  wrongLabel,
+  hint,
+  focus,
 }: {
   s: Sentence
   day: number
   grade?: Grade
   onGrade: (g: Grade) => void
+  label?: string // overrides the "A1 · B1 · topic" header (used by drills)
+  wrong?: string // an incorrect sentence the learner should rewrite
+  wrongLabel?: string
+  hint?: string
+  focus?: string // set when the card is part of a weakness drill
 }) {
   const [answer, setAnswer] = useState('')
   const [revealed, setRevealed] = useState(false)
   const [loading, setLoading] = useState(false)
   const [feedback, setFeedback] = useState<Feedback | null>(null)
   const [error, setError] = useState('')
+  const [showHint, setShowHint] = useState(false)
 
   async function check() {
     setRevealed(true)
@@ -140,6 +151,8 @@ function SentenceCard({
         score: fb.score,
         errors: fb.errors,
         at: new Date().toISOString(),
+        source: focus ? 'drill' : 'daily',
+        focus,
       })
     } catch (e) {
       const detail = e instanceof Error && e.message !== 'feedback failed' ? ` (${e.message})` : ''
@@ -153,13 +166,32 @@ function SentenceCard({
     <div className="p-5 border border-gray-200 rounded-lg">
       <div className="flex items-center gap-2 mb-3 text-xs">
         <span className="font-medium text-gray-400 tabular-nums">
-          {s.scenario}{s.number}
+          {label ?? `${s.scenario}${s.number}`}
         </span>
         <span className="px-1.5 py-0.5 rounded bg-gray-100 text-gray-500 font-medium">{s.level}</span>
-        <span className="text-gray-400 truncate">{s.topic}</span>
+        {!label && <span className="text-gray-400 truncate">{s.topic}</span>}
       </div>
 
       <p className="text-gray-900 leading-relaxed mb-4">{s.vietnamese}</p>
+
+      {wrong && (
+        <div className="mb-4 p-3 rounded-md bg-red-50 border border-red-100">
+          <p className="text-xs font-medium text-red-400 uppercase tracking-widest mb-1">{wrongLabel ?? 'Câu có lỗi — hãy viết lại cho đúng'}</p>
+          <p className="text-sm text-red-700">{wrong}</p>
+        </div>
+      )}
+
+      {hint && !revealed && (
+        <div className="mb-3">
+          {showHint ? (
+            <p className="text-xs text-gray-500">💡 {hint}</p>
+          ) : (
+            <button onClick={() => setShowHint(true)} className="text-xs text-gray-400 hover:text-gray-900">
+              💡 Gợi ý
+            </button>
+          )}
+        </div>
+      )}
 
       <textarea
         value={answer}

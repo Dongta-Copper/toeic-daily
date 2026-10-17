@@ -96,6 +96,33 @@ export type Attempt = {
   score: number
   errors: FeedbackError[]
   at: string
+  source?: 'daily' | 'drill'
+  focus?: string // ERROR_TYPES key practised in a drill
+}
+
+export type SavedReport = {
+  id: string
+  createdAt: string
+  periodDays: number // 0 = all time
+  attemptsCount: number
+  report: WeaknessReport
+}
+
+export type DrillItem = {
+  kind: 'translate' | 'fix' | 'redo'
+  vietnamese: string
+  wrong?: string // sentence with the target error (fix) or the learner's earlier answer (redo)
+  english: string // model answer
+  hint: string
+  level: string
+}
+
+export type DrillSet = {
+  focus: string
+  rule: string
+  examples: { wrong: string; correct: string }[]
+  items: DrillItem[]
+  createdAt: string
 }
 
 export type WeaknessReport = {
@@ -150,6 +177,40 @@ export async function saveAttempt(attempt: Attempt): Promise<void> {
       body: JSON.stringify(attempt),
     })
   } catch {}
+}
+
+// ─── Saved weakness reports ───────────────────────────────────────────────────
+
+const REPORTS_KEY = 'situation_reports'
+
+function readLocalReports(): SavedReport[] {
+  try {
+    return JSON.parse(localStorage.getItem(REPORTS_KEY) ?? '[]')
+  } catch {
+    return []
+  }
+}
+
+export async function saveReport(saved: SavedReport): Promise<void> {
+  try {
+    localStorage.setItem(REPORTS_KEY, JSON.stringify([saved, ...readLocalReports()].slice(0, 20)))
+  } catch {}
+  try {
+    await fetch('/api/situation-reports', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(saved),
+    })
+  } catch {}
+}
+
+export async function getSavedReports(): Promise<SavedReport[]> {
+  const byId = new Map(readLocalReports().map((r) => [r.id, r]))
+  try {
+    const res = await fetch('/api/situation-reports', { cache: 'no-store' })
+    if (res.ok) for (const r of (await res.json()) as SavedReport[]) byId.set(r.id, r)
+  } catch {}
+  return Array.from(byId.values()).sort((a, b) => b.createdAt.localeCompare(a.createdAt))
 }
 
 export async function getAttempts(): Promise<Attempt[]> {

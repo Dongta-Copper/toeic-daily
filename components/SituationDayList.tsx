@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { ArrowRight, BarChart3, CheckCircle } from 'lucide-react'
+import { ArrowRight, BarChart3, CheckCircle, Target } from 'lucide-react'
 import { getProgress, todayDayNumber, type ProgressMap } from '@/lib/situation'
 
 type DaySummary = { day: number; date: string; topics: string[] }
@@ -42,6 +42,10 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
             Đã hoàn thành ·{' '}
             <Link href="/situation/report" className="inline-flex items-center gap-1 text-gray-500 hover:text-gray-900 underline-offset-2 hover:underline">
               <BarChart3 className="w-3.5 h-3.5" /> Báo cáo điểm yếu
+            </Link>{' '}
+            ·{' '}
+            <Link href="/situation/drill" className="inline-flex items-center gap-1 text-gray-500 hover:text-gray-900 underline-offset-2 hover:underline">
+              <Target className="w-3.5 h-3.5" /> Luyện điểm yếu
             </Link>
           </span>
           <span className="text-sm font-medium text-gray-900 tabular-nums">{done}/{days.length} ngày</span>
