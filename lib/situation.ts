@@ -204,22 +204,52 @@ export async function saveReport(saved: SavedReport): Promise<void> {
   } catch {}
 }
 
-export async function getSavedReports(): Promise<SavedReport[]> {
-  const byId = new Map(readLocalReports().map((r) => [r.id, r]))
+/**
+ * Merges what the browser holds with what the server holds, keeps the merged list in the browser,
+ * and uploads anything the server is missing (e.g. saved while the server store was down).
+ * Returns null for the server part when the server store is unreachable.
+ */
+async function syncList<T>(url: string, local: T[], idOf: (x: T) => string): Promise<{ all: T[]; remote: T[] | null }> {
+  let remote: T[] | null = null
   try {
-    const res = await fetch('/api/situation-reports', { cache: 'no-store' })
-    if (res.ok) for (const r of (await res.json()) as SavedReport[]) byId.set(r.id, r)
+    const res = await fetch(url, { cache: 'no-store' })
+    if (res.ok) remote = await res.json()
   } catch {}
-  return Array.from(byId.values()).sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+
+  const byId = new Map<string, T>()
+  for (const x of [...local, ...(remote ?? [])]) byId.set(idOf(x), x)
+  const all = Array.from(byId.values())
+
+  if (remote) {
+    const remoteIds = new Set(remote.map(idOf))
+    const missing = all.filter((x) => !remoteIds.has(idOf(x)))
+    if (missing.length) {
+      fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(missing),
+      }).catch(() => {})
+    }
+  }
+  return { all, remote }
+}
+
+export async function getSavedReports(): Promise<SavedReport[]> {
+  const { all } = await syncList('/api/situation-reports', readLocalReports(), (r) => r.id)
+  const sorted = all.sort((a, b) => b.createdAt.localeCompare(a.createdAt))
+  try {
+    localStorage.setItem(REPORTS_KEY, JSON.stringify(sorted.slice(0, 20)))
+  } catch {}
+  return sorted
 }
 
 export async function getAttempts(): Promise<Attempt[]> {
-  const byId = new Map(readLocalAttempts().map((a) => [a.id, a]))
+  const { all } = await syncList('/api/situation-attempts', readLocalAttempts(), (a) => a.id)
+  const sorted = all.sort((a, b) => b.at.localeCompare(a.at))
   try {
-    const res = await fetch('/api/situation-attempts', { cache: 'no-store' })
-    if (res.ok) for (const a of (await res.json()) as Attempt[]) byId.set(a.id, a)
+    localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(sorted.slice(0, 2000)))
   } catch {}
-  return Array.from(byId.values()).sort((a, b) => b.at.localeCompare(a.at))
+  return sorted
 }
 
 // ─── Progress (Vercel KV via API, with localStorage fallback) ─────────────────
@@ -241,15 +271,31 @@ function writeLocal(map: ProgressMap) {
 }
 
 export async function getProgress(): Promise<ProgressMap> {
-  const local = readLocal()
+  const local = Object.values(readLocal())
+  let remoteMap: ProgressMap | null = null
   try {
     const res = await fetch('/api/situation-progress', { cache: 'no-store' })
-    if (!res.ok) return local
-    const remote: ProgressMap = await res.json()
-    return { ...local, ...remote }
-  } catch {
-    return local
+    if (res.ok) remoteMap = await res.json()
+  } catch {}
+
+  const merged: ProgressMap = {}
+  for (const p of [...local, ...Object.values(remoteMap ?? {})]) {
+    const prev = merged[p.day]
+    if (!prev || p.completedAt > prev.completedAt) merged[p.day] = p
   }
+  writeLocal(merged)
+
+  if (remoteMap) {
+    const missing = Object.values(merged).filter((p) => remoteMap[p.day]?.completedAt !== p.completedAt)
+    if (missing.length) {
+      fetch('/api/situation-progress', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(missing),
+      }).catch(() => {})
+    }
+  }
+  return merged
 }
 
 export async function saveDayProgress(entry: DayProgress): Promise<void> {

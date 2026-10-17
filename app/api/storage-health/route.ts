@@ -27,5 +27,5 @@ export async function GET() {
     host = `unreachable: ${e instanceof Error ? e.message : String(e)} ${cause}`.trim()
   }
 
-  return NextResponse.json({ envVarNames: vars, roundTrip, host })
+  return NextResponse.json({ ok: roundTrip === 'ok', envVarNames: vars, roundTrip, host })
 }
