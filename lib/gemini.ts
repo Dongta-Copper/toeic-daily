@@ -8,7 +8,18 @@ const MODELS = [process.env.GEMINI_MODEL || 'gemini-flash-latest', 'gemini-flash
 const TIMEOUT_MS = 30000
 
 function isTemporary(e: unknown): boolean {
-  return e instanceof Error && /\b(503|429|500)\b|overloaded|high demand|abort|timeout/i.test(e.message)
+  // Malformed JSON (long outputs occasionally contain a stray comma) is also worth another try.
+  return e instanceof SyntaxError || (e instanceof Error && /\b(503|429|500)\b|overloaded|high demand|abort|timeout/i.test(e.message))
+}
+
+/** Parses model output, repairing the most common JSON slips (code fences, trailing commas). */
+export function parseModelJSON<T>(raw: string): T {
+  const text = raw.trim().replace(/^```(?:json)?\s*|\s*```$/g, '')
+  try {
+    return JSON.parse(text) as T
+  } catch {
+    return JSON.parse(text.replace(/,\s*([}\]])/g, '$1')) as T
+  }
 }
 
 type Options = { timeoutMs?: number; attemptsPerModel?: number; temperature?: number }
@@ -30,8 +41,7 @@ export async function generateJSON<T>(prompt: string, opts: Options = {}): Promi
           { timeout: opts.timeoutMs ?? TIMEOUT_MS }
         )
         const result = await model.generateContent(prompt)
-        const text = result.response.text().replace(/^```(?:json)?\s*|\s*```$/g, '')
-        return JSON.parse(text) as T
+        return parseModelJSON<T>(result.response.text())
       } catch (e) {
         lastError = e
         if (!isTemporary(e)) throw e

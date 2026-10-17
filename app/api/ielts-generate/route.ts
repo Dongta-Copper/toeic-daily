@@ -60,9 +60,15 @@ ${RULES}
 
 ${SCHEMA}`
 
-    // One retry: if the checks fail, ask the model to fix exactly those problems.
-    for (let round = 0; round < 2; round++) {
-      const draft = await generateJSON<Omit<Section, 'id'>>(prompt, { timeoutMs: 120000, attemptsPerModel: 1, temperature: 0.7 })
+    // Up to three rounds: a broken response is retried; a draft that fails the checks is sent back with the problems.
+    for (let round = 0; round < 3; round++) {
+      let draft: Omit<Section, 'id'>
+      try {
+        draft = await generateJSON<Omit<Section, 'id'>>(prompt, { timeoutMs: 120000, attemptsPerModel: 1, temperature: 0.7 })
+      } catch (e) {
+        if (round < 2 && e instanceof SyntaxError) continue
+        throw e
+      }
       const stamp = Date.now()
       const section: Section = {
         ...draft,
