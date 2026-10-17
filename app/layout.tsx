@@ -8,8 +8,8 @@ import StorageWarning from '@/components/StorageWarning'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'TOEIC Practice',
-  description: 'Practice TOEIC Parts 5, 6, and 7',
+  title: 'English Daily',
+  description: 'IELTS General Reading và tiếng Anh tình huống công việc',
   // Lets iPhone "Add to Home Screen" open the site full-screen like an app.
   appleWebApp: { capable: true, title: 'English Daily', statusBarStyle: 'default' },
   icons: { apple: '/app-icon/180' },

@@ -11,21 +11,23 @@ function isTemporary(e: unknown): boolean {
   return e instanceof Error && /\b(503|429|500)\b|overloaded|high demand|abort|timeout/i.test(e.message)
 }
 
-export async function generateJSON<T>(prompt: string): Promise<T> {
+type Options = { timeoutMs?: number; attemptsPerModel?: number; temperature?: number }
+
+export async function generateJSON<T>(prompt: string, opts: Options = {}): Promise<T> {
   const apiKey = process.env.GEMINI_API_KEY
   if (!apiKey) throw new Error('GEMINI_API_KEY is not set')
   const genAI = new GoogleGenerativeAI(apiKey)
 
   let lastError: unknown
   for (const name of MODELS) {
-    for (let attempt = 0; attempt < 2; attempt++) {
+    for (let attempt = 0; attempt < (opts.attemptsPerModel ?? 2); attempt++) {
       try {
         const model = genAI.getGenerativeModel(
           {
             model: name,
-            generationConfig: { responseMimeType: 'application/json', temperature: 0.3 },
+            generationConfig: { responseMimeType: 'application/json', temperature: opts.temperature ?? 0.3 },
           },
-          { timeout: TIMEOUT_MS }
+          { timeout: opts.timeoutMs ?? TIMEOUT_MS }
         )
         const result = await model.generateContent(prompt)
         const text = result.response.text().replace(/^```(?:json)?\s*|\s*```$/g, '')

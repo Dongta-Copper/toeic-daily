@@ -28,17 +28,17 @@ export default function Navbar() {
           className="flex items-center gap-2 font-semibold tracking-tight text-gray-900 hover:text-gray-600 transition-colors"
         >
           <BookOpen className="w-4 h-4" />
-          <span className="hidden sm:inline">TOEIC Practice</span>
+          <span className="hidden sm:inline">English Daily</span>
         </Link>
 
         <div className="flex items-center p-0.5 bg-gray-100 rounded-md text-sm">
           <Link
-            href="/"
+            href="/ielts"
             className={`px-3 py-1.5 rounded transition-colors ${
               !situationMode ? 'bg-white text-gray-900 shadow-sm font-medium' : 'text-gray-500 hover:text-gray-900'
             }`}
           >
-            TOEIC
+            IELTS
           </Link>
           <Link
             href="/situation"
@@ -52,12 +52,12 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3 sm:gap-4">
           <Link
-            href="/history"
+            href={situationMode ? '/situation/report' : '/ielts/report'}
             className="flex items-center gap-1.5 p-1 text-sm text-gray-500 hover:text-gray-900 transition-colors"
-            title="History"
+            title="Báo cáo"
           >
             <History className="w-4 h-4" />
-            <span className="hidden sm:inline">History</span>
+            <span className="hidden sm:inline">Báo cáo</span>
           </Link>
 
           {loggedIn && (

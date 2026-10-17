@@ -2,9 +2,9 @@ import type { MetadataRoute } from 'next'
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'TOEIC & Situation Practice',
+    name: 'English Daily — IELTS & Situation',
     short_name: 'English Daily',
-    description: 'Luyện TOEIC Reading và tiếng Anh tình huống công việc mỗi ngày',
+    description: 'Luyện IELTS General Reading và tiếng Anh tình huống công việc mỗi ngày',
     start_url: '/situation',
     display: 'standalone',
     background_color: '#ffffff',

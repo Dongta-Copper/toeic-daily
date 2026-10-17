@@ -32,7 +32,7 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
         <div className="w-full max-w-sm">
           <div className="flex items-center gap-2 mb-10">
             <BookOpen className="w-5 h-5 text-gray-900" />
-            <span className="font-semibold tracking-tight text-gray-900 text-lg">TOEIC Practice</span>
+            <span className="font-semibold tracking-tight text-gray-900 text-lg">English Daily</span>
           </div>
 
           <h1 className="text-2xl font-bold text-gray-900 mb-1">Đăng nhập</h1>

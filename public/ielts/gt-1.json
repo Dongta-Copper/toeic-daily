@@ -1,0 +1,222 @@
+{
+  "id": "gt-1",
+  "title": "General Training — Test 1",
+  "sections": [
+    {
+      "id": "gt-1-s1",
+      "number": 1,
+      "title": "Section 1",
+      "texts": [
+        {
+          "id": "A",
+          "title": "Riverside Community Centre — Spring Courses",
+          "paragraphs": [
+            { "label": "A", "heading": "Beginner Pottery", "text": "Learn to shape bowls and cups on the wheel. All clay and tools are provided, but participants should bring an apron or old clothes. Tuesdays 7–9 pm, eight weeks, £96. Maximum 8 students, so early booking is advised." },
+            { "label": "B", "heading": "Conversational Spanish", "text": "Designed for people with some basic knowledge who want to gain confidence speaking. The tutor, a native speaker from Valencia, uses role plays based on travel situations. Mondays 6.30–8 pm, ten weeks, £85. A free trial lesson is offered on 3 March." },
+            { "label": "C", "heading": "Digital Photography", "text": "Get the most from your camera or smartphone. Weekly assignments are posted online and discussed in class. The course ends with an exhibition of students' work in the centre's café. Wednesdays 7–9 pm, six weeks, £72. You will need your own device." },
+            { "label": "D", "heading": "Family Cooking", "text": "Parents and children aged 8–12 cook simple, healthy meals together. The price is per pair (one adult and one child); additional children £20. Saturdays 10 am–12 noon, five weeks, £90 per pair. Please tell us about any food allergies when booking." },
+            { "label": "E", "heading": "First Aid at Work", "text": "A one-day course leading to a certificate recognised by most employers. Suitable for anyone responsible for workplace safety. Saturday 15 March, 9 am–5 pm, £110 including lunch. Some employers will reimburse the fee, so ask your manager before booking." },
+            { "label": "F", "heading": "Gentle Yoga", "text": "Suitable for all ages, including those recovering from injury. Mats are available, but regular students usually prefer to bring their own. Thursdays 10–11 am, ongoing. Pay £8 per class on the door; no booking required." }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Greenway Bike Share — How It Works",
+          "paragraphs": [
+            { "text": "Greenway Bike Share has 40 docking stations across the city centre, each located no more than 500 metres from the next. Bikes can be unlocked using the Greenway app or a contactless bank card at any station terminal." },
+            { "heading": "Pricing", "text": "A single journey costs £1.50 for the first 30 minutes. After that, a charge of £1 is added for every additional 15 minutes. Members who pay an annual fee of £60 can make unlimited journeys of up to 45 minutes at no extra cost." },
+            { "heading": "Returning a bike", "text": "Bikes must be returned to a docking station. If the station you arrive at is full, the terminal will give you 15 extra minutes free of charge to reach the nearest station with space. Bikes left outside a station will result in a £50 fine." },
+            { "heading": "Safety", "text": "Helmets are not supplied, and although wearing one is not a legal requirement, we strongly recommend it. All bikes are fitted with lights that switch on automatically when the bike is moving." },
+            { "heading": "Faults and repairs", "text": "If you notice a problem with a bike, press the red button on the dock when you return it. Our maintenance team checks reported bikes within 24 hours. Riders who report three genuine faults in one month receive a free journey credit." },
+            { "heading": "Age limits", "text": "Riders must be at least 16 years old. Annual members may register up to two additional riders aged 16 or over on their account." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-1-g1",
+          "type": "matching_features",
+          "textId": "A",
+          "instructions": "Look at the six courses, A–F, in Riverside Community Centre — Spring Courses. For which course are the following statements true? Choose the correct letter, A–F. You may use any letter more than once.",
+          "options": [
+            { "key": "A", "text": "Beginner Pottery" },
+            { "key": "B", "text": "Conversational Spanish" },
+            { "key": "C", "text": "Digital Photography" },
+            { "key": "D", "text": "Family Cooking" },
+            { "key": "E", "text": "First Aid at Work" },
+            { "key": "F", "text": "Gentle Yoga" }
+          ],
+          "questions": [
+            { "n": 1, "prompt": "This course offers a qualification.", "answer": ["E"], "evidence": "leading to a certificate recognised by most employers", "explanation": "Khóa E cấp chứng chỉ (certificate) được hầu hết nhà tuyển dụng công nhận.", "paraphrase": "a qualification ↔ a certificate recognised by most employers" },
+            { "n": 2, "prompt": "Participants do not need to reserve a place in advance.", "answer": ["F"], "evidence": "no booking required", "explanation": "Khóa F trả tiền tại cửa, không cần đặt chỗ.", "paraphrase": "reserve a place in advance ↔ booking" },
+            { "n": 3, "prompt": "This course is not intended for complete beginners.", "answer": ["B"], "evidence": "Designed for people with some basic knowledge", "explanation": "Khóa B dành cho người đã có kiến thức cơ bản, tức không phải người mới hoàn toàn. Chú ý: khóa A tên là Beginner nhưng là bẫy.", "paraphrase": "not for complete beginners ↔ people with some basic knowledge" },
+            { "n": 4, "prompt": "Learners have the chance to display what they have produced.", "answer": ["C"], "evidence": "The course ends with an exhibition of students' work", "explanation": "Khóa C kết thúc bằng triển lãm tác phẩm của học viên.", "paraphrase": "display what they have produced ↔ an exhibition of students' work" },
+            { "n": 5, "prompt": "The cost may be covered by the learner's employer.", "answer": ["E"], "evidence": "Some employers will reimburse the fee", "explanation": "Một số công ty sẽ hoàn lại học phí (reimburse) cho nhân viên.", "paraphrase": "covered by the employer ↔ employers will reimburse the fee" },
+            { "n": 6, "prompt": "The number of places on this course is restricted.", "answer": ["A"], "evidence": "Maximum 8 students", "explanation": "Khóa A giới hạn tối đa 8 học viên.", "paraphrase": "number of places is restricted ↔ maximum 8 students" },
+            { "n": 7, "prompt": "Participants are asked to provide information about a medical condition.", "answer": ["D"], "evidence": "Please tell us about any food allergies when booking", "explanation": "Khóa D yêu cầu báo trước dị ứng thực phẩm — một vấn đề sức khỏe. Khóa F chỉ nói phù hợp với người đang hồi phục chấn thương, không yêu cầu cung cấp thông tin.", "paraphrase": "provide information about a medical condition ↔ tell us about any food allergies" }
+          ]
+        },
+        {
+          "id": "gt-1-g2",
+          "type": "tfng",
+          "textId": "B",
+          "instructions": "Do the following statements agree with the information given in Greenway Bike Share — How It Works? Choose TRUE if the statement agrees with the information, FALSE if the statement contradicts the information, NOT GIVEN if there is no information on this.",
+          "questions": [
+            { "n": 8, "prompt": "Every docking station is within half a kilometre of another station.", "answer": ["TRUE"], "evidence": "each located no more than 500 metres from the next", "explanation": "500 mét = nửa kilômét, nên mỗi trạm cách trạm kế tiếp không quá nửa km.", "paraphrase": "within half a kilometre ↔ no more than 500 metres" },
+            { "n": 9, "prompt": "A 50-minute journey by a non-member costs £2.50.", "answer": ["FALSE"], "evidence": "a charge of £1 is added for every additional 15 minutes", "explanation": "30 phút đầu £1.50. 20 phút còn lại rơi vào HAI khoảng 15 phút tiếp theo (31–45 và 46–60), nên cộng £2 → tổng £3.50, không phải £2.50.", "paraphrase": "" },
+            { "n": 10, "prompt": "Annual members can ride for 45 minutes without paying anything extra.", "answer": ["TRUE"], "evidence": "unlimited journeys of up to 45 minutes at no extra cost", "explanation": "Hội viên năm được đi không giới hạn các chuyến tối đa 45 phút mà không mất thêm phí.", "paraphrase": "without paying anything extra ↔ at no extra cost" },
+            { "n": 11, "prompt": "Riders who cannot find a space at a full station have to pay a fine.", "answer": ["FALSE"], "evidence": "the terminal will give you 15 extra minutes free of charge", "explanation": "Trạm đầy thì được thêm 15 phút miễn phí. Tiền phạt £50 chỉ áp dụng khi để xe bên ngoài trạm.", "paraphrase": "" },
+            { "n": 12, "prompt": "Cyclists in the city are required by law to wear a helmet.", "answer": ["FALSE"], "evidence": "wearing one is not a legal requirement", "explanation": "Bài nói rõ đội mũ bảo hiểm KHÔNG phải yêu cầu của pháp luật, chỉ được khuyến khích.", "paraphrase": "required by law ↔ a legal requirement" },
+            { "n": 13, "prompt": "Faulty bikes are repaired within 24 hours of being reported.", "answer": ["NOT GIVEN"], "evidence": "Our maintenance team checks reported bikes within 24 hours", "explanation": "Bài chỉ nói KIỂM TRA (checks) trong 24 giờ, không nói SỬA XONG (repaired) trong bao lâu. Đây là bẫy kinh điển: từ gần nghĩa nhưng không cùng thông tin → NOT GIVEN.", "paraphrase": "repaired ≠ checks" },
+            { "n": 14, "prompt": "Riders who report faults receive a discount on annual membership.", "answer": ["NOT GIVEN"], "evidence": "receive a free journey credit", "explanation": "Phần thưởng là một chuyến đi miễn phí. Bài không nhắc gì đến giảm giá phí hội viên năm.", "paraphrase": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gt-1-s2",
+      "number": 2,
+      "title": "Section 2",
+      "texts": [
+        {
+          "id": "C",
+          "title": "Harbour Logistics — Health and Safety Guide for New Employees",
+          "paragraphs": [
+            { "text": "Welcome to Harbour Logistics. Before you start work in the warehouse, you must complete a half-day induction run by the site safety officer. This covers emergency procedures, the safe use of equipment and the reporting of accidents. You will not be given a security pass until the induction has been completed and signed off." },
+            { "heading": "Protective clothing", "text": "High-visibility vests and safety boots must be worn at all times in the warehouse and loading areas. Boots are provided free of charge in your first week; replacements are available at half price. Office staff visiting the warehouse can borrow a vest from reception." },
+            { "heading": "Manual handling", "text": "Many injuries in our industry are caused by lifting incorrectly rather than by heavy machinery. Any item over 20 kilograms must be lifted by two people or with a mechanical aid. Staff are trained in the correct lifting technique during their second week." },
+            { "heading": "Forklift trucks", "text": "Only employees who hold a valid licence may operate a forklift truck. Pedestrians must stay within the walkways marked in green paint, and must never walk behind a reversing vehicle. Drivers sound their horn at every junction." },
+            { "heading": "Reporting incidents", "text": "All accidents, however minor, must be recorded in the accident book kept in the staff canteen. 'Near misses' — events that could have caused an injury but did not — should also be reported, using the form on the company intranet. These reports help us to identify hazards before someone is hurt." },
+            { "heading": "Fire safety", "text": "The fire alarm is tested every Monday at 10 am; at any other time you should treat it as a real emergency. Leave the building by the nearest exit and go to the assembly point in the north car park. Do not stop to collect personal belongings." }
+          ]
+        },
+        {
+          "id": "D",
+          "title": "Harbour Logistics — Applying for Internal Promotion",
+          "paragraphs": [
+            { "text": "Harbour Logistics is committed to developing its own staff, and we aim to fill at least half of all supervisory vacancies through internal promotion. All vacancies are advertised on the staff noticeboard and the intranet for a minimum of ten working days before external candidates are considered." },
+            { "text": "To be eligible, you must have completed your probationary period and have worked for the company for at least twelve months. Employees who are subject to a formal warning are not eligible until the warning has expired." },
+            { "text": "Before applying, you are encouraged to discuss the role with the hiring manager. This informal conversation does not form part of the selection process, but it often helps candidates to decide whether the position is right for them." },
+            { "text": "Applications should be made using the internal application form rather than a CV. Your current line manager will be asked to provide a reference, so you should inform them of your application beforehand." },
+            { "text": "Shortlisted candidates are invited to an interview and, for some roles, a practical assessment. Unsuccessful internal candidates are always offered a feedback session with HR, and many go on to succeed in later applications." },
+            { "text": "Successful candidates normally move into their new role within one month. A pay rise takes effect from the first day in the new position, and there is a six-month review period during which either side may decide that the move is not working." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-1-g3",
+          "type": "note_completion",
+          "textId": "C",
+          "instructions": "Complete the notes below. Choose NO MORE THAN TWO WORDS from the text for each answer.",
+          "maxWords": 2,
+          "template": "New employee safety notes\n\nInduction\n• half-day session run by the site {15}\n• security pass issued only after induction has been completed and {16}\n\nProtective clothing\n• first pair of safety boots is free; replacements cost {17}\n• office staff visiting the warehouse: borrow a vest from {18}\n\nManual handling\n• items over 20 kg: lift with two people or a {19}\n\nForklift trucks\n• pedestrians must use walkways marked in {20}\n\nIncidents\n• near misses: report using a form on the {21}",
+          "questions": [
+            { "n": 15, "answer": ["safety officer"], "evidence": "a half-day induction run by the site safety officer", "explanation": "Buổi định hướng do cán bộ an toàn (safety officer) của công trường phụ trách.", "paraphrase": "" },
+            { "n": 16, "answer": ["signed off"], "evidence": "until the induction has been completed and signed off", "explanation": "Thẻ an ninh chỉ được cấp khi buổi định hướng đã hoàn thành VÀ được ký xác nhận (signed off).", "paraphrase": "issued only after ↔ will not be given … until" },
+            { "n": 17, "answer": ["half price"], "evidence": "replacements are available at half price", "explanation": "Giày thay thế được bán nửa giá.", "paraphrase": "" },
+            { "n": 18, "answer": ["reception"], "evidence": "can borrow a vest from reception", "explanation": "Nhân viên văn phòng mượn áo phản quang ở quầy lễ tân.", "paraphrase": "" },
+            { "n": 19, "answer": ["mechanical aid"], "evidence": "must be lifted by two people or with a mechanical aid", "explanation": "Vật trên 20 kg phải hai người nâng hoặc dùng thiết bị hỗ trợ cơ khí.", "paraphrase": "over 20 kg ↔ over 20 kilograms" },
+            { "n": 20, "answer": ["green paint", "green"], "evidence": "the walkways marked in green paint", "explanation": "Người đi bộ phải đi trong lối đi được kẻ sơn xanh lá.", "paraphrase": "" },
+            { "n": 21, "answer": ["company intranet", "intranet"], "evidence": "using the form on the company intranet", "explanation": "Sự cố suýt xảy ra (near miss) báo bằng biểu mẫu trên mạng nội bộ công ty. Chú ý: tai nạn thì ghi vào sổ ở căng tin — đó là bẫy.", "paraphrase": "" }
+          ]
+        },
+        {
+          "id": "gt-1-g4",
+          "type": "mcq",
+          "textId": "D",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            { "n": 22, "prompt": "What does the company say about supervisory vacancies?", "options": [{ "key": "A", "text": "They are shown only to existing employees." }, { "key": "B", "text": "Existing staff have the chance to apply before outside candidates." }, { "key": "C", "text": "They are always filled by internal staff." }, { "key": "D", "text": "They are advertised for at least twelve working days." }], "answer": ["B"], "evidence": "for a minimum of ten working days before external candidates are considered", "explanation": "Vị trí được đăng nội bộ ít nhất 10 ngày làm việc TRƯỚC khi xét ứng viên bên ngoài. C sai vì công ty chỉ đặt mục tiêu 'ít nhất một nửa'. D sai số ngày (10, không phải 12).", "paraphrase": "before outside candidates ↔ before external candidates are considered" },
+            { "n": 23, "prompt": "The conversation with the hiring manager", "options": [{ "key": "A", "text": "is compulsory for all applicants." }, { "key": "B", "text": "is assessed as part of the selection process." }, { "key": "C", "text": "can help applicants decide whether to apply." }, { "key": "D", "text": "takes place after the interview." }], "answer": ["C"], "evidence": "it often helps candidates to decide whether the position is right for them", "explanation": "Cuộc trò chuyện chỉ được khuyến khích (không bắt buộc), không tính vào xét tuyển, và giúp ứng viên quyết định vị trí có phù hợp không.", "paraphrase": "decide whether to apply ↔ decide whether the position is right for them" },
+            { "n": 24, "prompt": "What should applicants do before submitting their application?", "options": [{ "key": "A", "text": "Inform their current line manager." }, { "key": "B", "text": "Send a CV to the HR department." }, { "key": "C", "text": "Complete a practical assessment." }, { "key": "D", "text": "Obtain a reference from a colleague." }], "answer": ["A"], "evidence": "you should inform them of your application beforehand", "explanation": "Quản lý trực tiếp sẽ được hỏi để viết thư giới thiệu, nên phải báo cho họ trước. B sai vì không dùng CV.", "paraphrase": "before submitting ↔ beforehand" }
+          ]
+        },
+        {
+          "id": "gt-1-g5",
+          "type": "short_answer",
+          "textId": "D",
+          "instructions": "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the text for each answer.",
+          "maxWords": 3,
+          "questions": [
+            { "n": 25, "prompt": "What is the minimum length of service required before staff can apply?", "answer": ["twelve months", "12 months"], "evidence": "have worked for the company for at least twelve months", "explanation": "Phải làm việc ít nhất 12 tháng (và qua thử việc).", "paraphrase": "minimum length of service ↔ worked for the company for at least" },
+            { "n": 26, "prompt": "Which document should applicants NOT use to apply?", "answer": ["CV", "a CV"], "evidence": "using the internal application form rather than a CV", "explanation": "Nộp đơn bằng mẫu đơn nội bộ, KHÔNG dùng CV.", "paraphrase": "rather than ↔ not" },
+            { "n": 27, "prompt": "What are internal candidates who are not selected always offered?", "answer": ["feedback session", "a feedback session"], "evidence": "Unsuccessful internal candidates are always offered a feedback session with HR", "explanation": "Ứng viên nội bộ không trúng luôn được mời buổi phản hồi với phòng nhân sự.", "paraphrase": "not selected ↔ unsuccessful" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gt-1-s3",
+      "number": 3,
+      "title": "Section 3",
+      "texts": [
+        {
+          "id": "E",
+          "title": "The Return of the Night Train",
+          "paragraphs": [
+            { "label": "A", "text": "For much of the twentieth century, overnight trains were an ordinary part of European travel. Business people, students and families would board a sleeper carriage in one capital city in the evening and wake up in another the next morning. Yet by the early 2000s the network was shrinking rapidly. Between 2000 and 2015, more than half of Europe's international night services were withdrawn, and many observers assumed that the sleeper train would soon disappear altogether." },
+            { "label": "B", "text": "The reasons for this decline were largely economic. Night trains are expensive to operate: a sleeper carriage carries far fewer passengers than a daytime carriage of the same length, and staff must be paid to work through the night. At the same time, the arrival of low-cost airlines meant that a flight between two major cities could often be bought for less than the price of a bed on a train. High-speed rail lines also played a part, as journeys that had once required an overnight trip could now be completed in a few hours during the day." },
+            { "label": "C", "text": "The turning point came, perhaps surprisingly, from a state-owned company in one of Europe's smaller countries. In 2016, when the German national operator announced that it was abandoning its sleeper services, Austrian Federal Railways decided to take over several of the routes and buy some of the rolling stock. Critics at the time described the move as a risky gamble. Within three years, however, the company reported that its Nightjet services were profitable, and passenger numbers had risen by around ten per cent a year." },
+            { "label": "D", "text": "Changing attitudes to the environment are widely seen as the main driver of this revival. A passenger travelling by train from Vienna to Brussels is responsible for only a small fraction of the carbon emissions produced by the same journey by air. The so-called 'flight shame' movement, which began in Sweden in 2018, encouraged travellers to reconsider short-haul flights, and surveys suggest that a growing number of people, particularly under the age of 35, are now willing to accept a longer journey if it is less damaging to the climate." },
+            { "label": "E", "text": "Environmental concerns alone, however, do not explain why passengers are choosing night trains rather than daytime ones. Supporters argue that the sleeper offers something no other form of transport can: it turns travelling time into sleeping time. A traveller who leaves Amsterdam at eight in the evening can arrive in Vienna in time for a morning meeting, saving both a day of travel and the cost of a hotel room. For business travellers in particular, this convenience can outweigh the lower price of a flight." },
+            { "label": "F", "text": "Not everything about the revival has gone smoothly. New routes have been delayed by a shortage of suitable carriages, since few manufacturers still produce sleeper cars and orders can take years to fulfil. Operators must also negotiate with the infrastructure companies of every country a train passes through, each with its own fees and technical rules. Some passengers, meanwhile, have complained that tickets are hard to find, as many night services are still not sold on the major international booking websites." },
+            { "label": "G", "text": "Whether the sleeper train has a long-term future will depend largely on political decisions. Several governments have begun to offer financial support for international night services, and the European Union has identified them as one way of meeting its climate targets. Others remain unconvinced, pointing out that the money might reduce emissions more effectively if it were spent on improving local public transport. What seems certain is that the night train, which only a decade ago appeared to be a relic of the past, has once again become part of the conversation about how Europeans will travel in the future." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-1-g6",
+          "type": "matching_headings",
+          "textId": "E",
+          "instructions": "The text has seven paragraphs, A–G. Choose the correct heading for paragraphs B–G from the list of headings below. There are more headings than paragraphs.",
+          "options": [
+            { "key": "i", "text": "The unexpected decision that changed the industry's fortunes" },
+            { "key": "ii", "text": "Practical obstacles facing operators and passengers" },
+            { "key": "iii", "text": "Why the service stopped making money" },
+            { "key": "iv", "text": "The advantage of travelling while asleep" },
+            { "key": "v", "text": "A comparison of ticket prices across Europe" },
+            { "key": "vi", "text": "Growing awareness of the climate impact of flying" },
+            { "key": "vii", "text": "An uncertain outlook that depends on governments" },
+            { "key": "viii", "text": "The history of the first sleeper carriages" },
+            { "key": "ix", "text": "How railway staff feel about night work" }
+          ],
+          "questions": [
+            { "n": 28, "prompt": "Paragraph B", "answer": ["iii"], "evidence": "The reasons for this decline were largely economic.", "explanation": "Đoạn B giải thích lý do kinh tế khiến tàu đêm thua lỗ: chi phí vận hành cao, máy bay giá rẻ, tàu cao tốc. Heading v (so sánh giá vé) là bẫy vì đoạn chỉ nhắc giá vé như một ý phụ.", "paraphrase": "stopped making money ↔ reasons for this decline were largely economic" },
+            { "n": 29, "prompt": "Paragraph C", "answer": ["i"], "evidence": "The turning point came, perhaps surprisingly", "explanation": "Đoạn C kể quyết định bất ngờ của Đường sắt Áo — bước ngoặt (turning point) của ngành.", "paraphrase": "unexpected decision ↔ turning point … perhaps surprisingly" },
+            { "n": 30, "prompt": "Paragraph D", "answer": ["vi"], "evidence": "Changing attitudes to the environment are widely seen as the main driver of this revival.", "explanation": "Đoạn D nói về nhận thức môi trường và phong trào 'flight shame'.", "paraphrase": "climate impact of flying ↔ carbon emissions … by air / flight shame" },
+            { "n": 31, "prompt": "Paragraph E", "answer": ["iv"], "evidence": "it turns travelling time into sleeping time", "explanation": "Đoạn E: ưu điểm đặc biệt là biến thời gian di chuyển thành thời gian ngủ.", "paraphrase": "travelling while asleep ↔ turns travelling time into sleeping time" },
+            { "n": 32, "prompt": "Paragraph F", "answer": ["ii"], "evidence": "Not everything about the revival has gone smoothly.", "explanation": "Đoạn F liệt kê khó khăn thực tế: thiếu toa, phí hạ tầng từng nước, khó mua vé.", "paraphrase": "practical obstacles ↔ not everything … has gone smoothly" },
+            { "n": 33, "prompt": "Paragraph G", "answer": ["vii"], "evidence": "Whether the sleeper train has a long-term future will depend largely on political decisions.", "explanation": "Đoạn G: tương lai chưa chắc chắn và phụ thuộc quyết định chính trị.", "paraphrase": "depends on governments ↔ depend largely on political decisions" }
+          ]
+        },
+        {
+          "id": "gt-1-g7",
+          "type": "summary_completion",
+          "textId": "E",
+          "instructions": "Complete the summary below. Choose ONE WORD ONLY from the text for each answer.",
+          "maxWords": 1,
+          "template": "Night trains became less common partly because each sleeper carriage carries fewer {34} than a daytime carriage, and staff have to be paid to work at night. Low-cost airlines and {35} rail lines also reduced demand. In 2016, Austrian Federal Railways took over routes that a German operator was abandoning — a decision critics called a {36}. Later, a movement that started in {37} in 2018 encouraged people to think again about short flights.",
+          "questions": [
+            { "n": 34, "answer": ["passengers"], "evidence": "a sleeper carriage carries far fewer passengers than a daytime carriage", "explanation": "Toa giường nằm chở ít hành khách hơn toa ban ngày cùng chiều dài.", "paraphrase": "" },
+            { "n": 35, "answer": ["high-speed"], "evidence": "High-speed rail lines also played a part", "explanation": "Tàu cao tốc cũng góp phần làm giảm nhu cầu. 'High-speed' có gạch nối nên tính là một từ.", "paraphrase": "reduced demand ↔ also played a part" },
+            { "n": 36, "answer": ["gamble"], "evidence": "Critics at the time described the move as a risky gamble.", "explanation": "Giới phê bình gọi đó là canh bạc mạo hiểm. Chỉ được một từ nên đáp án là 'gamble'.", "paraphrase": "called ↔ described the move as" },
+            { "n": 37, "answer": ["Sweden"], "evidence": "which began in Sweden in 2018", "explanation": "Phong trào 'flight shame' bắt đầu ở Thụy Điển năm 2018.", "paraphrase": "started ↔ began" }
+          ]
+        },
+        {
+          "id": "gt-1-g8",
+          "type": "mcq",
+          "textId": "E",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            { "n": 38, "prompt": "According to paragraph E, night trains appeal to business travellers mainly because they", "options": [{ "key": "A", "text": "are cheaper than flights." }, { "key": "B", "text": "remove the need to pay for a hotel." }, { "key": "C", "text": "produce lower emissions." }, { "key": "D", "text": "provide space to work during the journey." }], "answer": ["B"], "evidence": "saving both a day of travel and the cost of a hotel room", "explanation": "Lợi ích là tiết kiệm một ngày đi lại và tiền khách sạn. A sai: bài nói giá vé máy bay THẤP hơn. C đúng sự thật nhưng không phải lý do trong đoạn E.", "paraphrase": "remove the need to pay for a hotel ↔ saving … the cost of a hotel room" },
+            { "n": 39, "prompt": "Which problem is mentioned in paragraph F?", "options": [{ "key": "A", "text": "Passengers dislike sharing compartments." }, { "key": "B", "text": "It takes a long time to obtain new carriages." }, { "key": "C", "text": "Trains are often delayed by bad weather." }, { "key": "D", "text": "Staff are difficult to recruit." }], "answer": ["B"], "evidence": "few manufacturers still produce sleeper cars and orders can take years to fulfil", "explanation": "Ít nhà sản xuất toa giường nằm, đơn hàng mất nhiều năm mới giao.", "paraphrase": "takes a long time to obtain ↔ orders can take years to fulfil" },
+            { "n": 40, "prompt": "What do some critics of government funding for night trains suggest?", "options": [{ "key": "A", "text": "The money would be better spent on local transport." }, { "key": "B", "text": "The funding is required by European law." }, { "key": "C", "text": "Private companies should pay instead." }, { "key": "D", "text": "Night trains have already met their climate targets." }], "answer": ["A"], "evidence": "the money might reduce emissions more effectively if it were spent on improving local public transport", "explanation": "Những người chưa bị thuyết phục cho rằng tiền nên dùng cải thiện giao thông công cộng địa phương.", "paraphrase": "better spent on local transport ↔ more effectively if it were spent on improving local public transport" }
+          ]
+        }
+      ]
+    }
+  ]
+}
