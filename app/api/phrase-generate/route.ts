@@ -11,7 +11,7 @@ const CARD_SPEC = `Mỗi thẻ là JSON:
   "phrase": "dạng chuẩn của cụm, ví dụ: comply with / make a decision / discuss (no preposition)",
   "answer": "phần bị kiểm tra (giới từ hoặc từ then chốt); nếu đúng là KHÔNG cần giới từ thì ghi —",
   "prompt": "mặt trước ngắn, có ___ ở vị trí answer, ví dụ: comply ___ the regulations",
-  "choices": [4 lựa chọn gồm answer và 3 phương án SAI; trong đúng ngữ cảnh của prompt chỉ được có ĐÚNG MỘT lựa chọn đúng],
+  "choices": [4 lựa chọn gồm answer và 3 phương án SAI. Bắt buộc: (1) trong đúng ngữ cảnh của prompt chỉ có ĐÚNG MỘT lựa chọn đúng — KHÔNG dùng từ đồng nghĩa vẫn hợp lệ làm phương án sai (ví dụ với "challenges" thì face/encounter/meet đều đúng, nên không được đưa encounter hay meet làm phương án sai); (2) cả 4 lựa chọn cùng dạng ngữ pháp (cùng thì, cùng từ loại); (3) phương án sai nên là lỗi người Việt hay mắc],
   "meaning": "nghĩa tiếng Việt ngắn",
   "example": "một câu ví dụ tự nhiên trong bối cảnh dự án xây dựng (gói thầu ghế chờ nhà ga sân bay) hoặc IELTS, đặt answer trong ngoặc vuông, ví dụ: All subcontractors must comply [with] the regulations. Nếu answer là — thì viết [—] ở chỗ người học hay chèn giới từ thừa. Từ trong ngoặc phải GIỐNG HỆT answer (không chia động từ khác đi)",
   "trap": "lỗi người Việt hay mắc với cụm này",
