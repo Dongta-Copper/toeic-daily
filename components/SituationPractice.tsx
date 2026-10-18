@@ -150,20 +150,19 @@ function SaveToCards({
   return (
     <div>
       <div className="flex flex-wrap gap-2">
-        {phraseErrors.length > 0 && (
-          <button onClick={() => run('errors')} disabled={!!busy} className={btn}>
-            {busy === 'errors' ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Layers className="w-3.5 h-3.5" />}
-            Tạo thẻ từ lỗi này
-          </button>
-        )}
         <button onClick={() => run('sentence')} disabled={!!busy} className={btn}>
           {busy === 'sentence' ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Layers className="w-3.5 h-3.5" />}
           Lưu cụm từ hay
         </button>
       </div>
+      {(feedback?.errors.length ?? 0) > 0 && (
+        <p className="mt-2 text-xs text-gray-500">
+          Lỗi trong câu này sẽ tự vào <Link href="/situation/cards" className="underline">Gym lỗ hổng</Link> để luyện.
+        </p>
+      )}
       {saved.length > 0 && (
         <p className="mt-2 text-xs text-green-700">
-          Đã thêm vào <Link href="/situation/cards" className="underline">Thẻ cụm từ</Link>: {saved.join(' · ')}
+          Đã thêm vào <Link href="/situation/cards/bank" className="underline">bộ cụm từ</Link>: {saved.join(' · ')}
         </p>
       )}
       {message && <p className="mt-2 text-xs text-gray-500">{message}</p>}

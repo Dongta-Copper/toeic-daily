@@ -2,7 +2,16 @@ import { kv } from '@vercel/kv'
 import { NextResponse } from 'next/server'
 
 // Generic synced lists (see lib/store.ts). Only these names may be read or written.
-const ALLOWED = new Set(['phrase_cards', 'phrase_srs', 'ielts_attempts', 'ielts_generated'])
+const ALLOWED = new Set([
+  'phrase_cards',
+  'phrase_srs',
+  'ielts_attempts',
+  'ielts_generated',
+  'gap_clusters',
+  'gap_items',
+  'gap_progress',
+  'gap_processed',
+])
 
 type Item = { id: string; updatedAt: string }
 

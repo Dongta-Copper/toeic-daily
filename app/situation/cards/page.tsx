@@ -1,5 +1,5 @@
-import PhraseCards from '@/components/PhraseCards'
+import GapGym from '@/components/GapGym'
 
-export default function PhraseCardsPage() {
-  return <PhraseCards />
+export default function GapGymPage() {
+  return <GapGym />
 }

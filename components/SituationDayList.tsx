@@ -2,10 +2,10 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { ArrowRight, BarChart3, CheckCircle, Layers, Repeat, Target } from 'lucide-react'
+import { ArrowRight, BarChart3, CheckCircle, Dumbbell, Repeat, Target } from 'lucide-react'
 import { getProgress, todayDayNumber, type ProgressMap } from '@/lib/situation'
 import { DAILY_LIMIT, dueItems, loadReviewItems } from '@/lib/srs'
-import { buildSession, loadBuiltinCards, phraseStates, userCards } from '@/lib/phrases'
+import { clusterViews, loadGapData, todayPool } from '@/lib/gaps'
 
 type DaySummary = { day: number; date: string; topics: string[] }
 
@@ -27,8 +27,8 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
       setToday(todayDayNumber(days))
     })
     loadReviewItems().then((items) => setDue(Math.min(dueItems(items).length, DAILY_LIMIT)))
-    Promise.all([loadBuiltinCards(), userCards.getAll(), phraseStates.getAll()]).then(([b, u, s]) =>
-      setCards(buildSession([...u, ...b], s).queue.length)
+    loadGapData().then((d) =>
+      setCards(todayPool(d.items, d.progress, clusterViews(d.clusters, d.items, d.progress, d.attemptDates)).length + d.pending.length)
     )
   }, [days])
 
@@ -79,8 +79,8 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
           },
           {
             href: '/situation/cards',
-            icon: Layers,
-            title: 'Thẻ cụm từ',
+            icon: Dumbbell,
+            title: 'Gym lỗ hổng',
             sub: cards === null ? '…' : cards > 0 ? `${cards} thẻ` : 'Đã xong',
             highlight: !!cards,
           },
