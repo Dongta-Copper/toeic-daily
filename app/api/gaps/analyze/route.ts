@@ -49,7 +49,7 @@ Quy tắc:
   • sentenceCorrect: câu đã sửa đúng, phải chứa nguyên văn "correct".
   • vietnamese: nghĩa / gợi ý ngắn bằng tiếng Việt cho cụm đúng (không chứa đáp án tiếng Anh).
 - Lỗi loại ielts_paraphrase: tạo item kind "paraphrase" — correct = cụm trong bài đọc ("đúng"), vietnamese = nghĩa tiếng Việt + "(≈ <cụm trong câu hỏi>)", sentenceCorrect = câu ngữ cảnh chứa correct; không cần sentenceWrong.
-- Với MỖI cụm MỚI, thêm 2–3 item kind "neighbour": cùng quy tắc nhưng từ khác (để học viên tổng quát hóa), kèm sentenceWrong là lỗi điển hình người Việt hay mắc và errorWord. Bối cảnh công trường / dự án / IELTS.
+- BẮT BUỘC: với MỖI cụm MỚI (mỗi phần tử trong newClusters), thêm ĐÚNG 2 item kind "neighbour": cùng quy tắc nhưng từ khác (để học viên tổng quát hóa, ví dụ lỗi "effort → efforts" thì thêm "several delay → several delays"), kèm sentenceWrong là lỗi điển hình người Việt hay mắc và errorWord. Bối cảnh công trường / dự án / IELTS. Riêng cụm lỗi chính tả thì không cần neighbour. Trước khi trả lời, tự kiểm tra: số item neighbour = 2 × số cụm mới (trừ cụm chính tả).
 
 Trả về JSON:
 {
