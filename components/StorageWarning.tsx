@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { usePathname } from 'next/navigation'
 import { AlertTriangle } from 'lucide-react'
 
 const CACHE_KEY = 'storage_health'
@@ -8,6 +9,7 @@ const CACHE_KEY = 'storage_health'
 // Shows a banner when the server data store is unreachable, so results are not silently lost again.
 export default function StorageWarning() {
   const [down, setDown] = useState(false)
+  const pathname = usePathname()
 
   useEffect(() => {
     let cached: string | null = null
@@ -19,7 +21,7 @@ export default function StorageWarning() {
       return
     }
     fetch('/api/storage-health', { cache: 'no-store' })
-      .then((r) => r.json())
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
       .then((d: { ok: boolean }) => {
         try {
           sessionStorage.setItem(CACHE_KEY, d.ok ? 'up' : 'down')
@@ -29,7 +31,7 @@ export default function StorageWarning() {
       .catch(() => {})
   }, [])
 
-  if (!down) return null
+  if (!down || pathname === '/login') return null
   return (
     <div className="bg-amber-50 border-b border-amber-200 text-amber-800 text-sm">
       <div className="max-w-5xl mx-auto px-6 py-2 flex items-start gap-2">

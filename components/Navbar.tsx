@@ -2,22 +2,16 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { useEffect, useState } from 'react'
 import { BookOpen, History, LogOut, User } from 'lucide-react'
-import { isLoggedIn, logout } from '@/lib/auth'
 
 export default function Navbar() {
-  const [loggedIn, setLoggedIn] = useState(false)
   const pathname = usePathname()
   const situationMode = pathname.startsWith('/situation')
+  if (pathname === '/login') return null
 
-  useEffect(() => {
-    setLoggedIn(isLoggedIn())
-  }, [])
-
-  function handleLogout() {
-    logout()
-    window.location.reload()
+  async function handleLogout() {
+    await fetch('/api/login', { method: 'DELETE' }).catch(() => {})
+    window.location.href = '/login'
   }
 
   return (
@@ -59,22 +53,17 @@ export default function Navbar() {
             <History className="w-4 h-4" />
             <span className="hidden sm:inline">Báo cáo</span>
           </Link>
-
-          {loggedIn && (
-            <>
-              <div className="hidden sm:flex items-center gap-1.5 text-sm text-gray-700">
-                <User className="w-4 h-4" />
-                <span className="font-medium">Dongta</span>
-              </div>
-              <button
-                onClick={handleLogout}
-                className="flex items-center gap-1.5 p-1 text-sm text-gray-400 hover:text-red-600 transition-colors"
-                title="Đăng xuất"
-              >
-                <LogOut className="w-4 h-4" />
-              </button>
-            </>
-          )}
+          <div className="hidden sm:flex items-center gap-1.5 text-sm text-gray-700">
+            <User className="w-4 h-4" />
+            <span className="font-medium">Dongta</span>
+          </div>
+          <button
+            onClick={handleLogout}
+            className="flex items-center gap-1.5 p-1 text-sm text-gray-400 hover:text-red-600 transition-colors"
+            title="Đăng xuất"
+          >
+            <LogOut className="w-4 h-4" />
+          </button>
         </div>
       </nav>
     </header>
