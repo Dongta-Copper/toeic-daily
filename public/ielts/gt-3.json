@@ -1,0 +1,224 @@
+{
+  "id": "gt-3",
+  "title": "General Training — Test 3 (theo khuôn Cambridge 9 GT A)",
+  "sections": [
+    {
+      "id": "gt-3-s1",
+      "number": 1,
+      "title": "Section 1",
+      "texts": [
+        {
+          "id": "A",
+          "title": "Situations Vacant — Harbourside Weekly",
+          "paragraphs": [
+            { "label": "A", "heading": "Kiosk assistant — Riverside Park", "text": "Cheerful person wanted to serve drinks and ice creams. No previous experience needed — full training given. Weekends only, April to September. Call in at the park office and ask for Mrs Dale." },
+            { "label": "B", "heading": "Banqueting waiter/waitress — The Regent Hotel", "text": "Part-time evening work for experienced staff only. Excellent hourly rate plus tips, and a free meal on every shift. Two written references are essential. Telephone the events manager during office hours." },
+            { "label": "C", "heading": "Family helper", "text": "Needed from March until the end of August to look after twin boys aged three. Patience and a sense of fun matter more to us than formal childcare certificates. Monday to Friday, 8 am – 5 pm. Must hold a driving licence. Please phone after 7 pm." },
+            { "label": "D", "heading": "Early-morning cleaner", "text": "Busy medical centre on Mill Lane needs a reliable cleaner, 6 am – 8 am, Monday to Friday, so that all rooms are ready before the first patients arrive. £85 per week." },
+            { "label": "E", "heading": "Office manager", "text": "Established curtain and upholstery firm supplying hotels and guest houses seeks a mature person with proven office experience. Afternoons only, 1 pm – 5 pm, Monday to Friday. Apply in writing to Ms R. Clarke." },
+            { "label": "F", "heading": "Chef — The Lantern Bistro", "text": "Full-time chef for a lively new bistro opening in the town centre this spring. Salary and working hours open to discussion. Ring the owner, Tom Pascoe." },
+            { "label": "G", "heading": "Café premises for lease", "text": "Fully equipped 40-cover café on the main coast road, available on a five-year lease. Would suit someone with long experience in the trade who now wants to be their own boss. Write to Box 118, Harbourside Weekly." }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Northern Star Overnight Coaches — Ticket Guide",
+          "paragraphs": [
+            { "text": "Most of our tickets can be used on the overnight services between London and the north. A reclining-seat reservation costs an extra £12, except with Comfort and Pair tickets, which already include a reserved seat. Every overnight passenger receives a hot drink and a snack before arrival." },
+            { "label": "A", "heading": "Early Bird", "text": "Our lowest fare: £39 return. Must be booked at least 21 days in advance and is valid only on coaches leaving after 11 am. No refunds unless we cancel the service." },
+            { "label": "B", "heading": "Advance", "text": "£49 return when bought at least seven days before you travel. Refunds are possible, but a 20% handling fee is deducted." },
+            { "label": "C", "heading": "Flexi Saver", "text": "£62 return. Can be bought up to the day of travel and used on any day except peak days: every Friday, 20–31 December and the Easter weekend. Departures between midnight and 3 am count as the previous day's departures." },
+            { "label": "D", "heading": "Day Return", "text": "£70 return. On sale until departure, but valid only on coaches leaving between 9 am and midnight. Seats cannot be reserved." },
+            { "label": "E", "heading": "Comfort", "text": "Enjoy one of our wider front-row seats. A return ticket with reserved seats in one or both directions; both reservations must be made when you book. Your stay must include a Saturday night. £110–£130." },
+            { "label": "F", "heading": "Pair", "text": "A return package for two people travelling together, with reserved seats in one or both directions — a real saving for both of you. Both journeys must be booked at the same time. From £95." },
+            { "label": "G", "heading": "Open", "text": "Our most expensive ticket, but it can be used on any coach at any time, right up to departure. Friday coaches are busy, so please arrive early." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-3-g1",
+          "type": "matching_features",
+          "textId": "A",
+          "instructions": "Look at the seven job advertisements, A–G. Which is the most suitable job for each person below? Choose the correct letter, A–G.",
+          "options": [
+            { "key": "A", "text": "Kiosk assistant" },
+            { "key": "B", "text": "Banqueting waiter/waitress" },
+            { "key": "C", "text": "Family helper" },
+            { "key": "D", "text": "Early-morning cleaner" },
+            { "key": "E", "text": "Office manager" },
+            { "key": "F", "text": "Chef" },
+            { "key": "G", "text": "Café premises for lease" }
+          ],
+          "questions": [
+            { "n": 1, "prompt": "a parent of young children who wants a few hours of simple work a week before the working day begins", "answer": ["D"], "evidence": "6 am – 8 am, Monday to Friday, so that all rooms are ready before the first patients arrive", "explanation": "Việc dọn dẹp 6–8 giờ sáng, không cần kinh nghiệm, kết thúc trước giờ làm việc.", "paraphrase": "before the working day begins ↔ before the first patients arrive" },
+            { "n": 2, "prompt": "someone with no qualifications who wants a temporary full-time job on weekdays", "answer": ["C"], "evidence": "Patience and a sense of fun matter more to us than formal childcare certificates.", "explanation": "Việc trông trẻ từ tháng 3 đến tháng 8 (tạm thời), thứ Hai–thứ Sáu cả ngày, không cần bằng cấp. Kiosk (A) chỉ làm cuối tuần.", "paraphrase": "no qualifications ↔ more … than formal childcare certificates" },
+            { "n": 3, "prompt": "an energetic student without experience who is only free on Saturdays and Sundays", "answer": ["A"], "evidence": "No previous experience needed — full training given. Weekends only", "explanation": "Kiosk chỉ làm cuối tuần và không cần kinh nghiệm.", "paraphrase": "only free on Saturdays and Sundays ↔ weekends only" },
+            { "n": 4, "prompt": "someone with decades in the restaurant trade who wants to start a business of their own", "answer": ["G"], "evidence": "Would suit someone with long experience in the trade who now wants to be their own boss.", "explanation": "Cho thuê quán café cho người nhiều kinh nghiệm muốn tự làm chủ.", "paraphrase": "start a business of their own ↔ be their own boss" },
+            { "n": 5, "prompt": "a newly qualified cook looking for a first full-time position", "answer": ["F"], "evidence": "Full-time chef for a lively new bistro", "explanation": "Vị trí đầu bếp toàn thời gian, không yêu cầu kinh nghiệm dài.", "paraphrase": "cook ↔ chef" },
+            { "n": 6, "prompt": "an experienced hotel worker who wants well-paid part-time work in a hotel", "answer": ["B"], "evidence": "Part-time evening work for experienced staff only. Excellent hourly rate", "explanation": "Phục vụ tiệc ở khách sạn, bán thời gian, lương tốt, cần kinh nghiệm. E cũng liên quan khách sạn nhưng là công ty rèm cửa và việc văn phòng.", "paraphrase": "well-paid ↔ excellent hourly rate" }
+          ]
+        },
+        {
+          "id": "gt-3-g2",
+          "type": "matching_features",
+          "textId": "B",
+          "instructions": "Look at the seven types of coach ticket, A–G. For which ticket are the following statements true? Choose the correct letter, A–G. You may use any letter more than once.",
+          "options": [
+            { "key": "A", "text": "Early Bird" },
+            { "key": "B", "text": "Advance" },
+            { "key": "C", "text": "Flexi Saver" },
+            { "key": "D", "text": "Day Return" },
+            { "key": "E", "text": "Comfort" },
+            { "key": "F", "text": "Pair" },
+            { "key": "G", "text": "Open" }
+          ],
+          "questions": [
+            { "n": 7, "prompt": "Travelling with a companion is cheaper with this ticket.", "answer": ["F"], "evidence": "A return package for two people travelling together", "explanation": "Vé Pair dành cho hai người đi cùng nhau, tiết kiệm cho cả hai.", "paraphrase": "a companion ↔ two people travelling together" },
+            { "n": 8, "prompt": "This ticket is not valid on Fridays.", "answer": ["C"], "evidence": "except peak days: every Friday", "explanation": "Flexi Saver không dùng được vào ngày cao điểm, gồm mọi thứ Sáu. Open (G) dùng được thứ Sáu, chỉ khuyên đến sớm.", "paraphrase": "" },
+            { "n": 9, "prompt": "There are no restrictions on when this ticket can be used.", "answer": ["G"], "evidence": "it can be used on any coach at any time", "explanation": "Vé Open đi bất kỳ chuyến nào, bất kỳ lúc nào.", "paraphrase": "no restrictions ↔ any coach at any time" },
+            { "n": 10, "prompt": "This ticket must be bought a week or more before travelling.", "answer": ["B"], "evidence": "when bought at least seven days before you travel", "explanation": "Vé Advance mua trước ít nhất 7 ngày. Early Bird phải mua trước 21 ngày — không khớp 'a week'.", "paraphrase": "a week or more ↔ at least seven days" },
+            { "n": 11, "prompt": "This is the lowest price, but you cannot travel early in the day.", "answer": ["A"], "evidence": "Our lowest fare: £39 return.", "explanation": "Early Bird rẻ nhất và chỉ đi các chuyến sau 11 giờ sáng.", "paraphrase": "cannot travel early in the day ↔ only on coaches leaving after 11 am" },
+            { "n": 12, "prompt": "You cannot get your money back if you change your mind about travelling.", "answer": ["A"], "evidence": "No refunds unless we cancel the service.", "explanation": "Early Bird không hoàn tiền trừ khi hãng hủy chuyến. Advance (B) vẫn hoàn được (trừ 20%).", "paraphrase": "get your money back ↔ refunds" },
+            { "n": 13, "prompt": "You cannot use this ticket if you go on a Tuesday and come back on Wednesday.", "answer": ["E"], "evidence": "Your stay must include a Saturday night.", "explanation": "Vé Comfort bắt buộc chuyến đi có một đêm thứ Bảy.", "paraphrase": "" },
+            { "n": 14, "prompt": "This ticket cannot be used on coaches leaving between midnight and 9 am.", "answer": ["D"], "evidence": "valid only on coaches leaving between 9 am and midnight", "explanation": "Day Return chỉ dùng cho chuyến khởi hành từ 9 giờ sáng đến nửa đêm.", "paraphrase": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gt-3-s2",
+      "number": 2,
+      "title": "Section 2",
+      "texts": [
+        {
+          "id": "C",
+          "title": "Brightwell Consulting — Workplace Dress Policy",
+          "paragraphs": [
+            { "text": "Our clients visit our offices every day and rely on us for expert advice. The purpose of this policy is to ensure that all staff present a professional appearance that inspires confidence." },
+            { "heading": "General standards", "text": "A business suit is the standard for both men and women, although a smart jacket with suitable trousers or a skirt is also acceptable. Clothes must always be clean and ironed; anything torn or faded will not be accepted. Because no policy can cover every situation, staff are expected to use good judgement and to consult their line manager if they are unsure." },
+            { "heading": "Footwear", "text": "Smart shoes, boots and low-heeled shoes are all acceptable. Trainers and open sandals may not be worn in the office." },
+            { "heading": "Accessories", "text": "Ties, scarves and jewellery are welcome, provided they are discreet. Large or eye-catching items should be avoided." },
+            { "heading": "Fragrance", "text": "Please apply perfume and aftershave lightly. Some colleagues suffer from asthma, and strong scents can trigger breathing problems." },
+            { "heading": "Headwear", "text": "Caps and hats should not be worn indoors. Head coverings worn for religious reasons or as part of a cultural tradition are of course permitted." },
+            { "heading": "Casual Fridays", "text": "On selected Fridays, smart-casual clothing is allowed. Staff are encouraged to wear clothing that displays the company name. However, keep a jacket at your desk in case you need to meet a client." },
+            { "heading": "If the policy is not followed", "text": "A member of staff whose clothing does not meet the policy will first be asked not to wear the item again. If the problem continues, a written warning will be issued, and the employee may be sent home to change." }
+          ]
+        },
+        {
+          "id": "D",
+          "title": "Westgate Stores — Your Benefits",
+          "paragraphs": [
+            { "text": "All salaries are reviewed every year, and increases reflect the performance of each individual employee. On top of your salary, you can enjoy the following benefits." },
+            { "heading": "Annual leave", "text": "All staff receive 25 days' paid leave a year, rising to 30 days after five years' service." },
+            { "heading": "Pension", "text": "Our company pension is open to all employees who have completed two years of service. The company pays the full contribution." },
+            { "heading": "Staff discount", "text": "After six months you will receive 15% off most items in our stores, rising to 20% after two years." },
+            { "heading": "Holiday cottages", "text": "The company owns several holiday cottages by the sea, which staff can rent at reduced prices." },
+            { "heading": "Theatre tickets", "text": "We pay half the price of theatre and cinema tickets for all staff." },
+            { "heading": "Learning fund", "text": "We offer generous support to staff who wish to take language courses or learn a new hobby, as well as those studying for professional qualifications." },
+            { "heading": "Financial support", "text": "Employees facing serious personal difficulties may apply for an interest-free loan." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-3-g3",
+          "type": "note_completion",
+          "textId": "C",
+          "instructions": "Complete the notes below. Choose NO MORE THAN TWO WORDS from the text for each answer.",
+          "maxWords": 2,
+          "template": "Dress policy — summary\n\n• Purpose: to give a {15} to clients\n• Clothes: suit or jacket; always clean and {16}\n• Accessories: allowed, but must be {17}\n• Perfume: use lightly — strong scents can cause {18}\n• Hats: not allowed, except for religious reasons or {19}\n• Casual Fridays: clothing with the {20} is encouraged\n• Repeated problems: a {21} is issued",
+          "questions": [
+            { "n": 15, "answer": ["professional appearance"], "evidence": "present a professional appearance that inspires confidence", "explanation": "Mục đích: nhân viên có vẻ ngoài chuyên nghiệp.", "paraphrase": "give ↔ present" },
+            { "n": 16, "answer": ["ironed"], "evidence": "Clothes must always be clean and ironed", "explanation": "Quần áo phải sạch và được là phẳng.", "paraphrase": "" },
+            { "n": 17, "answer": ["discreet"], "evidence": "provided they are discreet", "explanation": "Phụ kiện được phép nếu kín đáo.", "paraphrase": "allowed, but ↔ welcome, provided" },
+            { "n": 18, "answer": ["breathing problems"], "evidence": "strong scents can trigger breathing problems", "explanation": "Mùi mạnh có thể gây khó thở cho người bị hen.", "paraphrase": "cause ↔ trigger" },
+            { "n": 19, "answer": ["cultural tradition"], "evidence": "as part of a cultural tradition are of course permitted", "explanation": "Khăn đội đầu vì tôn giáo hoặc truyền thống văn hóa được phép.", "paraphrase": "" },
+            { "n": 20, "answer": ["company name"], "evidence": "clothing that displays the company name", "explanation": "Khuyến khích mặc quần áo có tên công ty.", "paraphrase": "with ↔ displays" },
+            { "n": 21, "answer": ["written warning"], "evidence": "a written warning will be issued", "explanation": "Vi phạm tiếp diễn sẽ bị cảnh cáo bằng văn bản.", "paraphrase": "repeated problems ↔ if the problem continues" }
+          ]
+        },
+        {
+          "id": "gt-3-g4",
+          "type": "sentence_completion",
+          "textId": "D",
+          "instructions": "Complete the sentences below. Choose NO MORE THAN TWO WORDS AND/OR A NUMBER from the text for each answer.",
+          "maxWords": 2,
+          "questions": [
+            { "n": 22, "prompt": "The size of a pay rise depends on the ___ of the employee.", "answer": ["performance"], "evidence": "increases reflect the performance of each individual employee", "explanation": "Mức tăng lương phụ thuộc vào hiệu quả làm việc của từng người.", "paraphrase": "depends on ↔ reflect" },
+            { "n": 23, "prompt": "Staff must work for at least ___ before they can join the pension scheme.", "answer": ["two years", "2 years"], "evidence": "open to all employees who have completed two years of service", "explanation": "Phải làm đủ 2 năm mới tham gia quỹ hưu.", "paraphrase": "" },
+            { "n": 24, "prompt": "Employees can stay in company-owned ___ near the coast.", "answer": ["holiday cottages"], "evidence": "several holiday cottages by the sea", "explanation": "Công ty sở hữu nhà nghỉ ven biển.", "paraphrase": "near the coast ↔ by the sea" },
+            { "n": 25, "prompt": "The company covers 50% of the cost of tickets for the theatre and ___.", "answer": ["cinema"], "evidence": "We pay half the price of theatre and cinema tickets", "explanation": "Công ty trả một nửa giá vé xem kịch và xem phim.", "paraphrase": "50% ↔ half" },
+            { "n": 26, "prompt": "The learning fund supports professional study, hobbies and ___.", "answer": ["language courses"], "evidence": "take language courses or learn a new hobby", "explanation": "Quỹ học tập hỗ trợ khóa ngoại ngữ, sở thích và bằng cấp nghề nghiệp.", "paraphrase": "" },
+            { "n": 27, "prompt": "Staff in serious difficulty may be given an ___.", "answer": ["interest-free loan"], "evidence": "may apply for an interest-free loan", "explanation": "Nhân viên gặp khó khăn có thể vay không lãi suất.", "paraphrase": "serious difficulty ↔ serious personal difficulties" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gt-3-s3",
+      "number": 3,
+      "title": "Section 3",
+      "texts": [
+        {
+          "id": "E",
+          "title": "Rising from the Ruins",
+          "paragraphs": [
+            { "label": "A", "text": "On the night of 12 March 1992, fire swept through Harlow Hall, a seventeenth-century manor house in the English Midlands. Roofers had spent the winter replacing old timbers, and their work was due to be finished on 15 March. The fire service arrived within twenty minutes, but the upper floor, with its library of rare books, could not be saved. On the ground floor, however, the situation was different. Staff, volunteers and neighbours formed long human chains and passed paintings, clocks and furniture out through the windows, so that almost 90 per cent of the ground-floor contents were rescued. That same night, a local hardware shop opened specially to supply the plastic sheeting that conservators needed to protect the rescued objects from the rain." },
+            { "label": "B", "text": "By morning the hall was little more than a shell. Blackened beams hung from what remained of the walls, and the ground floor lay under several centimetres of ash and water. Visitors who had known the house described the scene as heartbreaking." },
+            { "label": "C", "text": "In the weeks that followed, archaeologists and volunteers searched the ruins methodically. The site was first divided into numbered squares, and every fragment, however small, was photographed and its location noted. All the debris was then put into thousands of labelled sacks before being sieved and sorted." },
+            { "label": "D", "text": "There were some surprising finds. A section of carved staircase thought to have been destroyed was discovered almost intact beneath a collapsed ceiling, and a set of eighteenth-century tiles was recovered from the cellar. The great tapestry from the hall had been taken down by firefighters only minutes before the roof gave way." },
+            { "label": "E", "text": "Whether the hall should be rebuilt at all was hotly debated. Some argued that the money would be better spent elsewhere. In the end the owners, a heritage charity, decided to restore it, for three main reasons. First, much more of the original structure had survived than people had expected. Second, the house was fully insured, so the restoration would not have to be paid for from the charity's own funds. Finally, many of the rescued objects had been made specifically for the house and would lose much of their meaning if displayed anywhere else." },
+            { "label": "F", "text": "Finding people with the skills to do the work took many months. Every contract was put out to competitive tender, and firms were chosen only after their craftsmanship had been carefully assessed. The project brought a new generation of stonemasons and wood carvers to prominence, and several plasterers taught themselves techniques that had not been used for two hundred years — skills that are now in demand at other historic houses." },
+            { "label": "G", "text": "The restoration was completed in 1998, on schedule and within its £14 million budget, most of which was covered by insurance. The charity also took the opportunity to install a modern fire-detection system and to improve the heating and electrical wiring." },
+            { "label": "H", "text": "When the hall reopened, many former staff were in tears as they walked through the rooms again. Visitor numbers in the first year were higher than ever before. Nevertheless, some critics still believe that a ruined house should have been left as a ruin, and the debate continues." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-3-g5",
+          "type": "matching_info",
+          "textId": "E",
+          "instructions": "The text has eight paragraphs, A–H. Which paragraph contains the following information? Choose the correct letter, A–H.",
+          "options": [
+            { "key": "A", "text": "Paragraph A" }, { "key": "B", "text": "Paragraph B" }, { "key": "C", "text": "Paragraph C" }, { "key": "D", "text": "Paragraph D" },
+            { "key": "E", "text": "Paragraph E" }, { "key": "F", "text": "Paragraph F" }, { "key": "G", "text": "Paragraph G" }, { "key": "H", "text": "Paragraph H" }
+          ],
+          "questions": [
+            { "n": 28, "prompt": "the method used to examine what was left after the fire", "answer": ["C"], "evidence": "The site was first divided into numbered squares", "explanation": "Đoạn C mô tả cách chia ô, chụp ảnh, ghi vị trí và sàng lọc mảnh vụn.", "paraphrase": "examine what was left ↔ searched the ruins methodically" },
+            { "n": 29, "prompt": "a description of the state of the building the day after the fire", "answer": ["B"], "evidence": "By morning the hall was little more than a shell.", "explanation": "Đoạn B tả tòa nhà sáng hôm sau: chỉ còn vỏ, đầy tro và nước.", "paraphrase": "the day after ↔ by morning" },
+            { "n": 30, "prompt": "modern improvements carried out during the restoration", "answer": ["G"], "evidence": "install a modern fire-detection system and to improve the heating and electrical wiring", "explanation": "Đoạn G: lắp hệ thống báo cháy, cải thiện sưởi và điện.", "paraphrase": "modern improvements ↔ install a modern … improve" },
+            { "n": 31, "prompt": "how the people who carried out the work were chosen", "answer": ["F"], "evidence": "firms were chosen only after their craftsmanship had been carefully assessed", "explanation": "Đoạn F: mỗi hợp đồng đấu thầu cạnh tranh, tay nghề được đánh giá kỹ.", "paraphrase": "chosen ↔ chosen only after … assessed" },
+            { "n": 32, "prompt": "the reasons for the decision to restore the building", "answer": ["E"], "evidence": "decided to restore it, for three main reasons", "explanation": "Đoạn E nêu ba lý do quyết định phục dựng.", "paraphrase": "" },
+            { "n": 33, "prompt": "people's emotional response to the restored building", "answer": ["H"], "evidence": "many former staff were in tears as they walked through the rooms again", "explanation": "Đoạn H: nhân viên cũ xúc động rơi nước mắt.", "paraphrase": "emotional response ↔ in tears" }
+          ]
+        },
+        {
+          "id": "gt-3-g6",
+          "type": "short_answer",
+          "textId": "E",
+          "instructions": "Answer the questions below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the text for each answer.",
+          "maxWords": 3,
+          "questions": [
+            { "n": 34, "prompt": "On what date should the roofers have finished their work?", "answer": ["15 March"], "evidence": "their work was due to be finished on 15 March", "explanation": "Thợ lợp mái dự kiến xong ngày 15/3. Bẫy: 12/3 là ngày cháy.", "paraphrase": "should have finished ↔ was due to be finished" },
+            { "n": 35, "prompt": "How were objects removed from the ground floor during the fire?", "answer": ["human chains", "long human chains"], "evidence": "formed long human chains and passed paintings, clocks and furniture out through the windows", "explanation": "Mọi người xếp thành dây người chuyền đồ ra ngoài.", "paraphrase": "removed ↔ passed … out" },
+            { "n": 36, "prompt": "What did the conservators urgently need on the night of the fire?", "answer": ["plastic sheeting"], "evidence": "supply the plastic sheeting that conservators needed", "explanation": "Cửa hàng mở cửa đêm để cung cấp tấm nhựa che đồ khỏi mưa.", "paraphrase": "urgently ↔ opened specially" },
+            { "n": 37, "prompt": "What was the debris put into before it was sorted?", "answer": ["labelled sacks", "sacks"], "evidence": "All the debris was then put into thousands of labelled sacks", "explanation": "Mảnh vụn được cho vào hàng nghìn bao có dán nhãn.", "paraphrase": "" }
+          ]
+        },
+        {
+          "id": "gt-3-g7",
+          "type": "mcq",
+          "textId": "E",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            { "n": 38, "prompt": "What does the writer say about the contents of the house?", "options": [{ "key": "A", "text": "Everything on the upper floor was rescued." }, { "key": "B", "text": "Most items on the ground floor were saved." }, { "key": "C", "text": "The tapestry was destroyed when the roof fell." }, { "key": "D", "text": "The library was moved before the fire started." }], "answer": ["B"], "evidence": "almost 90 per cent of the ground-floor contents were rescued", "explanation": "Gần 90% đồ tầng trệt được cứu. Tầng trên (thư viện) không cứu được; tấm thảm được gỡ xuống kịp.", "paraphrase": "most ↔ almost 90 per cent" },
+            { "n": 39, "prompt": "One reason the charity decided to restore the hall was that", "options": [{ "key": "A", "text": "visitors demanded it." }, { "key": "B", "text": "the building was in danger of collapse." }, { "key": "C", "text": "the cost would be met by insurance." }, { "key": "D", "text": "it would attract more visitors than before." }], "answer": ["C"], "evidence": "the house was fully insured, so the restoration would not have to be paid for from the charity's own funds", "explanation": "Lý do thứ hai: bảo hiểm chi trả. D xảy ra sau này, không phải lý do quyết định.", "paraphrase": "met by insurance ↔ fully insured" },
+            { "n": 40, "prompt": "According to paragraph F, some plasterers have benefited because they", "options": [{ "key": "A", "text": "were paid more than other craftsmen." }, { "key": "B", "text": "learned old techniques that are now valuable." }, { "key": "C", "text": "trained a new generation of wood carvers." }, { "key": "D", "text": "won contracts without competition." }], "answer": ["B"], "evidence": "several plasterers taught themselves techniques that had not been used for two hundred years", "explanation": "Thợ trát tự học kỹ thuật cổ, giờ được các nhà cổ khác cần đến.", "paraphrase": "now valuable ↔ now in demand" }
+          ]
+        }
+      ]
+    }
+  ]
+}

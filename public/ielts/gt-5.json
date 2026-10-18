@@ -1,0 +1,211 @@
+{
+  "id": "gt-5",
+  "title": "General Training — Test 5 (theo khuôn đề Test 5)",
+  "sections": [
+    {
+      "id": "gt-5-s1",
+      "number": 1,
+      "title": "Section 1",
+      "texts": [
+        {
+          "id": "A",
+          "title": "Summer Events Around the Region",
+          "paragraphs": [
+            { "label": "A", "heading": "Kingsport Jazz Weekend", "text": "Jazz, soul and blues from internationally famous performers fill the old harbour town for three days. The weekend opens with a free concert on the quayside on Friday evening." },
+            { "label": "B", "heading": "New Sounds Festival", "text": "Known as the country's biggest showcase for up-and-coming bands, the festival presents more than 250 acts on 25 stages around the city centre." },
+            { "label": "C", "heading": "Country Life Show", "text": "Sheepdog trials, blacksmiths and basket weavers demonstrating their skills, pony rides and a huge farmers' market selling fresh local produce — all in the grounds of Thornbury Castle." },
+            { "label": "D", "heading": "Greenfield Family Festival", "text": "Winner of the 'Best Day Out for Families' award four years running, with music from bands based in the valley, puppet shows, comedy and food stalls from around the world." },
+            { "label": "E", "heading": "Eat Well Fair", "text": "Chefs and nutrition experts are on hand to answer questions about healthy eating and growing your own vegetables, while you sample dishes cooked in front of you." },
+            { "label": "F", "heading": "Moorland Folk Gathering", "text": "Four days of folk music, storytelling and craft workshops in a remote valley. Bring your own tent, or ask about the rooms that local farmers rent out to visitors." },
+            { "label": "G", "heading": "City Swing Dance Festival", "text": "Watch champion dancers from around the world, then take part in our attempt to set a new record for the largest swing dance — no experience necessary." }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Summit Indoor Climbing Centre",
+          "paragraphs": [
+            { "text": "Summit is a large, modern centre with more than 1,000 square metres of indoor climbing walls up to 14 metres high. All roped climbing is supervised by qualified instructors. For those who prefer to stay closer to the ground, our bouldering area offers short climbs without ropes, with thick crash mats underneath." },
+            { "heading": "Who can climb?", "text": "Anyone aged six or over can take part, and no previous experience or equipment is needed. Friends and family who would rather not climb are welcome to watch from our café, which overlooks the main hall. Spectators pay a small entry charge of £2, which can be spent in the café." },
+            { "heading": "Mobile climbing tower", "text": "Our mobile tower can be hired for a day for school fairs, festivals and other events at public venues. It has three climbing faces, so three people can climb at once, and it can be set up indoors or outside. Participants should wear comfortable trousers and closed shoes; necklaces and scarves must be removed before climbing. The tower can operate in light rain and moderate wind, although extra safety procedures are used in these conditions." },
+            { "heading": "Schools", "text": "Climbing appeals to many pupils who do not normally enjoy team sports. Children who are nervous about heights are never pushed further than they want to go; our instructors help them climb to a height they feel comfortable with, and even a short climb can be a real achievement." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-5-g1",
+          "type": "matching_features",
+          "textId": "A",
+          "instructions": "Look at the seven events, A–G. For which event are the following statements true? Choose the correct letter, A–G. You may use any letter more than once.",
+          "options": [
+            { "key": "A", "text": "Kingsport Jazz Weekend" },
+            { "key": "B", "text": "New Sounds Festival" },
+            { "key": "C", "text": "Country Life Show" },
+            { "key": "D", "text": "Greenfield Family Festival" },
+            { "key": "E", "text": "Eat Well Fair" },
+            { "key": "F", "text": "Moorland Folk Gathering" },
+            { "key": "G", "text": "City Swing Dance Festival" }
+          ],
+          "questions": [
+            { "n": 1, "prompt": "Members of the public can help to achieve something special at this event.", "answer": ["G"], "evidence": "take part in our attempt to set a new record for the largest swing dance", "explanation": "Khách tham gia nỗ lực lập kỷ lục.", "paraphrase": "achieve something special ↔ set a new record" },
+            { "n": 2, "prompt": "Musicians from the local area perform here.", "answer": ["D"], "evidence": "music from bands based in the valley", "explanation": "Ban nhạc ở địa phương (trong thung lũng).", "paraphrase": "local area ↔ based in the valley" },
+            { "n": 3, "prompt": "Music is performed in many different locations.", "answer": ["B"], "evidence": "more than 250 acts on 25 stages around the city centre", "explanation": "25 sân khấu khắp trung tâm.", "paraphrase": "many different locations ↔ 25 stages" },
+            { "n": 4, "prompt": "One event here does not cost anything.", "answer": ["A"], "evidence": "The weekend opens with a free concert on the quayside", "explanation": "Buổi hòa nhạc mở màn miễn phí.", "paraphrase": "does not cost anything ↔ free" },
+            { "n": 5, "prompt": "Visitors can sleep at or near this event.", "answer": ["F"], "evidence": "Bring your own tent, or ask about the rooms that local farmers rent out to visitors.", "explanation": "Có thể cắm trại hoặc thuê phòng nhà nông dân.", "paraphrase": "sleep ↔ tent / rooms" },
+            { "n": 6, "prompt": "This event is especially suitable for children.", "answer": ["D"], "evidence": "Winner of the 'Best Day Out for Families' award", "explanation": "Giải thưởng dành cho gia đình, có múa rối. C có cưỡi ngựa con nhưng không nhấn mạnh trẻ em.", "paraphrase": "" },
+            { "n": 7, "prompt": "Expert advice is available here.", "answer": ["E"], "evidence": "Chefs and nutrition experts are on hand to answer questions", "explanation": "Chuyên gia dinh dưỡng trả lời câu hỏi.", "paraphrase": "advice ↔ answer questions" },
+            { "n": 8, "prompt": "Visitors can watch traditional crafts being made.", "answer": ["C"], "evidence": "blacksmiths and basket weavers demonstrating their skills", "explanation": "Thợ rèn, thợ đan giỏ biểu diễn kỹ năng. F có workshop thủ công nhưng là để tham gia.", "paraphrase": "watch ↔ demonstrating" }
+          ]
+        },
+        {
+          "id": "gt-5-g2",
+          "type": "tfng",
+          "textId": "B",
+          "instructions": "Do the following statements agree with the information given in the text? Choose TRUE, FALSE or NOT GIVEN.",
+          "questions": [
+            { "n": 9, "prompt": "All climbing at the centre is done with ropes.", "answer": ["FALSE"], "evidence": "our bouldering area offers short climbs without ropes", "explanation": "Khu bouldering leo không dây.", "paraphrase": "" },
+            { "n": 10, "prompt": "People who only want to watch can enter free of charge.", "answer": ["FALSE"], "evidence": "Spectators pay a small entry charge of £2", "explanation": "Người xem trả phí £2.", "paraphrase": "" },
+            { "n": 11, "prompt": "The climbing tower can be hired for a private birthday party at home.", "answer": ["NOT GIVEN"], "evidence": "", "explanation": "Bài chỉ nói hội chợ trường, lễ hội, sự kiện ở địa điểm công cộng; không nói tiệc riêng tại nhà.", "paraphrase": "" },
+            { "n": 12, "prompt": "Climbers on the tower are not allowed to wear certain items.", "answer": ["TRUE"], "evidence": "necklaces and scarves must be removed before climbing", "explanation": "Phải tháo vòng cổ và khăn.", "paraphrase": "not allowed ↔ must be removed" },
+            { "n": 13, "prompt": "The tower cannot be used if there is any rain.", "answer": ["FALSE"], "evidence": "The tower can operate in light rain and moderate wind", "explanation": "Mưa nhẹ vẫn dùng được.", "paraphrase": "" },
+            { "n": 14, "prompt": "Children who are afraid of heights should not use the tower.", "answer": ["FALSE"], "evidence": "our instructors help them climb to a height they feel comfortable with", "explanation": "Trẻ sợ độ cao vẫn được hỗ trợ leo đến độ cao thoải mái.", "paraphrase": "afraid of heights ↔ nervous about heights" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gt-5-s2",
+      "number": 2,
+      "title": "Section 2",
+      "texts": [
+        {
+          "id": "C",
+          "title": "Finding Customers: Tips for Small Businesses",
+          "paragraphs": [
+            { "heading": "Find out where customers look", "text": "Advertising in places your customers never see is a waste of money. Carry out some simple research: whenever someone contacts you, ask how they heard about your business, and use the answers to decide where to advertise." },
+            { "heading": "See things from the customer's side", "text": "Understanding what your customers want is half the battle. A short questionnaire sent to existing customers, asking what they value and what could be better, will tell you exactly how they see your company." },
+            { "heading": "Be visible", "text": "Customers can only buy from you if they know you exist. Using a combination of channels — local press, leaflets, email and social media — greatly increases the chance that people will notice you." },
+            { "heading": "Stay in touch", "text": "Businesses that keep in contact with customers keep more of them. Collect email addresses, check that customers are satisfied after a purchase and, where possible, send them updates that are genuinely useful." },
+            { "heading": "Measure everything", "text": "Track the results of every advertisement. The figures will show what is working and may produce insights that transform your business." },
+            { "heading": "Protect your reputation", "text": "People trust personal recommendations far more than advertisements. Your reputation is therefore your most valuable asset: satisfied customers recommend you, while unhappy ones tell their friends." }
+          ]
+        },
+        {
+          "id": "D",
+          "title": "Working Hours Rules for Delivery Drivers",
+          "paragraphs": [
+            { "text": "These rules apply to drivers and crew of goods vehicles and coaches. They limit the number of hours that can be worked. Drivers who are self-employed are not currently covered." },
+            { "heading": "Limits", "text": "Staff may work up to 60 hours in a single week, provided that the average over a 17-week period does not exceed 48 hours a week. Night work is limited to 10 hours in any 24 hours unless a workforce agreement allows longer. Holiday, sick leave and parental leave all count as working time." },
+            { "heading": "What counts as work", "text": "Work includes driving, loading and unloading, and any vehicle checks that are the driver's responsibility, such as inspections of tyres and lights. It does not include travelling between home and your usual workplace, meal breaks or periods of availability." },
+            { "heading": "Periods of availability", "text": "These are times when the driver does not have to stay with the vehicle but must be available for work, and when the length of the wait is known in advance. Examples include waiting at a depot, or travelling with a vehicle while it is carried on a ferry. Time spent at the workstation can also count, as long as the driver is free to rest or read." },
+            { "text": "Delays caused by traffic jams do not count as availability, because the driver must keep stopping and starting the vehicle. The same applies to moving forward every few minutes in a queue." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-5-g3",
+          "type": "sentence_completion",
+          "textId": "C",
+          "instructions": "Complete the sentences below. Choose ONE WORD ONLY from the text for each answer.",
+          "maxWords": 1,
+          "questions": [
+            { "n": 15, "prompt": "Simple ___ can show you where to advertise.", "answer": ["research"], "evidence": "Carry out some simple research", "explanation": "Nghiên cứu đơn giản (hỏi khách biết đến bạn từ đâu).", "paraphrase": "" },
+            { "n": 16, "prompt": "A ___ sent to customers will reveal their opinion of your company.", "answer": ["questionnaire"], "evidence": "A short questionnaire sent to existing customers", "explanation": "Bảng hỏi cho biết khách nghĩ gì.", "paraphrase": "reveal their opinion ↔ tell you … how they see your company" },
+            { "n": 17, "prompt": "A ___ of advertising channels makes it more likely that people will notice you.", "answer": ["combination"], "evidence": "Using a combination of channels", "explanation": "Kết hợp nhiều kênh.", "paraphrase": "more likely ↔ greatly increases the chance" },
+            { "n": 18, "prompt": "Where possible, send customers useful ___.", "answer": ["updates"], "evidence": "send them updates that are genuinely useful", "explanation": "Gửi cập nhật hữu ích.", "paraphrase": "" },
+            { "n": 19, "prompt": "Measuring your advertising may give you ___ that change your business.", "answer": ["insights"], "evidence": "may produce insights that transform your business", "explanation": "Số liệu có thể mang lại hiểu biết sâu.", "paraphrase": "change ↔ transform" },
+            { "n": 20, "prompt": "Your ___ is the most important thing a business has.", "answer": ["reputation"], "evidence": "Your reputation is therefore your most valuable asset", "explanation": "Danh tiếng là tài sản quý nhất.", "paraphrase": "most important ↔ most valuable asset" }
+          ]
+        },
+        {
+          "id": "gt-5-g4",
+          "type": "note_completion",
+          "textId": "D",
+          "instructions": "Complete the notes below. Choose ONE WORD ONLY from the text for each answer.",
+          "maxWords": 1,
+          "template": "Working hours rules\n\n• Not applicable to {21} drivers\n• Max. 60 hours a week, if the {22} stays at or below 48 hours\n• Night work over 10 hours needs a workforce {23}\n• Work includes vehicle checks, e.g. {24} and lights\n\nPeriods of availability include:\n• travelling with a vehicle on a {25}\n• time at the workstation if the driver can rest or {26}\n\nThey do not include:\n• delays in {27} jams\n• moving forward in a queue",
+          "questions": [
+            { "n": 21, "answer": ["self-employed"], "evidence": "Drivers who are self-employed are not currently covered.", "explanation": "Tài xế tự doanh không áp dụng.", "paraphrase": "not applicable ↔ not covered" },
+            { "n": 22, "answer": ["average"], "evidence": "provided that the average over a 17-week period does not exceed 48 hours a week", "explanation": "Trung bình không quá 48 giờ.", "paraphrase": "at or below ↔ does not exceed" },
+            { "n": 23, "answer": ["agreement"], "evidence": "unless a workforce agreement allows longer", "explanation": "Cần thỏa thuận tập thể.", "paraphrase": "" },
+            { "n": 24, "answer": ["tyres"], "evidence": "such as inspections of tyres and lights", "explanation": "Kiểm tra lốp và đèn.", "paraphrase": "" },
+            { "n": 25, "answer": ["ferry"], "evidence": "travelling with a vehicle while it is carried on a ferry", "explanation": "Đi cùng xe trên phà.", "paraphrase": "" },
+            { "n": 26, "answer": ["read"], "evidence": "as long as the driver is free to rest or read", "explanation": "Tài xế được nghỉ hoặc đọc.", "paraphrase": "" },
+            { "n": 27, "answer": ["traffic"], "evidence": "Delays caused by traffic jams do not count as availability", "explanation": "Kẹt xe không tính.", "paraphrase": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gt-5-s3",
+      "number": 3,
+      "title": "Section 3",
+      "texts": [
+        {
+          "id": "E",
+          "title": "Machines That Move by Themselves",
+          "paragraphs": [
+            { "text": "An automaton is a self-operating machine, usually designed to look like a person or an animal. Few are built today, but their history goes back more than two thousand years. Greek legends tell of mechanical helpers built by the gods, and the Greeks almost certainly made real automata too. Most were probably worked by levers that people operated by hand, although some writers describe machines driven by steam or water. Many automata were toys, while others were used to teach simple principles of science." },
+            { "text": "Other early civilisations produced automata as well. In Alexandria, the engineer Heron built a theatre in which small figures moved by themselves, powered by falling weights and ropes. A Chinese text from the third century BC describes a life-sized mechanical man that could walk and sing." },
+            { "text": "Between the ninth and thirteenth centuries, engineers in the Islamic world wrote detailed manuals explaining how to build water clocks, musical fountains and mechanical servants. In fifteenth-century Europe, advances in clockmaking led to more sophisticated automata, since the two used very similar mechanisms. One famous example was an iron fly that, it was said, flew around a room before returning to its maker's hand." },
+            { "text": "Automata were usually luxury objects made for kings and nobles, who showed them to guests as a display of wealth. Some, however, were built for the public, and appeared on town clocks such as the one in Prague, completed in the fifteenth century." },
+            { "text": "In the eighteenth century, some makers built automata to study how living creatures move. Kessler built mechanical horses whose legs were moved by gears when a handle was turned. Fontaine made a copper duck that appeared to eat and digest food, and a life-sized drummer whose arms beat a drum in time to music, using bellows and cams. Lambert's golden peacock, made in 1781, stands beside a pool of rotating glass rods that resemble water. When it is wound up, the bird spreads its tail, turns its head and drinks from the pool. It still works today. The Swiss clockmaker Berthold built a mechanical child that could draw four different pictures with a pencil." },
+            { "text": "Perhaps the most ambitious creation of the century was the Water Theatre in the gardens of a castle near Munich, completed in 1765. It shows a small town in which more than a hundred tiny figures work at their trades: masons carry stones, a baker takes bread from an oven, a tailor sews. All the figures are driven by a hidden waterwheel." },
+            { "text": "In the nineteenth century, factory methods made automata cheap to produce, and they became children's toys rather than expensive amusements for adults. By the twentieth century, interest in traditional automata had largely disappeared." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-5-g5",
+          "type": "summary_completion",
+          "textId": "E",
+          "instructions": "Complete the summary below. Choose ONE WORD ONLY from the text for each answer.",
+          "maxWords": 1,
+          "template": "The Greeks told {28} about machines built by the gods. Real Greek automata were probably moved by {29} operated by hand. Some automata were {30}, while others were used for teaching science.",
+          "questions": [
+            { "n": 28, "answer": ["legends"], "evidence": "Greek legends tell of mechanical helpers built by the gods", "explanation": "Truyền thuyết Hy Lạp.", "paraphrase": "" },
+            { "n": 29, "answer": ["levers"], "evidence": "Most were probably worked by levers that people operated by hand", "explanation": "Đòn bẩy vận hành bằng tay.", "paraphrase": "" },
+            { "n": 30, "answer": ["toys"], "evidence": "Many automata were toys", "explanation": "Nhiều cỗ máy là đồ chơi.", "paraphrase": "" }
+          ]
+        },
+        {
+          "id": "gt-5-g6",
+          "type": "matching_features",
+          "textId": "E",
+          "instructions": "Match each description with the correct maker, A–F.",
+          "options": [
+            { "key": "A", "text": "Heron" },
+            { "key": "B", "text": "Islamic engineers" },
+            { "key": "C", "text": "Kessler" },
+            { "key": "D", "text": "Fontaine" },
+            { "key": "E", "text": "Lambert" },
+            { "key": "F", "text": "Berthold" }
+          ],
+          "questions": [
+            { "n": 31, "prompt": "made a bird that interacts with an imitation of water", "answer": ["E"], "evidence": "Lambert's golden peacock, made in 1781, stands beside a pool of rotating glass rods that resemble water", "explanation": "Con công uống nước từ 'hồ' bằng que thủy tinh.", "paraphrase": "imitation of water ↔ glass rods that resemble water" },
+            { "n": 32, "prompt": "made a figure that played a musical instrument", "answer": ["D"], "evidence": "a life-sized drummer whose arms beat a drum in time to music", "explanation": "Người đánh trống của Fontaine.", "paraphrase": "" },
+            { "n": 33, "prompt": "wrote instructions for building automata", "answer": ["B"], "evidence": "wrote detailed manuals explaining how to build water clocks", "explanation": "Kỹ sư Hồi giáo viết sách hướng dẫn.", "paraphrase": "instructions ↔ manuals" },
+            { "n": 34, "prompt": "made automata that a person had to operate", "answer": ["C"], "evidence": "whose legs were moved by gears when a handle was turned", "explanation": "Ngựa máy của Kessler cần quay tay.", "paraphrase": "" },
+            { "n": 35, "prompt": "used weights to power moving figures", "answer": ["A"], "evidence": "powered by falling weights and ropes", "explanation": "Nhà hát của Heron chạy bằng quả nặng rơi.", "paraphrase": "" }
+          ]
+        },
+        {
+          "id": "gt-5-g7",
+          "type": "sentence_completion",
+          "textId": "E",
+          "instructions": "Complete the sentences below. Choose ONE WORD ONLY from the text for each answer.",
+          "maxWords": 1,
+          "questions": [
+            { "n": 36, "prompt": "The Water Theatre represents a small ___.", "answer": ["town"], "evidence": "It shows a small town", "explanation": "Mô hình một thị trấn nhỏ.", "paraphrase": "" },
+            { "n": 37, "prompt": "The masons, baker and tailor represent different ___.", "answer": ["trades"], "evidence": "more than a hundred tiny figures work at their trades", "explanation": "Các nghề.", "paraphrase": "" },
+            { "n": 38, "prompt": "A hidden ___ powers the Water Theatre.", "answer": ["waterwheel"], "evidence": "All the figures are driven by a hidden waterwheel.", "explanation": "Bánh xe nước giấu kín.", "paraphrase": "powers ↔ driven by" },
+            { "n": 39, "prompt": "In the nineteenth century, factory ___ made automata cheaper.", "answer": ["methods"], "evidence": "factory methods made automata cheap to produce", "explanation": "Phương pháp sản xuất công nghiệp.", "paraphrase": "" },
+            { "n": 40, "prompt": "Nineteenth-century automata were mostly made for ___.", "answer": ["children"], "evidence": "they became children's toys rather than expensive amusements for adults", "explanation": "Thành đồ chơi trẻ em. Lưu ý chép 'children' (không có 's).", "paraphrase": "" }
+          ]
+        }
+      ]
+    }
+  ]
+}

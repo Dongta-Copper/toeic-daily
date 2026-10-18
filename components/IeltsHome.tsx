@@ -151,7 +151,7 @@ export default function IeltsHome() {
                   {t.sections.map((s) => (
                     <Link key={s.id} href={`/ielts/practice?section=${s.id}`} className="p-3 border border-gray-200 rounded-lg hover:border-gray-900">
                       <p className="text-sm font-medium text-gray-900">
-                        {t.title.replace('General Training — ', '')} · S{s.number}
+                        {t.title.replace('General Training — ', '').replace(/\s*\(.*\)$/, '')} · S{s.number}
                       </p>
                       {scoreTag(s.id)}
                     </Link>

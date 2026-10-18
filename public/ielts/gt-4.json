@@ -1,0 +1,202 @@
+{
+  "id": "gt-4",
+  "title": "General Training — Test 4 (theo khuôn Cambridge 9 GT B)",
+  "sections": [
+    {
+      "id": "gt-4-s1",
+      "number": 1,
+      "title": "Section 1",
+      "texts": [
+        {
+          "id": "A",
+          "title": "The Student Travel Pass",
+          "paragraphs": [
+            { "text": "A Student Travel Pass gives you a third off most bus and tram fares across the region — ideal for getting to lectures, visiting family or enjoying a weekend away." },
+            { "heading": "Who is eligible?", "text": "The pass is available to anyone aged 16 to 24. You will need to prove your age with a passport, a driving licence or a national identity card. If you are 25 or older, you can still apply as long as you are enrolled in full-time study, which means at least 16 hours of classes a week for a minimum of 30 weeks a year. In this case, your course leader must sign the application form, and one of your two photographs must be stamped by your college." },
+            { "text": "Take your completed form, two photographs, proof of eligibility and the £30 fee to any travel centre or student union office." },
+            { "heading": "Using your pass", "text": "The pass can be used at any time on weekends and public holidays. On weekdays before 9.30 am, however, peak fares apply, except during the summer holidays in July and August." },
+            { "heading": "Conditions", "text": "A pass that does not carry the holder's signature is not valid. The pass, and any tickets bought with it, may not be used by anybody else. If you board without a valid ticket, you must pay the standard fare — unless there was no ticket machine or ticket office at the stop where you got on." },
+            { "text": "Discounts do not apply to airport express services or to the night bus network, where all passengers pay the standard fare." }
+          ]
+        },
+        {
+          "id": "B",
+          "title": "Coastline Ferries — Fares and Conditions",
+          "paragraphs": [
+            { "text": "Coastline Ferries offers a range of discounts. Only one discount can be applied to each ticket." },
+            { "heading": "Discounts", "text": "Open returns (return within 30 days): 15% off. Same-day returns: 20% off — these cannot be changed or refunded. Children aged 5 to 12: 50% off. Students with a valid student card: 25% off. Passengers over 65 with a senior card: 30% off. Groups of 10 to 30: 10% off each journey." },
+            { "heading": "Changes and refunds", "text": "Tickets can be refunded up to one hour before departure, less a charge of 20% of the fare. Alternatively, you can move your journey to another date for a charge of 5% of the fare. These options do not apply to same-day returns." },
+            { "heading": "Before you travel", "text": "It is your responsibility to check that the dates and departure times on your ticket are correct. Boarding closes 10 minutes before departure. Each passenger may bring one large bag and one small bag on board; up to 20 kg of extra luggage can be checked in free of charge at least 45 minutes before departure. Groups of more than 30 passengers should contact our Group Bookings Team." },
+            { "heading": "Our punctuality promise", "text": "If your ferry arrives more than 15 minutes late because of a problem caused by us, we will refund your fare in full." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-4-g1",
+          "type": "sentence_completion",
+          "textId": "A",
+          "instructions": "Complete the sentences below. Choose NO MORE THAN THREE WORDS from the text for each answer.",
+          "maxWords": 3,
+          "questions": [
+            { "n": 1, "prompt": "Applicants aged 25 or over must be enrolled in ___.", "answer": ["full-time study"], "evidence": "as long as you are enrolled in full-time study", "explanation": "Người từ 25 tuổi phải đang học toàn thời gian.", "paraphrase": "" },
+            { "n": 2, "prompt": "Older students must have one photograph signed by their course leader and ___ by their college.", "answer": ["stamped"], "evidence": "one of your two photographs must be stamped by your college", "explanation": "Một ảnh phải được trường đóng dấu.", "paraphrase": "" },
+            { "n": 3, "prompt": "On weekday mornings before 9.30 am, pass holders have to pay ___.", "answer": ["peak fares"], "evidence": "On weekdays before 9.30 am, however, peak fares apply", "explanation": "Trước 9h30 sáng ngày thường áp dụng giá cao điểm.", "paraphrase": "have to pay ↔ apply" },
+            { "n": 4, "prompt": "A pass without the holder's ___ cannot be used.", "answer": ["signature"], "evidence": "A pass that does not carry the holder's signature is not valid.", "explanation": "Thẻ không có chữ ký của chủ thẻ thì vô hiệu.", "paraphrase": "cannot be used ↔ is not valid" },
+            { "n": 5, "prompt": "Tickets bought with the pass cannot be used by ___.", "answer": ["anybody else"], "evidence": "may not be used by anybody else", "explanation": "Thẻ và vé mua bằng thẻ không được cho người khác dùng.", "paraphrase": "" },
+            { "n": 6, "prompt": "Passengers without a ticket pay a reduced fare only if their stop had no ticket machine or ___.", "answer": ["ticket office"], "evidence": "unless there was no ticket machine or ticket office at the stop where you got on", "explanation": "Không có máy bán vé hay phòng vé ở điểm lên xe thì không phải trả giá thường.", "paraphrase": "" },
+            { "n": 7, "prompt": "On airport express and night buses, pass holders pay the ___.", "answer": ["standard fare"], "evidence": "where all passengers pay the standard fare", "explanation": "Xe sân bay và xe đêm không giảm giá — trả giá thường.", "paraphrase": "" }
+          ]
+        },
+        {
+          "id": "gt-4-g2",
+          "type": "summary_completion",
+          "textId": "B",
+          "instructions": "Complete the summary below. Choose NO MORE THAN THREE WORDS AND/OR A NUMBER from the text for each answer.",
+          "maxWords": 3,
+          "template": "A passenger over 65 who is also a student can only receive one discount; the senior discount is {8}. Groups of more than 30 should contact the {9}.\n\nPassengers who cancel can get their money back minus {10}, or change the date for {11} of the fare. Neither option is available for {12}. Passengers must check that the dates and {13} on their ticket are right.\n\nPassengers must be ready to board at least {14} before departure.",
+          "questions": [
+            { "n": 8, "answer": ["30%", "30 per cent"], "evidence": "Passengers over 65 with a senior card: 30% off.", "explanation": "Chỉ áp dụng một mức giảm; mức người cao tuổi là 30% (cao hơn mức sinh viên 25%).", "paraphrase": "only one discount ↔ Only one discount can be applied" },
+            { "n": 9, "answer": ["Group Bookings Team"], "evidence": "Groups of more than 30 passengers should contact our Group Bookings Team.", "explanation": "Nhóm trên 30 người liên hệ bộ phận đặt vé nhóm.", "paraphrase": "" },
+            { "n": 10, "answer": ["20%", "20 per cent"], "evidence": "less a charge of 20% of the fare", "explanation": "Hoàn vé trừ phí 20% giá vé.", "paraphrase": "minus ↔ less" },
+            { "n": 11, "answer": ["5%", "5 per cent"], "evidence": "for a charge of 5% of the fare", "explanation": "Đổi ngày mất phí 5%.", "paraphrase": "" },
+            { "n": 12, "answer": ["same-day returns"], "evidence": "These options do not apply to same-day returns.", "explanation": "Vé khứ hồi trong ngày không được hoàn/đổi.", "paraphrase": "neither option is available ↔ do not apply" },
+            { "n": 13, "answer": ["departure times"], "evidence": "check that the dates and departure times on your ticket are correct", "explanation": "Khách tự kiểm tra ngày và giờ khởi hành.", "paraphrase": "right ↔ correct" },
+            { "n": 14, "answer": ["10 minutes", "ten minutes"], "evidence": "Boarding closes 10 minutes before departure.", "explanation": "Lên tàu đóng 10 phút trước giờ chạy. Bẫy: 45 phút là hạn ký gửi hành lý.", "paraphrase": "ready to board ↔ boarding closes" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gt-4-s2",
+      "number": 2,
+      "title": "Section 2",
+      "texts": [
+        {
+          "id": "C",
+          "title": "Getting Your Overseas Qualifications Recognised",
+          "paragraphs": [
+            { "text": "If you have moved to Australia to work, you will need to make sure that employers, professional bodies and universities recognise the qualifications you gained abroad. These may include degrees and diplomas, but also trade licences and other vocational certificates." },
+            { "text": "Many recruiters have little experience of judging qualifications from other countries. At the same time, formal education is highly valued: around two thirds of job advertisements list a qualification as a requirement, yet many recruiters admit that they tend to ignore documents they do not understand." },
+            { "text": "Studies show that newcomers often accept a lower starting salary than workers trained locally. One way to improve your prospects is a traineeship. These combine paid work with part-time study, and around 80% of the learning takes place in the workplace. Traineeships in fields such as electrical work and plumbing are in high demand and often lead to secure, long-term employment." },
+            { "text": "Documents in other languages must be translated by an accredited translator. It is also wise to have your qualifications formally assessed and to send a copy of the assessment with every application. Don't wait until the interview stage: securing an interview is the hardest part of the whole job search, and the assessment helps make sure your application is not rejected at the first stage." },
+            { "text": "Settling into a new country is never easy, but employers are increasingly aware of the benefits of a diverse workforce." }
+          ]
+        },
+        {
+          "id": "D",
+          "title": "Running an Effective Meeting",
+          "paragraphs": [
+            { "text": "Being asked to chair a meeting for the first time can be stressful, but it is also a sign of trust: your manager believes you can keep the discussion focused and productive." },
+            { "text": "Start by deciding what the meeting must achieve. Write the objective in a single sentence and include it at the top of the agenda, so that everyone knows why they are there." },
+            { "text": "Keep the agenda short. Three or four items are usually enough, and each should have a time limit. Long meetings lose people's attention, however important the subject." },
+            { "text": "Visual aids can make complex information easier to follow. A simple chart or a short video often says more than ten minutes of talking." },
+            { "text": "Open the meeting on time and thank everyone for their attendance. Then invite each participant to say briefly what they hope the meeting will achieve; this encourages people to contribute from the start." },
+            { "text": "End with a clear summary of the decisions made and who is responsible for each action. Practise this summary beforehand, and you will finish with the confidence that comes from being well prepared." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-4-g3",
+          "type": "sentence_completion",
+          "textId": "C",
+          "instructions": "Complete the sentences below. Choose NO MORE THAN TWO WORDS from the text for each answer.",
+          "maxWords": 2,
+          "questions": [
+            { "n": 15, "prompt": "Newcomers need their degrees, diplomas and ___ to be recognised.", "answer": ["trade licences"], "evidence": "but also trade licences and other vocational certificates", "explanation": "Ngoài bằng cấp học thuật còn có giấy phép nghề.", "paraphrase": "" },
+            { "n": 16, "prompt": "Most job advertisements treat ___ as an important requirement.", "answer": ["formal education", "a qualification"], "evidence": "formal education is highly valued", "explanation": "Học vấn chính quy được coi trọng; 2/3 tin tuyển dụng yêu cầu bằng cấp.", "paraphrase": "most ↔ around two thirds" },
+            { "n": 17, "prompt": "Workers trained locally often receive a higher ___ than newcomers.", "answer": ["starting salary"], "evidence": "newcomers often accept a lower starting salary than workers trained locally", "explanation": "Người mới đến thường nhận lương khởi điểm thấp hơn.", "paraphrase": "" },
+            { "n": 18, "prompt": "Completing a ___ in a skilled trade can lead to secure employment.", "answer": ["traineeship"], "evidence": "Traineeships in fields such as electrical work and plumbing are in high demand", "explanation": "Chương trình học việc (traineeship) dẫn đến việc làm ổn định.", "paraphrase": "secure employment ↔ secure, long-term employment" },
+            { "n": 19, "prompt": "The most difficult stage of finding work is getting an ___.", "answer": ["interview"], "evidence": "securing an interview is the hardest part of the whole job search", "explanation": "Khó nhất là được mời phỏng vấn.", "paraphrase": "most difficult ↔ hardest" },
+            { "n": 20, "prompt": "Employers increasingly recognise the advantages of a ___.", "answer": ["diverse workforce"], "evidence": "employers are increasingly aware of the benefits of a diverse workforce", "explanation": "Nhà tuyển dụng ngày càng thấy lợi ích của lực lượng lao động đa dạng.", "paraphrase": "advantages ↔ benefits" }
+          ]
+        },
+        {
+          "id": "gt-4-g4",
+          "type": "note_completion",
+          "textId": "D",
+          "instructions": "Complete the notes below. Choose ONE WORD ONLY from the text for each answer.",
+          "maxWords": 1,
+          "template": "Running an effective meeting\n\n• Being asked to chair shows your manager's {21}\n• State the objective in one {22} on the agenda\n• Give each agenda item a time {23}\n• Use visual {24}, e.g. a chart or video\n• Thank people for their {25}\n• Ask each person what they want to achieve — this helps them {26}\n• Prepare the final summary to gain {27}",
+          "questions": [
+            { "n": 21, "answer": ["trust"], "evidence": "it is also a sign of trust", "explanation": "Được giao chủ trì cho thấy quản lý tin tưởng bạn.", "paraphrase": "shows ↔ a sign of" },
+            { "n": 22, "answer": ["sentence"], "evidence": "Write the objective in a single sentence", "explanation": "Viết mục tiêu trong một câu.", "paraphrase": "one ↔ a single" },
+            { "n": 23, "answer": ["limit"], "evidence": "each should have a time limit", "explanation": "Mỗi mục có giới hạn thời gian.", "paraphrase": "" },
+            { "n": 24, "answer": ["aids"], "evidence": "Visual aids can make complex information easier to follow.", "explanation": "Dùng công cụ trực quan.", "paraphrase": "" },
+            { "n": 25, "answer": ["attendance"], "evidence": "thank everyone for their attendance", "explanation": "Cảm ơn mọi người đã tham dự.", "paraphrase": "" },
+            { "n": 26, "answer": ["contribute"], "evidence": "this encourages people to contribute from the start", "explanation": "Giúp mọi người đóng góp ý kiến ngay từ đầu.", "paraphrase": "helps ↔ encourages" },
+            { "n": 27, "answer": ["confidence"], "evidence": "you will finish with the confidence that comes from being well prepared", "explanation": "Chuẩn bị kỹ phần tóm tắt giúp tự tin.", "paraphrase": "" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gt-4-s3",
+      "number": 3,
+      "title": "Section 3",
+      "texts": [
+        {
+          "id": "E",
+          "title": "Human Flight Without Wings?",
+          "paragraphs": [
+            { "label": "A", "text": "The dream of flying like a bird is as old as civilisation. Inventors sketched flying machines long before the first aeroplane left the ground, and even today many people feel that sitting in a passenger jet is not what they had in mind. For some, the ultimate goal is personal flight: a compact device that lets a single person rise into the air and steer freely. Mark Fennimore, a former film stunt performer, has worn a rocket belt more than 400 times. He now travels the world performing at events for a sports clothing company. 'I get paid to do what I love, and every flight puts the brand in front of thousands of people,' he says. Current rocket belts can fly for less than half a minute, but engineers are developing models that may stay airborne for a quarter of an hour." },
+            { "label": "B", "text": "Powered paragliding is a more practical way of getting into the air. It combines a paraglider wing with a small engine and propeller worn on the pilot's back, and it is growing in popularity. Diane Holt has been flying for seven years. 'It costs roughly the same as running a small motorbike,' she says. 'The real drawback is the weather: you simply cannot take off when the wind is strong, so you could never rely on it to get to work.'" },
+            { "label": "C", "text": "Luis Moreno, another enthusiast, had a frightening experience last summer. 'I smelt something hot and then felt heat on my back,' he recalls. 'I landed as quickly as I could.' Later he discovered that a loose exhaust pipe had begun to melt part of his harness. The experience has not put him off, but he has some advice for newcomers. 'People think they can save money by teaching themselves. It's a mistake — you pick up bad habits that are very hard to lose.' A proper course costs around £1,200 and new equipment several thousand pounds. Used kits are cheaper, although the writer noticed one advertised online with a broken frame and the comment: 'Never again!'" },
+            { "label": "D", "text": "None of this compares with the achievements of Erik Lindqvist, the Swedish engineer known to the press as 'the Human Jet'. Lindqvist has always enjoyed spectacle. During one display he flew low over a frozen lake, landed on a pair of skis and continued across the ice as the crowd cheered." },
+            { "label": "E", "text": "Lindqvist spent eight years as a military helicopter pilot and then flew cargo aircraft for a private company. 'I loved the job, but inside a cockpit you are sealed off from the sky,' he says. 'I wanted to feel the air itself.' That feeling led him to devote himself to building a jet-powered wing." },
+            { "label": "F", "text": "In 2015 he jumped from a helicopter at 2,500 metres. After a brief free fall he started four small jet engines and reached a top speed of 310 kph, around 110 kph faster than a typical skydiver. He then opened a parachute to land. His first wing, made by a company that built model aircraft, bent under the weight of the engines, so a second firm produced a stiffer one from carbon fibre. 'Without that wing, the record would have been impossible,' Lindqvist admits." },
+            { "label": "G", "text": "His next goal is to take off from the ground rather than from an aircraft, which will require more powerful engines. Physically, he says, flying is no harder than cycling, but it demands complete concentration: the slightest movement of a shoulder can send him into a spin. Will ordinary people ever fly like this? Perhaps — but probably only as a very expensive hobby." }
+          ]
+        }
+      ],
+      "groups": [
+        {
+          "id": "gt-4-g5",
+          "type": "mcq",
+          "textId": "E",
+          "instructions": "Choose the correct letter, A, B, C or D.",
+          "questions": [
+            { "n": 28, "prompt": "What does the writer say about Luis Moreno in paragraph C?", "options": [{ "key": "A", "text": "He narrowly avoided a serious accident." }, { "key": "B", "text": "He had not been trained to use his equipment." }, { "key": "C", "text": "He reacted too slowly to the problem." }, { "key": "D", "text": "He was rescued by other pilots." }], "answer": ["A"], "evidence": "I landed as quickly as I could.", "explanation": "Anh phát hiện dây đai bắt đầu chảy, hạ cánh nhanh — suýt gặp tai nạn. C sai: anh phản ứng nhanh.", "paraphrase": "" },
+            { "n": 29, "prompt": "By mentioning the used kit advertised online, the writer suggests that", "options": [{ "key": "A", "text": "second-hand equipment is hard to find." }, { "key": "B", "text": "equipment should be tested regularly." }, { "key": "C", "text": "the sport is too expensive for most people." }, { "key": "D", "text": "the sport can be frightening." }], "answer": ["D"], "evidence": "with a broken frame and the comment: 'Never again!'", "explanation": "Bộ đồ hỏng khung kèm lời 'Never again!' gợi ý môn này có thể đáng sợ.", "paraphrase": "" },
+            { "n": 30, "prompt": "The story about the frozen lake shows that Lindqvist", "options": [{ "key": "A", "text": "often changes his plans." }, { "key": "B", "text": "enjoys putting on an impressive show." }, { "key": "C", "text": "is good at many winter sports." }, { "key": "D", "text": "knows the region well." }], "answer": ["B"], "evidence": "Lindqvist has always enjoyed spectacle.", "explanation": "Ông thích biểu diễn gây ấn tượng; câu chuyện trên hồ băng là ví dụ.", "paraphrase": "an impressive show ↔ spectacle" }
+          ]
+        },
+        {
+          "id": "gt-4-g6",
+          "type": "summary_completion",
+          "textId": "E",
+          "instructions": "Complete the summary below. Choose ONE WORD AND/OR A NUMBER from the text for each answer.",
+          "maxWords": 1,
+          "template": "Erik Lindqvist worked as a helicopter pilot and then flew {31} aircraft before deciding to build a jet-powered wing. His first wing was made by a company that produced {32} aircraft, but it was not stiff enough. A second company made one from carbon {33}. In 2015 he reached {34} kph, much faster than an ordinary {35}.",
+          "questions": [
+            { "n": 31, "answer": ["cargo"], "evidence": "then flew cargo aircraft for a private company", "explanation": "Ông lái máy bay chở hàng.", "paraphrase": "" },
+            { "n": 32, "answer": ["model"], "evidence": "made by a company that built model aircraft", "explanation": "Công ty đầu tiên làm máy bay mô hình.", "paraphrase": "produced ↔ built" },
+            { "n": 33, "answer": ["fibre"], "evidence": "a stiffer one from carbon fibre", "explanation": "Cánh thứ hai làm bằng sợi carbon.", "paraphrase": "" },
+            { "n": 34, "answer": ["310"], "evidence": "reached a top speed of 310 kph", "explanation": "Tốc độ tối đa 310 km/h. Bẫy: 110 là mức chênh lệch.", "paraphrase": "" },
+            { "n": 35, "answer": ["skydiver"], "evidence": "around 110 kph faster than a typical skydiver", "explanation": "Nhanh hơn người nhảy dù thông thường.", "paraphrase": "ordinary ↔ typical" }
+          ]
+        },
+        {
+          "id": "gt-4-g7",
+          "type": "matching_features",
+          "textId": "E",
+          "instructions": "Match each statement with the correct person, A, B, C or D.",
+          "options": [
+            { "key": "A", "text": "Mark Fennimore" },
+            { "key": "B", "text": "Diane Holt" },
+            { "key": "C", "text": "Luis Moreno" },
+            { "key": "D", "text": "Erik Lindqvist" }
+          ],
+          "questions": [
+            { "n": 36, "prompt": "He admits that his equipment made his achievement possible.", "answer": ["D"], "evidence": "Without that wing, the record would have been impossible", "explanation": "Lindqvist thừa nhận nhờ cánh carbon mới lập được kỷ lục.", "paraphrase": "made possible ↔ without … impossible" },
+            { "n": 37, "prompt": "He describes how his flying helps to advertise a company.", "answer": ["A"], "evidence": "every flight puts the brand in front of thousands of people", "explanation": "Fennimore bay để quảng bá thương hiệu đồ thể thao.", "paraphrase": "advertise a company ↔ puts the brand in front of" },
+            { "n": 38, "prompt": "He explains why he wanted to find a new way of flying.", "answer": ["D"], "evidence": "inside a cockpit you are sealed off from the sky", "explanation": "Lindqvist muốn cảm nhận không khí thay vì ngồi trong buồng lái.", "paraphrase": "" },
+            { "n": 39, "prompt": "He warns about an error that some beginners make.", "answer": ["C"], "evidence": "People think they can save money by teaching themselves. It's a mistake", "explanation": "Moreno cảnh báo việc tự học để tiết kiệm.", "paraphrase": "error ↔ mistake" },
+            { "n": 40, "prompt": "She mentions conditions which make flying impossible.", "answer": ["B"], "evidence": "you simply cannot take off when the wind is strong", "explanation": "Holt: không thể cất cánh khi gió mạnh.", "paraphrase": "conditions ↔ the weather / wind" }
+          ]
+        }
+      ]
+    }
+  ]
+}

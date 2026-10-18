@@ -42,7 +42,7 @@ export type Text = { id: string; title: string; paragraphs: Paragraph[] }
 export type Section = { id: string; number: 1 | 2 | 3; title: string; texts: Text[]; groups: Group[] }
 export type Test = { id: string; title: string; sections: Section[] }
 
-export const TEST_IDS = ['gt-1', 'gt-2']
+export const TEST_IDS = ['gt-1', 'gt-2', 'gt-3', 'gt-4', 'gt-5']
 
 export const TYPE_LABEL: Record<QType, string> = {
   tfng: 'True / False / Not Given',
