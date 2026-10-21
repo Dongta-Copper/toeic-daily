@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 
-// The TOEIC part list was replaced by IELTS General Reading (the old /quiz and /history pages still exist).
+// Home is the learning roadmap (the old TOEIC part list was replaced by IELTS; /quiz and /history still exist).
 export default function Home() {
-  redirect('/ielts')
+  redirect('/roadmap')
 }

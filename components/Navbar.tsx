@@ -26,22 +26,21 @@ export default function Navbar() {
         </Link>
 
         <div className="flex items-center p-0.5 bg-gray-100 rounded-md text-sm">
-          <Link
-            href="/ielts"
-            className={`px-3 py-1.5 rounded transition-colors ${
-              !situationMode ? 'bg-white text-gray-900 shadow-sm font-medium' : 'text-gray-500 hover:text-gray-900'
-            }`}
-          >
-            IELTS
-          </Link>
-          <Link
-            href="/situation"
-            className={`px-3 py-1.5 rounded transition-colors ${
-              situationMode ? 'bg-white text-gray-900 shadow-sm font-medium' : 'text-gray-500 hover:text-gray-900'
-            }`}
-          >
-            Situation
-          </Link>
+          {[
+            { href: '/roadmap', label: 'Lộ trình', active: pathname.startsWith('/roadmap') || pathname === '/summary' },
+            { href: '/ielts', label: 'IELTS', active: pathname.startsWith('/ielts') },
+            { href: '/situation', label: 'Situation', active: situationMode },
+          ].map((t) => (
+            <Link
+              key={t.href}
+              href={t.href}
+              className={`px-2.5 sm:px-3 py-1.5 rounded transition-colors ${
+                t.active ? 'bg-white text-gray-900 shadow-sm font-medium' : 'text-gray-500 hover:text-gray-900'
+              }`}
+            >
+              {t.label}
+            </Link>
+          ))}
         </div>
 
         <div className="flex items-center gap-3 sm:gap-4">
