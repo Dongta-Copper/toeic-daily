@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { ArrowLeft, Check, ChevronDown, Dumbbell, Lightbulb, Loader2, Map as MapIcon, Shuffle, Volume2, X } from 'lucide-react'
 import {
   MODE_INFO,
@@ -11,9 +11,9 @@ import {
   gapProgress,
   hash01,
   loadGapData,
-  modeFor,
+  planSteps,
+  supports,
   norm,
-  shuffle,
   syncMistakes,
   todayPool,
   type ClusterView,
@@ -22,6 +22,7 @@ import {
   type GapProgress,
   type Mode,
   type Outcome,
+  type Step,
 } from '@/lib/gaps'
 
 function speak(text: string) {
@@ -72,81 +73,125 @@ function CardBack({ item, rule }: { item: GapItem; rule?: string }) {
   )
 }
 
-// ─── Match ────────────────────────────────────────────────────────────────────
+// ─── Việt → cụm Anh ───────────────────────────────────────────────────────────
 
-function MatchRound({ items, seed, onDone }: { items: GapItem[]; seed: string; onDone: (results: Map<string, Outcome | null>) => void }) {
-  const wrongVariant = items.every((i) => i.wrong) && hash01(seed) < 0.5
-  const left = useMemo(() => shuffle(items, seed + 'L'), [items, seed])
-  const right = useMemo(() => shuffle(items, seed + 'R'), [items, seed])
-  const [picked, setPicked] = useState<string | null>(null)
-  const [done, setDone] = useState<Set<string>>(new Set())
-  const [misses, setMisses] = useState<Map<string, number>>(new Map())
-  const [flash, setFlash] = useState<string | null>(null)
-  const startRef = useRef(0)
-  useEffect(() => {
-    startRef.current = performance.now()
-  }, [])
-  const [elapsed, setElapsed] = useState(0)
+function AnswerInput({
+  value,
+  onChange,
+  onSubmit,
+  locked,
+  placeholder,
+}: {
+  value: string
+  onChange: (v: string) => void
+  onSubmit: () => void
+  locked: boolean
+  placeholder: string
+}) {
+  return (
+    <form
+      onSubmit={(e) => {
+        e.preventDefault()
+        if (!locked && value.trim()) onSubmit()
+      }}
+      className="flex gap-2"
+    >
+      <input
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        readOnly={locked}
+        autoFocus
+        autoCorrect="off"
+        autoCapitalize="none"
+        spellCheck={false}
+        lang="en"
+        placeholder={placeholder}
+        className="flex-1 min-w-0 border border-gray-300 rounded-md px-3 py-2.5 text-base focus:outline-none focus:ring-2 focus:ring-gray-900 read-only:bg-gray-50"
+      />
+      {!locked && (
+        <button type="submit" className="px-4 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md">
+          Kiểm tra
+        </button>
+      )}
+    </form>
+  )
+}
 
-  function choose(rightId: string, at: number) {
-    if (!picked) return
-    if (picked === rightId) {
-      const next = new Set(done).add(rightId)
-      setDone(next)
-      setPicked(null)
-      if (next.size === items.length) {
-        setElapsed(Math.max(1, Math.round((at - startRef.current) / 1000)))
-        onDone(new Map(items.map((i) => [i.id, (misses.get(i.id) ?? 0) === 0 ? 'recognise' : null])))
-      }
-    } else {
-      setMisses((m) => new Map(m).set(picked, (m.get(picked) ?? 0) + 1))
-      setFlash(rightId)
-      setTimeout(() => setFlash(null), 400)
-    }
+function HintButton({ answer, hints, onHint }: { answer: string; hints: number; onHint: () => void }) {
+  return (
+    <button onClick={onHint} className="mt-2 inline-flex items-center gap-1 text-xs text-gray-400 hover:text-gray-900">
+      <Lightbulb className="w-3.5 h-3.5" /> Gợi ý chữ cái
+      {hints > 0 && <b className="text-gray-700 ml-1">{answer.slice(0, hints) + (hints < answer.length ? '…' : '')}</b>}
+    </button>
+  )
+}
+
+function VnCard({ item, context, onResult }: { item: GapItem; context?: string; onResult: (o: Outcome) => void }) {
+  const [value, setValue] = useState('')
+  const [hints, setHints] = useState(0)
+  const [ok, setOk] = useState<boolean | null>(null)
+
+  function check() {
+    const right = norm(value) === norm(item.correct)
+    setOk(right)
+    onResult(right ? (hints === 0 ? 'produce' : 'recognise') : 'wrong')
   }
 
-  const tile = 'w-full min-h-12 px-3 py-2 rounded-md border text-sm text-left transition-colors'
   return (
     <div>
-      <p className="text-sm text-gray-600 mb-3">
-        {wrongVariant ? 'Ghép lỗi sai (trái) với cách viết đúng (phải).' : 'Ghép nghĩa (trái) với cụm tiếng Anh (phải).'}
-        {elapsed > 0 && <b className="ml-2 text-gray-900">{elapsed} giây</b>}
-      </p>
-      <div className="grid grid-cols-2 gap-2">
-        <div className="space-y-2">
-          {left.map((i) =>
-            done.has(i.id) ? (
-              <div key={i.id} className={`${tile} border-transparent bg-green-50 text-green-700 opacity-60`}>
-                ✓
-              </div>
-            ) : (
-              <button
-                key={i.id}
-                onClick={() => setPicked(i.id)}
-                className={`${tile} ${picked === i.id ? 'border-gray-900 bg-gray-900 text-white' : 'border-gray-300 text-gray-800'}`}
-              >
-                {wrongVariant ? <span className="line-through decoration-red-400">{i.wrong}</span> : i.vietnamese}
-              </button>
-            )
-          )}
-        </div>
-        <div className="space-y-2">
-          {right.map((i) =>
-            done.has(i.id) ? (
-              <div key={i.id} className={`${tile} border-transparent bg-green-50 text-green-700 opacity-60`}>
-                {i.correct}
-              </div>
-            ) : (
-              <button
-                key={i.id}
-                onClick={(e) => choose(i.id, e.timeStamp)}
-                className={`${tile} font-medium ${flash === i.id ? 'border-red-400 bg-red-50 text-red-600' : 'border-gray-300 text-gray-900'}`}
-              >
-                {i.correct}
-              </button>
-            )
-          )}
-        </div>
+      <p className="text-xs text-gray-400 uppercase tracking-widest mb-1">Viết cụm tiếng Anh cho</p>
+      <p className="text-lg font-medium text-gray-900 mb-3">{item.vietnamese}</p>
+      {context && (
+        <p className="text-sm text-gray-500 leading-relaxed mb-4 p-3 bg-gray-50 rounded-md">
+          <span className="text-xs text-gray-400 mr-1">Trong câu:</span>
+          {context}
+        </p>
+      )}
+      <AnswerInput value={value} onChange={setValue} onSubmit={check} locked={ok !== null} placeholder="Gõ cụm tiếng Anh" />
+      {ok === null && <HintButton answer={item.correct} hints={hints} onHint={() => setHints((h) => Math.min(item.correct.length, h + 1))} />}
+      {ok !== null && (
+        <p className={`mt-3 text-sm font-medium ${ok ? 'text-green-700' : 'text-red-600'}`}>
+          {ok ? (hints ? '✓ Đúng (có dùng gợi ý — chưa tính là thuộc)' : '✓ Chính xác!') : `✗ Bạn viết “${value.trim()}” — đúng là “${item.correct}”`}
+        </p>
+      )}
+    </div>
+  )
+}
+
+// ─── Chọn đúng trong câu ─────────────────────────────────────────────────────
+
+function ChooseCard({ item, seed, onResult }: { item: GapItem; seed: string; onResult: (o: Outcome) => void }) {
+  const options = useMemo(() => (hash01(seed) < 0.5 ? [item.correct, item.wrong!] : [item.wrong!, item.correct]), [item, seed])
+  const [picked, setPicked] = useState<string | null>(null)
+
+  return (
+    <div>
+      <p className="text-sm text-gray-600 mb-1">Chọn cách viết đúng cho chỗ trống:</p>
+      <p className="text-xs text-gray-400 mb-3">({item.vietnamese})</p>
+      <p className="text-lg text-gray-900 leading-relaxed mb-5 p-3 bg-gray-50 rounded-md">{blanked(item)}</p>
+      <div className="grid gap-2">
+        {options.map((o) => {
+          const isRight = o === item.correct
+          let cls = 'border-gray-300 text-gray-900 hover:border-gray-900'
+          if (picked !== null) {
+            if (isRight) cls = 'border-green-500 bg-green-50 text-green-700'
+            else if (o === picked) cls = 'border-red-400 bg-red-50 text-red-600 line-through'
+            else cls = 'border-gray-100 text-gray-400'
+          }
+          return (
+            <button
+              key={o}
+              disabled={picked !== null}
+              onClick={() => {
+                setPicked(o)
+                onResult(isRight ? 'recognise' : 'wrong')
+              }}
+              className={`w-full text-left px-4 py-3 rounded-md border text-base font-medium ${cls}`}
+            >
+              {o}
+            </button>
+          )
+        })}
       </div>
     </div>
   )
@@ -268,7 +313,7 @@ function SpotCard({ item, seed, onResult }: { item: GapItem; seed: string; onRes
 
 // ─── Type the phrase ──────────────────────────────────────────────────────────
 
-function TypeCard({ item, onResult }: { item: GapItem; onResult: (o: Outcome) => void }) {
+function TypeCard({ item, context, onResult }: { item: GapItem; context?: string; onResult: (o: Outcome) => void }) {
   const [value, setValue] = useState('')
   const [hints, setHints] = useState(0)
   const [ok, setOk] = useState<boolean | null>(null)
@@ -282,9 +327,11 @@ function TypeCard({ item, onResult }: { item: GapItem; onResult: (o: Outcome) =>
 
   return (
     <div>
-      <p className="text-sm text-gray-500 mb-1">Nghĩa / gợi ý</p>
-      <p className="text-base text-gray-900 mb-3">{item.vietnamese}</p>
-      <p className="text-base text-gray-800 leading-relaxed mb-4 p-3 bg-gray-50 rounded-md">{blanked(item)}</p>
+      <p className="text-sm text-gray-600 mb-2">
+        Điền cụm còn thiếu <span className="text-gray-400">({item.vietnamese})</span>
+      </p>
+      <p className="text-lg text-gray-900 leading-relaxed mb-2 p-3 bg-gray-50 rounded-md">{blanked(item)}</p>
+      {context && <p className="text-xs text-gray-400 mb-4">{context}</p>}
       <form
         onSubmit={(e) => {
           e.preventDefault()
@@ -328,7 +375,7 @@ function TypeCard({ item, onResult }: { item: GapItem; onResult: (o: Outcome) =>
 
 // ─── Rewrite my sentence ──────────────────────────────────────────────────────
 
-function RewriteCard({ item, onResult }: { item: GapItem; onResult: (o: Outcome) => void }) {
+function RewriteCard({ item, context, onResult }: { item: GapItem; context?: string; onResult: (o: Outcome) => void }) {
   const [value, setValue] = useState('')
   const [busy, setBusy] = useState(false)
   const [res, setRes] = useState<{ ok: boolean; feedback: string; corrected: string } | null>(null)
@@ -336,8 +383,15 @@ function RewriteCard({ item, onResult }: { item: GapItem; onResult: (o: Outcome)
 
   async function submit() {
     if (!value.trim()) return
-    if (norm(value) === norm(item.sentenceCorrect)) {
-      setRes({ ok: true, feedback: 'Câu sửa chính xác.', corrected: value })
+    // Graded instantly (no AI) when the fix is clear: the correct chunk is present, the wrong one is gone,
+    // and the sentence is otherwise about the same length as before.
+    const v = norm(value)
+    const words = v.split(' ').length
+    const before = norm(item.sentenceWrong ?? '').split(' ').length
+    const clearFix =
+      v.includes(norm(item.correct)) && (!item.wrong || !v.includes(norm(item.wrong))) && Math.abs(words - before) <= Math.max(3, before * 0.3)
+    if (v === norm(item.sentenceCorrect) || clearFix) {
+      setRes({ ok: true, feedback: 'Đã sửa đúng chỗ lỗi.', corrected: value })
       onResult('produce')
       return
     }
@@ -363,6 +417,7 @@ function RewriteCard({ item, onResult }: { item: GapItem; onResult: (o: Outcome)
   return (
     <div>
       <p className="text-sm text-gray-600 mb-2">Đây là câu bạn từng viết. Viết lại cho đúng:</p>
+      {context && <p className="text-xs text-gray-400 mb-2">Ý gốc: {context}</p>}
       <p className="text-base text-red-700 leading-relaxed p-3 bg-red-50 rounded-md mb-3">{item.sentenceWrong}</p>
       <textarea
         value={value}
@@ -397,29 +452,6 @@ function RewriteCard({ item, onResult }: { item: GapItem; onResult: (o: Outcome)
 
 // ─── Session ──────────────────────────────────────────────────────────────────
 
-type Step = { kind: 'match'; items: GapItem[] } | { kind: Exclude<Mode, 'match'>; item: GapItem; retry?: boolean }
-
-function buildSteps(pool: GapItem[], mode: Mode | 'auto', progress: Map<string, GapProgress>, seed: string): Step[] {
-  if (mode === 'match') {
-    const order = shuffle(pool, seed)
-    const out: Step[] = []
-    for (let i = 0; i < order.length; i += 6) if (order.slice(i, i + 6).length >= 3) out.push({ kind: 'match', items: order.slice(i, i + 6) })
-    return out
-  }
-  if (mode !== 'auto') {
-    return shuffle(pool, seed).map((item) => {
-      const ok = mode === 'type' || (mode === 'spot' && item.sentenceWrong && item.errorWord) || (mode === 'rewrite' && item.kind === 'mistake' && item.sentenceWrong)
-      return { kind: ok ? mode : 'type', item }
-    })
-  }
-  // Auto: warm up by matching the new cards, then one exercise per card at its own level (interleaved).
-  const fresh = pool.filter((i) => !progress.has(i.id))
-  const steps: Step[] = []
-  for (let i = 0; i < fresh.length; i += 6) if (fresh.slice(i, i + 6).length >= 3) steps.push({ kind: 'match', items: fresh.slice(i, i + 6) })
-  for (const item of shuffle(pool, seed)) steps.push({ kind: modeFor(item, progress.get(item.id)), item })
-  return steps
-}
-
 function Session({
   pool,
   mode,
@@ -436,21 +468,24 @@ function Session({
   onExit: (again: boolean) => void
 }) {
   const [seed] = useState(() => String(Date.now()))
-  const [steps, setSteps] = useState(() => buildSteps(pool, mode, data.progress, seed))
+  const [steps, setSteps] = useState<Step[]>(() => planSteps(pool, data.progress, mode === 'auto' ? undefined : mode))
   const [index, setIndex] = useState(0)
   const [answered, setAnswered] = useState(false)
   const [tally, setTally] = useState({ produce: 0, recognise: 0, wrong: 0 })
   const [progress, setProgress] = useState(data.progress)
   const step = steps[index]
+  const contextOf = (item: GapItem) => item.sourceIds.map((id) => data.contexts.get(id)).find(Boolean)
 
   function record(item: GapItem, outcome: Outcome, retry?: boolean) {
     setTally((t) => ({ ...t, [outcome]: t[outcome] + 1 }))
+    setAnswered(true)
     if (retry) return // the second try in the same session does not change the schedule
     const next = applyOutcome(item.id, progress.get(item.id), outcome)
     gapProgress.save([next])
     setProgress((m) => new Map(m).set(item.id, next))
     onProgress(next)
-    if (outcome === 'wrong') setSteps((s) => [...s, { kind: 'type', item, retry: true }])
+    // A wrong answer comes back at the end of the session as a Việt → Anh card.
+    if (outcome === 'wrong') setSteps((s) => [...s, { mode: supports(item, 'vn') ? 'vn' : 'type', item, retry: true }])
   }
 
   if (!step) {
@@ -469,11 +504,9 @@ function Session({
           </span>
         </div>
         <div className="flex justify-center gap-2">
-          {mode !== 'auto' && (
-            <button onClick={() => onExit(true)} className="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md">
-              Luyện tiếp
-            </button>
-          )}
+          <button onClick={() => onExit(true)} className="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md">
+            Luyện thêm 10 câu
+          </button>
           <button onClick={() => onExit(false)} className="px-5 py-2.5 border border-gray-300 text-sm font-medium rounded-md">
             Xong
           </button>
@@ -482,7 +515,8 @@ function Session({
     )
   }
 
-  const label = step.kind === 'match' ? MODE_INFO.match.label : MODE_INFO[step.kind].label
+  const onResult = (o: Outcome) => record(step.item, o, step.retry)
+  const context = contextOf(step.item)
   return (
     <div>
       <div className="flex items-center justify-between mb-3 text-xs text-gray-500">
@@ -490,8 +524,8 @@ function Session({
           {index + 1}/{steps.length}
         </span>
         <span>
-          {label}
-          {step.kind !== 'match' && step.retry ? ' · làm lại' : ''}
+          {MODE_INFO[step.mode].label}
+          {step.retry ? ' · làm lại' : ''}
         </span>
         <button onClick={() => onExit(false)} className="text-gray-400 hover:text-gray-900">
           Dừng
@@ -502,25 +536,14 @@ function Session({
       </div>
 
       <div key={index} className="p-4 sm:p-5 border border-gray-200 rounded-lg">
-        {step.kind === 'match' && (
-          <MatchRound
-            items={step.items}
-            seed={seed + index}
-            onDone={(res) => {
-              for (const item of step.items) {
-                const o = res.get(item.id)
-                if (o) record(item, o)
-              }
-              setAnswered(true)
-            }}
-          />
-        )}
-        {step.kind === 'spot' && <SpotCard item={step.item} seed={seed + step.item.id} onResult={(o) => (record(step.item, o, step.retry), setAnswered(true))} />}
-        {step.kind === 'type' && <TypeCard item={step.item} onResult={(o) => (record(step.item, o, step.retry), setAnswered(true))} />}
-        {step.kind === 'rewrite' && <RewriteCard item={step.item} onResult={(o) => (record(step.item, o, step.retry), setAnswered(true))} />}
+        {step.mode === 'vn' && <VnCard item={step.item} context={context} onResult={onResult} />}
+        {step.mode === 'choose' && <ChooseCard item={step.item} seed={seed + step.item.id} onResult={onResult} />}
+        {step.mode === 'spot' && <SpotCard item={step.item} seed={seed + step.item.id} onResult={onResult} />}
+        {step.mode === 'type' && <TypeCard item={step.item} context={context} onResult={onResult} />}
+        {step.mode === 'rewrite' && <RewriteCard item={step.item} context={context} onResult={onResult} />}
       </div>
 
-      {answered && step.kind !== 'match' && <CardBack item={step.item} rule={rules.get(step.item.clusterId)} />}
+      {answered && <CardBack item={step.item} rule={rules.get(step.item.clusterId)} />}
       {answered && (
         <button
           onClick={() => {
@@ -637,7 +660,7 @@ export default function GapGym() {
         const sb = pb?.status === 'mastered' ? 10 : pb?.box ?? -1
         return sa - sb || hash01(a.id + Date.now()) - 0.5
       })
-      .slice(0, 12)
+      .slice(0, 10)
   }
 
   const mastered = data ? data.items.filter((i) => data.progress.get(i.id)?.status === 'mastered').length : 0
@@ -721,8 +744,8 @@ export default function GapGym() {
                 <p className="p-5 border border-gray-200 rounded-lg text-sm text-gray-600 text-center">Hôm nay đã xong. Vào “Luyện thêm” nếu muốn tập tiếp.</p>
               )}
               <div className="mt-8 text-xs text-gray-500 leading-relaxed space-y-1">
-                <p>• Thẻ mới: Ghép cặp để làm quen → Bắt lỗi / Gõ cụm từ → Sửa câu của chính bạn.</p>
-                <p>• “Thuộc” = tự viết đúng (không gợi ý) ở 2 ngày khác nhau. Ghép cặp chỉ tính là “nhận ra”.</p>
+                <p>• Mỗi ngày 10 câu, trộn 5 dạng: Việt → cụm Anh, Chọn đúng trong câu, Bắt lỗi, Điền cụm vào câu, Sửa câu của tôi.</p>
+                <p>• “Thuộc” = tự viết đúng (không gợi ý) ở 2 ngày khác nhau. “Chọn đúng” chỉ tính là “nhận ra”.</p>
                 <p>• Sai lại một lỗi cũ trong bài Situation → thẻ đó tự quay về ôn lại từ đầu.</p>
               </div>
             </>
@@ -732,7 +755,7 @@ export default function GapGym() {
             <GapMap
               views={views}
               progress={data.progress}
-              onPractise={(v) => setSession({ pool: v.items.slice(0, 12), mode: 'auto', key: Date.now() })}
+              onPractise={(v) => setSession({ pool: v.items.slice(0, 10), mode: 'auto', key: Date.now() })}
             />
           )}
 
@@ -774,7 +797,7 @@ export default function GapGym() {
                   <Shuffle className="w-4 h-4" /> Trộn các dạng
                 </button>
               </div>
-              <p className="text-xs text-gray-500">Mỗi lượt 12 thẻ yếu nhất của lỗ hổng đã chọn. Luyện bao nhiêu lượt cũng được.</p>
+              <p className="text-xs text-gray-500">Mỗi lượt 10 câu yếu nhất của lỗ hổng đã chọn. Luyện bao nhiêu lượt cũng được.</p>
             </div>
           )}
 

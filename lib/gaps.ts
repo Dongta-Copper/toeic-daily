@@ -109,24 +109,65 @@ export function applyOutcome(itemId: string, prev: GapProgress | undefined, outc
 }
 
 // ─── Modes ────────────────────────────────────────────────────────────────────
+// Every exercise shows the chunk inside a sentence or with its Vietnamese meaning — never a bare pair.
 
-export type Mode = 'match' | 'spot' | 'type' | 'rewrite'
+export type Mode = 'vn' | 'choose' | 'spot' | 'type' | 'rewrite'
 
 export const MODE_INFO: Record<Mode, { label: string; desc: string }> = {
-  match: { label: 'Ghép cặp', desc: 'Ghép 6 cặp nhanh nhất có thể' },
-  spot: { label: 'Bắt lỗi', desc: 'Chạm vào chữ sai rồi sửa' },
-  type: { label: 'Gõ cụm từ', desc: 'Nhìn nghĩa, gõ đúng cụm tiếng Anh' },
-  rewrite: { label: 'Sửa câu của tôi', desc: 'Viết lại câu sai bạn từng viết, AI chấm' },
+  vn: { label: 'Việt → cụm Anh', desc: 'Đọc nghĩa tiếng Việt, gõ cụm tiếng Anh' },
+  choose: { label: 'Chọn đúng trong câu', desc: 'Câu có chỗ trống — chọn cách viết đúng' },
+  spot: { label: 'Bắt lỗi', desc: 'Chạm vào chữ sai trong câu rồi sửa' },
+  type: { label: 'Điền cụm vào câu', desc: 'Gõ cụm còn thiếu trong câu tiếng Anh' },
+  rewrite: { label: 'Sửa câu của tôi', desc: 'Viết lại câu sai bạn từng viết' },
 }
 
-/** Which single-card exercise suits an item at its current stage. */
-export function modeFor(item: GapItem, p: GapProgress | undefined): Exclude<Mode, 'match'> {
-  const box = p?.box ?? 0
-  const canSpot = !!(item.sentenceWrong && item.errorWord)
-  const canRewrite = item.kind === 'mistake' && !!item.sentenceWrong
-  if (box === 0) return canSpot ? 'spot' : 'type'
-  if (box === 1) return hash01(item.id + (p?.reviews ?? 0)) < 0.5 || !canSpot ? 'type' : 'spot'
-  return canRewrite && hash01(item.id + 'r' + (p?.reviews ?? 0)) < 0.5 ? 'rewrite' : 'type'
+const wordsIn = (s: string) => s.trim().split(/\s+/).length
+
+export function supports(item: GapItem, mode: Mode): boolean {
+  const inSentence = item.sentenceCorrect.toLowerCase().includes(item.correct.toLowerCase())
+  switch (mode) {
+    case 'vn':
+      return !!item.vietnamese
+    case 'choose':
+      return inSentence && !!item.wrong && norm(item.wrong) !== norm(item.correct)
+    case 'spot':
+      // A long sentence of the learner's usually has several mistakes, which makes 'tap the wrong word' ambiguous.
+      return !!(item.sentenceWrong && item.errorWord) && (item.kind !== 'mistake' || wordsIn(item.sentenceWrong) <= 18)
+    case 'type':
+      return inSentence
+    case 'rewrite':
+      return item.kind === 'mistake' && !!item.sentenceWrong && wordsIn(item.sentenceWrong) <= 25
+  }
+}
+
+/** Recognition modes suit new cards; production modes suit cards already seen. */
+const PRODUCTION: Mode[] = ['vn', 'type', 'rewrite']
+
+/** A varied set: roughly 3 Việt→Anh, 2 choose, 2 spot, 2 fill-in, 1 rewrite, never the same mode twice in a row. */
+export const DAILY_PATTERN: Mode[] = ['vn', 'choose', 'spot', 'type', 'vn', 'rewrite', 'choose', 'spot', 'type', 'vn']
+
+export type Step = { mode: Mode; item: GapItem; retry?: boolean }
+
+export function planSteps(pool: GapItem[], progress: Map<string, GapProgress>, only?: Mode): Step[] {
+  const left = [...pool]
+  const steps: Step[] = []
+  const pattern = only ? pool.map(() => only) : DAILY_PATTERN.slice(0, Math.max(pool.length, 0))
+  for (let i = 0; i < pattern.length && left.length; i++) {
+    const want = pattern[i]
+    const isNew = (it: GapItem) => !progress.has(it.id)
+    // Prefer: an item that supports the mode and whose stage matches it (new → recognition, seen → production).
+    const fits = left.filter((it) => supports(it, want))
+    const best =
+      fits.find((it) => PRODUCTION.includes(want) !== isNew(it)) ?? fits[0] ?? null
+    if (best) {
+      steps.push({ mode: want, item: best })
+      left.splice(left.indexOf(best), 1)
+    } else {
+      const it = left.shift()!
+      steps.push({ mode: supports(it, 'vn') ? 'vn' : 'type', item: it })
+    }
+  }
+  return steps
 }
 
 // ─── Gap map ──────────────────────────────────────────────────────────────────
@@ -166,9 +207,9 @@ export function clusterViews(
 
 // ─── Daily session ────────────────────────────────────────────────────────────
 
-export const TODAY_CAP = 30
+export const TODAY_CAP = 10
 
-/** Due cards + every new mistake, then extra cards from the weakest cluster; mastered cards only when due. */
+/** 10 cards a day: due cards first, then new mistakes, then the weakest cluster; mastered cards only when due. */
 export function todayPool(items: GapItem[], progress: Map<string, GapProgress>, views: ClusterView[]): GapItem[] {
   const today = localDate()
   const due = items.filter((i) => {
@@ -177,7 +218,19 @@ export function todayPool(items: GapItem[], progress: Map<string, GapProgress>, 
   })
   const fresh = items.filter((i) => !progress.has(i.id))
   const picked = new Map<string, GapItem>()
-  for (const i of [...fresh.filter((x) => x.kind === 'mistake'), ...due, ...fresh]) if (picked.size < TODAY_CAP) picked.set(i.id, i)
+  const order = [...due, ...fresh.filter((x) => x.kind === 'mistake'), ...fresh]
+  // First pass: at most one card per original sentence and two per cluster, so the 10 cards are varied.
+  const sources = new Set<string>()
+  const perCluster = new Map<string, number>()
+  for (const i of order) {
+    if (picked.size >= TODAY_CAP) break
+    const src = i.sourceIds[0]
+    if ((src && sources.has(src)) || (perCluster.get(i.clusterId) ?? 0) >= 2) continue
+    picked.set(i.id, i)
+    if (src) sources.add(src)
+    perCluster.set(i.clusterId, (perCluster.get(i.clusterId) ?? 0) + 1)
+  }
+  for (const i of order) if (picked.size < TODAY_CAP) picked.set(i.id, i)
   const focus = views.find((v) => v.status === 'red')
   if (focus) for (const i of focus.items) if (picked.size < TODAY_CAP && progress.get(i.id)?.status !== 'mastered') picked.set(i.id, i)
   return [...picked.values()]
@@ -228,6 +281,7 @@ export type GapData = {
   items: GapItem[]
   progress: Map<string, GapProgress>
   attemptDates: Map<string, string> // source id → ISO date
+  contexts: Map<string, string> // source id → the Vietnamese sentence the learner was translating
   pending: RawError[]
 }
 
@@ -247,7 +301,11 @@ export async function loadGapData(): Promise<GapData> {
     for (const g of s.groups) for (const q of g.questions) index.set(qid(s.id, q.n), { g, q })
 
   const attemptDates = new Map<string, string>()
-  for (const a of attempts) attemptDates.set(a.id, a.at)
+  const contexts = new Map<string, string>()
+  for (const a of attempts) {
+    attemptDates.set(a.id, a.at)
+    contexts.set(a.id, a.vietnamese)
+  }
   for (const a of ielts) for (const r of a.results) attemptDates.set(`${a.id}:${r.qid}`, a.at)
 
   const done = new Set([...processed.map((p) => p.id), ...items.flatMap((i) => i.sourceIds)])
@@ -256,6 +314,7 @@ export async function loadGapData(): Promise<GapData> {
     items,
     progress: new Map(progress.map((p) => [p.id, p])),
     attemptDates,
+    contexts,
     pending: pendingErrors(attempts, ielts, index, done),
   }
 }
