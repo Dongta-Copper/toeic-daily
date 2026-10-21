@@ -197,120 +197,6 @@ function ChooseCard({ item, seed, onResult }: { item: GapItem; seed: string; onR
   )
 }
 
-// ─── Spot the error ───────────────────────────────────────────────────────────
-
-function SpotCard({ item, seed, onResult }: { item: GapItem; seed: string; onResult: (o: Outcome) => void }) {
-  const noError = hash01(seed + 'noerr') < 0.25
-  const sentence = noError ? item.sentenceCorrect : item.sentenceWrong!
-  const tokens = useMemo(() => {
-    const out: { text: string; start: number; end: number }[] = []
-    const re = /\S+/g
-    let m: RegExpExecArray | null
-    while ((m = re.exec(sentence))) out.push({ text: m[0], start: m.index, end: m.index + m[0].length })
-    return out
-  }, [sentence])
-  const errStart = noError ? -1 : sentence.indexOf(item.errorWord!)
-  const errEnd = errStart + (item.errorWord?.length ?? 0)
-  const isTarget = (t: { start: number; end: number }) => errStart >= 0 && t.start < errEnd && t.end > errStart
-
-  const [stage, setStage] = useState<'find' | 'fix' | 'done'>('find')
-  const [tapped, setTapped] = useState<number | null>(null)
-  const [fix, setFix] = useState('')
-  const [ok, setOk] = useState<boolean | null>(null)
-
-  function tap(i: number | 'none') {
-    if (stage !== 'find') return
-    if (i === 'none') {
-      const right = noError
-      setOk(right)
-      setStage('done')
-      onResult(right ? 'recognise' : 'wrong')
-      return
-    }
-    setTapped(i)
-    if (!noError && isTarget(tokens[i])) setStage('fix')
-    else {
-      setOk(false)
-      setStage('done')
-      onResult('wrong')
-    }
-  }
-
-  function submitFix(value: string) {
-    const replaced = item.sentenceWrong!.replace(item.errorWord!, value).replace(/\s+/g, ' ')
-    const right = norm(value) === norm(item.correct) || norm(replaced) === norm(item.sentenceCorrect)
-    setOk(right)
-    setStage('done')
-    onResult(right ? 'produce' : 'wrong')
-  }
-
-  return (
-    <div>
-      <p className="text-sm text-gray-600 mb-3">
-        {stage === 'fix' ? 'Đúng chỗ sai rồi! Sửa lại thành gì?' : 'Chạm vào chữ SAI trong câu — hoặc chọn “Không có lỗi”.'}
-      </p>
-      <p className="text-lg leading-loose text-gray-900 mb-4">
-        {tokens.map((t, i) => {
-          let cls = 'hover:bg-gray-100'
-          if (stage !== 'find') {
-            if (isTarget(t)) cls = 'bg-red-100 text-red-700 line-through decoration-red-500'
-            else if (i === tapped) cls = 'bg-amber-100'
-          }
-          return (
-            <button key={i} onClick={() => tap(i)} className={`px-0.5 rounded ${cls}`}>
-              {t.text}{' '}
-            </button>
-          )
-        })}
-      </p>
-      {stage === 'find' && (
-        <button onClick={() => tap('none')} className="px-4 py-2 border border-gray-300 rounded-md text-sm text-gray-700 hover:border-gray-900">
-          Không có lỗi
-        </button>
-      )}
-      {stage === 'fix' && (
-        <form
-          onSubmit={(e) => {
-            e.preventDefault()
-            submitFix(fix)
-          }}
-          className="flex flex-wrap gap-2"
-        >
-          <input
-            value={fix}
-            onChange={(e) => setFix(e.target.value)}
-            autoFocus
-            autoCorrect="off"
-            autoCapitalize="none"
-            spellCheck={false}
-            placeholder={`thay cho “${item.errorWord}”`}
-            className="flex-1 min-w-0 border border-gray-300 rounded-md px-3 py-2.5 text-base focus:outline-none focus:ring-2 focus:ring-gray-900"
-          />
-          <button type="submit" className="px-4 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md">
-            Sửa
-          </button>
-          <button type="button" onClick={() => submitFix('')} className="px-3 py-2.5 border border-gray-300 rounded-md text-sm text-gray-700">
-            Bỏ chữ này
-          </button>
-        </form>
-      )}
-      {stage === 'done' && (
-        <p className={`text-sm font-medium ${ok ? 'text-green-700' : 'text-red-600'}`}>
-          {noError
-            ? ok
-              ? '✓ Đúng — câu này không có lỗi.'
-              : '✗ Câu này thực ra đúng.'
-            : ok
-              ? '✓ Tìm đúng và sửa đúng!'
-              : tapped !== null && isTarget(tokens[tapped])
-                ? `✗ Tìm đúng chỗ, nhưng phải sửa thành “${item.correct}”.`
-                : `✗ Chữ sai là “${item.errorWord}”.`}
-        </p>
-      )}
-    </div>
-  )
-}
-
 // ─── Type the phrase ──────────────────────────────────────────────────────────
 
 function TypeCard({ item, context, onResult }: { item: GapItem; context?: string; onResult: (o: Outcome) => void }) {
@@ -368,83 +254,6 @@ function TypeCard({ item, context, onResult }: { item: GapItem; context?: string
         <p className={`mt-3 text-sm font-medium ${ok ? 'text-green-700' : 'text-red-600'}`}>
           {ok ? (hints ? '✓ Đúng (có dùng gợi ý — chưa tính là thuộc)' : '✓ Chính xác!') : `✗ Đáp án: ${item.correct}`}
         </p>
-      )}
-    </div>
-  )
-}
-
-// ─── Rewrite my sentence ──────────────────────────────────────────────────────
-
-function RewriteCard({ item, context, onResult }: { item: GapItem; context?: string; onResult: (o: Outcome) => void }) {
-  const [value, setValue] = useState('')
-  const [busy, setBusy] = useState(false)
-  const [res, setRes] = useState<{ ok: boolean; feedback: string; corrected: string } | null>(null)
-  const [error, setError] = useState('')
-
-  async function submit() {
-    if (!value.trim()) return
-    // Graded instantly (no AI) when the fix is clear: the correct chunk is present, the wrong one is gone,
-    // and the sentence is otherwise about the same length as before.
-    const v = norm(value)
-    const words = v.split(' ').length
-    const before = norm(item.sentenceWrong ?? '').split(' ').length
-    const clearFix =
-      v.includes(norm(item.correct)) && (!item.wrong || !v.includes(norm(item.wrong))) && Math.abs(words - before) <= Math.max(3, before * 0.3)
-    if (v === norm(item.sentenceCorrect) || clearFix) {
-      setRes({ ok: true, feedback: 'Đã sửa đúng chỗ lỗi.', corrected: value })
-      onResult('produce')
-      return
-    }
-    setBusy(true)
-    setError('')
-    try {
-      const r = await fetch('/api/gaps/check', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sentenceWrong: item.sentenceWrong, sentenceCorrect: item.sentenceCorrect, correct: item.correct, wrong: item.wrong, answer: value }),
-      })
-      const data = await r.json()
-      if (!r.ok) throw new Error(data.error)
-      setRes(data)
-      onResult(data.ok ? 'produce' : 'wrong')
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'AI chưa chấm được.')
-    } finally {
-      setBusy(false)
-    }
-  }
-
-  return (
-    <div>
-      <p className="text-sm text-gray-600 mb-2">Đây là câu bạn từng viết. Viết lại cho đúng:</p>
-      {context && <p className="text-xs text-gray-400 mb-2">Ý gốc: {context}</p>}
-      <p className="text-base text-red-700 leading-relaxed p-3 bg-red-50 rounded-md mb-3">{item.sentenceWrong}</p>
-      <textarea
-        value={value}
-        onChange={(e) => setValue(e.target.value)}
-        readOnly={!!res}
-        rows={3}
-        autoCorrect="off"
-        spellCheck={false}
-        placeholder="Câu đã sửa…"
-        className="w-full border border-gray-300 rounded-md px-3 py-2 text-base focus:outline-none focus:ring-2 focus:ring-gray-900"
-      />
-      {!res && (
-        <button
-          onClick={submit}
-          disabled={busy || !value.trim()}
-          className="mt-2 flex items-center gap-2 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md disabled:opacity-40"
-        >
-          {busy && <Loader2 className="w-4 h-4 animate-spin" />} {busy ? 'AI đang chấm…' : 'Kiểm tra'}
-        </button>
-      )}
-      {error && <p className="mt-2 text-sm text-red-600">{error}</p>}
-      {res && (
-        <div className={`mt-3 p-3 rounded-md text-sm ${res.ok ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-700'}`}>
-          <p className="font-medium mb-1">{res.ok ? '✓ Sửa đúng!' : '✗ Chưa đúng'}</p>
-          <p className="leading-relaxed">{res.feedback}</p>
-          {!res.ok && <p className="mt-1 text-gray-900">→ {res.corrected}</p>}
-        </div>
       )}
     </div>
   )
@@ -538,9 +347,7 @@ function Session({
       <div key={index} className="p-4 sm:p-5 border border-gray-200 rounded-lg">
         {step.mode === 'vn' && <VnCard item={step.item} context={context} onResult={onResult} />}
         {step.mode === 'choose' && <ChooseCard item={step.item} seed={seed + step.item.id} onResult={onResult} />}
-        {step.mode === 'spot' && <SpotCard item={step.item} seed={seed + step.item.id} onResult={onResult} />}
         {step.mode === 'type' && <TypeCard item={step.item} context={context} onResult={onResult} />}
-        {step.mode === 'rewrite' && <RewriteCard item={step.item} context={context} onResult={onResult} />}
       </div>
 
       {answered && <CardBack item={step.item} rule={rules.get(step.item.clusterId)} />}
@@ -744,7 +551,7 @@ export default function GapGym() {
                 <p className="p-5 border border-gray-200 rounded-lg text-sm text-gray-600 text-center">Hôm nay đã xong. Vào “Luyện thêm” nếu muốn tập tiếp.</p>
               )}
               <div className="mt-8 text-xs text-gray-500 leading-relaxed space-y-1">
-                <p>• Mỗi ngày 10 câu, trộn 5 dạng: Việt → cụm Anh, Chọn đúng trong câu, Bắt lỗi, Điền cụm vào câu, Sửa câu của tôi.</p>
+                <p>• Mỗi ngày 10 câu, 3 dạng xen kẽ: Chọn đúng trong câu, Điền cụm vào câu, Việt → cụm Anh — ưu tiên cụm từ dài.</p>
                 <p>• “Thuộc” = tự viết đúng (không gợi ý) ở 2 ngày khác nhau. “Chọn đúng” chỉ tính là “nhận ra”.</p>
                 <p>• Sai lại một lỗi cũ trong bài Situation → thẻ đó tự quay về ôn lại từ đầu.</p>
               </div>

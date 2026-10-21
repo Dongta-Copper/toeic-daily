@@ -109,56 +109,54 @@ export function applyOutcome(itemId: string, prev: GapProgress | undefined, outc
 }
 
 // ─── Modes ────────────────────────────────────────────────────────────────────
-// Every exercise shows the chunk inside a sentence or with its Vietnamese meaning — never a bare pair.
+// Three short-answer exercises, each showing the chunk in a sentence or with its Vietnamese meaning.
 
-export type Mode = 'vn' | 'choose' | 'spot' | 'type' | 'rewrite'
+export type Mode = 'choose' | 'type' | 'vn'
 
 export const MODE_INFO: Record<Mode, { label: string; desc: string }> = {
-  vn: { label: 'Việt → cụm Anh', desc: 'Đọc nghĩa tiếng Việt, gõ cụm tiếng Anh' },
   choose: { label: 'Chọn đúng trong câu', desc: 'Câu có chỗ trống — chọn cách viết đúng' },
-  spot: { label: 'Bắt lỗi', desc: 'Chạm vào chữ sai trong câu rồi sửa' },
   type: { label: 'Điền cụm vào câu', desc: 'Gõ cụm còn thiếu trong câu tiếng Anh' },
-  rewrite: { label: 'Sửa câu của tôi', desc: 'Viết lại câu sai bạn từng viết' },
+  vn: { label: 'Việt → cụm Anh', desc: 'Đọc nghĩa tiếng Việt, gõ cụm tiếng Anh' },
 }
 
-const wordsIn = (s: string) => s.trim().split(/\s+/).length
+export const wordsIn = (s: string) => s.trim().split(/\s+/).length
+
+/** Phrase-practice value of a chunk: 2–5 words is ideal; longer turns into half a sentence, single words are weaker. */
+export function chunkScore(item: GapItem) {
+  const w = wordsIn(item.correct)
+  return w >= 2 && w <= 5 ? 10 + w : w > 5 ? 6 : 1
+}
 
 export function supports(item: GapItem, mode: Mode): boolean {
   const inSentence = item.sentenceCorrect.toLowerCase().includes(item.correct.toLowerCase())
   switch (mode) {
-    case 'vn':
-      return !!item.vietnamese
     case 'choose':
       return inSentence && !!item.wrong && norm(item.wrong) !== norm(item.correct)
-    case 'spot':
-      // A long sentence of the learner's usually has several mistakes, which makes 'tap the wrong word' ambiguous.
-      return !!(item.sentenceWrong && item.errorWord) && (item.kind !== 'mistake' || wordsIn(item.sentenceWrong) <= 18)
     case 'type':
       return inSentence
-    case 'rewrite':
-      return item.kind === 'mistake' && !!item.sentenceWrong && wordsIn(item.sentenceWrong) <= 25
+    case 'vn':
+      return !!item.vietnamese
   }
 }
 
-/** Recognition modes suit new cards; production modes suit cards already seen. */
-const PRODUCTION: Mode[] = ['vn', 'type', 'rewrite']
-
-/** A varied set: roughly 3 Việt→Anh, 2 choose, 2 spot, 2 fill-in, 1 rewrite, never the same mode twice in a row. */
-export const DAILY_PATTERN: Mode[] = ['vn', 'choose', 'spot', 'type', 'vn', 'rewrite', 'choose', 'spot', 'type', 'vn']
+/** 10 cards: 3 choose, 3 fill-in, 4 Việt → Anh, never the same mode twice in a row. */
+export const DAILY_PATTERN: Mode[] = ['vn', 'choose', 'type', 'vn', 'choose', 'type', 'vn', 'choose', 'type', 'vn']
 
 export type Step = { mode: Mode; item: GapItem; retry?: boolean }
 
 export function planSteps(pool: GapItem[], progress: Map<string, GapProgress>, only?: Mode): Step[] {
   const left = [...pool]
   const steps: Step[] = []
-  const pattern = only ? pool.map(() => only) : DAILY_PATTERN.slice(0, Math.max(pool.length, 0))
+  const pattern = only ? pool.map(() => only) : DAILY_PATTERN.slice(0, pool.length)
   for (let i = 0; i < pattern.length && left.length; i++) {
     const want = pattern[i]
-    const isNew = (it: GapItem) => !progress.has(it.id)
-    // Prefer: an item that supports the mode and whose stage matches it (new → recognition, seen → production).
     const fits = left.filter((it) => supports(it, want))
+    // Typing modes get the longest chunks (multi-word phrases are worth more practice);
+    // the choice mode prefers new cards, which only need recognising at first.
     const best =
-      fits.find((it) => PRODUCTION.includes(want) !== isNew(it)) ?? fits[0] ?? null
+      want === 'choose'
+        ? fits.find((it) => !progress.has(it.id)) ?? fits[0]
+        : [...fits].sort((a, b) => chunkScore(b) - chunkScore(a))[0]
     if (best) {
       steps.push({ mode: want, item: best })
       left.splice(left.indexOf(best), 1)
@@ -218,7 +216,8 @@ export function todayPool(items: GapItem[], progress: Map<string, GapProgress>, 
   })
   const fresh = items.filter((i) => !progress.has(i.id))
   const picked = new Map<string, GapItem>()
-  const order = [...due, ...fresh.filter((x) => x.kind === 'mistake'), ...fresh]
+  const longFirst = (list: GapItem[]) => [...list].sort((a, b) => chunkScore(b) - chunkScore(a))
+  const order = [...longFirst(due), ...longFirst(fresh.filter((x) => x.kind === 'mistake')), ...longFirst(fresh)]
   // First pass: at most one card per original sentence and two per cluster, so the 10 cards are varied.
   const sources = new Set<string>()
   const perCluster = new Map<string, number>()
