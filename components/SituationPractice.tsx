@@ -1,14 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { ArrowLeft, ArrowRight, BarChart3, Check, Layers, Loader2, Pencil, RotateCcw, Sparkles, Volume2 } from 'lucide-react'
 import {
   ERROR_TYPES,
   SCENARIO_META,
+  feedbackFromAttempt,
+  getAttempts,
+  readDrafts,
   requestFeedback,
+  requestFeedbackBatch,
   saveAttempt,
   saveDayProgress,
+  writeDraft,
   type Feedback,
   type Scenario,
   type Sentence,
@@ -181,6 +186,9 @@ export function SentenceCard({
   hint,
   focus,
   source,
+  initialAnswer,
+  initialFeedback,
+  onDraft,
 }: {
   s: Sentence
   day: number
@@ -192,11 +200,14 @@ export function SentenceCard({
   hint?: string
   focus?: string // set when the card is part of a weakness drill
   source?: 'daily' | 'drill' | 'review'
+  initialAnswer?: string // restored draft or previously graded answer
+  initialFeedback?: Feedback // restored grading result
+  onDraft?: (text: string) => void
 }) {
-  const [answer, setAnswer] = useState('')
-  const [revealed, setRevealed] = useState(false)
+  const [answer, setAnswer] = useState(initialAnswer ?? '')
+  const [revealed, setRevealed] = useState(!!initialFeedback)
   const [loading, setLoading] = useState(false)
-  const [feedback, setFeedback] = useState<Feedback | null>(null)
+  const [feedback, setFeedback] = useState<Feedback | null>(initialFeedback ?? null)
   const [error, setError] = useState('')
   const [showHint, setShowHint] = useState(false)
   const [attemptId, setAttemptId] = useState('')
@@ -227,6 +238,7 @@ export function SentenceCard({
         at: new Date().toISOString(),
         source: source ?? (focus ? 'drill' : 'daily'),
         focus,
+        feedback: { summary: fb.summary, corrected: fb.corrected, natural: fb.natural },
       })
     } catch (e) {
       const detail = e instanceof Error && e.message !== 'feedback failed' ? ` (${e.message})` : ''
@@ -269,7 +281,10 @@ export function SentenceCard({
 
       <textarea
         value={answer}
-        onChange={(e) => setAnswer(e.target.value)}
+        onChange={(e) => {
+          setAnswer(e.target.value)
+          onDraft?.(e.target.value)
+        }}
         onKeyDown={(e) => {
           if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && !loading) check()
         }}
@@ -358,6 +373,8 @@ export function SentenceCard({
   )
 }
 
+type Restored = { answer: string; feedback?: Feedback }
+
 export default function SituationPractice({
   data,
   totalDays,
@@ -368,110 +385,208 @@ export default function SituationPractice({
   hasNext: boolean
 }) {
   const [grades, setGrades] = useState<Record<string, Grade>>({})
-  const [saved, setSaved] = useState(false)
+  const [restored, setRestored] = useState<Record<string, Restored> | null>(null)
+  const [drafts, setDrafts] = useState<Record<string, string>>({})
+  const [versions, setVersions] = useState<Record<string, number>>({})
+  const [batchBusy, setBatchBusy] = useState(false)
+  const [batchError, setBatchError] = useState('')
 
-  const graded = Object.keys(grades).length
+  // Restore graded answers (from saved attempts) and unsent drafts for this day.
+  useEffect(() => {
+    const ids = new Set(data.sentences.map((s) => s.id))
+    getAttempts().then((all) => {
+      const latest: Record<string, Restored> = {}
+      const g: Record<string, Grade> = {}
+      for (const a of all) {
+        if (a.day !== data.day || !ids.has(a.sentenceId) || (a.source && a.source !== 'daily') || latest[a.sentenceId]) continue
+        latest[a.sentenceId] = { answer: a.answer, feedback: feedbackFromAttempt(a) }
+        g[a.sentenceId] = a.verdict === 'correct' ? 'remembered' : 'review'
+      }
+      const d = readDrafts(data.day)
+      for (const [id, text] of Object.entries(d)) if (ids.has(id) && !latest[id]) latest[id] = { answer: text }
+      setDrafts(Object.fromEntries(Object.entries(d).filter(([id]) => ids.has(id) && !g[id])))
+      setGrades(g)
+      setRestored(latest)
+    })
+  }, [data])
+
   const total = data.sentences.length
+  const graded = Object.keys(grades).length
   const remembered = Object.values(grades).filter((g) => g === 'remembered').length
+  const pending = data.sentences.filter((s) => !grades[s.id] && drafts[s.id]?.trim())
 
-  async function handleFinish() {
-    await saveDayProgress({
+  // Progress is saved automatically after every graded sentence.
+  function persist(next: Record<string, Grade>) {
+    saveDayProgress({
       day: data.day,
       completedAt: new Date().toISOString(),
-      remembered,
+      remembered: Object.values(next).filter((g) => g === 'remembered').length,
       total,
-      review: Object.entries(grades).filter(([, g]) => g === 'review').map(([id]) => id),
+      graded: Object.keys(next).length,
+      review: Object.entries(next)
+        .filter(([, g]) => g === 'review')
+        .map(([id]) => id),
     })
-    setSaved(true)
   }
+
+  function setGrade(s: Sentence, g: Grade) {
+    const next = { ...grades, [s.id]: g }
+    setGrades(next)
+    persist(next)
+    setDrafts((d) => Object.fromEntries(Object.entries(d).filter(([id]) => id !== s.id)))
+    writeDraft(data.day, s.id, '')
+    scheduleFromLesson(s, g)
+  }
+
+  async function gradeAll() {
+    setBatchBusy(true)
+    setBatchError('')
+    try {
+      const items = pending.map((s) => ({ sentence: s, answer: drafts[s.id] }))
+      const results = await requestFeedbackBatch(items)
+      const base = Date.now()
+      const nextRestored: Record<string, Restored> = {}
+      const nextGrades: Record<string, Grade> = { ...grades }
+      results.forEach((fb, i) => {
+        const s = items[i].sentence
+        const answer = items[i].answer.trim()
+        nextRestored[s.id] = { answer, feedback: fb }
+        nextGrades[s.id] = fb.verdict === 'correct' ? 'remembered' : 'review'
+        saveAttempt({
+          id: `${s.id}-${base + i}`,
+          sentenceId: s.id,
+          day: data.day,
+          vietnamese: s.vietnamese,
+          model: s.english,
+          answer,
+          verdict: fb.verdict,
+          score: fb.score,
+          errors: fb.errors,
+          at: new Date(base + i).toISOString(),
+          source: 'daily',
+          feedback: { summary: fb.summary, corrected: fb.corrected, natural: fb.natural },
+        })
+        writeDraft(data.day, s.id, '')
+        scheduleFromLesson(s, nextGrades[s.id])
+      })
+      setRestored((r) => ({ ...(r ?? {}), ...nextRestored }))
+      setVersions((v) => {
+        const nv = { ...v }
+        for (const { sentence } of items) nv[sentence.id] = (nv[sentence.id] ?? 0) + 1
+        return nv
+      })
+      setGrades(nextGrades)
+      persist(nextGrades)
+      setDrafts({})
+    } catch (e) {
+      setBatchError(e instanceof Error ? e.message : 'AI chưa chấm được.')
+    } finally {
+      setBatchBusy(false)
+    }
+  }
+
+  const done = graded === total
 
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 py-8 sm:py-12 w-full">
       <div className="flex items-center justify-between mb-6">
-        <Link
-          href="/situation"
-          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors"
-        >
+        <Link href="/situation" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors">
           <ArrowLeft className="w-3.5 h-3.5" /> Tất cả các ngày
         </Link>
-        <Link
-          href="/situation/report"
-          className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors"
-        >
-          <BarChart3 className="w-3.5 h-3.5" /> Báo cáo
+        <Link href="/summary" className="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors">
+          <BarChart3 className="w-3.5 h-3.5" /> Tổng kết lỗi
         </Link>
       </div>
 
-      <div className="mb-10">
+      <div className="mb-8">
         <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">
           Ngày {data.day}/{totalDays} · {data.date.split('-').reverse().join('/')}
         </p>
         <h1 className="text-2xl font-semibold text-gray-900">Practice Situation</h1>
         <p className="text-sm text-gray-500 mt-2">
-          Gõ câu tiếng Anh rồi bấm <kbd className="px-1 py-0.5 border border-gray-200 rounded text-xs">Ctrl</kbd> +{' '}
-          <kbd className="px-1 py-0.5 border border-gray-200 rounded text-xs">Enter</kbd> — AI sẽ chấm câu của bạn và gợi ý cách viết tự nhiên hơn.
+          Mỗi câu chấm xong được lưu ngay — thoát ra rồi quay lại vẫn còn. Cách nhanh nhất: viết hết các câu rồi bấm <b>Chấm cả bài</b>.
         </p>
       </div>
 
-      <div className="space-y-12">
-        {(['A', 'B', 'C'] as Scenario[]).map((sc) => {
-          const items = data.sentences.filter((s) => s.scenario === sc)
-          if (items.length === 0) return null
-          return (
-            <section key={sc}>
-              <div className="flex items-baseline gap-3 mb-4">
-                <span className="text-xs font-medium text-gray-400 uppercase tracking-widest">Scenario {sc}</span>
-                <span className="text-sm font-medium text-gray-900">{SCENARIO_META[sc].vi}</span>
-              </div>
-              <div className="space-y-4">
-                {items.map((s) => (
-                  <SentenceCard
-                    key={s.id}
-                    s={s}
-                    day={data.day}
-                    grade={grades[s.id]}
-                    onGrade={(g) => {
-                      setGrades((prev) => ({ ...prev, [s.id]: g }))
-                      setSaved(false)
-                      scheduleFromLesson(s, g)
-                    }}
-                  />
-                ))}
-              </div>
-            </section>
-          )
-        })}
+      <div className="sticky top-0 z-10 -mx-4 sm:mx-0 px-4 sm:px-0 py-2 mb-6 bg-white/95 backdrop-blur border-b border-gray-100 flex items-center gap-3">
+        <div className="flex-1">
+          <div className="flex justify-between text-xs text-gray-500 mb-1 tabular-nums">
+            <span>
+              Đã chấm {graded}/{total}
+              {pending.length > 0 && ` · ${pending.length} câu chờ chấm`}
+            </span>
+            <span>{remembered} đúng</span>
+          </div>
+          <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+            <div className="h-full bg-gray-900 transition-all" style={{ width: `${(graded / total) * 100}%` }} />
+          </div>
+        </div>
+        <button
+          onClick={gradeAll}
+          disabled={batchBusy || pending.length === 0}
+          className="flex items-center gap-1.5 px-4 py-2 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 disabled:opacity-30"
+        >
+          {batchBusy ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
+          Chấm cả bài{pending.length ? ` (${pending.length})` : ''}
+        </button>
       </div>
+      {batchError && <p className="text-sm text-red-600 mb-4">{batchError}</p>}
 
-      <div className="mt-14 pt-8 border-t border-gray-200">
-        {saved ? (
-          <div className="flex flex-wrap items-center justify-between gap-4">
-            <div>
-              <div className="text-3xl font-semibold text-gray-900 tabular-nums">
-                {remembered}<span className="text-lg font-normal text-gray-400">/{total}</span>
-              </div>
-              <p className="text-sm text-gray-500">câu đã nhớ · đã lưu tiến độ ngày {data.day}</p>
-            </div>
-            {hasNext && (
-              <Link
-                href={`/situation/${data.day + 1}`}
-                className="flex items-center gap-2 px-6 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 transition-colors"
-              >
-                Ngày {data.day + 1} <ArrowRight className="w-3.5 h-3.5" />
-              </Link>
-            )}
+      {!restored ? (
+        <div className="h-24 bg-gray-50 rounded-lg animate-pulse" />
+      ) : (
+        <div className="space-y-12">
+          {(['A', 'B', 'C'] as Scenario[]).map((sc) => {
+            const items = data.sentences.filter((s) => s.scenario === sc)
+            if (items.length === 0) return null
+            return (
+              <section key={sc}>
+                <div className="flex items-baseline gap-3 mb-4">
+                  <span className="text-xs font-medium text-gray-400 uppercase tracking-widest">Scenario {sc}</span>
+                  <span className="text-sm font-medium text-gray-900">{SCENARIO_META[sc].vi}</span>
+                </div>
+                <div className="space-y-4">
+                  {items.map((s) => (
+                    <SentenceCard
+                      key={`${s.id}-${versions[s.id] ?? 0}`}
+                      s={s}
+                      day={data.day}
+                      grade={grades[s.id]}
+                      initialAnswer={restored[s.id]?.answer}
+                      initialFeedback={restored[s.id]?.feedback}
+                      onDraft={(text) => {
+                        writeDraft(data.day, s.id, text)
+                        setDrafts((d) => ({ ...d, [s.id]: text }))
+                      }}
+                      onGrade={(g) => setGrade(s, g)}
+                    />
+                  ))}
+                </div>
+              </section>
+            )
+          })}
+        </div>
+      )}
+
+      <div className="mt-14 pt-8 border-t border-gray-200 flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <div className="text-3xl font-semibold text-gray-900 tabular-nums">
+            {remembered}
+            <span className="text-lg font-normal text-gray-400">/{total}</span>
           </div>
-        ) : (
-          <div className="flex items-center gap-4">
-            <button
-              onClick={handleFinish}
-              disabled={graded < total}
-              className="px-7 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-            >
-              Hoàn thành ngày {data.day}
-            </button>
-            <span className="text-xs text-gray-400 tabular-nums">{graded}/{total} câu đã chấm</span>
-          </div>
+          <p className="text-sm text-gray-500">
+            {done ? `Đã hoàn thành ngày ${data.day} · tiến độ đã lưu` : `câu đúng · đã chấm ${graded}/${total}, tự lưu`}
+          </p>
+        </div>
+        {hasNext && (
+          <Link
+            href={`/situation/${data.day + 1}`}
+            className={`flex items-center gap-2 px-6 py-2.5 text-sm font-medium rounded-md transition-colors ${
+              done ? 'bg-gray-900 text-white hover:bg-gray-700' : 'border border-gray-300 text-gray-700 hover:border-gray-900'
+            }`}
+          >
+            Ngày {data.day + 1} <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
         )}
       </div>
     </div>

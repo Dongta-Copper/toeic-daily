@@ -46,7 +46,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3 sm:gap-4">
           <Link
-            href={situationMode ? '/situation/report' : '/ielts/report'}
+            href={situationMode ? '/summary' : '/ielts/report'}
             className="flex items-center gap-1.5 p-1 text-sm text-gray-500 hover:text-gray-900 transition-colors"
             title="Báo cáo"
           >

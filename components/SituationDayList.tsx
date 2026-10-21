@@ -32,7 +32,7 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
     )
   }, [days])
 
-  const done = days.filter((d) => progress[d.day]).length
+  const done = days.filter((d) => { const p = progress[d.day]; return p && (p.graded ?? p.total) >= p.total }).length
   const todayInfo = days.find((d) => d.day === today)
 
   return (
@@ -85,7 +85,7 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
             highlight: !!cards,
           },
           { href: '/situation/drill', icon: Target, title: 'Luyện điểm yếu', sub: 'Theo AI', highlight: false },
-          { href: '/situation/report', icon: BarChart3, title: 'Báo cáo', sub: 'Điểm yếu', highlight: false },
+          { href: '/summary', icon: BarChart3, title: 'Tổng kết lỗi', sub: '80/20 · xuất AI', highlight: false },
         ].map((t) => (
           <Link
             key={t.href}
@@ -116,12 +116,15 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
                 <span className="text-sm font-medium text-gray-900">
                   Ngày {d.day} <span className="text-gray-400 font-normal">· {formatDate(d.date)}</span>
                 </span>
-                {p && (
-                  <span className="flex items-center gap-1 text-xs text-green-600 tabular-nums">
-                    <CheckCircle className="w-3.5 h-3.5" />
-                    {p.remembered}/{p.total}
-                  </span>
-                )}
+                {p &&
+                  ((p.graded ?? p.total) < p.total ? (
+                    <span className="text-xs text-amber-600 tabular-nums">đang làm {p.graded}/{p.total}</span>
+                  ) : (
+                    <span className="flex items-center gap-1 text-xs text-green-600 tabular-nums">
+                      <CheckCircle className="w-3.5 h-3.5" />
+                      {p.remembered}/{p.total} đúng
+                    </span>
+                  ))}
               </div>
               <p className="text-xs text-gray-500 leading-relaxed truncate">{d.topics.join(' · ')}</p>
             </Link>

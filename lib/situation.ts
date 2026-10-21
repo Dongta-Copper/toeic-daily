@@ -25,6 +25,7 @@ export type DayProgress = {
   remembered: number
   total: number
   review: string[] // ids of sentences marked "Cần ôn"
+  graded?: number // sentences graded so far (the day is complete when graded === total)
 }
 
 export type ProgressMap = Record<string, DayProgress>
@@ -98,6 +99,51 @@ export type Attempt = {
   at: string
   source?: 'daily' | 'drill' | 'review'
   focus?: string // ERROR_TYPES key practised in a drill
+  feedback?: Pick<Feedback, 'summary' | 'corrected' | 'natural'> // kept so a graded card can be shown again
+}
+
+/** Rebuilds the AI feedback shown on a card from a saved attempt. */
+export function feedbackFromAttempt(a: Attempt): Feedback {
+  return {
+    verdict: a.verdict,
+    score: a.score,
+    errors: a.errors,
+    summary: a.feedback?.summary ?? '',
+    corrected: a.feedback?.corrected ?? '',
+    natural: a.feedback?.natural ?? [],
+  }
+}
+
+/** Grades several sentences in one AI call (much faster than one call per sentence). */
+export async function requestFeedbackBatch(items: { sentence: Sentence; answer: string }[]): Promise<Feedback[]> {
+  const res = await fetch('/api/situation-feedback-batch', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ items }),
+  })
+  const data = await res.json()
+  if (!res.ok) throw new Error(data.error ?? 'feedback failed')
+  return data.results
+}
+
+// Unsent answers are kept in the browser so nothing typed is lost when leaving the page.
+const draftKey = (day: number) => `situation_draft_${day}`
+
+export function readDrafts(day: number): Record<string, string> {
+  try {
+    return JSON.parse(localStorage.getItem(draftKey(day)) ?? '{}')
+  } catch {
+    return {}
+  }
+}
+
+export function writeDraft(day: number, id: string, text: string) {
+  try {
+    const d = readDrafts(day)
+    if (text.trim()) d[id] = text
+    else delete d[id]
+    localStorage.setItem(draftKey(day), JSON.stringify(d))
+  } catch {}
 }
 
 export type SavedReport = {
