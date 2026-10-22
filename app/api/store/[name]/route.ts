@@ -1,5 +1,6 @@
 import { kv } from '@vercel/kv'
 import { NextResponse } from 'next/server'
+import { userKey } from '@/lib/session'
 
 // Generic synced lists (see lib/store.ts). Only these names may be read or written.
 const ALLOWED = new Set([
@@ -15,11 +16,11 @@ const ALLOWED = new Set([
 
 type Item = { id: string; updatedAt: string }
 
-export async function GET(_req: Request, { params }: { params: Promise<{ name: string }> }) {
+export async function GET(req: Request, { params }: { params: Promise<{ name: string }> }) {
   const { name } = await params
   if (!ALLOWED.has(name)) return NextResponse.json({ error: 'unknown store' }, { status: 404 })
   try {
-    return NextResponse.json((await kv.get<Item[]>(name)) ?? [])
+    return NextResponse.json((await kv.get<Item[]>(userKey(req, name))) ?? [])
   } catch {
     return NextResponse.json({ error: 'storage unavailable' }, { status: 503 })
   }
@@ -31,12 +32,12 @@ export async function POST(req: Request, { params }: { params: Promise<{ name: s
   if (!ALLOWED.has(name)) return NextResponse.json({ error: 'unknown store' }, { status: 404 })
   try {
     const incoming: Item[] = await req.json()
-    const byId = new Map(((await kv.get<Item[]>(name)) ?? []).map((it) => [it.id, it]))
+    const byId = new Map(((await kv.get<Item[]>(userKey(req, name))) ?? []).map((it) => [it.id, it]))
     for (const it of incoming) {
       const prev = byId.get(it.id)
       if (!prev || it.updatedAt > prev.updatedAt) byId.set(it.id, it)
     }
-    await kv.set(name, Array.from(byId.values()))
+    await kv.set(userKey(req, name), Array.from(byId.values()))
     return NextResponse.json({ ok: true })
   } catch {
     return NextResponse.json({ ok: false }, { status: 503 })

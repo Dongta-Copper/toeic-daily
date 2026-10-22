@@ -1,8 +1,9 @@
 import { kv } from '@vercel/kv'
 import { NextResponse } from 'next/server'
+import { USER_HEADER, userKey } from '@/lib/session'
 
 // Diagnostics: which storage env vars exist (names only, never values) and whether a round-trip works.
-export async function GET() {
+export async function GET(req: Request) {
   const vars = Object.keys(process.env)
     .filter((k) => /KV|REDIS|UPSTASH/i.test(k))
     .sort()
@@ -27,5 +28,6 @@ export async function GET() {
     host = `unreachable: ${e instanceof Error ? e.message : String(e)} ${cause}`.trim()
   }
 
-  return NextResponse.json({ ok: roundTrip === 'ok', envVarNames: vars, roundTrip, host })
+  const user = req.headers.get(USER_HEADER)
+  return NextResponse.json({ ok: roundTrip === 'ok', user, dataSpace: user ? userKey(req, '*') : null, envVarNames: vars, roundTrip, host })
 }

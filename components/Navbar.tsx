@@ -2,10 +2,21 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { useSyncExternalStore } from 'react'
 import { BookOpen, History, LogOut, User } from 'lucide-react'
+
+function readUser() {
+  const m = document.cookie.match(/(?:^|; )ed_user=([^;]*)/)
+  return m ? decodeURIComponent(decodeURIComponent(m[1])) : ''
+}
 
 export default function Navbar() {
   const pathname = usePathname()
+  const user = useSyncExternalStore(
+    () => () => {},
+    readUser,
+    () => ''
+  )
   const situationMode = pathname.startsWith('/situation')
   if (pathname === '/login') return null
 
@@ -54,7 +65,7 @@ export default function Navbar() {
           </Link>
           <div className="hidden sm:flex items-center gap-1.5 text-sm text-gray-700">
             <User className="w-4 h-4" />
-            <span className="font-medium">Dongta</span>
+            <span className="font-medium">{user || 'Tài khoản'}</span>
           </div>
           <button
             onClick={handleLogout}
