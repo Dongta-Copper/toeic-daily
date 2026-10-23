@@ -38,7 +38,7 @@ export default function Glossary() {
         <ArrowLeft className="w-3.5 h-3.5" /> Practice Situation
       </Link>
       <h1 className="text-2xl font-semibold text-gray-900">Bảng thuật ngữ</h1>
-      <p className="text-sm text-gray-500 mt-1 mb-5">FIDIC, PMP, công trường, email & biên bản họp, IELTS — kèm phiên âm IPA và nút nghe.</p>
+      <p className="text-sm text-gray-500 mt-1 mb-5">FIDIC 2017, PMBOK 8, công trường, email & biên bản họp, IELTS — kèm phiên âm IPA và nút nghe.</p>
 
       <div className="relative mb-3">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
