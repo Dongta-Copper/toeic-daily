@@ -41,6 +41,7 @@ export default function Navbar() {
             { href: '/roadmap', label: 'Lộ trình', active: pathname.startsWith('/roadmap') || pathname === '/summary' },
             { href: '/ielts', label: 'IELTS', active: pathname.startsWith('/ielts') },
             { href: '/situation', label: 'Situation', active: situationMode },
+            { href: '/fidic', label: 'FIDIC', active: pathname.startsWith('/fidic') },
           ].map((t) => (
             <Link
               key={t.href}

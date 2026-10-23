@@ -9,7 +9,7 @@ export const XP_RULES = [
   { label: 'Câu luyện điểm yếu / ôn câu cũ', xp: '5 XP' },
   { label: 'Thẻ Gym lỗ hổng', xp: '4 XP mỗi lần luyện' },
   { label: 'Câu IELTS Reading', xp: '2 XP, +2 nếu đúng' },
-  { label: 'Bài học nhanh đạt 4/5', xp: '30 XP' },
+  { label: 'Bài học nhanh / chủ đề FIDIC đạt 4/5', xp: '30 XP' },
 ]
 
 export const STAGES = [

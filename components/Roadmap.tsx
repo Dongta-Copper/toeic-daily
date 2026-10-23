@@ -10,6 +10,7 @@ import { clusterViews, loadGapData, todayPool } from '@/lib/gaps'
 import { dueItems, getReviewItems } from '@/lib/srs'
 import { XP_RULES, computeXp } from '@/lib/xp'
 import { lessonProgress } from '@/components/Lessons'
+import { fidicProgress } from '@/components/Fidic'
 
 const DAY = 86400000
 const ERROR_TARGET = 8 // errors per 10 sentences that marks the end of phase 1
@@ -166,8 +167,9 @@ export default function Roadmap({ days }: { days: { day: number; date: string }[
       loadGapData(),
       getReviewItems(),
       lessonProgress.getAll(),
+      fidicProgress.getAll(),
     ]).then(
-      ([attempts, ielts, progress, tests, gen, gap, review, lessons]) => {
+      ([attempts, ielts, progress, tests, gen, gap, review, lessons, fidic]) => {
         const index = new Map<string, { g: Group; q: Question }>()
         for (const s of [...tests.flatMap((t) => t.sections), ...gen.map((x) => x.section)])
           for (const g of s.groups) for (const q of g.questions) index.set(qid(s.id, q.n), { g, q })
@@ -180,7 +182,7 @@ export default function Roadmap({ days }: { days: { day: number; date: string }[
           summary: buildSummary(attempts, ielts, index, 30, now),
           gymLeft: todayPool(gap.items, gap.progress, views).length,
           reviewDue: dueItems(review).length,
-          xp: computeXp(attempts, ielts, Array.from(gap.progress.values()), lessons, now),
+          xp: computeXp(attempts, ielts, Array.from(gap.progress.values()), [...lessons, ...fidic.filter((p) => p.id.startsWith('topic:'))], now),
           now,
         })
       }
