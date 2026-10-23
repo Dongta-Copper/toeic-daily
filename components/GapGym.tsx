@@ -8,6 +8,7 @@ import {
   applyOutcome,
   blanked,
   clusterViews,
+  gapItems,
   gapProgress,
   hash01,
   loadGapData,
@@ -48,13 +49,44 @@ function Marked({ sentence, chunk, className }: { sentence: string; chunk?: stri
 }
 
 function CardBack({ item, rule }: { item: GapItem; rule?: string }) {
+  const [ipa, setIpa] = useState(item.ipa ?? '')
+  const [busy, setBusy] = useState(false)
+
+  async function loadIpa() {
+    setBusy(true)
+    try {
+      const r = await fetch('/api/ipa', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: item.correct }) })
+      const d = await r.json()
+      if (r.ok && d.ipa) {
+        setIpa(d.ipa)
+        gapItems.save([{ ...item, ipa: d.ipa, updatedAt: new Date().toISOString() }])
+      }
+    } finally {
+      setBusy(false)
+    }
+  }
+
   return (
     <div className="mt-4 p-4 border border-gray-200 rounded-lg bg-white space-y-2">
       <div className="flex items-start justify-between gap-3">
-        <p className="text-lg font-semibold text-green-700">{item.correct}</p>
-        <button onClick={() => speak(item.sentenceCorrect)} className="p-1 text-gray-400 hover:text-gray-900" title="Nghe">
-          <Volume2 className="w-5 h-5" />
-        </button>
+        <div>
+          <p className="text-lg font-semibold text-green-700">{item.correct}</p>
+          {ipa ? (
+            <p className="text-sm text-gray-500">{ipa}</p>
+          ) : (
+            <button onClick={loadIpa} disabled={busy} className="text-xs text-gray-400 hover:text-gray-900">
+              {busy ? 'Đang lấy phiên âm…' : 'Xem phiên âm IPA'}
+            </button>
+          )}
+        </div>
+        <div className="flex gap-1">
+          <button onClick={() => speak(item.correct)} className="p-1 text-gray-400 hover:text-gray-900 text-xs" title="Nghe cụm từ">
+            <Volume2 className="w-4 h-4" />
+          </button>
+          <button onClick={() => speak(item.sentenceCorrect)} className="p-1 text-gray-400 hover:text-gray-900" title="Nghe cả câu">
+            <Volume2 className="w-5 h-5" />
+          </button>
+        </div>
       </div>
       <p className="text-sm text-gray-600">{item.vietnamese}</p>
       <p className="text-sm text-gray-900 leading-relaxed">

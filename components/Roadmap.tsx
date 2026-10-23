@@ -8,6 +8,8 @@ import { TARGET_BAND, bandGT, generatedSections, ieltsAttempts, loadTests, qid, 
 import { buildSummary, type Summary } from '@/lib/errorSummary'
 import { clusterViews, loadGapData, todayPool } from '@/lib/gaps'
 import { dueItems, getReviewItems } from '@/lib/srs'
+import { XP_RULES, computeXp } from '@/lib/xp'
+import { lessonProgress } from '@/components/Lessons'
 
 const DAY = 86400000
 const ERROR_TARGET = 8 // errors per 10 sentences that marks the end of phase 1
@@ -29,6 +31,7 @@ type Data = {
   progress: ProgressMap
   summary: Summary
   gymLeft: number
+  xp: ReturnType<typeof computeXp>
   reviewDue: number
   now: number
 }
@@ -154,8 +157,17 @@ export default function Roadmap({ days }: { days: { day: number; date: string }[
   const [data, setData] = useState<Data | null>(null)
 
   useEffect(() => {
-    Promise.all([getAttempts(), ieltsAttempts.getAll(), getProgress(), loadTests(), generatedSections.getAll(), loadGapData(), getReviewItems()]).then(
-      ([attempts, ielts, progress, tests, gen, gap, review]) => {
+    Promise.all([
+      getAttempts(),
+      ieltsAttempts.getAll(),
+      getProgress(),
+      loadTests(),
+      generatedSections.getAll(),
+      loadGapData(),
+      getReviewItems(),
+      lessonProgress.getAll(),
+    ]).then(
+      ([attempts, ielts, progress, tests, gen, gap, review, lessons]) => {
         const index = new Map<string, { g: Group; q: Question }>()
         for (const s of [...tests.flatMap((t) => t.sections), ...gen.map((x) => x.section)])
           for (const g of s.groups) for (const q of g.questions) index.set(qid(s.id, q.n), { g, q })
@@ -168,6 +180,7 @@ export default function Roadmap({ days }: { days: { day: number; date: string }[
           summary: buildSummary(attempts, ielts, index, 30, now),
           gymLeft: todayPool(gap.items, gap.progress, views).length,
           reviewDue: dueItems(review).length,
+          xp: computeXp(attempts, ielts, Array.from(gap.progress.values()), lessons, now),
           now,
         })
       }
@@ -293,11 +306,49 @@ export default function Roadmap({ days }: { days: { day: number; date: string }[
           <span>
             Band hiện tại: <b className="text-gray-900">{level ?? '—'}</b> <span className="text-gray-400">({data.summary.ielts.bandNote})</span>
           </span>
-          <span className="flex items-center gap-1">
-            <Flame className="w-4 h-4 text-gray-900" /> Chuỗi <b className="text-gray-900">{derived.streak}</b> ngày
-          </span>
         </div>
       </div>
+
+      {/* Growth: XP tree + streak */}
+      <section className="mb-10 p-4 sm:p-5 border border-gray-200 rounded-lg">
+        <div className="flex items-center gap-4">
+          <div className="text-5xl leading-none select-none" aria-hidden>
+            {data.xp.stage.icon}
+          </div>
+          <div className="flex-1 min-w-0">
+            <div className="flex items-baseline justify-between gap-2">
+              <p className="text-base font-semibold text-gray-900">{data.xp.stage.name}</p>
+              <p className="text-sm text-gray-600 tabular-nums">
+                <b className="text-gray-900">{data.xp.total.toLocaleString('vi-VN')}</b> XP
+                {data.xp.todayXp > 0 && <span className="text-green-700"> · +{data.xp.todayXp} hôm nay</span>}
+              </p>
+            </div>
+            <div className="mt-2 h-2 bg-gray-100 rounded-full overflow-hidden">
+              <div className="h-full bg-gray-900 transition-all" style={{ width: `${data.xp.pct}%` }} />
+            </div>
+            <p className="mt-1 text-xs text-gray-500 tabular-nums">
+              {data.xp.next
+                ? `Còn ${(data.xp.next.min - data.xp.total).toLocaleString('vi-VN')} XP để lên ${data.xp.next.icon} ${data.xp.next.name}`
+                : 'Đã đạt giai đoạn cao nhất 🎉'}
+            </p>
+          </div>
+          <div className="text-center pl-2 border-l border-gray-100">
+            <Flame className={`w-6 h-6 mx-auto ${derived.streak ? 'text-orange-500' : 'text-gray-300'}`} />
+            <p className="text-lg font-semibold text-gray-900 tabular-nums leading-tight">{derived.streak}</p>
+            <p className="text-[10px] text-gray-500">ngày liên tiếp</p>
+          </div>
+        </div>
+        <details className="mt-3 text-xs text-gray-500">
+          <summary className="cursor-pointer select-none">Cách tính XP</summary>
+          <ul className="mt-2 space-y-0.5">
+            {XP_RULES.map((r) => (
+              <li key={r.label}>
+                • {r.label}: {r.xp}
+              </li>
+            ))}
+          </ul>
+        </details>
+      </section>
 
       {/* Today */}
       <section className="mb-10">

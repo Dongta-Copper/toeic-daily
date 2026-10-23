@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowLeft, Check, ChevronDown, Copy, Download, Dumbbell, Share2 } from 'lucide-react'
+import { ArrowLeft, Check, ChevronDown, Copy, Download, Dumbbell, GraduationCap, Share2 } from 'lucide-react'
+import { lessonFor } from '@/lib/lessons'
 import { getAttempts, type Attempt } from '@/lib/situation'
 import { generatedSections, ieltsAttempts, loadTests, qid, type Group, type IeltsAttempt, type Question } from '@/lib/ielts'
 import { PURPOSES, TREND_LABEL, buildSummary, toMarkdown, type Purpose, type Summary } from '@/lib/errorSummary'
@@ -143,6 +144,21 @@ export default function ErrorSummary() {
                     </p>
                     <p className="mt-1 ml-9 text-xs text-gray-600">{r.parts.map((p) => `${p.label} ${p.count}`).join(' · ')}</p>
                   </button>
+                  {open === r.type && (
+                    <div className="px-4 pb-2 ml-9 flex flex-wrap gap-2">
+                      {r.parts
+                        .filter((p) => lessonFor(p.type))
+                        .map((p) => (
+                          <Link
+                            key={p.type}
+                            href={`/lessons/${p.type}`}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md border border-gray-300 text-xs text-gray-700 hover:border-gray-900"
+                          >
+                            <GraduationCap className="w-3.5 h-3.5" /> Học bài: {p.label}
+                          </Link>
+                        ))}
+                    </div>
+                  )}
                   {open === r.type && (
                     <ul className="px-4 pb-4 ml-9 space-y-3">
                       {r.examples.map((e, j) => (

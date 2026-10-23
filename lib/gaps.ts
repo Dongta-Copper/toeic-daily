@@ -27,6 +27,7 @@ export type GapItem = {
   sentenceWrong?: string // the learner's own sentence (mistake) or a typical wrong sentence, containing `errorWord`
   errorWord?: string // the wrong word(s) inside sentenceWrong
   sourceIds: string[] // attempt ids this item came from
+  ipa?: string // British IPA of `correct`, fetched on demand
   createdAt: string
   updatedAt: string
 }

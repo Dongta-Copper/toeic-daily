@@ -12,6 +12,7 @@ const ALLOWED = new Set([
   'gap_items',
   'gap_progress',
   'gap_processed',
+  'lesson_progress',
 ])
 
 type Item = { id: string; updatedAt: string }

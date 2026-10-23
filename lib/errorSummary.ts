@@ -31,7 +31,7 @@ export type ErrorRow = {
   trend: Trend
   weeks: number // number of different weeks this error appeared in (persistence)
   examples: Example[]
-  parts: { label: string; count: number }[] // breakdown by fine-grained error type
+  parts: { type: string; label: string; count: number }[] // breakdown by fine-grained error type
 }
 
 export type Example = {
@@ -112,7 +112,7 @@ export function buildSummary(
       const partCounts = new Map<string, number>()
       for (const a of inWindow)
         for (const e of a.errors) if (familyOf(e.type) === type) partCounts.set(e.type, (partCounts.get(e.type) ?? 0) + 1)
-      const parts = [...partCounts.entries()].sort((x, y) => y[1] - x[1]).map(([t, n]) => ({ label: ERROR_TYPES[t] ?? t, count: n }))
+      const parts = [...partCounts.entries()].sort((x, y) => y[1] - x[1]).map(([t, n]) => ({ type: t, label: ERROR_TYPES[t] ?? t, count: n }))
       // Representative examples: the most recent, one per sentence, covering the most frequent sub-types first.
       const order = [...partCounts.entries()].sort((x, y) => y[1] - x[1]).map(([t]) => t)
       const seen = new Set<string>()

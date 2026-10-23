@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { ArrowRight, BarChart3, CheckCircle, Dumbbell, Repeat, Target } from 'lucide-react'
+import { ArrowRight, BarChart3, BookText, CheckCircle, Dumbbell, GraduationCap, Repeat, Target } from 'lucide-react'
 import { getProgress, todayDayNumber, type ProgressMap } from '@/lib/situation'
 import { DAILY_LIMIT, dueItems, loadReviewItems } from '@/lib/srs'
 import { clusterViews, loadGapData, todayPool } from '@/lib/gaps'
@@ -68,7 +68,7 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
         </Link>
       )}
 
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-10">
         {[
           {
             href: '/situation/review',
@@ -84,6 +84,8 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
             sub: cards === null ? '…' : cards > 0 ? `${cards} thẻ` : 'Đã xong',
             highlight: !!cards,
           },
+          { href: '/lessons', icon: GraduationCap, title: 'Bài học nhanh', sub: 'Theo lỗi của bạn', highlight: false },
+          { href: '/glossary', icon: BookText, title: 'Thuật ngữ', sub: 'FIDIC · PMP · IPA', highlight: false },
           { href: '/situation/drill', icon: Target, title: 'Luyện điểm yếu', sub: 'Theo AI', highlight: false },
           { href: '/summary', icon: BarChart3, title: 'Tổng kết lỗi', sub: '80/20 · xuất AI', highlight: false },
         ].map((t) => (
