@@ -18,7 +18,7 @@ const QUIZ_SPEC = (n: number) => `${n} questions as a JSON array "quiz". Mix two
 - About 40%: {"kind":"fix","q":"Sửa cụm gạch chân","sentence":"a full English sentence that contains one mistake","wrong":"the exact wrong phrase as it appears in sentence","answer":"the corrected phrase only","alts":["other fully correct phrasings, if any"],"why":"short reason in Vietnamese"}.
 Rules: workplace context (construction projects, site, contracts, emails, meetings); natural British/international business English; vary the vocabulary; each question tests the lesson's rules; "wrong" must appear verbatim in "sentence".
 Quality (most important):
-- In "choose" items every distractor must be clearly WRONG English in that sentence. Never offer two acceptable options (e.g. "make/reach a decision", "face/encounter problems"). If unsure, drop the item.
+- In "choose" items every distractor must be clearly WRONG English in that sentence. Never offer two acceptable options (e.g. "make/reach/take a decision" — "take a decision" is fine British English; "face/encounter problems"). If unsure, drop the item.
 - In "fix" items the wrong phrase must be a genuine grammar or word error that any teacher would mark wrong (e.g. "discuss about", "informations", "meet difficulties"). Never mark a grammatical phrase as wrong just because another is more idiomatic (e.g. "not meet the deadline" is correct). Put every other correct answer in "alts".`
 
 function valid(q: QuizQ): boolean {
@@ -41,11 +41,18 @@ export async function POST(req: Request) {
     const avoid = b.avoid?.length ? `\nDo not repeat these questions:\n${b.avoid.slice(0, 30).map((q) => `- ${q}`).join('\n')}` : ''
 
     if (b.mode === 'quiz') {
-      const out = await generateJSON<{ quiz: QuizQ[] }>(
-        `You write English grammar/vocabulary exercises for a Vietnamese learner (target IELTS 6.5).\n${ctx}${mine}${avoid}\nReturn JSON {"quiz": [...]} with ${QUIZ_SPEC(n)}`,
-        { timeoutMs: 45000 }
-      )
-      const quiz = (out.quiz ?? []).filter(valid).slice(0, n)
+      // The quality rules make the model drop items now and then; ask again for what is missing.
+      const quiz: QuizQ[] = []
+      for (let round = 0; round < 2 && quiz.length < n; round++) {
+        const need = n - quiz.length
+        const fixes = Math.max(1, Math.round(need * 0.4))
+        const used = quiz.length ? `\nAlso avoid these new ones:\n${quiz.map((q) => `- ${q.q} ${q.kind === 'fix' ? q.sentence ?? '' : ''}`).join('\n')}` : ''
+        const out = await generateJSON<{ quiz: QuizQ[] }>(
+          `You write English grammar/vocabulary exercises for a Vietnamese learner (target IELTS 6.5).\n${ctx}${mine}${avoid}${used}\nReturn JSON {"quiz": [...]} with exactly ${QUIZ_SPEC(need)}\nInclude exactly ${fixes} "fix" items.`,
+          { timeoutMs: 28000 }
+        ).catch(() => ({ quiz: [] as QuizQ[] }))
+        quiz.push(...(out.quiz ?? []).filter(valid).slice(0, need))
+      }
       if (!quiz.length) throw new Error('no valid questions')
       return NextResponse.json({ quiz })
     }
