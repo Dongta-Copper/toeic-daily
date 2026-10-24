@@ -1,0 +1,64 @@
+import { NextResponse } from 'next/server'
+import { generateJSON } from '@/lib/gemini'
+import type { Lesson, QuizQ } from '@/lib/lessons'
+
+export const maxDuration = 60
+
+type Body = {
+  mode: 'quiz' | 'lesson'
+  count?: number
+  base: { title: string; rules: string[] }
+  focus?: string // narrower topic for a new lesson
+  avoid?: string[] // question texts already used
+  myErrors?: { wrong: string; correct: string }[]
+}
+
+const QUIZ_SPEC = (n: number) => `${n} questions as a JSON array "quiz". Mix two kinds:
+- About 60%: {"kind":"choose","q":"sentence with ___ gap or a short question","options":["…","…","…"],"answer":<index of correct option>,"why":"short reason in Vietnamese"}. 2-4 options, exactly one correct.
+- About 40%: {"kind":"fix","q":"Sửa cụm gạch chân","sentence":"a full English sentence that contains one mistake","wrong":"the exact wrong phrase as it appears in sentence","answer":"the corrected phrase only","alts":["other fully correct phrasings, if any"],"why":"short reason in Vietnamese"}.
+Rules: workplace context (construction projects, site, contracts, emails, meetings); natural British/international business English; vary the vocabulary; each question tests the lesson's rules; "wrong" must appear verbatim in "sentence"; answers must be unambiguous.`
+
+function valid(q: QuizQ): boolean {
+  if (!q || typeof q.q !== 'string' || typeof q.why !== 'string') return false
+  if (q.kind === 'fix') return typeof q.answer === 'string' && !!q.answer.trim() && (!q.wrong || !q.sentence || q.sentence.includes(q.wrong))
+  return Array.isArray(q.options) && q.options.length >= 2 && Number.isInteger(q.answer) && q.answer >= 0 && q.answer < q.options.length
+}
+
+export async function POST(req: Request) {
+  try {
+    const b: Body = await req.json()
+    const n = Math.min(Math.max(b.count ?? 10, 1), 10)
+    const ctx = `Lesson: "${b.base.title}"\nRules:\n- ${b.base.rules.join('\n- ')}`
+    const mine = b.myErrors?.length
+      ? `\nThe learner (Vietnamese construction project manager) actually made these mistakes; build similar items:\n${b.myErrors
+          .slice(0, 8)
+          .map((e) => `- "${e.wrong}" → "${e.correct}"`)
+          .join('\n')}`
+      : ''
+    const avoid = b.avoid?.length ? `\nDo not repeat these questions:\n${b.avoid.slice(0, 30).map((q) => `- ${q}`).join('\n')}` : ''
+
+    if (b.mode === 'quiz') {
+      const out = await generateJSON<{ quiz: QuizQ[] }>(
+        `You write English grammar/vocabulary exercises for a Vietnamese learner (target IELTS 6.5).\n${ctx}${mine}${avoid}\nReturn JSON {"quiz": [...]} with ${QUIZ_SPEC(n)}`,
+        { timeoutMs: 45000 }
+      )
+      const quiz = (out.quiz ?? []).filter(valid).slice(0, n)
+      if (!quiz.length) throw new Error('no valid questions')
+      return NextResponse.json({ quiz })
+    }
+
+    const out = await generateJSON<Omit<Lesson, 'type' | 'minutes'>>(
+      `You write short English lessons in Vietnamese for a Vietnamese construction project manager (target IELTS 6.5).
+Parent lesson for context:\n${ctx}
+New lesson topic (narrower or related): "${b.focus || b.base.title}".${mine}
+Return JSON {"title": "Vietnamese title", "rules": ["3-5 concise rules in Vietnamese, with English patterns"], "examples": [{"en":"…","vi":"…"}] (4 examples, construction/workplace), "trap": [{"wrong":"…","right":"…","why":"Vietnamese"}] (3 typical mistakes of Vietnamese speakers), "quiz": [...]} where quiz is ${QUIZ_SPEC(10)}`,
+      { timeoutMs: 55000 }
+    )
+    const quiz = (out.quiz ?? []).filter(valid)
+    if (!out.title || !out.rules?.length || quiz.length < 5) throw new Error('incomplete lesson')
+    return NextResponse.json({ lesson: { ...out, quiz } })
+  } catch (e) {
+    const detail = e instanceof Error ? e.message.slice(0, 200) : String(e)
+    return NextResponse.json({ error: detail }, { status: 500 })
+  }
+}

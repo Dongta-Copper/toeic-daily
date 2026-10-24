@@ -1,7 +1,10 @@
 // Short lessons, one per error type the AI tags (keys match ERROR_TYPES).
 // Each: core rule, construction-context examples, the typical Vietnamese-speaker trap, and a 5-question check.
 
-export type QuizQ = { q: string; options: string[]; answer: number; why: string }
+export type ChooseQ = { kind?: 'choose'; q: string; options: string[]; answer: number; why: string }
+/** Type the correct phrase. `sentence` (optional) is shown with `wrong` underlined. */
+export type FixQ = { kind: 'fix'; q: string; sentence?: string; wrong?: string; answer: string; alts?: string[]; why: string; mine?: boolean }
+export type QuizQ = ChooseQ | FixQ
 
 export type Lesson = {
   type: string
@@ -359,3 +362,19 @@ export const LESSONS: Lesson[] = [
 ]
 
 export const lessonFor = (type: string) => LESSONS.find((l) => l.type === type)
+
+export const PASS_RATIO = 0.8
+export const SESSION_SIZE = 10
+
+const norm = (s: string) =>
+  s
+    .toLowerCase()
+    .replace(/[‘’]/g, "'")
+    .replace(/[.,!?;:"()]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+export function checkFix(q: FixQ, input: string) {
+  const got = norm(input)
+  return [q.answer, ...(q.alts ?? [])].some((a) => norm(a) === got)
+}
