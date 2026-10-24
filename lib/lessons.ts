@@ -1,3 +1,5 @@
+import type { TheorySection } from './lessonTheory'
+
 // Short lessons, one per error type the AI tags (keys match ERROR_TYPES).
 // Each: core rule, construction-context examples, the typical Vietnamese-speaker trap, and a 5-question check.
 
@@ -7,6 +9,7 @@ export type FixQ = { kind: 'fix'; q: string; sentence?: string; wrong?: string; 
 export type QuizQ = ChooseQ | FixQ
 
 export type Lesson = {
+  theory?: TheorySection[] // AI-made lessons carry their own theory
   type: string
   title: string
   minutes: number
@@ -357,6 +360,33 @@ export const LESSONS: Lesson[] = [
       { q: '___ we receive payment, we cannot continue.', options: ['If', 'Unless'], answer: 1, why: 'Unless = if not.' },
       { q: '___ you have any questions, please let me know.', options: ['Should', 'Would'], answer: 0, why: 'Should you… = If you…' },
       { q: 'We will start on Monday, ___ the access is ready.', options: ['provided that', 'unless'], answer: 0, why: 'Với điều kiện.' },
+    ],
+  },
+  {
+    type: 'noun_phrase',
+    title: 'Cụm danh từ (noun phrase) trong văn bản kỹ thuật',
+    minutes: 4,
+    rules: [
+      'Danh từ chính đứng cuối; từ bổ nghĩa đứng trước và để số ít: fire safety inspection, drawing register.',
+      'Thông tin sau danh từ: giới từ (increase in cost), V3 (drawings issued yesterday), V-ing (workers working at height), to V (a decision to extend).',
+      'of cho số lượng/bộ phận/sở hữu với vật: the number of defects, the price of the hotel.',
+    ],
+    examples: [
+      { en: 'The revised fire safety plan was issued yesterday.', vi: 'Phương án an toàn PCCC điều chỉnh đã được phát hành hôm qua.' },
+      { en: 'The drawings issued on Monday supersede Rev. A.', vi: 'Bản vẽ phát hành thứ Hai thay thế phiên bản A.' },
+      { en: 'There has been a significant increase in material costs.', vi: 'Chi phí vật liệu đã tăng đáng kể.' },
+    ],
+    trap: [
+      { wrong: 'a drawings register', right: 'a drawing register', why: 'Danh từ bổ nghĩa để số ít.' },
+      { wrong: 'the project’s cost of the variation', right: 'the cost of the variation', why: 'Sở hữu với vật → of.' },
+      { wrong: 'the workers who are working at height must…', right: 'workers working at height must…', why: 'Rút gọn mệnh đề quan hệ cho gọn.' },
+    ],
+    quiz: [
+      { q: 'Choose the correct phrase:', options: ['a safeties officer', 'a safety officer'], answer: 1, why: 'Danh từ bổ nghĩa để số ít.' },
+      { q: 'There was a sharp increase ___ steel prices.', options: ['of', 'in', 'on'], answer: 1, why: 'increase in.' },
+      { q: 'The materials ___ yesterday are for Zone B.', options: ['delivering', 'delivered', 'deliver'], answer: 1, why: 'Bị động rút gọn → V3.' },
+      { q: 'We made a decision ___ the deadline.', options: ['extending', 'to extend', 'for extend'], answer: 1, why: 'decision + to V.' },
+      { q: 'Choose the natural phrase:', options: ['the cost of the variation', 'the variation’s cost of it'], answer: 0, why: 'Vật → of.' },
     ],
   },
 ]

@@ -1,11 +1,12 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useMemo, useState } from 'react'
-import { ArrowLeft, ArrowRight, Check, GraduationCap, Loader2, Plus, RotateCcw, Sparkles, Trash2, Volume2, X } from 'lucide-react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { ArrowLeft, ArrowRight, Check, GraduationCap, Loader2, Plus, Sparkles, Trash2, Volume2, X } from 'lucide-react'
 import { createStore } from '@/lib/store'
 import { LESSONS, PASS_RATIO, SESSION_SIZE, checkFix, lessonFor, type FixQ, type Lesson, type QuizQ } from '@/lib/lessons'
 import { getAttempts } from '@/lib/situation'
+import { THEORY, type TheorySection } from '@/lib/lessonTheory'
 
 export type LessonProgress = { id: string; updatedAt: string; bestScore: number; attempts: number; completedAt?: string; total?: number }
 export const lessonProgress = createStore<LessonProgress>('lesson_progress')
@@ -346,56 +347,50 @@ export function LessonView({ type }: { type: string }) {
     myErrorQuestions(parentType).then(setMine)
   }, [parentType])
 
+  const theory: TheorySection[] | undefined = builtIn ? THEORY[type]?.sections : custom?.lesson.theory
+  const ref = builtIn ? THEORY[type]?.ref : undefined
+  // What the AI must test: every theory point (rule + example), or the short rules for older lessons.
+  const aiRules = useMemo(
+    () => (theory ? theory.flatMap((s) => s.points.map((p) => `[${s.heading}] ${p.rule}${p.ex ? ` e.g. ${p.ex}` : ''}${p.warn ? ` (common mistake: ${p.warn})` : ''}`)) : lesson?.rules ?? []),
+    [theory, lesson]
+  )
+  const myErrorsForAi = useMemo(() => mine.slice(0, 8).map((m) => ({ wrong: m.wrong ?? '', correct: m.answer })), [mine])
+
+  // Prepare the next 10 AI questions in the background so "Kiểm tra" starts instantly.
+  const ready = useRef<Promise<QuizQ[]> | null>(null)
+  useEffect(() => {
+    if (!lesson) return
+    const p = generate({ mode: 'quiz', count: SESSION_SIZE, base: { title: lesson.title, rules: aiRules }, avoid: lesson.quiz.map((q) => q.q), myErrors: myErrorsForAi }).then(
+      (d) => d.quiz as QuizQ[]
+    )
+    p.catch(() => {})
+    ready.current = p
+  }, [lesson, aiRules, myErrorsForAi, round])
+
   if (custom === undefined) return <div className="max-w-2xl mx-auto px-4 py-12"><div className="h-24 bg-gray-50 rounded-lg animate-pulse" /></div>
   if (!lesson) return <div className="max-w-2xl mx-auto px-4 py-12 text-sm text-gray-500">Không tìm thấy bài học.</div>
 
-  const myErrorsForAi = mine.slice(0, 8).map((m) => ({ wrong: m.wrong ?? '', correct: m.answer }))
-
-  /** 10 questions: own mistakes (up to 5) + the lesson's questions, topped up by AI if fewer than 10. */
-  async function startStandard() {
-    setError('')
-    const own = shuffle(mine).slice(0, 5)
-    const base = shuffle(lesson!.quiz).slice(0, SESSION_SIZE - own.length)
-    let list = [...base, ...own]
-    if (list.length < SESSION_SIZE) {
-      setStage('loading')
-      try {
-        const d = await generate({
-          mode: 'quiz',
-          count: SESSION_SIZE - list.length,
-          base: { title: lesson!.title, rules: lesson!.rules },
-          avoid: list.map((q) => q.q),
-          myErrors: myErrorsForAi,
-        })
-        list = [...list, ...d.quiz]
-      } catch {
-        // Fall back to the questions we have.
-      }
-    }
-    setQuestions(shuffle(list))
-    setRound((r) => r + 1)
-    setStage('quiz')
-  }
-
-  async function startAi() {
+  /** 10 AI questions targeting this lesson's rules; the built-in questions are the fallback. */
+  async function start() {
     setError('')
     setStage('loading')
+    let list: QuizQ[] = []
     try {
-      const d = await generate({ mode: 'quiz', count: 10, base: { title: lesson!.title, rules: lesson!.rules }, avoid: lesson!.quiz.map((q) => q.q), myErrors: myErrorsForAi })
-      setQuestions(d.quiz)
-      setRound((r) => r + 1)
-      setStage('quiz')
-    } catch (e) {
-      setError(`Không tạo được câu hỏi: ${e instanceof Error ? e.message : e}. Thử lại sau.`)
-      setStage('learn')
+      list = (await ready.current) ?? []
+    } catch {
+      list = []
     }
+    if (list.length < SESSION_SIZE) list = [...list, ...shuffle(lesson!.quiz)].slice(0, SESSION_SIZE)
+    setQuestions(list)
+    setRound((r) => r + 1) // also triggers preparing the next set
+    setStage('quiz')
   }
 
   async function makeLesson() {
     setMaking(true)
     setError('')
     try {
-      const d = await generate({ mode: 'lesson', base: { title: lesson!.title, rules: lesson!.rules }, focus: focus.trim(), myErrors: myErrorsForAi })
+      const d = await generate({ mode: 'lesson', base: { title: lesson!.title, rules: aiRules }, focus: focus.trim(), myErrors: myErrorsForAi })
       const id = `my-${Date.now().toString(36)}`
       const item: CustomLesson = { id, updatedAt: new Date().toISOString(), parent: parentType, lesson: { ...d.lesson, type: id, minutes: 4 } }
       await customLessons.save([item])
@@ -458,7 +453,7 @@ export function LessonView({ type }: { type: string }) {
             <button onClick={() => setStage('learn')} className="py-2.5 border border-gray-300 rounded-md text-sm">
               Đọc lại quy tắc
             </button>
-            <button onClick={startAi} className="py-2.5 border border-gray-300 rounded-md text-sm flex items-center justify-center gap-1.5">
+            <button onClick={start} className="py-2.5 border border-gray-300 rounded-md text-sm flex items-center justify-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" /> 10 câu mới
             </button>
           </div>
@@ -468,17 +463,47 @@ export function LessonView({ type }: { type: string }) {
         </>
       ) : (
         <div className="space-y-6">
-          <section>
-            <h2 className="text-sm font-medium text-gray-900 mb-2">Quy tắc</h2>
-            <ul className="space-y-2">
-              {lesson.rules.map((r, k) => (
-                <li key={k} className="text-sm text-gray-700 leading-relaxed flex gap-2">
-                  <span className="text-gray-400">{k + 1}.</span>
-                  {r}
-                </li>
+          {theory ? (
+            <section className="space-y-5">
+              {theory.map((s, k) => (
+                <div key={k}>
+                  <h2 className="text-sm font-semibold text-gray-900 mb-2">
+                    {k + 1}. {s.heading}
+                  </h2>
+                  <ul className="space-y-2.5">
+                    {s.points.map((p, j) => (
+                      <li key={j} className="text-sm leading-relaxed pl-3 border-l-2 border-gray-200">
+                        <p className="text-gray-800">{p.rule}</p>
+                        {p.ex && (
+                          <p className="text-gray-900 italic mt-0.5 flex items-start gap-1.5">
+                            <span className="not-italic text-gray-400">→</span>
+                            <span className="flex-1">{p.ex}</span>
+                            <button onClick={() => speak(p.ex!.replace(/\(.*?\)/g, ''))} className="not-italic text-gray-300 hover:text-gray-900" title="Nghe">
+                              <Volume2 className="w-3.5 h-3.5" />
+                            </button>
+                          </p>
+                        )}
+                        {p.warn && <p className="text-xs text-amber-700 mt-0.5">⚠ {p.warn}</p>}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
-          </section>
+              {ref && <p className="text-xs text-gray-400">Tham khảo: {ref}</p>}
+            </section>
+          ) : (
+            <section>
+              <h2 className="text-sm font-medium text-gray-900 mb-2">Quy tắc</h2>
+              <ul className="space-y-2">
+                {lesson.rules.map((r, k) => (
+                  <li key={k} className="text-sm text-gray-700 leading-relaxed flex gap-2">
+                    <span className="text-gray-400">{k + 1}.</span>
+                    {r}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
           <section>
             <h2 className="text-sm font-medium text-gray-900 mb-2">Ví dụ</h2>
             <ul className="space-y-2">
@@ -514,28 +539,23 @@ export function LessonView({ type }: { type: string }) {
             </ul>
           </section>
           {mine.length > 0 && (
-            <section>
-              <h2 className="text-sm font-medium text-gray-900 mb-2">Lỗi của bạn ({mine.length})</h2>
-              <ul className="space-y-1.5">
-                {mine.slice(0, 5).map((m, k) => (
-                  <li key={k} className="text-sm">
+            <details className="text-sm">
+              <summary className="cursor-pointer text-gray-500 select-none">Xem {mine.length} lỗi bạn từng mắc thuộc loại này</summary>
+              <ul className="space-y-1.5 mt-2">
+                {mine.slice(0, 8).map((m, k) => (
+                  <li key={k}>
                     <span className="text-red-600 line-through">{m.wrong}</span> → <span className="text-green-700">{m.answer}</span>
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-gray-500 mt-1">Trong bài kiểm tra có đến 5 câu lấy từ các lỗi này.</p>
-            </section>
+            </details>
           )}
 
           {error && <p className="text-sm text-red-600">{error}</p>}
-          <div className="grid gap-2">
-            <button onClick={startStandard} className="w-full py-3.5 bg-gray-900 text-white font-medium rounded-lg flex items-center justify-center gap-2">
-              <RotateCcw className="w-4 h-4" /> Kiểm tra 10 câu
-            </button>
-            <button onClick={startAi} className="w-full py-3 border border-gray-300 rounded-lg text-sm flex items-center justify-center gap-2 hover:border-gray-900">
-              <Sparkles className="w-4 h-4" /> AI tạo 10 câu mới
-            </button>
-          </div>
+          <button onClick={start} className="w-full py-3.5 bg-gray-900 text-white font-medium rounded-lg flex items-center justify-center gap-2">
+            <Sparkles className="w-4 h-4" /> Luyện 10 câu theo bài này
+          </button>
+          <p className="-mt-4 text-xs text-gray-500 text-center">AI soạn câu mới mỗi lượt, bám đúng các quy tắc ở trên. Đạt 8/10 là hoàn thành.</p>
 
           <section className="p-4 border border-dashed border-gray-300 rounded-lg">
             <h2 className="text-sm font-medium text-gray-900 mb-1 flex items-center gap-1.5">
