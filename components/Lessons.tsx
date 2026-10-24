@@ -147,7 +147,24 @@ function Underlined({ sentence, wrong }: { sentence: string; wrong: string }) {
   )
 }
 
-function Question({ q, onAnswer }: { q: QuizQ; onAnswer: (ok: boolean) => void }) {
+/** Lets the learner overrule an AI answer key that marked a correct answer wrong. */
+function Overrule({ onClick }: { onClick: () => void }) {
+  const [done, setDone] = useState(false)
+  if (done) return <span className="block text-xs text-gray-500 mt-1">Đã tính là đúng.</span>
+  return (
+    <button
+      onClick={() => {
+        setDone(true)
+        onClick()
+      }}
+      className="block text-xs text-gray-500 underline mt-1 hover:text-gray-900"
+    >
+      Đáp án của tôi cũng đúng — tính là đúng
+    </button>
+  )
+}
+
+function Question({ q, onAnswer, onOverrule }: { q: QuizQ; onAnswer: (ok: boolean) => void; onOverrule: () => void }) {
   const [picked, setPicked] = useState<number | null>(null)
   const [text, setText] = useState('')
   const [result, setResult] = useState<boolean | null>(null)
@@ -189,6 +206,7 @@ function Question({ q, onAnswer }: { q: QuizQ; onAnswer: (ok: boolean) => void }
             {result ? '✓ ' : '✗ '}Đáp án: <b>{q.answer}</b>
             {q.alts?.length ? <span className="text-gray-500"> (hoặc: {q.alts.join(' / ')})</span> : null}
             <span className="block text-gray-600 mt-0.5">{q.why}</span>
+            {!result && <Overrule onClick={onOverrule} />}
           </p>
         )}
       </div>
@@ -221,6 +239,7 @@ function Question({ q, onAnswer }: { q: QuizQ; onAnswer: (ok: boolean) => void }
         <p className={`mt-3 text-sm ${picked === q.answer ? 'text-green-700' : 'text-red-600'}`}>
           {picked === q.answer ? '✓ ' : '✗ '}
           {q.why}
+          {picked !== q.answer && <Overrule onClick={onOverrule} />}
         </p>
       )}
     </div>
@@ -277,6 +296,10 @@ function Quiz({ questions, onDone }: { questions: QuizQ[]; onDone: (score: numbe
           setAnswered(ok)
           if (ok) setScore((s) => s + 1)
           else setWrong((w) => [...w, q])
+        }}
+        onOverrule={() => {
+          setScore((s) => s + 1)
+          setWrong((w) => w.filter((x) => x !== q))
         }}
       />
       {answered !== null && (

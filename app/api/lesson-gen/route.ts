@@ -16,7 +16,10 @@ type Body = {
 const QUIZ_SPEC = (n: number) => `${n} questions as a JSON array "quiz". Mix two kinds:
 - About 60%: {"kind":"choose","q":"sentence with ___ gap or a short question","options":["…","…","…"],"answer":<index of correct option>,"why":"short reason in Vietnamese"}. 2-4 options, exactly one correct.
 - About 40%: {"kind":"fix","q":"Sửa cụm gạch chân","sentence":"a full English sentence that contains one mistake","wrong":"the exact wrong phrase as it appears in sentence","answer":"the corrected phrase only","alts":["other fully correct phrasings, if any"],"why":"short reason in Vietnamese"}.
-Rules: workplace context (construction projects, site, contracts, emails, meetings); natural British/international business English; vary the vocabulary; each question tests the lesson's rules; "wrong" must appear verbatim in "sentence"; answers must be unambiguous.`
+Rules: workplace context (construction projects, site, contracts, emails, meetings); natural British/international business English; vary the vocabulary; each question tests the lesson's rules; "wrong" must appear verbatim in "sentence".
+Quality (most important):
+- In "choose" items every distractor must be clearly WRONG English in that sentence. Never offer two acceptable options (e.g. "make/reach a decision", "face/encounter problems"). If unsure, drop the item.
+- In "fix" items the wrong phrase must be a genuine grammar or word error that any teacher would mark wrong (e.g. "discuss about", "informations", "meet difficulties"). Never mark a grammatical phrase as wrong just because another is more idiomatic (e.g. "not meet the deadline" is correct). Put every other correct answer in "alts".`
 
 function valid(q: QuizQ): boolean {
   if (!q || typeof q.q !== 'string' || typeof q.why !== 'string') return false
