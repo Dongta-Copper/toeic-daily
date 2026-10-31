@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { ArrowLeft, ArrowRight, Check, GraduationCap, Loader2, Plus, Sparkles, Trash2, Volume2, X } from 'lucide-react'
 import { createStore } from '@/lib/store'
 import { LESSONS, PASS_RATIO, SESSION_SIZE, checkFix, lessonFor, type FixQ, type Lesson, type QuizQ } from '@/lib/lessons'
@@ -333,6 +333,7 @@ export function LessonView({ type }: { type: string }) {
   const [round, setRound] = useState(0)
   const [prev, setPrev] = useState<LessonProgress | undefined>()
   const [mine, setMine] = useState<FixQ[]>([])
+  const [mineLoaded, setMineLoaded] = useState(false)
   const [error, setError] = useState('')
   const [focus, setFocus] = useState('')
   const [making, setMaking] = useState(false)
@@ -344,7 +345,10 @@ export function LessonView({ type }: { type: string }) {
   }, [type, builtIn])
 
   useEffect(() => {
-    myErrorQuestions(parentType).then(setMine)
+    myErrorQuestions(parentType).then((m) => {
+      setMine(m)
+      setMineLoaded(true)
+    })
   }, [parentType])
 
   const theory: TheorySection[] | undefined = builtIn ? THEORY[type]?.sections : custom?.lesson.theory
@@ -357,15 +361,23 @@ export function LessonView({ type }: { type: string }) {
   const myErrorsForAi = useMemo(() => mine.slice(0, 8).map((m) => ({ wrong: m.wrong ?? '', correct: m.answer })), [mine])
 
   // Prepare the next 10 AI questions in the background so "Kiểm tra" starts instantly.
+  // Only the first set is prepared in advance (once the learner's mistakes are known); later sets on demand.
   const ready = useRef<Promise<QuizQ[]> | null>(null)
+  const fetchSet = useCallback(
+    () =>
+      lesson
+        ? generate({ mode: 'quiz', count: SESSION_SIZE, base: { title: lesson.title, rules: aiRules }, avoid: lesson.quiz.map((q) => q.q), myErrors: myErrorsForAi }).then(
+            (d) => d.quiz as QuizQ[]
+          )
+        : Promise.resolve([] as QuizQ[]),
+    [lesson, aiRules, myErrorsForAi]
+  )
   useEffect(() => {
-    if (!lesson) return
-    const p = generate({ mode: 'quiz', count: SESSION_SIZE, base: { title: lesson.title, rules: aiRules }, avoid: lesson.quiz.map((q) => q.q), myErrors: myErrorsForAi }).then(
-      (d) => d.quiz as QuizQ[]
-    )
+    if (!lesson || !mineLoaded || ready.current) return
+    const p = fetchSet()
     p.catch(() => {})
     ready.current = p
-  }, [lesson, aiRules, myErrorsForAi, round])
+  }, [lesson, mineLoaded, fetchSet])
 
   if (custom === undefined) return <div className="max-w-2xl mx-auto px-4 py-12"><div className="h-24 bg-gray-50 rounded-lg animate-pulse" /></div>
   if (!lesson) return <div className="max-w-2xl mx-auto px-4 py-12 text-sm text-gray-500">Không tìm thấy bài học.</div>
@@ -376,13 +388,15 @@ export function LessonView({ type }: { type: string }) {
     setStage('loading')
     let list: QuizQ[] = []
     try {
-      list = (await ready.current) ?? []
+      const pending = ready.current
+      ready.current = Promise.resolve([]) // used up; the next set is generated on demand
+      list = (await (pending && round === 0 ? pending : fetchSet())) ?? []
     } catch {
       list = []
     }
     if (list.length < SESSION_SIZE) list = [...list, ...shuffle(lesson!.quiz)].slice(0, SESSION_SIZE)
     setQuestions(list)
-    setRound((r) => r + 1) // also triggers preparing the next set
+    setRound((r) => r + 1)
     setStage('quiz')
   }
 

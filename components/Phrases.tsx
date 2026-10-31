@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import { ArrowLeft, ArrowRight, BarChart3, Check, Loader2, Repeat, Sparkles, Volume2, X } from 'lucide-react'
 import { Quiz, generate, lessonProgress, type LessonProgress } from '@/components/Lessons'
 import { PASS_RATIO, type QuizQ } from '@/lib/lessons'
@@ -51,25 +51,34 @@ function usePractice(groups: VerbGroup[], title: string) {
   const [round, setRound] = useState(0)
   const ready = useRef<Promise<QuizQ[]> | null>(null)
   const key = groups.map((g) => g.id).join(',')
+  const fetchSet = useCallback(
+    () =>
+      generate({
+        mode: 'quiz',
+        count: SESSION,
+        base: {
+          title: `${title}. Test choosing the right verb for the nuance/formality AND the structure that follows it (to V, V-ing, that-clause, object + to V, preposition).`,
+          rules: groupRules(groups),
+        },
+      }).then((d) => d.quiz as QuizQ[]),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [key, title]
+  )
+  // Only the first set is prepared in advance; later sets are generated when asked for.
   useEffect(() => {
     if (!groups.length) return
-    const p = generate({
-      mode: 'quiz',
-      count: SESSION,
-      base: {
-        title: `${title}. Test choosing the right verb for the nuance/formality AND the structure that follows it (to V, V-ing, that-clause, object + to V, preposition).`,
-        rules: groupRules(groups),
-      },
-    }).then((d) => d.quiz as QuizQ[])
+    const p = fetchSet()
     p.catch(() => {})
     ready.current = p
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [key, round])
+  }, [key])
 
   async function next(): Promise<QuizQ[]> {
     let list: QuizQ[] = []
     try {
-      list = (await ready.current) ?? []
+      const pending = ready.current
+      ready.current = null
+      list = (await (pending ?? fetchSet())) ?? []
     } catch {
       list = []
     }
