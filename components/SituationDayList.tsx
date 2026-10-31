@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { ArrowRight, BarChart3, BookText, CheckCircle, Dumbbell, GraduationCap, Repeat, Target } from 'lucide-react'
+import { ArrowRight, BarChart3, BookText, CalendarCheck, CheckCircle, Dumbbell, GraduationCap, Languages, Repeat, Target } from 'lucide-react'
 import { getProgress, todayDayNumber, type ProgressMap } from '@/lib/situation'
 import { DAILY_LIMIT, dueItems, loadReviewItems } from '@/lib/srs'
 import { clusterViews, loadGapData, todayPool } from '@/lib/gaps'
@@ -84,6 +84,8 @@ export default function SituationDayList({ days }: { days: DaySummary[] }) {
             sub: cards === null ? '…' : cards > 0 ? `${cards} thẻ` : 'Đã xong',
             highlight: !!cards,
           },
+          { href: '/phrases', icon: Languages, title: 'Động từ theo nhóm', sub: 'Mỗi ngày 1 nhóm', highlight: false },
+          { href: '/review', icon: CalendarCheck, title: 'Ôn tuần', sub: 'Chủ nhật', highlight: false },
           { href: '/lessons', icon: GraduationCap, title: 'Bài học nhanh', sub: 'Theo lỗi của bạn', highlight: false },
           { href: '/glossary', icon: BookText, title: 'Thuật ngữ', sub: 'FIDIC · PMP · IPA', highlight: false },
           { href: '/situation/drill', icon: Target, title: 'Luyện điểm yếu', sub: 'Theo AI', highlight: false },

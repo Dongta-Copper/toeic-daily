@@ -53,7 +53,7 @@ async function myErrorQuestions(type: string): Promise<FixQ[]> {
   return out
 }
 
-async function generate(body: object) {
+export async function generate(body: object) {
   const r = await fetch('/api/lesson-gen', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
   const d = await r.json()
   if (!r.ok) throw new Error(d.error || 'AI lỗi')
@@ -247,7 +247,7 @@ function Question({ q, onAnswer, onOverrule }: { q: QuizQ; onAnswer: (ok: boolea
   )
 }
 
-function Quiz({ questions, onDone }: { questions: QuizQ[]; onDone: (score: number, wrong: QuizQ[]) => void }) {
+export function Quiz({ questions, onDone }: { questions: QuizQ[]; onDone: (score: number, wrong: QuizQ[]) => void }) {
   const [i, setI] = useState(0)
   const [answered, setAnswered] = useState<boolean | null>(null)
   const [score, setScore] = useState(0)

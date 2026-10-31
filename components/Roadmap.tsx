@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
-import { BookOpen, Check, Circle, Dumbbell, Flame, PenLine, Repeat } from 'lucide-react'
+import { BookOpen, CalendarCheck, Check, Circle, Dumbbell, Flame, Languages, PenLine, Repeat } from 'lucide-react'
+import { groupForDate } from '@/lib/verbGroups'
 import { getAttempts, getProgress, todayDayNumber, type Attempt, type ProgressMap } from '@/lib/situation'
 import { TARGET_BAND, bandGT, generatedSections, ieltsAttempts, loadTests, qid, type Group, type IeltsAttempt, type Question } from '@/lib/ielts'
 import { buildSummary, type Summary } from '@/lib/errorSummary'
@@ -34,6 +35,7 @@ type Data = {
   gymLeft: number
   xp: ReturnType<typeof computeXp>
   reviewDue: number
+  phraseDone: Set<string>
   now: number
 }
 
@@ -154,7 +156,7 @@ function ActivityGrid({ days }: { days: { key: string; count: number }[] }) {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
-export default function Roadmap({ days }: { days: { day: number; date: string }[] }) {
+export default function Roadmap({ days }: { days: { day: number; date: string; total: number }[] }) {
   const [data, setData] = useState<Data | null>(null)
 
   useEffect(() => {
@@ -182,6 +184,7 @@ export default function Roadmap({ days }: { days: { day: number; date: string }[
           summary: buildSummary(attempts, ielts, index, 30, now),
           gymLeft: todayPool(gap.items, gap.progress, views).length,
           reviewDue: dueItems(review).length,
+          phraseDone: new Set(lessons.filter((p) => p.completedAt).map((p) => p.id)),
           xp: computeXp(attempts, ielts, Array.from(gap.progress.values()), [...lessons, ...fidic.filter((p) => p.id.startsWith('topic:'))], now),
           now,
         })
@@ -272,16 +275,26 @@ export default function Roadmap({ days }: { days: { day: number; date: string }[
   const today = todayDayNumber(days)
   const todayProgress = today ? data.progress[today] : undefined
   const situationDone = todayProgress ? todayProgress.graded ?? todayProgress.total : 0
+  const situationTotal = days.find((d) => d.day === today)?.total ?? 6
+  const sunday = new Date(data.now).getDay() === 0
+  const phrase = groupForDate(new Date(data.now))
   const level = data.summary.ielts.band
 
   const tasks = [
-    {
-      icon: PenLine,
-      title: today ? `Situation — Ngày ${today}` : 'Situation',
-      sub: `${situationDone}/10 câu`,
-      done: situationDone >= 10,
-      href: today ? `/situation/${today}` : '/situation',
-    },
+    ...(sunday
+      ? [{ icon: CalendarCheck, title: 'Ôn tập tuần', sub: 'cụm từ · câu sai · tiến bộ', done: false, href: '/review' }]
+      : [
+          ...(phrase
+            ? [{ icon: Languages, title: `Động từ: ${phrase.vi}`, sub: `${phrase.verbs.length} động từ · 10 câu`, done: data.phraseDone.has(`vg:${phrase.id}`), href: `/phrases/${phrase.id}` }]
+            : []),
+          {
+            icon: PenLine,
+            title: today ? `Situation — Ngày ${today}` : 'Situation',
+            sub: `${situationDone}/${situationTotal} câu`,
+            done: situationDone >= situationTotal,
+            href: today ? `/situation/${today}` : '/situation',
+          },
+        ]),
     { icon: Dumbbell, title: 'Gym lỗ hổng', sub: data.gymLeft ? `${data.gymLeft} câu` : 'xong', done: data.gymLeft === 0, href: '/situation/cards' },
     { icon: Repeat, title: 'Ôn câu cũ', sub: data.reviewDue ? `${Math.min(20, data.reviewDue)} câu đến hạn` : 'xong', done: data.reviewDue === 0, href: '/situation/review' },
     {
