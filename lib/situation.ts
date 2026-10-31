@@ -114,16 +114,86 @@ export function feedbackFromAttempt(a: Attempt): Feedback {
   }
 }
 
-/** Grades several sentences in one AI call (much faster than one call per sentence). */
-export async function requestFeedbackBatch(items: { sentence: Sentence; answer: string }[]): Promise<Feedback[]> {
-  const res = await fetch('/api/situation-feedback-batch', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ items }),
+// ─── Self-check against the model sentence (no AI) ───────────────────────────
+
+export const VERDICT_SCORE: Record<Verdict, number> = { correct: 10, minor: 7, incorrect: 4 }
+
+/** Error types offered as one-tap tags when self-checking (most frequent first). */
+export const SELF_TAGS = [
+  'word_choice', 'collocation', 'word_form', 'article', 'preposition', 'tense', 'plural_countable',
+  'subject_verb_agreement', 'passive', 'word_order', 'missing_word', 'meaning', 'spelling',
+] as const
+
+/** Builds the stored result of a self-check: verdict, tagged error types and an optional wrong → right phrase. */
+export function selfFeedback(s: Sentence, verdict: Verdict, tags: string[], pair?: { wrong: string; correct: string }): Feedback {
+  const types = verdict === 'correct' ? [] : tags.length ? tags : ['other']
+  const errors: FeedbackError[] = types.map((type, i) => ({
+    type,
+    wrong: i === 0 && pair?.wrong.trim() ? pair.wrong.trim() : '',
+    correct: i === 0 && pair?.correct.trim() ? pair.correct.trim() : '',
+    explanation: 'Tự đánh dấu khi so với câu mẫu',
+  }))
+  return {
+    verdict,
+    score: VERDICT_SCORE[verdict],
+    summary: verdict === 'correct' ? 'Tự chấm: đúng.' : `Tự chấm: ${types.map((t) => ERROR_TYPES[t] ?? t).join(', ')}.`,
+    errors,
+    corrected: s.english,
+    natural: [],
+  }
+}
+
+/** Word-level comparison of the learner's sentence with the model (longest common subsequence). */
+export function wordDiff(answer: string, model: string): { text: string; kind: 'same' | 'mine' | 'model' }[] {
+  const tok = (x: string) => x.trim().split(/\s+/).filter(Boolean)
+  const key = (w: string) => w.toLowerCase().replace(/[.,!?;:"'()]/g, '')
+  const a = tok(answer)
+  const b = tok(model)
+  const dp = Array.from({ length: a.length + 1 }, () => new Array<number>(b.length + 1).fill(0))
+  for (let i = a.length - 1; i >= 0; i--)
+    for (let j = b.length - 1; j >= 0; j--) dp[i][j] = key(a[i]) === key(b[j]) ? dp[i + 1][j + 1] + 1 : Math.max(dp[i + 1][j], dp[i][j + 1])
+  const out: { text: string; kind: 'same' | 'mine' | 'model' }[] = []
+  let i = 0
+  let j = 0
+  while (i < a.length || j < b.length) {
+    if (i < a.length && j < b.length && key(a[i]) === key(b[j])) {
+      out.push({ text: a[i], kind: 'same' })
+      i++
+      j++
+    } else if (j < b.length && (i >= a.length || dp[i][j + 1] >= dp[i + 1][j])) out.push({ text: b[j++], kind: 'model' })
+    else out.push({ text: a[i++], kind: 'mine' })
+  }
+  return out
+}
+
+/** Markdown for a day's sentences, ready to paste into any AI for detailed feedback (also exported as Word). */
+export function dayForAI(day: SituationDay, answers: Record<string, string>, results: Record<string, Feedback | undefined>): string {
+  const lines = [
+    `# Bài dịch Practice Situation – Ngày ${day.day} (${day.date.split('-').reverse().join('/')})`,
+    '',
+    '## Yêu cầu cho AI',
+    'Bạn là giáo viên tiếng Anh cho một kỹ sư quản lý dự án xây dựng người Việt (mục tiêu IELTS General 6.5, viết email/biên bản/thư hợp đồng FIDIC).',
+    'Với MỖI câu bên dưới, hãy:',
+    '- Chấm: Đúng / Gần đúng / Sai, điểm /10.',
+    '- Liệt kê từng lỗi: cụm sai → cụm đúng, loại lỗi (thì, mạo từ, giới từ, từ loại, chọn từ, kết hợp từ, số ít/nhiều…), giải thích ngắn bằng tiếng Việt.',
+    '- Viết lại câu đúng giữ ý của tôi, và 1 cách nói tự nhiên hơn nếu có.',
+    'Cuối cùng: tổng kết 3 lỗi tôi hay mắc nhất trong bài này và 3 cụm từ nên học thuộc.',
+    '',
+    '## Các câu',
+  ]
+  day.sentences.forEach((s, i) => {
+    const r = results[s.id]
+    lines.push(
+      '',
+      `### Câu ${i + 1} (${s.scenario}${s.number} · ${s.topic})`,
+      `- **Tiếng Việt:** ${s.vietnamese}`,
+      `- **Câu tôi viết:** ${answers[s.id]?.trim() || '(chưa làm)'}`,
+      `- **Câu mẫu:** ${s.english}`
+    )
+    if (s.notes) lines.push(`- **Ghi chú:** ${s.notes}`)
+    if (r) lines.push(`- **Tôi tự chấm:** ${r.summary}`)
   })
-  const data = await res.json()
-  if (!res.ok) throw new Error(data.error ?? 'feedback failed')
-  return data.results
+  return lines.join('\n')
 }
 
 // Unsent answers are kept in the browser so nothing typed is lost when leaving the page.
@@ -189,17 +259,6 @@ export type WeaknessReport = {
     level: string
     focus: string
   }[]
-}
-
-export async function requestFeedback(s: Sentence, answer: string): Promise<Feedback> {
-  const res = await fetch('/api/situation-feedback', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ sentence: s, answer }),
-  })
-  const data = await res.json()
-  if (!res.ok) throw new Error(data.detail ?? 'feedback failed')
-  return data
 }
 
 const ATTEMPTS_KEY = 'situation_attempts'

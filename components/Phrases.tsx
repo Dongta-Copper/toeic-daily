@@ -1,11 +1,13 @@
 'use client'
 
 import Link from 'next/link'
-import { useCallback, useEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
-import { ArrowLeft, ArrowRight, BarChart3, Check, Loader2, Repeat, Sparkles, Volume2, X } from 'lucide-react'
-import { Quiz, generate, lessonProgress, type LessonProgress } from '@/components/Lessons'
+import { useEffect, useMemo, useState, useSyncExternalStore } from 'react'
+import { ArrowLeft, ArrowRight, BarChart3, Check, FileText, Loader2, Repeat, Sparkles, Volume2, X } from 'lucide-react'
+import { downloadWord } from '@/lib/wordExport'
+import { Quiz, lessonProgress, type LessonProgress } from '@/components/Lessons'
+import { VERB_PRACTICE } from '@/lib/verbPractice'
 import { PASS_RATIO, type QuizQ } from '@/lib/lessons'
-import { FORMALITY, VERB_GROUPS, dateForGroup, groupForDate, groupRules, isoDate, weekGroups, type VerbEntry, type VerbGroup } from '@/lib/verbGroups'
+import { FORMALITY, VERB_GROUPS, dateForGroup, groupForDate, isoDate, weekGroups, type VerbEntry, type VerbGroup } from '@/lib/verbGroups'
 import { ERROR_TYPES, getAttempts, type Attempt } from '@/lib/situation'
 
 const SESSION = 10
@@ -32,7 +34,7 @@ function speak(text: string) {
 
 const shuffle = <T,>(a: T[]) => [...a].sort(() => Math.random() - 0.5)
 
-/** Built-in fallback questions: pick the correct version of each pattern. */
+/** Right-or-wrong items from the verb cards: pick the correct version of each pattern. */
 function fallbackQuiz(groups: VerbGroup[]): QuizQ[] {
   return shuffle(
     groups.flatMap((g) =>
@@ -46,44 +48,14 @@ function fallbackQuiz(groups: VerbGroup[]): QuizQ[] {
   ).slice(0, SESSION)
 }
 
-/** Prepares AI questions for the given groups in the background; falls back to built-in items. */
-function usePractice(groups: VerbGroup[], title: string) {
+/** 10 written questions for the given groups: nuance/structure items plus right-or-wrong items from the cards. */
+function usePractice(groups: VerbGroup[]) {
   const [round, setRound] = useState(0)
-  const ready = useRef<Promise<QuizQ[]> | null>(null)
-  const key = groups.map((g) => g.id).join(',')
-  const fetchSet = useCallback(
-    () =>
-      generate({
-        mode: 'quiz',
-        count: SESSION,
-        base: {
-          title: `${title}. Test choosing the right verb for the nuance/formality AND the structure that follows it (to V, V-ing, that-clause, object + to V, preposition).`,
-          rules: groupRules(groups),
-        },
-      }).then((d) => d.quiz as QuizQ[]),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [key, title]
-  )
-  // Only the first set is prepared in advance; later sets are generated when asked for.
-  useEffect(() => {
-    if (!groups.length) return
-    const p = fetchSet()
-    p.catch(() => {})
-    ready.current = p
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [key])
-
-  async function next(): Promise<QuizQ[]> {
-    let list: QuizQ[] = []
-    try {
-      const pending = ready.current
-      ready.current = null
-      list = (await (pending ?? fetchSet())) ?? []
-    } catch {
-      list = []
-    }
+  function next(): QuizQ[] {
     setRound((r) => r + 1)
-    return list.length >= SESSION ? list.slice(0, SESSION) : [...list, ...fallbackQuiz(groups)].slice(0, SESSION)
+    const practice = shuffle(groups.flatMap((g) => VERB_PRACTICE[g.id] ?? []))
+    const take = groups.length > 1 ? 6 : 5 // weekly review: more nuance questions across the week
+    return shuffle([...practice.slice(0, take), ...fallbackQuiz(groups)]).slice(0, SESSION)
   }
   return { next, round }
 }
@@ -204,7 +176,7 @@ export function PhraseHome() {
 export function PhraseGroupView({ id }: { id: string }) {
   const group = VERB_GROUPS.find((g) => g.id === id)
   const groups = useMemo(() => (group ? [group] : []), [group])
-  const { next, round } = usePractice(groups, group ? `Verb group "${group.vi}"` : '')
+  const { next, round } = usePractice(groups)
   const [stage, setStage] = useState<'learn' | 'loading' | 'quiz'>('learn')
   const [questions, setQuestions] = useState<QuizQ[]>([])
   const [prev, setPrev] = useState<LessonProgress | undefined>()
@@ -297,7 +269,7 @@ export function WeeklyReview() {
   const device = useToday()
   const today = device ?? new Date()
   const groups = useMemo(() => (device ? weekGroups(device) : []), [device])
-  const { next, round } = usePractice(groups, 'Weekly review of verb groups')
+  const { next, round } = usePractice(groups)
   const [stage, setStage] = useState<'home' | 'loading' | 'quiz'>('home')
   const [questions, setQuestions] = useState<QuizQ[]>([])
   const [attempts, setAttempts] = useState<Attempt[] | null>(null)
@@ -318,6 +290,41 @@ export function WeeklyReview() {
     setStage('loading')
     setQuestions(await next())
     setStage('quiz')
+  }
+
+  /** Weekly report for any AI chat: progress, error types, wrong sentences and the week's verb groups. */
+  function weekReport() {
+    const fmt = (d: Date) => d.toLocaleDateString('vi-VN')
+    const sunday = new Date(monday.getTime() + 6 * 86400000)
+    const lines = [
+      `# Báo cáo tuần ${fmt(monday)} – ${fmt(sunday)}`,
+      '',
+      '## Yêu cầu cho AI',
+      'Tôi là kỹ sư quản lý dự án xây dựng người Việt, đang luyện viết tiếng Anh công việc (email, biên bản, thư FIDIC) và IELTS General (mục tiêu 6.5). Dựa trên báo cáo tuần này, hãy:',
+      '- Với mỗi câu sai: chỉ ra lỗi, sửa lại, giải thích ngắn bằng tiếng Việt.',
+      '- Tìm 3 lỗ hổng lớn nhất và cho mỗi lỗ hổng 5 câu luyện (có đáp án ở cuối).',
+      '- Kiểm tra tôi các nhóm động từ đã học trong tuần bằng 10 câu chọn từ theo sắc thái và cấu trúc đi sau.',
+      '',
+      '## Tiến bộ',
+      `- Tuần trước: ${lastWeek?.perTen ?? '—'} lỗi / 10 câu (${lastWeek?.sentences ?? 0} câu)`,
+      `- Tuần này: ${thisWeek?.perTen ?? '—'} lỗi / 10 câu (${thisWeek?.sentences ?? 0} câu)`,
+      `- Lỗi nhiều nhất: ${topTypes.map(([t, n]) => `${ERROR_TYPES[t] ?? t} (${n})`).join(', ') || '—'}`,
+      '',
+      '## Nhóm động từ đã học',
+      ...(groups.length ? groups.map((g) => `- ${g.vi}: ${g.verbs.map((v) => v.verb).join(', ')}`) : ['- (chưa có)']),
+      '',
+      '## Câu Situation làm chưa đúng',
+    ]
+    for (const a of (thisWeek?.list ?? []).filter((x) => x.verdict !== 'correct')) {
+      lines.push(
+        '',
+        `### ${a.vietnamese}`,
+        `- **Tôi viết:** ${a.answer}`,
+        `- **Câu mẫu:** ${a.model}`,
+        `- **Tôi tự đánh dấu:** ${a.errors.map((e) => (e.wrong ? `${ERROR_TYPES[e.type] ?? e.type}: ${e.wrong} → ${e.correct}` : ERROR_TYPES[e.type] ?? e.type)).join('; ') || '—'}`
+      )
+    }
+    return lines.join('\n')
   }
 
   return (
@@ -417,6 +424,13 @@ export function WeeklyReview() {
             <Link href="/lessons" className="underline">Ôn bài học tương ứng</Link>
           </p>
         )}
+        <button
+          onClick={() => downloadWord(weekReport(), `bao-cao-tuan-${isoDate(monday)}`)}
+          disabled={!attempts}
+          className="mb-3 w-full py-3 bg-gray-900 text-white text-sm font-medium rounded-lg flex items-center justify-center gap-2 disabled:opacity-40"
+        >
+          <FileText className="w-4 h-4" /> Xuất báo cáo tuần (Word) để hỏi AI
+        </button>
         <Link href="/summary" className="inline-flex items-center gap-1.5 text-sm text-gray-700 hover:text-gray-900">
           <BarChart3 className="w-4 h-4" /> Tổng kết lỗi & xuất cho AI →
         </Link>

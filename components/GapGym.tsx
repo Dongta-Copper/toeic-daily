@@ -8,7 +8,6 @@ import {
   applyOutcome,
   blanked,
   clusterViews,
-  gapItems,
   gapProgress,
   hash01,
   loadGapData,
@@ -49,35 +48,12 @@ function Marked({ sentence, chunk, className }: { sentence: string; chunk?: stri
 }
 
 function CardBack({ item, rule }: { item: GapItem; rule?: string }) {
-  const [ipa, setIpa] = useState(item.ipa ?? '')
-  const [busy, setBusy] = useState(false)
-
-  async function loadIpa() {
-    setBusy(true)
-    try {
-      const r = await fetch('/api/ipa', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ text: item.correct }) })
-      const d = await r.json()
-      if (r.ok && d.ipa) {
-        setIpa(d.ipa)
-        gapItems.save([{ ...item, ipa: d.ipa, updatedAt: new Date().toISOString() }])
-      }
-    } finally {
-      setBusy(false)
-    }
-  }
-
   return (
     <div className="mt-4 p-4 border border-gray-200 rounded-lg bg-white space-y-2">
       <div className="flex items-start justify-between gap-3">
         <div>
           <p className="text-lg font-semibold text-green-700">{item.correct}</p>
-          {ipa ? (
-            <p className="text-sm text-gray-500">{ipa}</p>
-          ) : (
-            <button onClick={loadIpa} disabled={busy} className="text-xs text-gray-400 hover:text-gray-900">
-              {busy ? 'Đang lấy phiên âm…' : 'Xem phiên âm IPA'}
-            </button>
-          )}
+          {item.ipa && <p className="text-sm text-gray-500">{item.ipa}</p>}
         </div>
         <div className="flex gap-1">
           <button onClick={() => speak(item.correct)} className="p-1 text-gray-400 hover:text-gray-900 text-xs" title="Nghe cụm từ">
@@ -476,7 +452,7 @@ export default function GapGym() {
       try {
         setData(await syncMistakes(d, (done, total) => setSyncing({ done, total })))
       } catch (e) {
-        setError(e instanceof Error ? e.message : 'AI chưa phân tích được lỗi mới.')
+        setError(e instanceof Error ? e.message : 'Chưa cập nhật được lỗi mới.')
       } finally {
         setSyncing(null)
       }
@@ -519,7 +495,7 @@ export default function GapGym() {
       {syncing && (
         <div className="mb-6 p-4 border border-amber-200 bg-amber-50 rounded-lg text-sm text-amber-800">
           <p className="flex items-center gap-2">
-            <Loader2 className="w-4 h-4 animate-spin" /> AI đang phân tích {syncing.total} lỗi mới… ({syncing.done}/{syncing.total})
+            <Loader2 className="w-4 h-4 animate-spin" /> Đang thêm {syncing.total} lỗi mới vào Gym… ({syncing.done}/{syncing.total})
           </p>
           <p className="text-xs mt-1">Lần đầu có thể mất vài phút. Bạn vẫn luyện được với các thẻ đã có.</p>
         </div>
@@ -644,9 +620,6 @@ export default function GapGym() {
             <span className="flex items-center gap-1">
               <MapIcon className="w-3.5 h-3.5" /> {data.items.length} thẻ từ {data.items.filter((i) => i.kind === 'mistake').length} lỗi thật của bạn
             </span>
-            <Link href="/situation/cards/bank" className="hover:text-gray-900">
-              Bộ 150 cụm soạn sẵn →
-            </Link>
           </div>
         </>
       )}

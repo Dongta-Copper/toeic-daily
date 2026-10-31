@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { Fragment, useEffect, useMemo, useRef, useState } from 'react'
-import { ArrowLeft, BookOpen, Check, Clock, Layers, ListChecks, Loader2, Search, X } from 'lucide-react'
+import { ArrowLeft, BookOpen, Check, Clock, ListChecks, Search, X } from 'lucide-react'
 import {
   TYPE_LABEL,
   TYPE_TIP,
@@ -19,7 +19,6 @@ import {
   type Question,
   type QResult,
 } from '@/lib/ielts'
-import { generateCards, loadBuiltinCards, userCards } from '@/lib/phrases'
 
 type Highlight = { sectionId: string; textId: string; quote: string } | null
 
@@ -91,9 +90,6 @@ export default function IeltsPlayer({ paper }: { paper: Paper }) {
   const [highlight, setHighlight] = useState<Highlight>(null)
   const [results, setResults] = useState<QResult[]>([])
   const [tips, setTips] = useState<Record<string, boolean>>({})
-  const [phrase, setPhrase] = useState('')
-  const [phraseMsg, setPhraseMsg] = useState('')
-  const [phraseBusy, setPhraseBusy] = useState(false)
   const answersRef = useRef(answers)
   const submittedRef = useRef(false)
 
@@ -182,20 +178,7 @@ export default function IeltsPlayer({ paper }: { paper: Paper }) {
     setView('text')
   }
 
-  async function savePhrase() {
-    if (!phrase.trim()) return
-    setPhraseBusy(true)
-    setPhraseMsg('')
-    try {
-      const cards = await generateCards({ mode: 'manual', text: phrase.trim() }, [...userCards.readLocal(), ...(await loadBuiltinCards())])
-      setPhraseMsg(cards.length ? `Đã lưu: ${cards.map((c) => c.phrase).join(' · ')}` : 'Cụm này đã có trong Thẻ cụm từ.')
-      setPhrase('')
-    } catch (e) {
-      setPhraseMsg(e instanceof Error ? e.message : 'AI chưa tạo được thẻ.')
-    } finally {
-      setPhraseBusy(false)
-    }
-  }
+
 
   // ─── Intro ──────────────────────────────────────────────────────────────────
   if (phase === 'intro') {
@@ -432,32 +415,6 @@ export default function IeltsPlayer({ paper }: { paper: Paper }) {
             </button>
           )}
 
-          {reviewing && (
-            <div className="mt-6 p-4 border border-dashed border-gray-300 rounded-lg">
-              <p className="text-sm font-medium text-gray-900 mb-1 flex items-center gap-1.5">
-                <Layers className="w-4 h-4" /> Lưu cụm từ hay trong bài vào Thẻ cụm từ
-              </p>
-              <p className="text-xs text-gray-500 mb-3">Gõ cụm từ bạn muốn học, ví dụ: reimburse the fee, in response to.</p>
-              <div className="flex gap-2">
-                <input
-                  value={phrase}
-                  onChange={(e) => setPhrase(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && !phraseBusy && savePhrase()}
-                  autoCorrect="off"
-                  spellCheck={false}
-                  className="flex-1 min-w-0 border border-gray-300 rounded-md px-3 py-2 text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-gray-900"
-                />
-                <button
-                  onClick={savePhrase}
-                  disabled={phraseBusy || !phrase.trim()}
-                  className="px-4 py-2 bg-gray-900 text-white text-sm rounded-md disabled:opacity-40 flex items-center gap-1.5"
-                >
-                  {phraseBusy && <Loader2 className="w-4 h-4 animate-spin" />} Lưu
-                </button>
-              </div>
-              {phraseMsg && <p className="mt-2 text-xs text-gray-600">{phraseMsg}</p>}
-            </div>
-          )}
         </div>
       </div>
     </div>

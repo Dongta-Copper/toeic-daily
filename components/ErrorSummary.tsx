@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
 import { ArrowLeft, Check, ChevronDown, Copy, Download, Dumbbell, GraduationCap, Share2 } from 'lucide-react'
 import { lessonFor } from '@/lib/lessons'
+import { downloadWord } from '@/lib/wordExport'
 import { getAttempts, type Attempt } from '@/lib/situation'
 import { generatedSections, ieltsAttempts, loadTests, qid, type Group, type IeltsAttempt, type Question } from '@/lib/ielts'
 import { PURPOSES, TREND_LABEL, buildSummary, toMarkdown, type Purpose, type Summary } from '@/lib/errorSummary'
@@ -57,12 +58,7 @@ export default function ErrorSummary() {
   }
 
   function download() {
-    const url = URL.createObjectURL(new Blob([markdown], { type: 'text/markdown;charset=utf-8' }))
-    const a = document.createElement('a')
-    a.href = url
-    a.download = fileName
-    a.click()
-    URL.revokeObjectURL(url)
+    downloadWord(markdown, fileName.replace(/\.md$/, ''))
   }
 
   async function share() {
@@ -82,7 +78,7 @@ export default function ErrorSummary() {
       </Link>
       <div className="mb-6">
         <h1 className="text-2xl font-semibold text-gray-900">Tổng kết lỗi</h1>
-        <p className="text-sm text-gray-500 mt-1">Tính từ toàn bộ câu bạn đã viết — không cần chờ AI. Xuất hồ sơ để hỏi Claude, ChatGPT, Gemini hay DeepSeek.</p>
+        <p className="text-sm text-gray-500 mt-1">Tính từ kết quả tự chấm của toàn bộ câu bạn đã viết. Xuất file Word để hỏi ChatGPT, Claude, DeepSeek hay Copilot.</p>
       </div>
 
       <div className="flex gap-1 p-0.5 bg-gray-100 rounded-md text-sm w-fit mb-6">
@@ -200,7 +196,7 @@ export default function ErrorSummary() {
           <section className="p-4 sm:p-5 border-2 border-gray-900 rounded-lg">
             <h2 className="text-base font-semibold text-gray-900 mb-1">Xuất hồ sơ cho AI</h2>
             <p className="text-xs text-gray-500 mb-4">
-              File Markdown (.md) — dán hoặc đính kèm vào Claude, ChatGPT, Gemini, DeepSeek đều đọc được. Hồ sơ gồm top lỗi, ví dụ thật có ngữ cảnh, xu hướng và một yêu cầu
+              File Word (.docx) — mở ra rồi copy, hoặc đính kèm thẳng vào ChatGPT, Claude, DeepSeek, Copilot. Hồ sơ gồm top lỗi, ví dụ thật có ngữ cảnh, xu hướng và một yêu cầu
               theo mục đích bạn chọn.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
@@ -221,7 +217,7 @@ export default function ErrorSummary() {
                 {copied ? 'Đã copy — dán vào AI' : 'Copy'}
               </button>
               <button onClick={download} className="flex items-center gap-1.5 px-4 py-2.5 border border-gray-300 text-sm rounded-md hover:border-gray-900">
-                <Download className="w-4 h-4" /> Tải file .md
+                <Download className="w-4 h-4" /> Tải file Word
               </button>
               {canShare && (
                 <button onClick={share} className="flex items-center gap-1.5 px-4 py-2.5 border border-gray-300 text-sm rounded-md hover:border-gray-900">

@@ -1,4 +1,5 @@
 import type { TheorySection } from './lessonTheory'
+import { EXTRA_QUIZ } from './lessonExtra'
 
 // Short lessons, one per error type the AI tags (keys match ERROR_TYPES).
 // Each: core rule, construction-context examples, the typical Vietnamese-speaker trap, and a 5-question check.
@@ -408,3 +409,6 @@ export function checkFix(q: FixQ, input: string) {
   const got = norm(input)
   return [q.answer, ...(q.alts ?? [])].some((a) => norm(a) === got)
 }
+
+// Each lesson gets its written extra items so a session has 10 questions.
+for (const l of LESSONS) l.quiz.push(...(EXTRA_QUIZ[l.type] ?? []))

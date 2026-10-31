@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowRight, BarChart3, Clock, Loader2, Sparkles, Target } from 'lucide-react'
+import { ArrowRight, BarChart3, Clock, Target } from 'lucide-react'
 import {
   TARGET_BAND,
   TYPE_LABEL,
@@ -20,8 +20,6 @@ export default function IeltsHome() {
   const [tests, setTests] = useState<Test[] | null>(null)
   const [generated, setGenerated] = useState<GeneratedSection[]>([])
   const [attempts, setAttempts] = useState<IeltsAttempt[]>([])
-  const [busy, setBusy] = useState<number | null>(null)
-  const [error, setError] = useState('')
 
   useEffect(() => {
     Promise.all([loadTests(), generatedSections.getAll(), ieltsAttempts.getAll()]).then(([t, g, a]) => {
@@ -64,28 +62,6 @@ export default function IeltsHome() {
     for (const s of all) for (const g of s.groups) count.set(g.type, (count.get(g.type) ?? 0) + g.questions.length)
     return [...count.entries()].sort((a, b) => b[1] - a[1])
   }, [tests, generated])
-
-  async function generate(number: 1 | 2 | 3) {
-    setBusy(number)
-    setError('')
-    try {
-      const res = await fetch('/api/ielts-generate', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ number }),
-      })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error)
-      const now = new Date().toISOString()
-      const entry: GeneratedSection = { id: data.section.id, createdAt: now, updatedAt: now, section: data.section }
-      generatedSections.save([entry])
-      setGenerated((g) => [entry, ...g])
-    } catch (e) {
-      setError(e instanceof Error && e.message ? e.message : 'AI chưa tạo được đề.')
-    } finally {
-      setBusy(null)
-    }
-  }
 
   const scoreTag = (key: string) => {
     const a = lastByKey.get(key)
@@ -173,29 +149,6 @@ export default function IeltsHome() {
               )}
             </div>
 
-            <div className="mt-4 p-4 border border-dashed border-gray-300 rounded-lg">
-              <p className="text-sm text-gray-900 font-medium flex items-center gap-1.5 mb-1">
-                <Sparkles className="w-4 h-4" /> AI soạn Section mới
-              </p>
-              <p className="text-xs text-gray-500 mb-3">
-                Mất khoảng 1–3 phút. Đề được kiểm tra tự động (trích dẫn đáp án phải có thật trong bài) trước khi hiện ra.
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {([1, 2, 3] as const).map((n) => (
-                  <button
-                    key={n}
-                    onClick={() => generate(n)}
-                    disabled={busy !== null}
-                    className="flex items-center gap-1.5 px-4 py-2 border border-gray-300 rounded-md text-sm text-gray-700 hover:border-gray-900 disabled:opacity-40"
-                  >
-                    {busy === n && <Loader2 className="w-4 h-4 animate-spin" />}
-                    Section {n}
-                  </button>
-                ))}
-              </div>
-              {busy !== null && <p className="text-xs text-gray-500 mt-2">AI đang soạn Section {busy}… đừng đóng trang.</p>}
-              {error && <p className="text-sm text-red-600 mt-2">{error}</p>}
-            </div>
           </section>
 
           <section>

@@ -1,6 +1,6 @@
 import { createStore } from '@/lib/store'
 import { INTERVALS, localDate } from '@/lib/srs'
-import { getAttempts, type Attempt } from '@/lib/situation'
+import { ERROR_TYPES, getAttempts, type Attempt } from '@/lib/situation'
 import { generatedSections, ieltsAttempts, loadTests, qid, type IeltsAttempt, type Group, type Question } from '@/lib/ielts'
 
 // ─── "Gap gym": practice built only from the learner's own mistakes ──────────
@@ -322,7 +322,40 @@ export async function loadGapData(): Promise<GapData> {
 const BATCH = 20
 
 /**
- * Sends pending mistakes to the AI in batches and merges the result into the gap map.
+ * Turns mistakes into gap items without AI: one item per wrong → correct phrase found in the learner's
+ * sentence, grouped into one cluster per error type. Mistakes without a phrase pair are only marked done.
+ */
+function buildItems(errors: RawError[], clusters: GapCluster[], now: string): { clusters: GapCluster[]; items: GapItem[] } {
+  const newClusters: GapCluster[] = []
+  const items: GapItem[] = []
+  for (const e of errors) {
+    if (e.type === 'ielts_paraphrase' || !e.wrong.trim() || !e.correct.trim()) continue
+    const at = e.context.toLowerCase().indexOf(e.wrong.toLowerCase())
+    if (at < 0) continue
+    const clusterId = `type-${e.type}`
+    if (!clusters.some((c) => c.id === clusterId) && !newClusters.some((c) => c.id === clusterId))
+      newClusters.push({ id: clusterId, title: ERROR_TYPES[e.type] ?? e.type, rule: '', createdAt: now, updatedAt: now })
+    const wrong = e.context.slice(at, at + e.wrong.length)
+    items.push({
+      id: `gi-${e.sourceId}-${items.length}`,
+      clusterId,
+      kind: 'mistake',
+      correct: e.correct.trim(),
+      wrong,
+      vietnamese: '',
+      sentenceCorrect: e.context.slice(0, at) + e.correct.trim() + e.context.slice(at + e.wrong.length),
+      sentenceWrong: e.context,
+      errorWord: wrong,
+      sourceIds: [e.sourceId],
+      createdAt: now,
+      updatedAt: now,
+    })
+  }
+  return { clusters: newClusters, items }
+}
+
+/**
+ * Turns pending mistakes into gap items in batches and merges them into the gap map.
  * A mistake that repeats an existing item is merged into it, and that item goes back to box 0.
  */
 export async function syncMistakes(data: GapData, onProgress: (done: number, total: number) => void): Promise<GapData> {
@@ -331,15 +364,8 @@ export async function syncMistakes(data: GapData, onProgress: (done: number, tot
   const total = data.pending.length
   for (let i = 0; i < total; i += BATCH) {
     const batch = data.pending.slice(i, i + BATCH)
-    const res = await fetch('/api/gaps/analyze', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ errors: batch, clusters: clusters.map(({ id, title, rule }) => ({ id, title, rule })) }),
-    })
-    const out = await res.json()
-    if (!res.ok) throw new Error(out.error ?? 'analyze failed')
-
     const now = new Date().toISOString()
+    const out = buildItems(batch, clusters, now)
     const newClusters = out.clusters as GapCluster[]
     const changed: GapItem[] = []
     const resets: GapProgress[] = []

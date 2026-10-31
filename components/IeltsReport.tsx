@@ -2,7 +2,8 @@
 
 import Link from 'next/link'
 import { useEffect, useMemo, useState } from 'react'
-import { ArrowLeft, ArrowRight, Loader2, Sparkles } from 'lucide-react'
+import { ArrowLeft, ArrowRight, FileText } from 'lucide-react'
+import { downloadWord, today } from '@/lib/wordExport'
 import {
   TARGET_BAND,
   TYPE_LABEL,
@@ -12,28 +13,14 @@ import {
   loadTests,
   qid,
   type Group,
-  type IeltsAnalysis,
   type IeltsAttempt,
   type QType,
   type Question,
 } from '@/lib/ielts'
 
-const ANALYSIS_KEY = 'ielts_analysis'
-
-function readAnalysis(): { at: string; data: IeltsAnalysis } | null {
-  try {
-    return JSON.parse(localStorage.getItem(ANALYSIS_KEY) ?? 'null')
-  } catch {
-    return null
-  }
-}
-
 export default function IeltsReport() {
   const [attempts, setAttempts] = useState<IeltsAttempt[] | null>(null)
   const [index, setIndex] = useState<Map<string, { g: Group; q: Question }>>(new Map())
-  const [analysis, setAnalysis] = useState<{ at: string; data: IeltsAnalysis } | null>(null)
-  const [busy, setBusy] = useState(false)
-  const [error, setError] = useState('')
 
   useEffect(() => {
     Promise.all([ieltsAttempts.getAll(), loadTests(), generatedSections.getAll()]).then(([a, tests, gen]) => {
@@ -42,7 +29,6 @@ export default function IeltsReport() {
         for (const g of s.groups) for (const q of g.questions) m.set(qid(s.id, q.n), { g, q })
       setIndex(m)
       setAttempts(a.sort((x, y) => y.at.localeCompare(x.at)))
-      setAnalysis(readAnalysis())
     })
   }, [])
 
@@ -61,43 +47,38 @@ export default function IeltsReport() {
 
   const fullTests = (attempts ?? []).filter((a) => a.mode === 'full')
 
-  async function analyze() {
-    setBusy(true)
-    setError('')
-    try {
-      const mistakes = results
-        .filter((r) => !r.correct)
-        .map((r) => {
-          const hit = index.get(r.qid)
-          return hit
-            ? {
-                type: TYPE_LABEL[r.type],
-                question: hit.q.prompt ?? `(điền từ, câu ${hit.q.n})`,
-                answer: r.answer,
-                correct: hit.q.answer[0],
-                explanation: hit.q.explanation,
-              }
-            : null
-        })
-        .filter((x) => x !== null)
-      const stats = Object.fromEntries(byType.map(([t, s]) => [TYPE_LABEL[t], s]))
-      const res = await fetch('/api/ielts-analyze', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ stats, mistakes, band: fullTests[0] ? bandGT(fullTests[0].score) : null }),
-      })
-      const data = await res.json()
-      if (!res.ok) throw new Error(data.error)
-      const saved = { at: new Date().toISOString(), data: data as IeltsAnalysis }
-      try {
-        localStorage.setItem(ANALYSIS_KEY, JSON.stringify(saved))
-      } catch {}
-      setAnalysis(saved)
-    } catch (e) {
-      setError(e instanceof Error && e.message ? e.message : 'AI chưa phân tích được.')
-    } finally {
-      setBusy(false)
+  /** Markdown for any AI chat: accuracy by question type and every wrong answer with its evidence. */
+  function forAI() {
+    const lines = [
+      '# Báo cáo IELTS General Reading',
+      '',
+      '## Yêu cầu cho AI',
+      'Tôi là kỹ sư quản lý dự án người Việt, mục tiêu IELTS General Training band ' + TARGET_BAND + '. Dựa trên số liệu và các câu sai bên dưới, hãy:',
+      '- Chỉ ra 3 điểm yếu lớn nhất (theo dạng câu hỏi) và nguyên nhân thường gặp.',
+      '- Với mỗi câu sai: giải thích vì sao đáp án đúng, chỉ ra từ khóa / paraphrase trong bài.',
+      '- Đề xuất kế hoạch luyện 1 tuần (6 ngày học, Chủ nhật ôn).',
+      '',
+      '## Tỷ lệ đúng theo dạng câu hỏi',
+      ...byType.map(([t, s]) => `- ${TYPE_LABEL[t]}: ${s.right}/${s.total} (${Math.round((s.right / s.total) * 100)}%)`),
+      '',
+      '## Bài thi đủ đề gần đây',
+      ...(fullTests.length ? fullTests.slice(0, 5).map((a) => `- ${a.title}: ${a.score}/${a.total} → band ${bandGT(a.score, a.total)}`) : ['- (chưa có)']),
+      '',
+      '## Các câu làm sai (gần nhất)',
+    ]
+    for (const r of results.filter((x) => !x.correct).slice(0, 40)) {
+      const hit = index.get(r.qid)
+      if (!hit) continue
+      lines.push(
+        '',
+        `### ${TYPE_LABEL[r.type]} – câu ${hit.q.n}`,
+        `- **Câu hỏi:** ${hit.q.prompt ?? hit.g.instructions ?? ''}`,
+        `- **Tôi trả lời:** ${r.answer || '(bỏ trống)'}`,
+        `- **Đáp án:** ${hit.q.answer.join(' / ')}`
+      )
+      if (hit.q.evidence) lines.push(`- **Trích trong bài:** ${hit.q.evidence}`)
     }
+    return lines.join('\n')
   }
 
   return (
@@ -141,38 +122,13 @@ export default function IeltsReport() {
 
           <section className="mb-10">
             <button
-              onClick={analyze}
-              disabled={busy || !results.some((r) => !r.correct)}
+              onClick={() => downloadWord(forAI(), `bao-cao-ielts-${today()}`)}
+              disabled={!results.length}
               className="flex items-center gap-2 px-6 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 disabled:opacity-40"
             >
-              {busy ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
-              {busy ? 'AI đang phân tích…' : analysis ? 'AI phân tích lại' : 'AI phân tích điểm yếu'}
+              <FileText className="w-4 h-4" /> Xuất báo cáo Word cho AI
             </button>
-            {error && <p className="text-sm text-red-600 mt-3">{error}</p>}
-            {analysis && (
-              <div className="mt-6 space-y-6">
-                <p className="text-xs text-gray-500">Phân tích lúc {new Date(analysis.at).toLocaleString('vi-VN')}</p>
-                <p className="text-sm text-gray-700 leading-relaxed p-4 bg-gray-50 rounded-md border-l-2 border-gray-300">{analysis.data.overview}</p>
-                {analysis.data.weaknesses.map((w, i) => (
-                  <div key={i} className="p-4 border border-gray-200 rounded-lg">
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="text-sm font-medium text-gray-900">{w.type}</span>
-                      <span className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-600">{w.level}</span>
-                    </div>
-                    <p className="text-sm text-gray-700 leading-relaxed mb-2">{w.pattern}</p>
-                    <p className="text-xs text-gray-600 leading-relaxed">💡 {w.strategy}</p>
-                  </div>
-                ))}
-                <div>
-                  <h3 className="text-sm font-medium text-gray-900 mb-2">Kế hoạch tuần tới</h3>
-                  <ol className="list-decimal list-inside space-y-1.5 text-sm text-gray-700">
-                    {analysis.data.plan.map((p, i) => (
-                      <li key={i}>{p}</li>
-                    ))}
-                  </ol>
-                </div>
-              </div>
-            )}
+            <p className="text-xs text-gray-500 mt-2">File gồm tỷ lệ đúng theo dạng câu, điểm các đề và các câu sai kèm trích dẫn — mở Word, copy vào ChatGPT / Claude / DeepSeek để được phân tích.</p>
           </section>
 
           <section className="mb-10">
