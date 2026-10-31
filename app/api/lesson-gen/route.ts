@@ -44,13 +44,14 @@ export async function POST(req: Request) {
     if (b.mode === 'quiz') {
       // The quality rules make the model drop items now and then; ask again for what is missing.
       const quiz: QuizQ[] = []
-      for (let round = 0; round < 2 && quiz.length < n; round++) {
+      const deadline = Date.now() + 52000
+      for (let round = 0; round < 2 && quiz.length < n && deadline - Date.now() > 15000; round++) {
         const need = n - quiz.length
         const fixes = Math.max(1, Math.round(need * 0.4))
         const used = quiz.length ? `\nAlso avoid these new ones:\n${quiz.map((q) => `- ${q.q} ${q.kind === 'fix' ? q.sentence ?? '' : ''}`).join('\n')}` : ''
         const out = await generateJSON<{ quiz: QuizQ[] }>(
           `You write English grammar/vocabulary exercises for a Vietnamese learner (target IELTS 6.5).\n${ctx}${mine}${avoid}${used}\nReturn JSON {"quiz": [...]} with exactly ${QUIZ_SPEC(need)}\nInclude exactly ${fixes} "fix" items.`,
-          { timeoutMs: 28000 }
+          { timeoutMs: 40000, deadline }
         ).catch(() => ({ quiz: [] as QuizQ[] }))
         quiz.push(...(out.quiz ?? []).filter(valid).slice(0, need))
       }
@@ -64,7 +65,7 @@ Parent lesson for context:\n${ctx}
 New lesson topic (narrower or related): "${b.focus || b.base.title}".${mine}
 Write it like a good grammar reference (e.g. Cambridge Grammar for IELTS): clear sections, each rule with a pattern, a workplace example and a warning about the typical mistake.
 Return JSON {"title": "Vietnamese title", "theory": [{"heading":"short heading","points":[{"rule":"rule in Vietnamese with the English pattern","ex":"English workplace example","warn":"optional: wrong ✗ → right ✓"}]}] (3 sections, 2-4 points each), "rules": ["the 3-5 most important rules, one line each, Vietnamese"], "examples": [{"en":"…","vi":"…"}] (3 examples), "trap": [{"wrong":"…","right":"…","why":"Vietnamese"}] (3 typical mistakes of Vietnamese speakers), "quiz": [...]} where quiz is ${QUIZ_SPEC(10)}`,
-      { timeoutMs: 55000 }
+      { timeoutMs: 50000, deadline: Date.now() + 55000 }
     )
     const quiz = (out.quiz ?? []).filter(valid)
     if (!out.title || !out.rules?.length || quiz.length < 5) throw new Error('incomplete lesson')

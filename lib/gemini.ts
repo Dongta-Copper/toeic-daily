@@ -22,7 +22,8 @@ export function parseModelJSON<T>(raw: string): T {
   }
 }
 
-type Options = { timeoutMs?: number; attemptsPerModel?: number; temperature?: number }
+// deadline: absolute time (ms) by which all attempts must finish — keeps retries inside the function limit.
+type Options = { timeoutMs?: number; attemptsPerModel?: number; temperature?: number; deadline?: number }
 
 export async function generateJSON<T>(prompt: string, opts: Options = {}): Promise<T> {
   const apiKey = process.env.GEMINI_API_KEY
@@ -32,13 +33,15 @@ export async function generateJSON<T>(prompt: string, opts: Options = {}): Promi
   let lastError: unknown
   for (const name of MODELS) {
     for (let attempt = 0; attempt < (opts.attemptsPerModel ?? 2); attempt++) {
+      const left = opts.deadline ? opts.deadline - Date.now() : Infinity
+      if (left < 5000) throw lastError ?? new Error('timeout: no time left for the AI call')
       try {
         const model = genAI.getGenerativeModel(
           {
             model: name,
             generationConfig: { responseMimeType: 'application/json', temperature: opts.temperature ?? 0.3 },
           },
-          { timeout: opts.timeoutMs ?? TIMEOUT_MS }
+          { timeout: Math.min(opts.timeoutMs ?? TIMEOUT_MS, left) }
         )
         const result = await model.generateContent(prompt)
         return parseModelJSON<T>(result.response.text())
