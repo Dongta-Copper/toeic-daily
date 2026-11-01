@@ -1,0 +1,102 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|S|allow|Visitors are not allowed ___ without PPE.|to enter|entering|enter|be allowed + to V.
+F|S|allow|The rules do not allow to enter without PPE.|allow to enter|allow visitors to enter|allow + người + to V.|allow entering;allow entry
+C|E|allow|Please allow ___ days for delivery.|five working|five work|five works|allow + khoảng thời gian.
+C|S|allow|Smoking is not ___ on site.|allowed|allow|allowing|Bị động.
+C|M|allow|The client agreed to allow the subcontractor ___ on Sundays.|to work|working|work|allow + sb + to V.
+C|C|allow|The programme should allow ___ for weather delays.|time|times|timing|allow time for = dự trù thời gian.
+C|E|allow|Could you allow us ___ access to Zone C earlier?|(không cần từ)|for|to|allow sb sth (allow us access).
+C|S|allow|Only authorised staff are allowed ___ the crane.|to operate|operating|operate|be allowed + to V.
+C|I|allow|Technology allows people ___ from anywhere.|to work|working|work|allow + sb + to V.
+C|C|allow|The budget allows ___ a 5% contingency.|for|to|with|allow for = tính đến, dự phòng.
+F|S|allow|Workers are not allow to eat in this area.|are not allow|are not allowed|Bị động cần V3.
+C|E|allow|This will allow us ___ the delay.|to recover|recovering|recover|allow + sb + to V.
+C|M|allow|Night works will be allowed ___ the residents agree.|if|unless to|since|if + điều kiện.
+C|I|allow|Some countries allow ___ to vote at 16.|young people|to young people|for young people|allow + người + to V.
+C|S|allow|No vehicles are allowed ___ this point.|beyond|over of|after of|beyond this point = qua điểm này.
+C|E|allow|Please allow me ___ myself.|to introduce|introducing|introduce|allow me to V (lịch sự).
+C|C|allow|The Contract does not allow the Contractor ___ the Works without consent.|to subcontract|subcontracting|subcontract|allow sb to V.
+C|M|permit|Hot work is not ___ without a valid permit.|permitted|permit|permitting|Bị động: be permitted.
+F|M|permit|Hot work is not permit without a permit.|is not permit|is not permitted|Bị động cần V3.
+C|S|permit|You need a ___ to work before starting hot work.|permit|permission of|permitting|Danh từ: permit to work (/ˈpɜːmɪt/).
+C|C|permit|The Contractor shall obtain all ___ required by law.|permits|permit's|permitting|Danh từ số nhiều.
+C|E|permit|Weather ___, the pour will take place on Saturday.|permitting|permitted|permits|Cụm cố định: weather permitting.
+C|S|permit|Only trained workers are permitted ___ the scaffold.|to erect|erecting|erect|be permitted + to V.
+C|C|permit|Subcontracting is not ___ without the Engineer's consent.|permitted|permit|permitting|Bị động.
+C|I|permit|The law does not permit employers ___ staff without notice.|to dismiss|dismissing|dismiss|permit + sb + to V.
+C|E|permit|If time ___, we will also discuss the variation.|permits|permit|permitting|If time permits = nếu còn thời gian.
+C|C|permit|The Employer shall assist the Contractor in obtaining ___.|permits|permit|permitted|Danh từ số nhiều.
+C|S|permit|Entry is permitted ___ with a valid pass.|only|alone|single|only with = chỉ khi có.
+F|S|permit|Workers are permitted enter only through Gate 2.|permitted enter|permitted to enter|be permitted + to V.
+C|M|permit|The authorities granted the ___ last week.|permit|permitted|permitting|Danh từ: the permit.
+C|E|permit|Please ensure your work ___ is displayed on site.|permit|permission|permitting|work permit = giấy phép làm việc.
+C|C|permit|The Contractor is not permitted ___ the Site before the Commencement Date.|to occupy|occupying|occupy|be permitted to V.
+C|I|permit|Many cities do not permit cars ___ the historic centre.|in|to in|for|permit cars in = cho xe vào.
+C|E|permit|The client has ___ us to start the night shift.|permitted|permit|permission|Hiện tại hoàn thành: has permitted.
+C|S|let|Let the team ___ the pour before you start.|finish|to finish|finishing|let + sb + V nguyên mẫu.
+F|S|let|Let the team to finish the pour.|Let the team to finish|Let the team finish|let + sb + V (không to).
+C|E|let|Please let me ___ if you need anything.|know|to know|knowing|let + sb + V.
+C|M|let|The client will not let us ___ on Sundays.|work|to work|working|let + sb + V.
+C|E|let|Let's ___ the meeting to Thursday.|move|to move|moving|Let's + V.
+C|S|let|Don't let anyone ___ under the load.|stand|to stand|standing|let + sb + V.
+F|E|let|Let's to discuss this at the next meeting.|Let's to discuss|Let's discuss|Let's + V nguyên mẫu.
+C|E|let|Could you let the supplier ___ about the new address?|know|to know|knowing|let + sb + V.
+C|S|let|The guard let the truck ___ through the gate.|pass|to pass|passing|let + sb/sth + V.
+C|M|let|We cannot let the delay ___ the handover date.|affect|to affect|affecting|let + sth + V.
+C|E|let|Thank you for letting us ___ the mock-up.|see|to see|seeing|let + sb + V.
+C|I|let|Parents should let children ___ their own mistakes.|make|to make|making|let + sb + V.
+C|S|let|Don't let the cement ___ in the mixer.|harden|to harden|hardening|let + sth + V.
+C|E|let|Please let us have your comments ___ Friday.|by|until|since|by = trước hạn.
+C|M|let|The client let the contractor ___ the old site office.|use|to use|using|let + sb + V.
+C|E|let|Let me ___ you the revised layout.|show|to show|showing|Let me + V.
+C|S|let|The safety officer will not let you ___ without boots.|enter|to enter|entering|let + sb + V.
+C|C|enable|BIM enables ___ clashes early.|us to detect|to detect|us detecting|enable + sb + to V.
+F|C|enable|BIM enables to detect clashes early.|enables to detect|enables us to detect|enable cần tân ngữ trước to V.|enables clashes to be detected
+C|S|enable|The new crane will enable the team ___ faster.|to work|working|work|enable + sb + to V.
+C|I|enable|Online learning enables people ___ new skills at home.|to learn|learning|learn|enable + sb + to V.
+C|M|enable|The extra workers enabled us ___ the delay.|to recover|recovering|recover|enable + sb + to V.
+C|E|enable|Please send the data to ___ us to finalise the report.|enable|enabling|enabled|to + V nguyên mẫu (mục đích).
+C|C|enable|Prefabrication enables ___ on site to be reduced.|work|works of|working of|enable + sth + to be V3.
+C|I|enable|Good public transport enables cities ___ more efficiently.|to function|functioning|function|enable + sth + to V.
+F|I|enable|The internet enables to work from home.|enables to work|enables people to work|enable + sb + to V.
+C|S|enable|The temporary ramp enabled deliveries ___ the basement.|to reach|reaching|reach|enable + sth + to V.
+C|E|enable|Early approval would enable the supplier ___ production.|to start|starting|start|enable + sb + to V.
+C|C|enable|The software enables the planner ___ the critical path automatically.|to calculate|calculating|calculate|enable + sb + to V.
+C|M|enable|The night shift enabled ___ to finish Zone A on time.|the team|to the team|for the team|enable + sb + to V.
+C|I|enable|Education enables young people ___ better jobs.|to find|finding|find|enable + sb + to V.
+C|E|enable|Your quick reply will ___ us to place the order today.|enable|enables|enabling|will + V nguyên mẫu.
+C|S|enable|The new lights enable ___ at night.|work to continue|to continue work|continuing work to|enable + sth + to V.
+C|C|enable|Advance warning enables both Parties ___ action early.|to take|taking|take|enable + sb + to V.
+C|S|prevent|Guardrails prevent workers ___ falling.|from|to|of|prevent sb from V-ing.
+F|S|prevent|Guardrails prevent workers to fall.|prevent workers to fall|prevent workers from falling|prevent … from + V-ing.
+C|S|prevent|The cover prevents rain ___ getting into the joint.|from|to|of|prevent sth from V-ing.
+C|E|prevent|To prevent further ___, please approve the drawing this week.|delays|delaying|delayed|prevent + N.
+C|C|prevent|The Contractor shall take measures to ___ pollution.|prevent|preventing|prevented|to + V nguyên mẫu.
+C|I|prevent|Education can help prevent young people ___ crime.|from committing|to commit|committing to|prevent sb from V-ing.
+C|S|prevent|Netting was installed to prevent tools ___ falling.|from|to|of|prevent sth from V-ing.
+C|M|prevent|The new procedure is intended to prevent the same mistake ___ again.|from happening|to happen|happening to|prevent sth from V-ing.
+F|E|prevent|The rain prevented us to pour the slab.|prevented us to pour|prevented us from pouring|prevent sb from + V-ing.
+C|S|prevent|Accident ___ is everyone's responsibility.|prevention|prevent|preventing|Danh từ: prevention.
+C|C|prevent|If the Contractor is prevented ___ performing by an Exceptional Event, it shall give a Notice.|from|to|of|be prevented from + V-ing.
+C|I|prevent|Regular exercise helps ___ heart disease.|prevent|preventing of|prevention|help + V.
+C|S|prevent|Wet the surface to prevent ___.|dust|dusts|dusty|prevent + N.
+C|M|prevent|The barriers prevent the public ___ the site.|from entering|to enter|entering into|prevent sb from V-ing.
+C|E|prevent|Nothing should prevent ___ completing on time.|us from|us to|to us|prevent sb from V-ing.
+C|I|prevent|Laws alone cannot prevent ___ pollution.|air|aired|airy|air pollution.
+C|C|prevent|The Engineer was prevented ___ attending the test by the storm.|from|to|for|be prevented from V-ing.
+C|S|prohibit|Smoking is strictly ___ on site.|prohibited|prohibit|prohibiting|Bị động: be prohibited.
+F|S|prohibit|The rules prohibit workers to smoke on site.|prohibit workers to smoke|prohibit workers from smoking|prohibit … from + V-ing.
+C|S|prohibit|Mobile phones are prohibited ___ the crane cab.|in|on|at of|in + không gian kín.
+C|C|prohibit|The Contract prohibits the Contractor ___ assigning the Contract.|from|to|of|prohibit sb from V-ing.
+C|I|prohibit|Many cities prohibit ___ in public places.|smoking|to smoke|smoke|prohibit + V-ing.
+C|S|prohibit|Entry to the excavation is ___ without a permit.|prohibited|prohibit|prohibiting|Bị động.
+C|E|prohibit|Please note that parking is prohibited ___ the main gate.|near|near of|nearly|near + nơi.
+C|S|prohibit|The use of ladders is prohibited ___ the scaffold is available.|where|which|what|where = nơi mà.
+C|C|prohibit|Child labour is ___ by law.|prohibited|prohibition|prohibit|Bị động + by law.
+C|I|prohibit|The new law prohibits companies ___ plastic bags.|from using|to use|using of|prohibit sb from V-ing.
+C|S|prohibit|Hot work is prohibited ___ 50 m of the fuel store.|within|between|among|within + khoảng cách.
+F|S|prohibit|Entry is prohibit for unauthorised persons.|is prohibit|is prohibited|Bị động cần V3.
+C|M|prohibit|It was agreed to prohibit deliveries ___ peak hours.|during|while|since|during + danh từ.
+C|C|prohibit|The ___ on night work was lifted in December.|prohibition|prohibit|prohibited|Danh từ: prohibition.
+C|S|prohibit|Workers are prohibited from ___ alone in confined spaces.|working|work|to work|from + V-ing.
+C|I|prohibit|Should governments prohibit ___ of fossil-fuel cars?|the sale|to sell|sell|prohibit + N.

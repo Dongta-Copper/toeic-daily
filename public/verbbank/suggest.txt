@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|E|suggest|I suggest ___ the inspection to Monday.|moving|to move|move|suggest + V-ing.
+C|M|suggest|We suggest that the MEP team ___ first.|start|to start|starting|suggest that + sb + V nguyên mẫu.
+C|E|suggest|Could you suggest ___ for the next coordination meeting?|a date|me a date|to me date|suggest + N (+ to sb); không suggest sb sth.
+F|E|suggest|I suggest to postpone the pour until the rain stops.|suggest to postpone|suggest postponing|suggest + V-ing, không + to V.|suggest that we postpone
+F|M|suggest|The consultant suggested us to use a lighter frame.|suggested us to use|suggested using|Không có suggest + sb + to V.|suggested that we use;suggested that we should use
+C|M|suggest|The Engineer suggested ___ the contractor add a second crane.|that|to|for|suggest that + mệnh đề.
+C|E|suggest|Can you suggest a supplier ___ can deliver within two weeks?|who|which he|what|Mệnh đề quan hệ chỉ người → who.
+C|I|suggest|Research suggests ___ flexible working improves productivity.|that|to|about|suggest that = cho thấy rằng.
+C|I|suggest|The data suggest a strong link ___ noise and stress.|between|of|with|a link between A and B.
+F|E|suggest|Could you suggest me a good subcontractor?|suggest me a good subcontractor|suggest a good subcontractor|suggest không nhận hai tân ngữ liền nhau.|recommend a good subcontractor;suggest a good subcontractor to me
+C|M|suggest|It was suggested ___ the meeting be moved to Thursday.|that|to|for|It was suggested that + mệnh đề.
+C|E|suggest|May I suggest ___ a short call to clarify the scope?|having|to have|have|suggest + V-ing.
+C|E|suggest|Thank you for your ___; we will consider it at the next meeting.|suggestion|suggest|suggesting|Danh từ: suggestion.
+F|E|suggest|Thank you for your suggest regarding the layout.|your suggest|your suggestion|Sau tính từ sở hữu → danh từ suggestion.
+C|S|suggest|The foreman suggested ___ the scaffold before the wind picks up.|checking|to check|check|suggest + V-ing.
+C|M|suggest|The client suggested that the handover ___ by one week.|be postponed|is postpone|to be postponed|suggest that + be + V3.
+C|I|suggest|Some people suggest ___ public transport free for everyone.|making|to make|make|suggest + V-ing.
+F|I|suggest|Experts suggest that governments should to invest in rail.|should to invest|should invest|should + V nguyên mẫu.|invest
+C|E|suggest|What time would you suggest ___ the call?|for|to|at|suggest a time for sth.
+C|M|suggest|As suggested ___ the last meeting, we have prepared two options.|at|in|on|at the meeting.
+C|E|suggest|We would suggest ___ a mock-up before mass production.|approving|to approve|approve|suggest + V-ing.
+C|I|suggest|The results suggest ___ more training is needed.|that|to|for|suggest that.
+F|M|suggest|The team suggested about changing the delivery route.|suggested about changing|suggested changing|suggest + V-ing, không có about.
+C|E|suggest|I'd like to suggest ___ alternative fixing detail.|an|to an|for an|suggest + N.
+C|S|suggest|The safety officer suggested ___ the area before lifting.|cordoning off|to cordon off|cordon off|suggest + V-ing.
+C|E|propose|We ___ an alternative fixing detail for the glass balustrade.|propose|propose about|propose for|propose + N.
+C|E|propose|We propose ___ night shifts next week to recover the delay.|to start|starting about|start|propose to V = dự định làm.
+C|C|propose|We propose that the meeting ___ held on Monday.|be|is being|to be|propose that + be + V3.
+F|E|propose|We propose the client to approve the new layout.|propose the client to approve|propose that the client approve|Không có propose + sb + to V.|propose that the client should approve
+C|C|propose|The Contractor may submit a ___ for value engineering.|proposal|propose|proposing|Danh từ: proposal.
+C|E|propose|Please find attached our ___ for the additional works.|proposal|propose|proposition of|Danh từ: proposal.
+C|M|propose|The Engineer proposed ___ the inspection to 9 am.|moving|to moving|move|propose + V-ing (đề xuất làm gì).
+C|C|propose|The Contractor shall submit a proposal ___ 28 days.|within|until|since|within + khoảng thời gian.
+F|E|propose|We would like to propose about a revised programme.|propose about a revised programme|propose a revised programme|propose + N, không có about.
+C|M|propose|The rate ___ by the subcontractor was too high.|proposed|proposing|propose|Rút gọn bị động: the rate (which was) proposed.
+C|E|propose|We are pleased to propose the following ___.|solution|solve|solving|Sau the following → danh từ.
+C|I|propose|The government has proposed ___ the speed limit in cities.|reducing|to reducing|reduce|propose + V-ing.
+C|C|propose|The Engineer shall respond to the proposal ___ a Notice.|by giving|by give|to giving|by + V-ing.
+F|M|propose|The client proposed that the works are completed in phases.|are completed|be completed|propose that + be + V3 (nguyên mẫu).
+C|E|propose|What do you propose ___ about the late deliveries?|we do|us to do|doing we|propose (that) + sb + V.
+C|M|propose|The designer proposed two ___ for the facade.|options|option|optional|two + danh từ số nhiều.
+C|E|propose|We propose ___ the remaining works within six weeks.|to complete|completing of|complete|propose to V.
+F|E|propose|Please find attached our propose for the variation.|our propose|our proposal|Danh từ: proposal.
+C|I|propose|A new law has been ___ to limit construction noise.|proposed|propose|proposing|Bị động hiện tại hoàn thành: has been proposed.
+C|M|propose|It was proposed ___ the site office be relocated.|that|to|for|It was proposed that…
+C|C|propose|The Contractor proposed a new rate based ___ actual cost.|on|in|at|based on.
+C|E|propose|We propose ___ supplier B because of the shorter lead time.|using|to using|use|propose + V-ing.
+F|C|propose|The Contractor proposed to the Engineer an alternative.|proposed to the Engineer an alternative|proposed an alternative to the Engineer|propose + N + to sb.
+C|E|propose|Our ___ rate includes installation and testing.|proposed|proposing|propose|Tính từ (V3): proposed rate = đơn giá đề xuất.
+C|E|recommend|We recommend ___ the damaged gaskets.|replacing|to replace|replace|recommend + V-ing.
+C|C|recommend|The consultant recommends that the slab ___ tested again.|be|is|to be|recommend that + be + V3.
+F|E|recommend|We recommend to use stainless steel fixings.|recommend to use|recommend using|recommend + V-ing.|recommend that you use
+C|E|recommend|Could you recommend a reliable ___ for the signage works?|subcontractor|subcontract|subcontracting|recommend + N.
+C|I|recommend|Doctors recommend ___ at least 30 minutes a day.|exercising|to exercise|exercise of|recommend + V-ing.
+C|M|recommend|The Engineer's ___ was to postpone the pour.|recommendation|recommend|recommended|Danh từ: recommendation.
+C|E|recommend|We strongly recommend ___ deliveries 48 hours in advance.|booking|to book|book|recommend + V-ing.
+F|M|recommend|The safety officer recommended us to install more barriers.|recommended us to install|recommended installing|recommend + V-ing hoặc that-clause (văn hợp đồng).|recommended that we install
+C|E|recommend|The recommended ___ is 5 mm for this sealant.|thickness|thick|thicken|Sau tính từ → danh từ.
+C|C|recommend|The manufacturer recommends that the frames ___ cleaned monthly.|be|are being|to be|recommend that + be + V3.
+C|I|recommend|The report recommends ___ more cycle lanes.|building|to build|build|recommend + V-ing.
+C|E|recommend|Based on the test results, we recommend ___ batch C.|rejecting|to reject|reject|recommend + V-ing.
+F|E|recommend|I can recommend you this supplier.|recommend you this supplier|recommend this supplier to you|recommend + N + to sb.|recommend this supplier
+C|M|recommend|It is recommended ___ all visitors wear PPE.|that|to|for|It is recommended that + mệnh đề.
+C|E|recommend|Which option would you ___ for the lobby floor?|recommend|recommend for|recommending|recommend + N.
+C|I|recommend|Experts recommend that children ___ less time on screens.|spend|spends|to spend|recommend that + V nguyên mẫu.
+C|C|recommend|The consultant issued a list of ___ after the audit.|recommendations|recommends|recommending|Danh từ số nhiều.
+F|C|recommend|The consultant recommends that the slab is tested again.|is tested|be tested|recommend that + be + V3.|should be tested
+C|E|recommend|We would recommend ___ the meeting until the drawings are ready.|postponing|to postpone|postpone|recommend + V-ing.
+C|S|recommend|The supplier recommends ___ the adhesive at temperatures above 5 °C.|applying|to apply|apply|recommend + V-ing.
+C|E|recommend|This product is highly ___ by other contractors.|recommended|recommending|recommend|Bị động: be recommended.
+F|E|recommend|This supplier is highly recommend.|highly recommend|highly recommended|Bị động cần V3.
+C|I|recommend|The government recommends ___ unnecessary travel during the storm.|avoiding|to avoid|avoid|recommend + V-ing.
+C|M|recommend|The Engineer recommended ___ the Contractor add a night shift.|that|to|for|recommend that + mệnh đề.
+C|E|recommend|Please follow the manufacturer's ___ for storage.|recommendations|recommends|recommending|Danh từ số nhiều.
+C|E|advise|We advise you ___ deliveries 48 hours in advance.|to book|booking|book|advise + sb + to V.
+C|E|advise|Please ___ us of any change to the schedule.|advise|advice|advise to|advise sb of sth = thông báo (động từ /z/).
+F|E|advise|We advice you to check the levels before pouring.|advice you|advise you|advise (động từ) ≠ advice (danh từ).
+C|E|advise|Thank you for your ___ on the fixing detail.|advice|advise|advising|Danh từ: advice (không đếm được).
+F|E|advise|Thank you for your advices on the contract.|advices|advice|advice không đếm được, không có -s.|piece of advice
+C|E|advise|Please advise ___ the materials will arrive.|when|that when|about when|advise + when/whether (thông báo).
+C|S|advise|Workers are advised ___ the area during lifting.|to avoid|avoiding|avoid|be advised + to V.
+C|E|advise|Kindly advise ___ you are available on Thursday.|whether|about|what|advise whether = cho biết liệu.
+C|E|advise|We were advised ___ the delay by the supplier this morning.|of|about to|for|be advised of = được thông báo về.
+F|M|advise|The Engineer advised to stop the works during the storm.|advised to stop|advised stopping|advise + V-ing (không tân ngữ) hoặc advise sb to V.|advised us to stop;advised that the works stop
+C|I|advise|Doctors advise people ___ too much sugar.|not to eat|to not eating|not eat|advise sb not to V.
+C|E|advise|Please be ___ that the site will be closed on Saturday.|advised|advise|advice|Please be advised that… = xin thông báo.
+F|E|advise|Please be advise that the road will be closed.|be advise|be advised|Bị động: be advised.
+C|M|advise|The consultant advised the client ___ the variation.|to accept|accepting|accept|advise sb to V.
+C|E|advise|Could you advise me ___ the best way to dispose of the packaging?|on|for|with|advise sb on sth.
+C|I|advise|Students are often advised ___ notes during lectures.|to take|taking|take|be advised + to V.
+C|E|advise|We would be grateful if you could advise ___ the expected delivery date.|us of|to us|us about to|advise sb of sth.
+C|S|advise|The safety officer advised ___ the crane until the wind dropped.|against using|to not use|not using|advise against + V-ing.
+F|E|advise|Please advise us any change to the delivery date.|advise us any change|advise us of any change|Nghĩa "thông báo" cần of.
+C|E|advise|I need your ___ before we sign the subcontract.|advice|advise|advices|Danh từ: advice.
+C|M|advise|The lawyer advised that the claim ___ submitted within 28 days.|be|is to|to be|advise that + be + V3.
+C|E|advise|As ___ in our previous email, the works will start on Monday.|advised|advice|advising|As advised = như đã thông báo.
+F|M|advise|The lawyer gave us an advice about the claim.|an advice|some advice|advice không đếm được → không dùng an.|a piece of advice;advice
+C|E|advise|Please advise ___ the revised drawing will be issued.|when|about when|what time it|advise + when + mệnh đề.
+C|I|advise|Many experts advise ___ in property during a recession.|against investing|to not invest|not investing|advise against + V-ing.
+C|M|propose|The subcontractor proposed ___ the work into two phases.|splitting|to splitting|split|propose + V-ing.

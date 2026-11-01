@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|M|refuse|The subcontractor refused ___ the variation order.|to sign|signing|sign|refuse + to V.
+F|M|refuse|The subcontractor refused signing the order.|refused signing|refused to sign|refuse + to V.
+C|S|refuse|Workers have the right to refuse ___ unsafe work.|to do|doing|do|refuse + to V.
+C|E|refuse|The client refused ___ payment for the extra work.|to make|making|make|refuse + to V.
+C|M|refuse|The Engineer refused the Contractor's ___ for more time.|request|requesting|requested|refuse + N.
+C|E|refuse|We regret that we must refuse your ___.|offer|offering|offered|refuse + N.
+C|S|refuse|The driver refused ___ the load because it was unsafe.|to lift|lifting|lift|refuse + to V.
+C|I|refuse|Some people refuse ___ new technology.|to accept|accepting|accept|refuse + to V.
+C|M|refuse|The supplier refused to ___ responsibility for the damage.|accept|accepting|accepted|refuse to + V nguyên mẫu.
+F|E|refuse|The bank refused to issuing the guarantee.|refused to issuing|refused to issue|refuse to + V nguyên mẫu.
+C|C|refuse|The Contractor may not unreasonably ___ consent.|refuse|refusing|refused|may not + V nguyên mẫu.
+C|M|refuse|The ___ of the client to approve the colour delayed the order.|refusal|refuse|refusing|Danh từ: refusal.
+C|E|refuse|We were refused ___ to the site because we had no passes.|access|accessing|to access|be refused + N.
+C|I|refuse|Many young people refuse ___ jobs in construction.|to take|taking|take|refuse + to V.
+C|M|refuse|The residents refused ___ the noise any longer.|to tolerate|tolerating|tolerate|refuse + to V.
+F|S|refuse|The operator refused work in the rain.|refused work|refused to work|refuse + to V (không làm gì).
+C|E|refuse|They flatly refused ___ the rate.|to discuss|discussing|discuss|refuse + to V.
+C|C|refuse|The Employer shall not ___ to issue a certificate without reason.|refuse|refusing|refused|shall not + V nguyên mẫu.
+C|M|refuse|The Engineer's ___ to attend the test caused a delay.|refusal|refuse|refusing|Danh từ: refusal.
+C|E|refuse|The supplier refused to deliver ___ the deposit was paid.|until|unless to|since|until + mệnh đề.
+C|S|refuse|Never refuse ___ a safety concern.|to report|reporting|report|refuse + to V.
+C|I|refuse|Governments should not refuse ___ refugees.|to help|helping|help|refuse + to V.
+C|M|refuse|The client refused ___ the extra costs.|to pay|paying|pay|refuse + to V.
+C|E|refuse|Our request for an extension was ___.|refused|refuse|refusing|Bị động.
+C|M|refuse|The client refused the variation ___ that it was not instructed.|on the grounds|on ground|for the ground|on the grounds that = với lý do.
+C|C|reject|The Engineer ___ two submittals last week.|rejected|rejected to|denied|Bác bỏ hồ sơ trình → reject + N.
+F|C|reject|The Engineer rejected to approve the submittals.|rejected to approve the submittals|rejected the submittals|reject + danh từ, không + to V.
+C|S|reject|Damaged panels will be ___ on delivery.|rejected|reject|rejecting|Bị động.
+C|C|reject|The Engineer may reject any Plant or Materials that are ___.|defective|defect|defectively|Tính từ sau are.
+C|E|reject|We have no choice but ___ the shipment.|to reject|rejecting|reject of|have no choice but + to V.
+C|C|reject|If the material is ___, the Contractor shall remove it from site.|rejected|reject|rejecting|Bị động.
+C|M|reject|The client rejected the proposal ___ it was too expensive.|because|because of|due|because + mệnh đề.
+C|E|reject|The invoice was rejected ___ the PO number was missing.|because|because of|due to|because + mệnh đề.
+C|C|reject|The Engineer shall give a Notice of ___ with reasons.|rejection|reject|rejected|Danh từ: rejection.
+F|C|reject|The Engineer rejected about the method statement.|rejected about the method statement|rejected the method statement|reject + tân ngữ trực tiếp.
+C|M|reject|Two out of ten samples ___ rejected.|were|was|have|Chủ ngữ số nhiều → were.
+C|E|reject|Our tender was ___ for being late.|rejected|reject|rejecting|Bị động.
+C|I|reject|Voters rejected the plan ___ a large majority.|by|with|of|by a majority.
+C|S|reject|Concrete with a slump above the limit must be ___.|rejected|reject|rejection|Bị động sau must be.
+C|C|reject|The Contractor shall resubmit any document that has been ___.|rejected|reject|rejecting|Bị động.
+C|M|reject|The client rejected the colour sample ___ asked for a darker one.|and|but to|so for|Nối hai hành động: and.
+C|E|reject|Please explain why the drawing was ___.|rejected|reject|rejection|Bị động.
+C|I|reject|Scientists rejected the theory ___ lack of evidence.|due to|because|since|due to + danh từ.
+C|S|reject|The QC engineer rejected the welds ___ they failed the test.|because|because of|for|because + mệnh đề.
+F|E|reject|Your claim is reject because the notice was late.|is reject|is rejected|Bị động cần V3.
+C|C|reject|A ___ submittal must be revised and resubmitted.|rejected|reject|rejecting|Tính từ V3: rejected submittal.
+C|M|reject|The board rejected the request ___ a second crane.|for|of|about|request for.
+C|E|reject|We cannot accept the goods; they will be ___ and returned.|rejected|reject|rejecting|Bị động: will be rejected.
+C|I|reject|Many people reject the idea ___ working from home all the time.|of|for|to|the idea of + V-ing.
+C|C|reject|The Engineer may reject the work ___ a test.|after|until|since|after + danh từ.
+C|E|decline|Unfortunately, we must ___ your invitation.|decline|deny|reject to|Từ chối lịch sự → decline.
+C|E|decline|We decline ___ the meeting on Sunday.|to attend|attending|attend|decline + to V.
+F|E|decline|We decline attending the meeting on Sunday.|decline attending|decline to attend|decline + to V.
+C|E|decline|The supplier politely declined ___ comment.|to|for|on|decline to + V.
+C|E|decline|We regret that we must decline ___ offer.|your|for your|to your|decline + N.
+C|I|decline|The number of apprentices has declined ___ 20% since 2020.|by|of|with|Mức giảm → by.
+C|I|decline|Productivity has ___ steadily over the last decade.|declined|declining|decline|Hiện tại hoàn thành.
+C|I|decline|There has been a sharp ___ in the number of accidents.|decline|declining|declined|Danh từ: a decline in.
+F|I|decline|There was a sharp decline of the number of accidents.|decline of the number|decline in the number|a decline in + N.
+C|E|decline|The client declined the proposal ___ explaining why.|without|unless|except|without + V-ing.
+C|M|decline|The subcontractor declined ___ responsibility for the delay.|to accept|accepting|accept|decline + to V.
+C|E|decline|Thank you for the offer, but we will have to ___.|decline|deny|reject to|decline (nội động từ) = từ chối lịch sự.
+C|I|decline|Sales have been ___ since the new competitor arrived.|declining|decline|declined of|Hiện tại hoàn thành tiếp diễn.
+C|E|decline|We respectfully decline ___ the variation at this price.|to accept|accepting|accept|decline + to V.
+C|I|decline|The population of rural areas is ___.|declining|decline|declined of|Hiện tại tiếp diễn.
+C|E|decline|The bank declined ___ the loan.|to approve|approving|approve|decline + to V.
+C|I|decline|The decline ___ sales was caused by the economic crisis.|in|of|on|decline in + N.
+C|M|decline|The Engineer declined ___ the test.|to witness|witnessing|witness|decline + to V.
+C|E|decline|I am afraid I must decline your ___.|request|requesting|requested|decline + N.
+C|I|decline|Water quality has declined ___ in recent years.|significantly|significant|significance|Trạng từ bổ nghĩa cho động từ.
+C|E|decline|The client declined to ___ on the issue.|comment|commenting|commented|decline to + V nguyên mẫu.
+C|I|decline|Birth rates are declining ___ many developed countries.|in|on|at|in + quốc gia.
+F|E|decline|We are decline to sign the contract in its current form.|are decline|decline|Động từ thường không đi với are.|have declined
+C|E|decline|Unfortunately the client has declined ___ the meeting.|to attend|attending|attend|decline + to V.
+C|I|decline|Interest in manual trades has declined ___ young people.|among|between|within of|among + nhóm người.
+C|M|deny|The supplier denied ___ the damage.|causing|to cause|cause|deny + V-ing.
+F|M|deny|The supplier denied to cause the damage.|denied to cause|denied causing|deny + V-ing.
+C|M|deny|The subcontractor denied ___ it had received the drawings.|that|to|for|deny that.
+C|E|deny|We do not deny ___ the delivery was late.|that|to|for|deny that + mệnh đề.
+C|S|deny|The visitor was denied ___ to the site.|access|accessing|to access|be denied + N.
+F|S|deny|The visitor was denied to access the site.|denied to access the site|denied access to the site|be denied access to + nơi.
+C|M|deny|The contractor denied ___ for the accident.|responsibility|responsible|responsibly|deny responsibility.
+C|C|deny|The Employer cannot deny the Contractor ___ to the Site.|access|accessing|to access|deny sb + N.
+C|M|deny|The foreman denied ___ the safety officer's warning.|ignoring|to ignore|ignore|deny + V-ing.
+C|E|deny|The supplier denies any ___ for the delay.|liability|liable|liably|deny liability.
+C|I|deny|It cannot be ___ that technology has changed construction.|denied|deny|denying|It cannot be denied that = không thể phủ nhận.
+C|M|deny|The subcontractor denied ___ the instruction.|receiving|to receive|receive|deny + V-ing.
+C|E|deny|We strongly ___ the allegations made in your letter.|deny|refuse|decline|Phủ nhận cáo buộc → deny.
+F|E|deny|We refuse the allegation that the materials were defective.|refuse the allegation|deny the allegation|Phủ nhận điều được cho là đúng → deny.|reject the allegation
+C|I|deny|Nobody can deny the importance ___ education.|of|for|to|importance of.
+C|M|deny|The client denied ___ approved the extra work.|having|to have|have|deny + having V3 (đã làm).
+C|E|deny|The claim was ___ because the notice was late.|denied|deny|denying|Bị động.
+C|I|deny|There is no ___ that cities are becoming more crowded.|denying|deny|denied|There is no denying that.
+C|M|deny|The supplier did not deny ___ the delivery.|delaying|to delay|delay|deny + V-ing.
+C|E|deny|The bank denied our request ___ an extension.|for|of|to|request for.
+C|S|deny|He denied ___ his harness during the inspection.|removing|to remove|remove|deny + V-ing.
+C|C|deny|The Engineer may not deny a claim ___ giving reasons.|without|unless|except|without + V-ing.
+C|I|deny|Some politicians still deny ___ climate change is real.|that|to|of|deny that.
+C|E|deny|We deny any ___ for the damage caused by third parties.|responsibility|responsible|responsibly|deny responsibility.
+C|M|deny|The operator denied ___ the speed limit.|exceeding|to exceed|exceed|deny + V-ing.

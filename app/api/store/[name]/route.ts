@@ -15,6 +15,7 @@ const ALLOWED = new Set([
   'lesson_progress',
   'fidic_progress',
   'lesson_custom',
+  'verb_mastery',
 ])
 
 type Item = { id: string; updatedAt: string }

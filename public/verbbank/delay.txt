@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|E|delay|We cannot delay ___ the steel any longer.|ordering|to order|order|delay + V-ing.
+F|E|delay|We cannot delay to order the steel.|delay to order|delay ordering|delay + V-ing.
+C|S|delay|Heavy rain ___ the pour by two days.|delayed|was delayed|delaying|Chủ ngữ gây chậm → chủ động delay + N.
+C|E|delay|The delivery was delayed ___ three days.|by|of|with|Mức chậm → by + thời gian.
+F|E|delay|The delivery was delayed for 3 days late.|for 3 days late|by three days|Mức chậm dùng by + thời gian, không thêm late.|by 3 days
+C|C|delay|Any ___ to an activity on the critical path will delay completion.|delay|delaying|delayed|Danh từ: a delay to + N.
+C|E|delay|We apologise for the ___ in replying to your email.|delay|delaying|delayed|Danh từ: delay in + V-ing.
+C|E|delay|Sorry for the delay ___ getting back to you.|in|of|on|delay in + V-ing.
+C|S|delay|The concrete truck was delayed ___ heavy traffic.|by|from|with|Bị động + by + nguyên nhân.
+C|C|delay|The Contractor shall notify the Engineer of any ___ delay.|probable|probably|probability|Tính từ trước danh từ.
+C|M|delay|The handover has been delayed ___ 15 December.|until|for|since|delay until + thời điểm.
+F|M|delay|The steel delivery delayed due to customs.|delivery delayed|delivery was delayed|Lô hàng bị làm chậm → bị động.
+C|I|delay|Delays in public projects often lead ___ higher costs.|to|for|in|lead to.
+C|E|delay|Please let us know without ___ if there are any problems.|delay|delaying|delayed|without delay = ngay lập tức.
+C|C|delay|The Contractor is entitled to an EOT if completion is delayed ___ the Employer.|by|with|from|be delayed by + tác nhân.
+C|M|delay|The ___ delivery of the glass affected the facade works.|delayed|delay|delaying|Tính từ V3: delayed delivery.
+C|E|delay|We must avoid any further ___.|delays|delaying|delayed|Danh từ số nhiều: further delays.
+C|S|delay|The inspection ___ delayed by one hour because the lift broke down.|was|has|did|Bị động: was delayed.
+F|S|delay|The inspection delayed by one hour.|inspection delayed by|inspection was delayed by|Bị động: was delayed.
+C|C|delay|Delay Damages are payable for every day of ___.|delay|delaying|delayed|Danh từ: day of delay.
+C|M|postpone|The inspection was postponed ___ Monday.|until|since|during|postpone + until/to + thời điểm.
+C|E|postpone|We had to postpone ___ the slab.|pouring|to pour|pour|postpone + V-ing.
+F|E|postpone|We had to postpone to pour the slab.|postpone to pour|postpone pouring|postpone + V-ing.
+C|M|postpone|The meeting has been postponed ___ next Tuesday.|to|for|since|postpone to + thời điểm.
+C|E|postpone|Could we postpone ___ meeting by one hour?|the|to the|for the|postpone + N.
+F|M|postpone|The meeting was postpone until Friday.|was postpone|was postponed|Bị động cần V3.
+C|E|postpone|Due to the heavy rain, the concrete pour ___ until tomorrow.|has been postponed|has postponed|postponing|Bị động hiện tại hoàn thành.
+C|I|postpone|Many couples postpone ___ children until their thirties.|having|to have|have|postpone + V-ing.
+C|M|postpone|It was agreed to postpone ___ the decision until the next meeting.|making|to make|make|postpone + V-ing.
+C|E|postpone|The site visit is ___ until further notice.|postponed|postpone|postponing|Bị động: is postponed.
+C|S|postpone|The lifting operation was postponed ___ the strong wind.|due to|because|so|due to + danh từ.
+C|E|postpone|We regret to inform you that the handover will be ___.|postponed|postpone|postponing|Bị động.
+F|E|postpone|We decided postponing the opening ceremony.|decided postponing|decided to postpone|decide + to V.
+C|M|postpone|The ___ of the inspection was caused by missing documents.|postponement|postpone|postponing|Danh từ: postponement.
+C|E|postpone|Can we postpone the call ___ 3 pm?|until|since|by|postpone until.
+C|I|postpone|Students who postpone ___ often feel more stressed.|studying|to study|study|postpone + V-ing.
+C|M|postpone|The client asked us to postpone the works ___ the holiday season.|until after|until before|since after|until after = cho đến sau.
+C|E|postpone|The training has been postponed ___ two weeks.|by|of|with|Lùi bao lâu → by.
+C|S|postpone|We postponed ___ the scaffold because of the storm warning.|dismantling|to dismantle|dismantle|postpone + V-ing.
+C|E|postpone|Unfortunately, we have to postpone our meeting ___ short notice.|at|in|on|at short notice = gấp, báo muộn.
+C|C|defer|Release of the retention is ___ until the DNP expires.|deferred|defer|deferring|Bị động: is deferred.
+C|E|defer|The client deferred ___ the final payment.|making|to make|make|defer + V-ing.
+F|E|defer|The client deferred to pay the retention.|deferred to pay|deferred paying|defer + V-ing (defer to sb = nhường quyết định).|deferred payment of
+C|M|defer|The board agreed to defer the decision ___ next month.|until|since|by|defer until.
+C|C|defer|Payment of the amount in dispute may be ___ pending the DAAB decision.|deferred|defer|deferring|Bị động.
+C|M|defer|The non-urgent works were ___ to Phase 2.|deferred|deferring|defer|Bị động: were deferred.
+C|E|defer|We propose to defer the installation of the signage ___ the lighting is complete.|until|unless|since|defer … until + mệnh đề.
+C|M|defer|We will defer ___ the Engineer on technical matters.|to|for|with|defer to sb = theo ý kiến ai.
+C|C|defer|A ___ payment schedule was agreed with the supplier.|deferred|defer|deferring|Tính từ V3: deferred payment.
+F|C|defer|The payment is defer until the defects are fixed.|is defer|is deferred|Bị động cần V3.
+C|E|defer|We would like to defer ___ the order until the price is confirmed.|placing|to place|place|defer + V-ing.
+C|I|defer|Some students defer ___ university for a year to travel.|starting|to start|start|defer + V-ing.
+C|M|defer|Item 4 was ___ to the next meeting.|deferred|defer|deferring|Bị động (= carried forward).
+C|C|defer|The Employer may defer the ___ of part of the Works.|commencement|commence|commenced|Danh từ: commencement.
+C|E|defer|Can we defer this discussion ___ we have the test results?|until|unless|since|defer until + mệnh đề.
+C|M|defer|The client decided to defer ___ phase of the project.|the second|to the second|on the second|defer + N.
+C|E|defer|The meeting has been deferred ___ a later date.|to|for|at|defer to + thời điểm.
+C|C|defer|Taxes may be ___ for up to 90 days.|deferred|defer|deferring|Bị động.
+C|M|defer|The decision on the colour was deferred ___ further samples are received.|until|unless|since|until + mệnh đề.
+C|E|defer|We kindly ask you to defer ___ the invoice until the variation is approved.|issuing|to issue|issue|defer + V-ing.
+C|C|suspend|The Contractor may ___ work after giving 21 days' notice.|suspend|postpone to|delay to|Tạm dừng công việc (FIDIC 16.1) → suspend + work.
+F|C|suspend|The Contractor may suspend to work if payment is late.|suspend to work|suspend work|suspend + danh từ (công việc).|suspend the works
+C|S|suspend|All lifting operations were ___ due to high winds.|suspended|suspending|suspend|Bị động.
+C|C|suspend|The Engineer may instruct the Contractor to ___ progress of part of the Works.|suspend|suspending|suspended|instruct sb to + V nguyên mẫu.
+C|C|suspend|If the ___ continues for more than 84 days, the Contractor may request permission to proceed.|suspension|suspend|suspended|Danh từ: suspension (FIDIC 8.12).
+C|S|suspend|Work was suspended ___ the safety investigation was completed.|until|unless|since|until + mệnh đề.
+C|M|suspend|The site has been suspended ___ the accident on Monday.|since|for|from|since + mốc thời gian.
+F|S|suspend|The works were suspend for two days.|were suspend|were suspended|Bị động cần V3.
+C|C|suspend|During the suspension, the Contractor shall protect the ___ works.|suspended|suspending|suspend|Tính từ V3: suspended works.
+C|E|suspend|We regret to inform you that we will have to suspend ___ at Zone C.|work|to work|working|suspend + work (danh từ).
+C|C|suspend|The Contractor may suspend work or reduce the ___ of work.|rate|rated|rating|reduce the rate of work.
+C|S|suspend|The worker was suspended ___ breaking the safety rules.|for|of|by|suspended for + V-ing (bị đình chỉ vì).
+C|M|suspend|Deliveries will be suspended ___ the national holiday.|during|while|until to|during + danh từ.
+C|C|suspend|The Employer's ___ of the Works is covered by Sub-Clause 8.9.|suspension|suspend|suspending|Danh từ: suspension.
+C|E|suspend|Please suspend all ___ until further notice.|deliveries|delivery's|delivered|Danh từ số nhiều.
+C|S|suspend|Crane operations must be suspended ___ wind speeds exceed 38 km/h.|when|until|since|when + điều kiện.
+C|C|suspend|The Contractor shall resume work as soon as reasonably practicable after the ___ ends.|suspension|suspend|suspended|Danh từ: suspension.
+C|M|suspend|It was agreed to suspend night work ___ the residents' complaints.|following|follow|followed|following = sau khi có.
+F|E|suspend|We will suspend the works in case of payment is not received.|in case of payment is not received|if payment is not received|in case of + danh từ; có mệnh đề → if.|unless payment is received
+C|I|suspend|Some schools suspended classes ___ the heatwave.|during|while|on|during + danh từ.
+C|E|push back|Can we push the meeting ___ to Thursday?|back|off|out|push back = lùi lại.
+F|E|push back|Can we push back the meeting until two days?|push back the meeting until two days|push the meeting back by two days|Lùi bao lâu → by.|push back the meeting by two days
+C|M|push back|The handover has been pushed back ___ a week.|by|for|with|Lùi bao lâu → by.
+C|E|push back|Could we push the call back ___ 4 pm?|to|by|since|Lùi đến lúc nào → to.
+C|S|push back|The rain has pushed ___ the facade works.|back|off|up|push back.
+C|M|push back|The client pushed ___ on the proposed rate.|back|off|over|push back on = phản đối.
+C|E|push back|Let's push ___ back to next week.|it|on it|for it|Đại từ đứng giữa: push it back.
+F|E|push back|Let's push back it to next week.|push back it|push it back|Đại từ đứng giữa động từ và tiểu từ.
+C|M|push back|The deadline was pushed back ___ the late design changes.|because of|because|so|because of + danh từ.
+C|E|push back|We may need to push the start date ___.|back|backward to|behind|push back.
+C|M|push back|Pushing the opening back ___ the client a lot of money.|would cost|would costs|costing|Cấu trúc điều kiện: would + V.
+C|S|push back|The concrete pour was pushed back ___ Saturday.|to|by|for|Lùi đến ngày → to.
+C|E|push back|I'm afraid we have to push our meeting back ___.|again|more|also|push back again.
+C|M|push back|The suppliers pushed back the delivery ___ 10 days.|by|with|of|Lùi bao lâu → by.
+C|E|push back|Is it possible to push the inspection back ___ an hour?|by|for|in|by + thời gian.
+F|M|push back|The delivery was push back to Friday.|was push back|was pushed back|Bị động cần V3.
+C|S|push back|Every day the pour is pushed back costs ___ money.|us|to us|for us|cost + sb + sth.
+C|M|push back|The team pushed back ___ the unrealistic deadline.|against|to|for|push back against = phản đối.
+C|E|push back|The client agreed to push the deadline back ___ the end of March.|to|until to|for|Lùi đến thời điểm → to.
+C|M|push back|If we push the pour back, the whole ___ will slip.|schedule|schedules|scheduled|Danh từ số ít: the whole schedule.

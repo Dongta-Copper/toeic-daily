@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|S|solve|Adding a drain ___ the water problem.|solved|resolved about|dealt|Vấn đề kỹ thuật có lời giải → solve + N.
+F|M|solve|We solved the conflict between the two subcontractors.|solved the conflict|resolved the conflict|Xung đột, tranh chấp → resolve.
+C|I|solve|Building more roads alone will not ___ traffic congestion.|solve|deal|settle down|solve + problem.
+C|S|solve|The engineers found a way ___ the leaking joint.|to solve|solving of|solve to|a way to + V.
+C|M|solve|The clash between the ducts and the beams has been ___.|solved|solving|solve|Bị động hiện tại hoàn thành.
+C|I|solve|There is no simple ___ to climate change.|solution|solve|solving|Danh từ: solution to.
+F|I|solve|There is no easy solution for the housing problem.|solution for|solution to|a solution to + problem.
+C|E|solve|We are working hard to solve ___ as soon as possible.|the problem|about the problem|with the problem|solve + N.
+C|S|solve|The new layout solves the ___ of limited storage space.|problem|problems of|problematic|the problem of + N.
+C|I|solve|Technology alone cannot solve ___ social problems.|all|to all|for all|solve + N.
+F|E|solve|We are trying to solve with the noise issue.|solve with the noise issue|solve the noise issue|solve + N, không có with.|deal with the noise issue
+C|S|solve|This problem is not easy ___.|to solve|solving|to be solve|easy + to V.
+C|M|solve|The team ___ the drainage issue within two days.|solved|solves to|solving|Quá khứ đơn.
+C|I|solve|Problem-___ skills are essential for engineers.|solving|solve|solved|problem-solving skills.
+C|E|solve|Thank you for helping us ___ this issue so quickly.|solve|solving to|solved|help sb (to) + V.
+C|S|solve|The access problem was finally ___ by moving the laydown area.|solved|solve|solving|Bị động.
+C|I|solve|Many experts believe education is the key to ___ poverty.|solving|solve|solved|key to + V-ing.
+C|C|resolve|The parties ___ the dispute through mediation.|resolved|solved|dealt|Tranh chấp → resolve.
+F|C|resolve|The parties resolved about the dispute.|resolved about the dispute|resolved the dispute|resolve + tân ngữ trực tiếp.
+C|C|resolve|If the dispute is not ___ amicably, it may be referred to arbitration.|resolved|resolving|resolve|Bị động.
+C|M|resolve|All open RFIs must be resolved ___ the end of the month.|by|until|since|by = hạn chót.
+C|E|resolve|We trust this ___ the matter.|resolves|resolve|resolving|Chủ ngữ số ít → resolves.
+C|C|resolve|The DAAB helps the Parties ___ disputes before they escalate.|resolve|resolving|to resolving|help + sb + V.
+C|M|resolve|The ___ of the NCR is still pending.|resolution|resolve|resolving|Danh từ: resolution.
+C|E|resolve|We would like to resolve this issue ___ going to the DAAB.|without|unless|except|without + V-ing.
+F|M|resolve|The issue has been resolve by the MEP team.|has been resolve|has been resolved|Bị động cần V3.
+C|C|resolve|The Engineer shall try to ___ the disagreement through consultation.|resolve|solve to|deal|resolve + N.
+C|E|resolve|We hope to resolve the outstanding items ___ next week's meeting.|at|in|on|at the meeting.
+C|M|resolve|The clashes ___ in the BIM model before construction.|were resolved|resolved|resolving|Bị động quá khứ.
+C|I|resolve|Conflicts at work should be resolved ___ they become serious.|before|until|unless|before + mệnh đề.
+C|C|resolve|Amicable ___ is required before arbitration.|settlement|settle|settled|FIDIC 21.5: amicable settlement.
+C|E|resolve|We are confident that the matter will be ___ shortly.|resolved|resolve|resolving|Bị động tương lai.
+C|M|resolve|The two contractors resolved their differences ___ a joint meeting.|at|on|by|at a meeting.
+C|E|resolve|Please let us know once the issue ___ resolved.|has been|will be|is being|Sau once dùng hiện tại (hoàn thành).
+C|E|address|All comments have been ___ in Rev. B.|addressed|addressed to|dealt|Xử lý ý kiến → address + N.
+F|E|address|All comments have been addressed to Rev. B.|addressed to Rev. B|addressed in Rev. B|address a letter TO sb là gửi thư; xử lý ý kiến → address + N (+ in).
+C|M|address|The Contractor must address the Engineer's ___ by Friday.|concerns|concern about|concerned|address + concerns.
+C|E|address|We will address ___ in our next submission.|your comments|to your comments|with your comments|address + N.
+C|I|address|Governments must address the ___ of youth unemployment.|problem|problematic|problems of|address + the problem of.
+C|M|address|The safety issues raised by the client were ___ immediately.|addressed|address|addressing|Bị động.
+F|M|address|The issues will be address in the next revision.|will be address|will be addressed|Bị động cần V3.
+C|E|address|Please see below how each comment ___.|has been addressed|has addressed|addressing|Bị động hiện tại hoàn thành.
+C|C|address|Every Notice shall be ___ to the address stated in the Contract Data.|delivered|addressed of|delivering|deliver = gửi đến (address ở đây là danh từ địa chỉ).
+C|E|address|The letter should be ___ to the Engineer.|addressed|address|addressing|address a letter to sb = gửi thư cho ai.
+C|M|address|The team needs to address ___ quickly.|the risk|to the risk|with the risk|address + N.
+C|I|address|This essay will address ___ main questions.|two|to two|for two|address + N.
+C|E|address|The revised method statement addresses all ___ raised by your team.|points|point|pointed|Danh từ số nhiều: all points.
+C|M|address|The client asked us to address the noise ___ urgently.|complaints|complain|complaining|Danh từ số nhiều.
+C|E|address|Thank you for addressing our concerns ___ quickly.|so|such|too much|so + trạng từ.
+C|I|address|Climate change must be addressed ___ a global level.|at|in|on|at a global level.
+C|E|address|We have not yet addressed ___ of the missing documents.|the issue|to the issue|about the issue|address + N.
+C|M|deal with|Who will deal ___ the NCR from yesterday?|with|about|for|Nghĩa "xử lý" luôn có with.
+F|M|deal with|Who will deal the NCR?|deal the NCR|deal with the NCR|deal with + N.
+C|E|deal with|Our QS will deal ___ all commercial matters.|with|for|on|deal with.
+C|S|deal with|The team is used to dealing ___ tight deadlines.|with|to|about|be used to + V-ing; deal with.
+C|E|deal with|The complaint is being dealt ___ by our site manager.|with|about|for|Bị động: be dealt with.
+F|E|deal with|The complaint is being dealt by our site manager.|being dealt by|being dealt with by|Bị động vẫn giữ with.
+C|I|deal with|Many cities struggle to deal ___ traffic congestion.|with|for|on|deal with.
+C|M|deal with|The Engineer dealt ___ the issue quickly.|with|to|about|Quá khứ: dealt with.
+C|E|deal with|Please let me know how you would like us to deal ___ this matter.|with|about|on|deal with.
+C|S|deal with|The supervisor knows how ___ difficult subcontractors.|to deal with|dealing|deal|know how to + V.
+C|I|deal with|Stress is easier to deal ___ when you exercise regularly.|with|for|on|deal with (giữ with ở cuối).
+C|M|deal with|The RFI will be dealt with ___ the next coordination meeting.|at|on|in|at the meeting.
+C|E|deal with|We need someone experienced to deal ___ the authorities.|with|for|to|deal with + người/tổ chức.
+C|S|deal with|There are too many defects ___ before handover.|to deal with|to deal|dealing|to deal with (giữ with).
+F|I|deal with|Governments must deal the problem of homelessness.|deal the problem|deal with the problem|deal with + N.|tackle the problem;address the problem
+C|M|deal with|The outstanding items were dealt with ___ Friday.|by|until|since|by = trước hạn.
+C|E|deal with|Thank you for dealing with this ___ promptly.|so|such|too much|so + trạng từ.
+C|E|handle|Our QS will ___ the variation claim.|handle|handle with|deal|handle + N (không with).
+F|E|handle|Our QS will handle with the claim.|handle with the claim|handle the claim|handle không đi với with.
+C|S|handle|Glass panels must be ___ with care.|handled|handling|handle|Bị động: be handled.
+C|S|handle|Only trained staff may handle ___ materials.|hazardous|hazard|hazardously|Tính từ trước danh từ.
+C|M|handle|The subcontractor cannot ___ two zones at the same time.|handle|handle with|deal|handle + N.
+C|E|handle|We will handle ___ with the customs agent.|the paperwork|on the paperwork|to the paperwork|handle + N.
+C|I|handle|Good managers know how to handle ___.|pressure|pressured|pressing|handle + N.
+C|S|handle|The crane can handle loads ___ to 10 tonnes.|up|of up|until|up to + số lượng.
+C|M|handle|The complaint was handled ___ professionally.|very|much|so much|very + trạng từ.
+F|S|handle|The materials must be handle carefully.|be handle|be handled|Bị động cần V3.
+C|E|handle|Who is ___ the handover documents?|handling|handled|handle|Hiện tại tiếp diễn: is handling.
+C|S|handle|Manual ___ of heavy loads causes many back injuries.|handling|handle|handled|Danh từ: manual handling.
+C|M|handle|The client was not happy with the way the delay was ___.|handled|handle|handling|Bị động.
+C|E|handle|Please handle this request ___ priority.|as a|as|like|as a priority.
+C|I|handle|Some people handle criticism better ___ others.|than|then|as|So sánh: better than.
+C|E|handle|We are not able to handle ___ orders this month.|any more|any more of|more of|any more + danh từ.
+C|C|settle|We ___ the final account at USD 2.4 million.|settled|settled down|solved|Quyết toán → settle + N.
+F|C|settle|We settled down the final account last week.|settled down the final account|settled the final account|settle down = ổn định cuộc sống; quyết toán → settle.
+C|C|settle|The Parties shall attempt to settle the dispute ___.|amicably|amicable|amicability|Trạng từ bổ nghĩa cho động từ.
+C|E|settle|Please settle the outstanding invoice ___ 30 days.|within|until|since|within + thời gian.
+C|C|settle|The claim was ___ for USD 50,000.|settled|settle|settling|Bị động.
+C|M|settle|It was agreed to settle the remaining items ___ a commercial meeting.|at|on|by|at a meeting.
+C|E|settle|The invoice has not been ___ yet.|settled|settle|settling|Bị động hiện tại hoàn thành.
+C|C|settle|An out-of-court ___ is usually cheaper than arbitration.|settlement|settle|settled|Danh từ: settlement.
+F|E|settle|We hope to settle the matter in amicable way.|in amicable way|in an amicable way|Danh từ đếm được số ít cần an.|amicably
+C|M|settle|Both parties were keen to settle ___ going to arbitration.|without|unless|except|without + V-ing.
+C|E|settle|Please settle your account ___ bank transfer.|by|with|on|by bank transfer.
+C|C|settle|The dispute was settled ___ the parties' satisfaction.|to|for|with|to sb's satisfaction.
+C|I|settle|Many migrants settle ___ large cities.|in|to|at|settle in + nơi.
+C|M|settle|The subcontractor agreed to settle ___ 80% of the claimed amount.|for|with|on to|settle for = chấp nhận mức.
+C|E|settle|Once the account is ___, we will release the retention.|settled|settle|settling|Bị động.
+C|C|settle|Disputes not settled amicably shall be ___ by arbitration.|finally settled|final settle|finally settling|Bị động + trạng từ.

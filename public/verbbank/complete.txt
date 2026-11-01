@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|C|commence|The works shall commence ___ 3 November.|on|at|in|Ngày → on.
+F|C|commence|The works shall commence at 3 November.|at 3 November|on 3 November|Ngày → on.
+C|C|commence|The Engineer shall give a Notice of the ___ Date at least 14 days in advance.|Commencement|Commence|Commencing|Thuật ngữ FIDIC: Commencement Date.
+C|C|commence|The Contractor shall commence the Works as soon as reasonably ___.|practicable|practice|practically|as soon as reasonably practicable.
+C|E|commence|Installation will commence ___ the floor finishes are complete.|once|until|since|once + mệnh đề.
+C|C|commence|Arbitration may be ___ 28 days after the NOD was given.|commenced|commence|commencing|Bị động.
+C|M|commence|Night works are scheduled to commence ___ Monday.|on|at|in|Ngày trong tuần → on.
+C|C|commence|The Contractor shall not commence ___ before the method statement is approved.|work|working of|to work of|commence + N.
+F|C|commence|The Contractor commenced the works from 3 November.|from 3 November|on 3 November|Mốc bắt đầu → on + ngày.
+C|E|commence|We are pleased to confirm that piling has ___.|commenced|commence|commencing|Hiện tại hoàn thành.
+C|C|commence|The Time for Completion is calculated from the ___ Date.|Commencement|Commencing|Commence|Thuật ngữ: Commencement Date.
+C|M|commence|The meeting commenced ___ 9:00 am.|at|on|in|Giờ → at.
+C|C|commence|The Commencement Date shall be within 42 days ___ the Contractor receives the Letter of Acceptance.|after|before of|since of|within 42 days after (FIDIC 8.1).
+C|E|commence|The tests will commence ___ the Engineer arrives.|when|until|unless to|when + mệnh đề.
+C|C|commence|Each Party shall continue to perform its obligations even if arbitration has ___.|commenced|commence|commencing|Hiện tại hoàn thành.
+C|S|commence|Excavation may not commence ___ a permit.|without|unless|except of|without + danh từ.
+C|C|commence|The Defects Notification Period commences ___ the date of completion.|from|on from|since of|commence from = tính từ.
+F|E|commence|The works will be commence next week.|will be commence|will commence|commence là nội động từ ở đây → will commence.|will be commenced
+C|M|commence|It was agreed that demolition ___ on 10 November.|will commence|commences to|commencing|Tương lai: will commence.
+C|C|commence|Notice of the Commencement Date shall be given not ___ than 14 days before it.|less|fewer|lower|not less than = ít nhất.
+C|S|start|We will start ___ the seats on Monday.|installing|install|installed|start + V-ing (hoặc to V).
+F|S|start|We will start installing the seats from Monday next week.|from Monday next week|on Monday next week|Mốc bắt đầu → on + ngày.
+C|E|start|Could you start ___ the drawings today?|reviewing|reviewed|review of|start + V-ing.
+C|M|start|The night shift will start ___ 10 pm.|at|on|in|Giờ → at.
+C|S|start|The crane cannot start work ___ the wind drops.|until|unless|since|until + mệnh đề.
+C|E|start|Work started ___ schedule.|on|in|at|on schedule = đúng tiến độ.
+C|M|start|When do you expect ___ Zone C?|to start|starting|start|expect + to V.
+C|I|start|More people are starting their own ___.|businesses|business's|businessmen of|Danh từ số nhiều.
+C|S|start|The generator would not ___ this morning.|start|starting|started|would not + V.
+C|E|start|Let's start ___ a short safety briefing.|with|by to|from of|start with + N.
+F|E|start|We will start to working on Zone B tomorrow.|start to working|start working|start + V-ing hoặc to V nguyên mẫu.|start to work
+C|M|start|The start ___ the works was delayed by two weeks.|of|for|in|the start of.
+C|S|start|Please do not start the pour ___ the Engineer has inspected the reinforcement.|before|until when|since|before + mệnh đề.
+C|E|start|We can start the installation as soon as the area ___ handed over.|is|will be|be|Sau as soon as dùng hiện tại.
+C|M|start|The project got off to a good ___.|start|starting|started|get off to a good start.
+C|I|start|Children should start learning languages ___ an early age.|at|in|on|at an early age.
+C|S|start|The team started ___ 7 am and finished at 5 pm.|at|from of|in|start at + giờ.
+C|E|start|Has the supplier started production ___?|yet|already yet|still|Câu hỏi HTHT → yet.
+C|M|start|Start-up of the chillers is planned ___ week 46.|for|in to|at|planned for + thời điểm.
+C|E|start|Could we start the meeting ten minutes ___?|earlier|early|more early|So sánh hơn: earlier.
+C|S|finish|The painters finished ___ Zone A yesterday.|painting|to paint|paint|finish + V-ing.
+F|S|finish|The painters finished to paint Zone A.|finished to paint|finished painting|finish + V-ing.
+C|E|finish|We expect to finish the installation ___ the end of the month.|by|until|since|by = trước/chậm nhất.
+C|M|finish|The team finished ___ schedule.|ahead of|before of|ahead|ahead of schedule = sớm hơn tiến độ.
+C|S|finish|Please clean the area when you have ___.|finished|finish|finishing|Hiện tại hoàn thành: have finished.
+C|E|finish|Have you finished ___ the report yet?|writing|to write|write|finish + V-ing.
+C|S|finish|The floor ___ must be protected during installation.|finishes|finish's|finishing|Danh từ số nhiều: floor finishes = lớp hoàn thiện sàn.
+C|M|finish|Zone B will be finished ___ two weeks.|in|on|at|in + khoảng thời gian (sau bao lâu).
+C|E|finish|Once you finish ___ the drawings, please send them to the client.|checking|to check|check|finish + V-ing.
+C|S|finish|The concrete must not be walked on until it has ___ setting.|finished|finish|finishing|has finished + V-ing.
+C|I|finish|Many students finish university ___ a lot of debt.|with|by|in|with + N = mang theo.
+C|E|finish|We hope to finish ___ before Christmas.|the project|to the project|for the project|finish + N.
+C|M|finish|The subcontractor finished ___ two days late.|the work|to the work|of the work|finish + N.
+C|S|finish|Don't leave the site before you finish ___ up.|cleaning|to clean|clean|finish + V-ing.
+C|E|finish|The meeting finished ___ than planned.|later|latter|more late|So sánh hơn: later.
+F|E|finish|We will finish the works until Friday.|until Friday|by Friday|Hạn chót → by (until = kéo dài đến).
+C|S|finish|The seats arrive with a powder-coated ___.|finish|finishing|finished|Danh từ: finish = lớp hoàn thiện bề mặt.
+C|M|finish|Action: subcontractor to finish all snags ___ 20 November.|by|until|since|by = hạn chót.
+C|E|finish|I will call you as soon as I ___ the meeting.|finish|will finish|finished|Sau as soon as dùng hiện tại.
+C|S|finish|The team finished the pour ___ midnight.|before|until|since|before + thời điểm.
+C|C|complete|The installation in Zone B ___ on 12 November.|was completed|completed itself|completing|Công việc được hoàn thành → bị động.
+F|C|complete|The installation in Zone B completed on 12 November.|installation in Zone B completed|installation in Zone B was completed|Công việc không tự hoàn thành → bị động.|installation in Zone B was complete
+C|C|complete|The Works shall be completed ___ the Time for Completion.|within|until|since|within the Time for Completion.
+C|E|complete|Please complete the attached form and ___ it to us by Friday.|return|returning|to return|Song song mệnh lệnh: complete … and return.
+C|C|complete|The Taking-Over Certificate states the date of ___.|completion|complete|completing|Danh từ: completion.
+C|M|complete|Zone A is now ___.|complete|completion|completing|Tính từ: complete = đã xong.
+C|E|complete|We expect to complete the works ___ schedule.|on|in|at|on schedule.
+C|C|complete|Delay Damages are payable if the Contractor fails to complete ___ time.|on|in to|at|on time = đúng hạn.
+C|S|complete|The scaffold must be ___ before it is used.|completed|complete of|completing|Bị động.
+C|E|complete|The project was completed two weeks ___ schedule.|ahead of|before of|ahead|ahead of schedule.
+C|M|complete|All items on the punch list must be completed ___ handover.|before|until|since|before + danh từ.
+F|C|complete|The works has been completed.|works has been|works have been|works (công trình) số nhiều → have.
+C|I|complete|Many students fail to ___ their degree.|complete|completing|completion|fail to + V.
+C|E|complete|We are pleased to inform you that the installation has been ___.|completed|complete|completing|Bị động hiện tại hoàn thành.
+C|C|complete|The Engineer shall issue the certificate within 28 days after the works are ___.|complete|completing|completion|Tính từ: are complete.
+C|M|complete|The project is 85% ___.|complete|completion|completing|Tính từ: 85% complete.
+C|S|complete|Each worker must complete a safety induction ___ starting work.|before|until|since|before + V-ing.
+C|C|complete|Tests on ___ must be passed before taking over.|Completion|Complete|Completing|Thuật ngữ FIDIC: Tests on Completion.
+C|E|complete|Could you confirm when the repairs will be ___?|completed|complete|completing|Bị động tương lai.
+C|M|complete|The expected ___ date is 15 December.|completion|complete|completed|Danh từ ghép: completion date.
+C|M|hand over|We will ___ Zone A to the client on Friday.|hand over|handover|hand on|Động từ viết rời: hand over.
+F|M|hand over|We will handover Zone A on Friday.|handover Zone A|hand over Zone A|Động từ viết rời "hand over"; "handover" là danh từ.
+C|M|hand over|The ___ of Zone A is planned for Friday.|handover|hand over|handing|Danh từ viết liền: handover.
+C|E|hand over|The handover ___ includes as-built drawings and O&M manuals.|package|packed|packing|handover package = bộ hồ sơ bàn giao.
+C|S|hand over|The flooring subcontractor must hand ___ Zone B before we start.|over|out|on|hand over.
+C|M|hand over|Zone A was handed over ___ the client yesterday.|to|for|with|hand over to + sb.
+C|S|hand over|Please hand the keys ___ to the security team.|over|out|off|hand sth over to sb.
+C|M|hand over|We plan to hand ___ over on 30 November.|it|on it|for it|Đại từ đứng giữa: hand it over.
+F|M|hand over|We plan to hand over it on 30 November.|hand over it|hand it over|Đại từ phải đứng giữa động từ và tiểu từ.
+C|C|hand over|After handover, the Employer becomes responsible ___ the care of the works.|for|of|to|responsible for.
+C|E|hand over|The area will be handed over ___ all snags are closed.|once|until|since|once + mệnh đề.
+C|M|hand over|The handover meeting will be held ___ 9 am on Thursday.|at|on|in|Giờ → at.
+C|S|hand over|The night shift handed over ___ the day shift at 6 am.|to|for|with|hand over to.
+C|E|hand over|Please confirm the date of ___.|handover|hand over|handing|Danh từ: handover.
+C|M|hand over|Late handover of Zone C ___ our works by two weeks.|delayed|was delayed|delaying|Chủ ngữ gây chậm → chủ động.
+C|C|hand over|Partial handover of a Section may be ___ by the Employer.|requested|request|requesting|Bị động.
+C|M|hand over|The client refused to ___ the zone because of open snags.|take over|hand over to|take on|Bên nhận → take over (bên giao → hand over).
+F|E|hand over|The client will take over the area to us next week.|take over the area to us|hand over the area to us|Bên giao cho mình → hand over; bên nhận → take over.
+C|M|hand over|All documents must be handed over ___ the end of the DNP.|before|until|since|before + thời điểm.
+C|E|hand over|Who will be responsible for the ___?|handover|hand over|handed over|Danh từ: the handover.

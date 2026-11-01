@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|E|ensure|Please ___ that the area is cordoned off before lifting.|ensure|assure|insure|Làm cho chắc chắn xảy ra → ensure.
+C|S|ensure|The supervisor must ensure ___ all workers wear harnesses.|that|to|for|ensure (that) + mệnh đề.
+F|S|ensure|Please ensure the area to be cordoned off.|ensure the area to be cordoned off|ensure the area is cordoned off|ensure + mệnh đề, không + O + to V.|ensure that the area is cordoned off
+C|C|ensure|The Contractor shall take all measures to ___ the safety of the public.|ensure|assure|insure|ensure + N.
+C|E|ensure|We will do our best to ensure ___ delivery.|on-time|in time of|to on-time|ensure + N (on-time delivery).
+F|E|ensure|We will ensure for the quality of the finishes.|ensure for the quality|ensure the quality|ensure + N, không có for.
+C|M|ensure|The subcontractor agreed to ensure that the joints ___ sealed by Friday.|are|be to|to be|ensure that + mệnh đề đầy đủ.
+C|I|ensure|Governments must ensure ___ every child has access to education.|that|to|so|ensure that.
+C|E|ensure|To ensure ___ the meeting runs smoothly, please send your comments in advance.|that|to|for|ensure that + mệnh đề.
+F|E|ensure|Please insure that all drawings are signed before issue.|insure|ensure|Muốn nói "đảm bảo" → ensure (insure = mua bảo hiểm).
+C|C|ensure|The QA plan is designed to ensure ___ with the Specification.|compliance|comply|complying|ensure + danh từ.
+C|S|ensure|Barriers were installed ___ ensure pedestrian safety.|to|for|so|to + V chỉ mục đích.
+C|E|ensure|Kindly ensure ___ the invoice includes the PO number.|that|whether|if|ensure that (không dùng whether/if).
+C|I|ensure|Regular maintenance ensures ___ machines last longer.|that|to|for|ensure that + mệnh đề.
+F|M|ensure|The site manager will ensure all materials to be stored properly.|ensure all materials to be stored|ensure all materials are stored|ensure + mệnh đề.|ensure that all materials are stored
+C|C|ensure|The Contractor shall ensure that the Performance Security ___ valid until the Performance Certificate is issued.|remains|remain to|to remain|ensure that + mệnh đề chia động từ.
+C|E|ensure|Our team will ___ that the handover documents are complete.|ensure|assure|insure|ensure that.
+C|I|ensure|Strict laws are needed to ensure ___ in the workplace.|safety|safe|safely|ensure + danh từ.
+C|S|ensure|Before pouring, ensure ___ the formwork is clean.|that|for|about|ensure that.
+F|E|ensure|We ensure you that the works will finish on time.|ensure you that|assure you that|Trấn an người nghe → assure + sb + that.
+C|S|make sure|Make sure ___ the scaffold tag is green before you climb.|that|about|of|make sure (that) + mệnh đề.
+F|S|make sure|Make sure about the generator is switched off.|Make sure about the generator is|Make sure the generator is|Không chèn about trước mệnh đề.|Make sure that the generator is
+C|E|make sure|Please make sure ___ the attachments before you send the email.|to check|checking|check of|make sure to V = nhớ làm.
+C|S|make sure|Make sure ___ wear your PPE at all times.|you|to you|for you|make sure (that) + you + V.
+C|M|make sure|The foreman will make sure ___ is ready for the inspection.|everything|of everything|to everything|make sure (that) + mệnh đề.
+F|E|make sure|Please make sure to checking the levels again.|to checking|to check|make sure to + V nguyên mẫu.
+C|S|make sure|I'll make sure the drawings ___ printed before the meeting.|are|be|to be|make sure + mệnh đề đầy đủ.
+C|E|make sure|Just to make ___, are we still meeting at 10 am?|sure|surely|certainly to|make sure = để chắc chắn.
+C|S|make sure|Make sure you don't ___ the cable when you move the lift.|damage|damaging|to damage|you don't + V nguyên mẫu.
+F|S|make sure|Make sure that you are lock the gate tonight.|are lock|lock|Mệnh đề sau make sure cần động từ đúng.
+C|M|make sure|Please make sure the minutes ___ by Friday.|are circulated|circulated|to circulate|Bị động: are circulated.
+C|E|make sure|Can you make sure ___ the client receives the samples today?|that|of|to|make sure that.
+C|I|make sure|Parents should make sure their children ___ enough sleep.|get|to get|getting|make sure + mệnh đề.
+C|S|make sure|Make sure ___ is standing under the load.|nobody|anybody not|no one not|Phủ định: nobody is.
+F|E|make sure|We will make sure for the delivery on Monday.|make sure for the delivery|make sure the delivery arrives|make sure + mệnh đề, không có for.|make sure of the delivery
+C|E|make sure|Please make sure ___ copy the Engineer on this email.|to|for|of|make sure to + V.
+C|S|make sure|Make sure the extinguisher ___ easy to reach.|is|be|being|Mệnh đề hiện tại: is.
+C|M|make sure|Action: QC engineer to make sure all NCRs ___ closed before handover.|are|be|to be|make sure + mệnh đề.
+C|E|make sure|I just want to make sure I ___ your request correctly.|understood|understand to|understanding|make sure + mệnh đề quá khứ.
+C|S|make sure|Make sure the area is clean ___ you leave.|before|until|unless|before + mệnh đề.
+C|E|assure|We ___ you that the works will be completed on time.|assure|ensure|insure|Trấn an người nghe → assure + sb.
+F|E|assure|We assure that the defects will be fixed this week.|assure that|assure you that|assure cần tân ngữ chỉ người.
+C|E|assure|We assure you ___ our full cooperation.|of|about|for|assure sb of sth.
+F|E|assure|We assure our full support to you.|assure our full support to you|assure you of our full support|Cấu trúc assure sb of sth.
+C|M|assure|The supplier assured the client ___ the frames would arrive on Monday.|that|of that|to|assure sb that.
+C|E|assure|Please be ___ that we are doing everything possible.|assured|assure|assuring|be assured that = xin yên tâm rằng.
+F|E|assure|Please be assure that we will meet the deadline.|be assure|be assured|Bị động: be assured.
+C|E|assure|Let me assure you ___ this will not happen again.|that|about|for|assure sb that.
+C|M|assure|The Engineer ___ the residents that the noise would stop at 6 pm.|assured|ensured|insured|assure + người + that.
+C|E|assure|I can assure ___ that the quality will meet the Specification.|you|to you|for you|assure + sb trực tiếp.
+F|E|assure|I can assure to you that the samples are correct.|assure to you|assure you|assure + người trực tiếp, không to.
+C|C|assure|Quality ___ (QA) is about building quality into the process.|assurance|assure|assured|Danh từ: assurance.
+C|E|assure|Despite the delay, we can assure you ___ the completion date.|of|for|about to|assure sb of sth.
+C|I|assure|Politicians often assure voters ___ taxes will not rise.|that|to|of that|assure sb that.
+C|M|assure|The contractor was ___ that payment would be made this week.|assured|assuring|assure|be assured that.
+C|E|assure|Rest ___ that your comments will be addressed in Rev. B.|assured|assure|assuring|Rest assured that = hãy yên tâm.
+F|E|assure|Rest assure that we will reply tomorrow.|Rest assure|Rest assured|Cụm cố định: rest assured.
+C|E|assure|We wish to assure you ___ our commitment to safety.|of|for|on|assure sb of sth.
+C|M|assure|The supplier assured us ___ any defective seats within 48 hours.|that they would replace|to replace|replacing|assure sb that + mệnh đề.
+C|E|assure|I ___ you there is no reason to worry.|assure|ensure|insure|assure + sb.
+C|C|guarantee|The supplier ___ the frames for ten years.|guarantees|assures|ensures to|Cam kết bảo hành → guarantee + N.
+C|C|guarantee|We guarantee ___ any defective seat within 48 hours.|to replace|replacing|replace of|guarantee + to V.
+F|C|guarantee|The manufacturer guarantees for the coating ten years.|guarantees for the coating ten years|guarantees the coating for ten years|guarantee + N + for + thời gian.
+C|C|guarantee|The bank issued a ___ in favour of the Employer.|guarantee|guaranteed|guaranteeing|Danh từ: a bank guarantee.
+C|C|guarantee|The advance payment ___ must be valid until the advance is repaid.|guarantee|guaranteeing|guaranteed|Danh từ: advance payment guarantee.
+C|E|guarantee|We cannot guarantee ___ the shipment will clear customs on time.|that|to|for|guarantee that.
+C|C|guarantee|All seats are guaranteed ___ manufacturing defects for five years.|against|for|from|guarantee against defects.
+F|C|guarantee|The frames are guarantee for ten years.|are guarantee|are guaranteed|Bị động: be guaranteed.
+C|I|guarantee|A university degree does not guarantee ___ a good job.|you|to you|for you|guarantee + sb + sth.
+C|C|guarantee|The ___ period starts from the date of taking-over.|guarantee|guaranteed|guaranteeing|Danh từ dùng như tính từ: guarantee period.
+C|E|guarantee|We guarantee ___ quality of all materials supplied.|the|for the|about the|guarantee + N.
+C|I|guarantee|Hard work alone does not guarantee ___.|success|successful|succeed|guarantee + danh từ.
+C|M|guarantee|The subcontractor guaranteed ___ the zone by Friday.|to complete|completing|complete|guarantee + to V.
+F|E|guarantee|We guarantee finishing the works before Christmas.|guarantee finishing|guarantee to finish|guarantee + to V.|guarantee that we will finish
+C|C|guarantee|A parent company ___ may be required for foreign contractors.|guarantee|guaranteed|guaranty of|Danh từ: parent company guarantee.
+C|E|guarantee|There is no ___ that prices will remain stable.|guarantee|guaranteed|guaranteeing|There is no guarantee that…
+C|C|guarantee|The workmanship is ___ for two years after handover.|guaranteed|guarantee|guaranteeing|Bị động.
+C|E|guarantee|Can you guarantee ___ the panels will match the approved sample?|that|to|of|guarantee that.
+C|I|guarantee|Investing in safety ___ fewer accidents in the long run.|guarantees|guarantee to|guaranteeing|Chủ ngữ số ít → guarantees.
+C|C|guarantee|The retention may be replaced by a bank ___.|guarantee|guaranteed|guarantor|bank guarantee = bảo lãnh ngân hàng.
+C|C|insure|The Contractor shall ___ the Works against loss and damage.|insure|ensure|assure|Mua bảo hiểm → insure.
+F|S|insure|Please insure that all workers wear helmets.|insure|ensure|Đảm bảo việc gì → ensure (insure = bảo hiểm).
+C|C|insure|The Works must be insured ___ their full replacement cost.|for|with|by|insure for + số tiền.
+C|C|insure|All vehicles on site must be fully ___.|insured|insurance|insuring|Bị động: be insured.
+C|C|insure|The Contractor shall provide evidence of ___ before starting work.|insurance|insure|insured|Danh từ: insurance.
+C|E|insure|Please send us a copy of the ___ certificate.|insurance|insure|insured|insurance certificate.
+F|C|insure|The equipment is not insure against theft.|is not insure|is not insured|Bị động cần V3.
+C|C|insure|The Employer may insure the Works if the Contractor fails ___ so.|to do|doing|do|fail + to V.
+C|C|insure|Third-party ___ covers injury to members of the public.|insurance|insure|insurer|Danh từ: insurance.
+C|E|insure|The shipment is insured ___ loss during transport.|against|from|of|insure against + rủi ro.
+C|C|insure|The ___ must be a reputable company approved by the Employer.|insurer|insurance|insured|Người/công ty bảo hiểm → insurer.
+F|E|insure|We need to insure the delivery arrives on Monday.|insure the delivery arrives|ensure the delivery arrives|Đảm bảo → ensure.|make sure the delivery arrives
+C|C|insure|Professional indemnity ___ is required for design consultants.|insurance|insured|insure|Danh từ: insurance.
+C|E|insure|Is the crane ___ while it is on site?|insured|insurance|insuring|be insured.
+C|C|insure|The Contractor shall insure ___ Contractor's Equipment for its full value.|the|for the|about the|insure + N.
+C|I|insure|Many homeowners do not insure their houses ___ floods.|against|for|from|insure against.
+C|E|insure|We have ___ the materials stored in the warehouse.|insured|ensured|assured|Mua bảo hiểm cho vật tư → insure.
+C|C|insure|The insurance policy must name both Parties as ___.|insured parties|insurers|insurances|Bên được bảo hiểm → insured parties.
+C|E|insure|Please confirm the goods are ___ until delivery.|insured|insuring|insurance|Bị động: are insured.
+C|C|insure|Failure to insure ___ entitle the Employer to deduct the cost.|shall|shall to|shall be|shall + V nguyên mẫu.

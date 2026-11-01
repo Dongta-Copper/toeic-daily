@@ -248,7 +248,15 @@ function shuffleOptions(q: QuizQ): QuizQ {
   return { ...q, options: order.map((k) => q.options[k]), answer: order.indexOf(q.answer) }
 }
 
-export function Quiz({ questions: input, onDone }: { questions: QuizQ[]; onDone: (score: number, wrong: QuizQ[]) => void }) {
+export function Quiz({
+  questions: input,
+  onDone,
+  onResult,
+}: {
+  questions: QuizQ[]
+  onDone: (score: number, wrong: QuizQ[]) => void
+  onResult?: (index: number, ok: boolean) => void // per question, e.g. to track mastery
+}) {
   const [questions] = useState(() => input.map(shuffleOptions))
   const [i, setI] = useState(0)
   const [answered, setAnswered] = useState<boolean | null>(null)
@@ -299,10 +307,12 @@ export function Quiz({ questions: input, onDone }: { questions: QuizQ[]; onDone:
           setAnswered(ok)
           if (ok) setScore((s) => s + 1)
           else setWrong((w) => [...w, q])
+          onResult?.(i, ok)
         }}
         onOverrule={() => {
           setScore((s) => s + 1)
           setWrong((w) => w.filter((x) => x !== q))
+          onResult?.(i, true)
         }}
       />
       {answered !== null && (

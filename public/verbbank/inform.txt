@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|E|inform|Please inform ___ any changes to the delivery date.|us of|to us|us to|inform + người + of.
+F|E|inform|Please inform to us any changes to the schedule.|inform to us any changes|inform us of any changes|inform + người trực tiếp (không to) + of.
+C|E|inform|We would like to inform ___ that the pour will take place on Saturday.|you|to you|about|inform cần tân ngữ chỉ người.
+F|E|inform|We would like to inform that the site will close on Sunday.|inform that|inform you that|inform cần tân ngữ chỉ người.
+C|E|inform|Please keep us ___ of any developments.|informed|inform|informing|keep sb informed = cập nhật cho ai.
+C|E|inform|I am writing to inform you ___ the delay to the glass delivery.|about|for|with|inform sb about/of sth.
+C|M|inform|The client was informed ___ the revised handover date.|of|with|for|be informed of.
+C|E|inform|We regret to inform you ___ your tender was not successful.|that|about|of that|regret to inform you that.
+F|E|inform|We regret to informing you that the meeting is cancelled.|regret to informing|regret to inform|regret + to V (thông báo tin không vui).
+C|E|inform|For your ___, please find attached the revised drawings.|information|inform|informing|For your information (FYI).
+C|E|inform|Please inform the site team ___ the new access route.|about|to|with|inform sb about sth.
+C|M|inform|The Engineer will be ___ as soon as the area is ready.|informed|inform|informing|Bị động tương lai.
+F|E|inform|Thank you for the informations about the delivery.|informations|information|information không đếm được.
+C|E|inform|I will inform you ___ soon as I hear from the supplier.|as|so|when|as soon as.
+C|I|inform|Citizens have the right to be informed ___ public spending.|about|for|to|be informed about.
+C|M|inform|It was agreed to inform all subcontractors ___ the new working hours.|of|to|with|inform sb of sth.
+C|E|inform|We were not informed ___ the change until yesterday.|of|to|with|be informed of.
+C|E|inform|Please inform me ___ you need any further documents.|if|whether to|that|inform me if = báo nếu.
+C|C|inform|The Contractor shall ___ the Engineer of any accident immediately.|inform|inform to|informing|shall + V nguyên mẫu; inform + người.
+C|E|inform|Could you inform the security team ___ the visitors arriving at 10 am?|about|to|for|inform sb about sth.
+C|C|notify|The Contractor shall notify ___ of any accident immediately.|the Engineer|to the Engineer|with the Engineer|notify + người trực tiếp + of.
+F|C|notify|The Contractor shall notify to the Engineer about the delay.|notify to the Engineer about|notify the Engineer of|notify + người trực tiếp + of.
+C|C|notify|The Engineer must be ___ in writing.|notified|notify|notifying|Bị động.
+C|C|notify|Each Party shall ___ the other of any known future event that may delay the Works.|notify|notify to|notification|shall + V nguyên mẫu.
+C|C|notify|The Contractor must give ___ within 28 days of becoming aware of the event.|notice|notify|notified|give notice (FIDIC: give a Notice).
+C|E|notify|Please notify us ___ any defects within 48 hours.|of|about to|with|notify sb of sth.
+C|C|notify|The Defects ___ Period is one year unless stated otherwise.|Notification|Notify|Notified|Thuật ngữ FIDIC: Defects Notification Period.
+C|E|notify|You will be notified ___ email when the drawings are uploaded.|by|with|on|by email.
+F|E|notify|We will notify the result to you tomorrow.|notify the result to you|notify you of the result|notify + người + of + sự việc.
+C|M|notify|All residents were notified ___ the night works in advance.|of|for|to|be notified of.
+C|C|notify|Failure to notify ___ time may result in a time bar.|in|on|at|in time = kịp lúc.
+C|E|notify|We were notified ___ the delivery had been cancelled.|that|of that|to|be notified that.
+C|C|notify|The Engineer shall notify the Contractor ___ the Commencement Date at least 14 days before it.|of|about to|for|notify sb of sth.
+C|E|notify|Please notify the site office ___ you arrive.|when|until|since|when + mệnh đề.
+C|C|notify|A ___ of Claim must describe the event giving rise to the claim.|Notice|Notify|Notification|Thuật ngữ: Notice of Claim.
+C|M|notify|The supplier failed to ___ us of the price increase.|notify|notify to|notifying|fail to + V.
+C|E|notify|We have just been ___ that the road will be closed tomorrow.|notified|notify|notifying|Bị động hiện tại hoàn thành.
+C|C|notify|The Contractor shall notify the Engineer whenever the works are ready ___ inspection.|for|to|of|ready for inspection.
+F|E|notify|Please notify me about any changes immediately.|notify me about|notify me of|Văn trang trọng: notify sb of sth.|inform me of;inform me about
+C|C|notify|The affected Party shall notify the other Party ___ 14 days.|within|until|since|within + thời gian (FIDIC 18.2).
+C|E|update|I will update you ___ the progress every Friday.|on|to|for|update sb on sth.
+F|E|update|I will update to you the progress every Friday.|update to you the progress|update you on the progress|update + người + on + nội dung.
+C|E|update|Please keep me ___ on the delivery.|updated|update|updating|keep sb updated.
+C|E|update|Here is a quick ___ on the seating package.|update|updating|updated|Danh từ: an update on.
+C|M|update|The programme must be ___ every two weeks.|updated|update|updating|Bị động.
+C|E|update|Could you update the RFI log ___ Friday?|by|until|since|by = trước hạn.
+C|M|update|The Contractor will update the client ___ the status of the NCRs.|on|to|with to|update sb on sth.
+C|E|update|Please find attached the ___ drawings.|updated|updating|update|Tính từ V3: updated drawings.
+F|E|update|Please send us the update drawing list.|update drawing list|updated drawing list|Tính từ V3: updated.
+C|E|update|I just wanted to give you an update ___ the inspection.|on|of|about to|an update on sth.
+C|M|update|Action: QS to update the cost report ___ the approved variations.|with|to|for|update sth with + thông tin mới.
+C|E|update|We will update you ___ soon as we hear from the client.|as|so|when|as soon as.
+C|I|update|Professionals need to update their skills ___.|regularly|regular|regularity|Trạng từ bổ nghĩa cho động từ.
+C|E|update|Thank you for the ___.|update|updating|updated|Danh từ: the update.
+C|M|update|The risk register has not been updated ___ last month.|since|for|from|since + mốc thời gian.
+C|E|update|Please update me ___ any issues before the meeting.|on|to|at|update sb on sth.
+C|E|update|Could you send me an ___ programme?|updated|update|updating|Tính từ V3.
+C|M|update|The look-ahead was updated ___ include the night shifts.|to|for|so|to + V chỉ mục đích.
+C|E|update|We will keep you ___ of any changes.|updated|update|updating|keep sb updated.
+C|I|update|Many companies fail to update their ___ policies.|safety|safe|safely|Danh từ ghép: safety policies.
+C|E|let sb know|Please let me ___ if you need anything else.|know|to know|knowing|let + sb + V nguyên mẫu.
+F|E|let sb know|Please let me to know if you have any questions.|let me to know|let me know|let + sb + V nguyên mẫu (không to).
+C|E|let sb know|Let me know ___ you are available on Thursday.|if|that if|about|let me know if/whether.
+C|E|let sb know|Could you let us know ___ the materials will arrive?|when|that when|about when|let sb know + when.
+F|E|let sb know|Please let me knows your decision by Friday.|let me knows|let me know|let + sb + V nguyên mẫu.
+C|E|let sb know|I'll let you know ___ soon as I hear from the client.|as|so|when|as soon as.
+C|E|let sb know|Let us know what time ___ best for you.|suits|suit|suiting|Câu hỏi gián tiếp: what time suits.
+F|E|let sb know|Please let me know what time is suitable with you.|suitable with you|suitable for you|suitable for sb.|convenient for you
+C|E|let sb know|Kindly let us know your ___ by the end of the week.|decision|decide|decided|let sb know + N.
+C|E|let sb know|Please let me know ___ there are any changes.|if|unless|so|if = nếu.
+C|E|let sb know|Let me know ___ you think of the new layout.|what|that|how about|let me know what you think.
+F|E|let sb know|Let me know what do you think about the proposal.|what do you think|what you think|Câu hỏi gián tiếp không đảo ngữ.
+C|E|let sb know|I'll let you ___ by tomorrow.|know|to know|knowing|let + sb + V.
+C|E|let sb know|Could you let the site team ___ about the new access route?|know|to know|knowing|let + sb + V.
+C|E|let sb know|Please let me know ___ the samples have been dispatched.|whether|about|that whether|let me know whether.
+C|E|let sb know|Do let me know ___ I can help in any way.|if|when to|that|if = nếu.
+C|E|let sb know|Let me know how many ___ you need for Zone B.|chairs|chair|chair's|how many + danh từ số nhiều.
+C|E|let sb know|Thanks for letting me ___.|know|to know|knowing|let + sb + V.
+C|E|let sb know|Let me know when ___ ready to start the inspection.|you are|are you|you will be being|Câu hỏi gián tiếp không đảo.
+C|E|let sb know|Please let me know ___ any questions.|if you have|if do you have|that you have|let me know if + mệnh đề.
+C|M|announce|The client ___ the new handover date to all contractors.|announced|announced to|announced for|announce + N (+ to sb).
+F|E|announce|We announce you that the site will close on Friday.|announce you that|would like to inform you that|announce không nhận người làm tân ngữ; báo riêng → inform.|announce that
+C|I|announce|The government announced ___ new housing project yesterday.|a|to a|about a|announce + N.
+C|M|announce|It was announced ___ the site would close for the holidays.|that|to|about|It was announced that.
+C|E|announce|We are pleased ___ the completion of Phase 1.|to announce|announcing|announce|be pleased + to V.
+C|I|announce|The new policy will be announced ___ next week.|(không cần từ)|in|on|next week không cần giới từ.
+C|M|announce|The project director made an ___ about the new organisation chart.|announcement|announce|announced|Danh từ: announcement.
+C|I|announce|The company announced ___ it would cut 200 jobs.|that|to|about|announce that.
+F|M|announce|The client announced to all contractors about the new rules.|announced to all contractors about the new rules|announced the new rules to all contractors|announce + sth + to sb.
+C|E|announce|We would like to announce the ___ of our new site office.|opening|open|opened|Sau the → danh từ.
+C|I|announce|The results will be announced ___ the website.|on|in|at|on the website.
+C|M|announce|The new working hours were announced ___ the toolbox talk.|at|in|on|at a meeting/talk.
+C|E|announce|We are delighted to announce ___ the terminal has opened.|that|about|of|announce that.
+C|I|announce|The minister announced plans ___ public transport.|to improve|improving|improve|plans + to V.
+C|M|announce|Changes to the schedule will be announced ___ advance.|in|on|at|in advance.
+C|E|announce|The award winners have just been ___.|announced|announce|announcing|Bị động hiện tại hoàn thành.
+C|I|announce|Shortly after the ___, share prices fell.|announcement|announce|announced|Danh từ sau the.
+C|M|announce|The client is expected ___ its decision on Friday.|to announce|announcing|announce|be expected + to V.
+C|E|announce|We will announce the date of the ceremony ___ due course.|in|on|at|in due course = đúng lúc, sau này.
+C|M|announce|The client is due ___ the winning tender next week.|to announce|announcing|announce|be due + to V.

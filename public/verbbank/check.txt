@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|S|check|Please check ___ the anchors are tight.|that|about|on|check (that) + mệnh đề.
+F|S|check|Please check about the anchors before the inspection.|check about the anchors|check the anchors|check + tân ngữ trực tiếp.
+C|E|check|Could you check ___ the drawings have been approved?|whether|about|that whether|check whether/if.
+C|S|check|The foreman checks the scaffold ___ morning.|every|all|each of|every + danh từ số ít.
+C|E|check|I'll check ___ the supplier and get back to you.|with|to|for|check with sb = hỏi lại ai.
+C|M|check|The levels were checked ___ the site engineer.|by|from|with|Bị động + by.
+C|S|check|Make sure you check the formwork ___ pouring.|before|until|since|before + V-ing.
+F|S|check|The foreman checked carefully the levels.|checked carefully the levels|checked the levels carefully|Không đặt trạng từ giữa động từ và tân ngữ.|carefully checked the levels
+C|E|check|Can you double-___ the quantities in the BOQ?|check|checking|checked|double-check = kiểm tra lại.
+C|S|check|Safety ___ are carried out every week.|checks|check's|checking of|Danh từ số nhiều: checks.
+C|E|check|Please check the attached invoice and let me know ___ it is correct.|if|that|what|if = liệu.
+C|S|check|The crane must be checked ___ a competent person.|by|with|from|Bị động + by.
+C|M|check|Action: QC to check all fire doors ___ handover.|before|until|since|before + danh từ.
+C|E|check|I have checked ___ the supplier, and the delivery is confirmed.|with|to|at|check with sb.
+C|S|check|Check the harness ___ damage before use.|for|about|of|check sth for damage.
+F|E|check|Please check if the drawings is correct.|drawings is|drawings are|drawings số nhiều → are.
+C|I|check|Many people check their phones ___ waking up.|immediately after|immediately before of|immediate after|immediately after + V-ing.
+C|S|check|The electrician is ___ the cables now.|checking|check|checked|Hiện tại tiếp diễn.
+C|E|check|Please check your email ___ the revised schedule.|for|of|about to|check your email for sth.
+C|S|check|All tools must be checked ___ use.|before|until|since|before use.
+C|C|inspect|The Engineer will ___ the reinforcement at 10 am.|inspect|inspect on|review about|Kiểm tra hiện trường → inspect + N.
+F|C|inspect|The Engineer will inspect on the reinforcement tomorrow.|inspect on the reinforcement|inspect the reinforcement|inspect + tân ngữ trực tiếp.
+C|C|inspect|The works were ___ and accepted.|inspected|inspect|inspecting|Bị động.
+C|C|inspect|Please submit the request for ___ at least 24 hours in advance.|inspection|inspect|inspecting|Danh từ: request for inspection.
+C|S|inspect|The scaffold must be inspected ___ seven days.|every|each of|all|every + số + days.
+C|C|inspect|The Employer's Personnel are entitled to inspect the works ___ any reasonable time.|at|in|on|at any time.
+C|M|inspect|The joint ___ of Zone B was held on 12 November.|inspection|inspect|inspected|Danh từ: inspection.
+C|E|inspect|We would like to invite you ___ the anchor bolts tomorrow.|to inspect|inspecting|inspect|invite sb + to V.
+C|C|inspect|Work must not be covered up before it ___.|has been inspected|has inspected|is inspecting|Bị động hiện tại hoàn thành.
+F|C|inspect|The work was covered before it was inspect.|was inspect|was inspected|Bị động cần V3.
+C|S|inspect|The lifting gear is inspected ___ a third party every six months.|by|from|with|Bị động + by.
+C|C|inspect|The ___ found that two anchors were loose.|inspector|inspect|inspected|Danh từ chỉ người: inspector.
+C|C|inspect|The Engineer shall inspect the work ___ unreasonable delay.|without|unless|except|without + danh từ.
+C|E|inspect|Is the area ready ___ inspection?|for|to|of|ready for inspection.
+C|S|inspect|Fire extinguishers are ___ monthly.|inspected|inspecting|inspect|Bị động.
+C|M|inspect|The client wants to inspect the mock-up ___ approving it.|before|until|since|before + V-ing.
+C|C|inspect|Hold points require the Engineer ___ the work.|to inspect|inspecting|inspect|require sb + to V.
+C|E|inspect|The inspection was postponed ___ the area was not ready.|because|because of|due|because + mệnh đề.
+C|S|inspect|All welds will be ___ before painting.|inspected|inspect|inspecting|Bị động tương lai.
+C|C|inspect|The Engineer may inspect materials ___ the place of manufacture.|at|on|in to|at the place.
+C|C|review|The Engineer has 21 days to ___ the shop drawings.|review|review about|inspect on|Xem xét hồ sơ → review + N.
+F|C|review|The Engineer has 21 days to review about the drawings.|review about the drawings|review the drawings|review + tân ngữ trực tiếp.
+C|E|review|Please find attached the method statement for your ___.|review|reviewing|reviewed|Danh từ: for your review.
+C|C|review|The drawings are currently ___ review.|under|in|on|under review = đang được xem xét.
+C|M|review|The risk register will be reviewed ___ every monthly meeting.|at|in|on|at the meeting.
+C|E|review|We have reviewed your comments and ___ the drawings accordingly.|revised|revise|revising|Hai động từ song song cùng thì.
+C|C|review|If the Engineer gives no Notice within the Review ___, a No-objection is deemed.|Period|Time|Duration of|Thuật ngữ FIDIC: Review Period.
+C|E|review|Could you review the draft ___ Friday?|by|until|since|by = trước hạn.
+C|M|review|The programme was reviewed and ___ by the Engineer.|accepted|accepting|accept|Song song bị động: reviewed and accepted.
+F|E|review|The documents are under reviewing by the Engineer.|under reviewing|under review|Cụm cố định: under review.
+C|E|review|After ___ your proposal, we have a few questions.|reviewing|review|reviewed of|after + V-ing.
+C|M|review|The lessons learned were reviewed ___ the project team.|with|by of|to|review with sb.
+C|C|review|The QA plan is subject ___ review by the Engineer.|to|for|of|subject to.
+C|E|review|We would appreciate your review ___ the attached report.|of|for|about to|review of + N.
+C|I|review|The government should review its policy ___ public transport.|on|for|to|policy on + N.
+C|M|review|The budget will be ___ at the end of each quarter.|reviewed|review|reviewing|Bị động.
+C|E|review|Thank you for taking the time ___ our submission.|to review|reviewing|review|take the time + to V.
+C|C|review|Each revised programme shall be submitted for ___.|review|reviewing|reviewed|for review.
+C|E|review|Please review the attached and ___ me know if you agree.|let|to let|letting|Câu mệnh lệnh song song: review … and let.
+C|M|review|The Engineer is reviewing ___ we submitted last week.|the claim|to the claim|about the claim|review + N.
+C|E|verify|Please ___ the quantities against the BOQ.|verify|verify about|check about|verify + N.
+F|E|verify|Please verify if the quantities is correct.|quantities is|quantities are|quantities số nhiều → are.|whether the quantities are correct
+C|E|verify|Could you verify ___ the certificates are original?|whether|about|that whether|verify whether.
+C|C|verify|The Engineer shall verify that the Contractor's equipment ___ suitable.|is|be to|being|verify that + mệnh đề.
+C|M|verify|The measurements were ___ by both parties.|verified|verify|verifying|Bị động.
+C|C|verify|Compliance ___ is part of the QM System.|verification|verify|verified|Danh từ: verification.
+C|E|verify|We need to verify ___ before we pay the invoice.|the quantities|about the quantities|for the quantities|verify + N.
+C|S|verify|The surveyor verified the levels ___ a total station.|with|by|from|with + công cụ.
+C|E|verify|Please verify the details and ___ us by return email.|confirm to|confirm|confirming|Song song mệnh lệnh: verify … and confirm.
+F|E|verify|Please verify and confirm to us by return email.|confirm to us|confirm|confirm + tân ngữ hoặc không có to.|confirm by return email
+C|C|verify|The bank guarantee must be verified ___ the issuing bank.|with|by from|of|verify with + tổ chức.
+C|E|verify|We cannot verify the information ___ further documents.|without|unless|except|without + danh từ.
+C|I|verify|Journalists must verify facts ___ publishing them.|before|until|since|before + V-ing.
+C|M|verify|The QS will verify the subcontractor's claim ___ Friday.|by|until|since|by = trước hạn.
+C|E|verify|The figures have been ___ against the site records.|verified|verify|verifying|Bị động.
+C|C|verify|Independent ___ of the test results is required.|verification|verify|verified|Danh từ.
+C|E|verify|Could you verify ___ the delivery will arrive?|when|that when|about when|verify + when.
+C|S|verify|The engineer verified ___ the anchors were installed correctly.|that|about|to|verify that.
+C|E|verify|Please verify your identity ___ entering the airside area.|before|until|since|before + V-ing.
+C|C|verify|The Engineer may require the Contractor ___ the setting-out.|to verify|verifying|verify|require sb + to V.
+C|C|monitor|We ___ progress against the baseline every week.|monitor|monitor on|check about|Theo dõi liên tục → monitor + N.
+F|C|monitor|We monitor on progress every week.|monitor on progress|monitor progress|monitor + tân ngữ trực tiếp.
+C|S|monitor|Noise levels are ___ throughout the night works.|monitored|monitor|monitoring|Bị động.
+C|C|monitor|Risks should be monitored ___ the life of the project.|throughout|through of|during of|throughout + thời gian.
+C|M|monitor|The client asked us to monitor the settlement ___ daily.|readings|reading's|read|monitor + N số nhiều.
+C|E|monitor|We will continue to monitor the ___ and update you.|situation|situate|situated|Danh từ: situation.
+C|S|monitor|Gas ___ is required before entering the tank.|monitoring|monitor|monitored|Danh từ V-ing: monitoring.
+C|I|monitor|Parents should monitor how much time children spend ___.|online|onlinely|on line of|online (trạng từ).
+C|C|monitor|Monitor and Control Schedule is a process in the ___ performance domain.|Schedule|Schedules|Scheduling of|PMBOK 8: Schedule domain.
+C|E|monitor|The weather is being closely ___.|monitored|monitor|monitoring|Bị động tiếp diễn.
+F|S|monitor|The cracks is monitored every week.|cracks is|cracks are|Chủ ngữ số nhiều → are.
+C|M|monitor|Action: HSE officer to monitor dust levels ___ the demolition.|during|while|since|during + danh từ.
+C|C|monitor|The Contractor shall monitor the ___ of the Works and report monthly.|progress|progressive|progressing|Danh từ: progress.
+C|I|monitor|Governments use cameras to monitor ___.|traffic|traffics|trafficking|traffic không đếm được.
+C|E|monitor|Please monitor the delivery and let me know ___ there is any delay.|if|that|what|if = nếu.
+C|S|monitor|The concrete temperature was monitored ___ a sensor.|with|from|of|with + công cụ.
+C|C|monitor|Earned value helps the team monitor cost and schedule ___.|performance|perform|performed|Danh từ: performance.
+C|M|monitor|The subcontractor's productivity will be monitored ___ the next two weeks.|over|in of|since|over + khoảng thời gian.
+C|E|monitor|We are monitoring the issue ___.|closely|close|closed|Trạng từ: closely.
+C|S|monitor|Vibration ___ were installed near the old building.|monitors|monitoring of|monitored|Danh từ số nhiều: monitors (thiết bị).

@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|M|approve|The client ___ the mock-up yesterday.|approved|approved of|accepted with|Duyệt chính thức → approve + N.
+F|M|approve|The client approved of the shop drawings yesterday.|approved of the shop drawings|approved the shop drawings|Duyệt hồ sơ → approve + N (approve of = tán thành, cảm xúc).
+C|C|approve|All materials must ___ by the Engineer before use.|be approved|approve|approved|Vật liệu được duyệt → bị động.
+F|C|approve|All materials must approve by the Engineer.|must approve|must be approved|Bị động: must be + V3.
+C|E|approve|Please find attached the drawings for your ___.|approval|approve|approving|Danh từ: approval.
+C|E|approve|We are still waiting for ___ of the revised programme.|approval|approve|approving|Danh từ: approval of.
+C|M|approve|The minutes of the previous meeting were ___ without comments.|approved|approving|approve|Bị động.
+C|E|approve|Once the samples are ___, we will place the order.|approved|approval|approving|Bị động.
+F|E|approve|We need your approve before we order the steel.|your approve|your approval|Sau tính từ sở hữu → danh từ approval.
+C|C|approve|The shop drawings were approved ___ noted.|as|with|by|Approved as noted = duyệt kèm ghi chú.
+C|E|approve|Could you approve the quotation ___ Friday?|by|until|since|by = trước hạn.
+C|M|approve|The budget was approved ___ the board last week.|by|from|with|Bị động + by + người làm.
+C|I|approve|Most residents approve ___ the new park plan.|of|to|with|approve of = tán thành (cảm xúc, quan điểm).
+C|E|approve|The design will go ahead subject ___ client approval.|to|for|of|subject to approval = tùy thuộc phê duyệt.
+F|E|approve|The quotation was approve by the client.|was approve|was approved|Bị động cần V3.
+C|C|approve|The Contractor shall not start any work until the method statement ___ approved.|has been|will be|is being|Sau until dùng hiện tại (hoàn thành), không dùng will.
+C|E|approve|Please let us know when the variation has been ___.|approved|approve|approval|Bị động hiện tại hoàn thành.
+C|M|approve|The client approved ___ two extra workers for Zone C.|hiring|to hire of|hire|approve + V-ing (đồng ý cho làm).
+C|E|approve|We are pleased to confirm that the colour has been ___.|approved|approving|approval|Bị động.
+C|C|approve|Every change to the baseline requires formal ___.|approval|approve|approved|Danh từ: approval.
+C|E|approve|The Engineer approved ___ the condition that the joints are resealed.|on|with|by|on condition that.
+F|M|approve|The board approved to increase the budget.|approved to increase the budget|approved an increase in the budget|approve + N (hoặc V-ing), không + to V.|approved increasing the budget
+C|C|approve|In FIDIC 2017, the Engineer gives a Notice of ___ rather than an approval.|No-objection|Not-objection|No-objecting|Thuật ngữ FIDIC: No-objection.
+C|E|approve|The supplier is waiting for our approval ___ the sample.|of|for|to|approval of + N.
+C|I|approve|The plan was approved ___ a large majority.|by|with|of|approved by a majority.
+C|E|accept|We ___ your proposal for the revised rate.|accept|accept with|accept to|accept + tân ngữ trực tiếp.
+F|E|accept|We accept with your proposal.|accept with your proposal|accept your proposal|accept + tân ngữ trực tiếp.
+C|C|accept|The Employer may refuse to accept ___ defective work.|any|for any|with any|accept + N.
+C|E|accept|Please confirm whether you accept ___ terms.|these|with these|to these|accept + N.
+C|M|accept|The Engineer did not accept the Contractor's ___ of delay.|explanation|explain|explaining|Danh từ: explanation.
+C|C|accept|The works were ___ after the second inspection.|accepted|accepting|accept|Bị động.
+C|E|accept|We regret that we cannot ___ the late delivery charge.|accept|accept with|agree to with|Nhận khoản phí → accept + N.
+C|C|accept|The ___ of the works is shown in the Taking-Over Certificate.|acceptance|accept|accepted|Danh từ: acceptance.
+C|C|accept|The Letter of ___ forms part of the Contract.|Acceptance|Accept|Accepting|Thuật ngữ: Letter of Acceptance.
+F|M|accept|The client accepted to pay for the extra armrests.|accepted to pay|agreed to pay|Đồng ý làm gì → agree to V (accept + N).|accepted the cost of
+C|E|accept|Do you accept payment ___ bank transfer?|by|with|on|by bank transfer.
+C|I|accept|Many people find it hard to accept ___.|criticism|critical|criticise|accept + danh từ.
+C|M|accept|The subcontractor accepted ___ for the damage.|responsibility|responsible|responsibly|accept responsibility.
+F|E|accept|We accept that the delivery were late.|delivery were|delivery was|Chủ ngữ số ít → was.
+C|E|accept|We are pleased to accept your invitation ___ the opening ceremony.|to|for|of|invitation to + sự kiện.
+C|C|accept|The Contractor is deemed to have accepted the ___ of the Site.|conditions|condition of|conditioned|accept + N số nhiều.
+C|E|accept|Unfortunately, the rate you proposed is not ___.|acceptable|accepted to|accepting|Tính từ: acceptable.
+C|I|accept|Society has become more ___ of flexible working.|accepting|accepted|acceptance|be accepting of = cởi mở với.
+C|M|accept|The Engineer accepted the revised programme ___ comments.|without|unless|except of|without comments.
+F|E|accept|Your proposal is accept with minor comments.|is accept|is accepted|Bị động cần V3.
+C|C|accept|Materials that fail the test shall not be ___ on site.|accepted|accept|accepting|Bị động.
+C|E|accept|We cannot accept ___ for delays caused by the client.|liability|liable|liably|accept liability.
+C|M|accept|Both parties accepted the ___ of the mediator.|decision|decide|decisive|Danh từ: decision.
+C|E|accept|Please accept ___ apologies for the late reply.|our|us|to our|accept our apologies.
+C|I|accept|It is widely ___ that exercise improves health.|accepted|accepting|acceptance|It is widely accepted that…
+C|M|agree|Both parties agreed ___ the new rate.|on|to with|about to|Thống nhất điều khoản → agree on.
+F|E|agree|I am agree with your comments.|am agree|agree|agree là động từ, không đi với am.
+C|M|agree|The subcontractor agreed ___ four workers.|to add|adding|add|agree + to V.
+F|M|agree|The subcontractor agreed adding two workers.|agreed adding|agreed to add|agree + to V.
+C|E|agree|I completely agree ___ you.|with|to|on|agree with + người.
+C|E|agree|We agree ___ your proposal to start on Monday.|to|with to|on to|agree to + đề xuất.
+C|M|agree|It was ___ that the Contractor will update the programme weekly.|agreed|agree|agreeing|It was agreed that… (MOM).
+C|C|agree|If the Parties fail to ___ within 42 days, the Engineer shall make a determination.|agree|agreed|agreement|fail to + V nguyên mẫu.
+C|C|agree|The Engineer shall give a Notice of ___ if the Parties reach agreement.|agreement|agree|agreed|Danh từ: agreement.
+C|M|agree|All parties agreed ___ the minutes should be issued within two days.|that|to|on|agree that + mệnh đề.
+C|E|agree|We could not reach ___ on the final account.|agreement|agree|agreed|reach agreement.
+F|M|agree|We was agreed to start the night shift on Monday.|was agreed to start|agreed to start|Dùng động từ chủ động agree + to V; chủ ngữ we → không dùng was.
+C|I|agree|To what extent do you agree or ___?|disagree|unagree|not agree|Cụm IELTS: agree or disagree.
+C|E|agree|As ___, please find attached the signed transmittal.|agreed|agree|agreement|As agreed = như đã thống nhất.
+C|M|agree|The Engineer did not agree ___ the Contractor's delay analysis.|with|about to|for|agree with + ý kiến/phân tích.
+C|I|agree|Many people agree ___ public transport should be free.|that|about|for|agree that.
+F|E|agree|We are agreed to your request.|are agreed to|agree to|Dùng động từ chủ động: we agree to.
+C|C|agree|A rate ___ by both Parties shall be used for the variation.|agreed|agreeing|agree|Rút gọn bị động: a rate (that is) agreed.
+C|M|agree|The client and the contractor have agreed ___ a meeting every Tuesday.|to hold|holding|hold|agree to + V.
+C|E|agree|Please confirm that you agree ___ these terms.|to|with to|on to|agree to + điều khoản/đề xuất.
+C|M|agree|We agreed ___ a compromise after two hours of discussion.|on|to with|for|agree on a compromise.
+C|C|agree|The Parties may agree ___ writing to extend the time limit.|in|by|on|in writing.
+C|I|agree|I partly agree ___ this opinion.|with|to|on|agree with + opinion.
+C|E|agree|We are happy to ___ to your revised delivery date.|agree|accept|approve|agree to + N.
+C|M|agree|It was agreed ___ the RFI log will be shared on the CDE.|that|to|for|It was agreed that.
+C|M|sign off|The Engineer ___ the snag list this morning.|signed off|signed off for|signed out|sign off + N = ký duyệt.
+F|M|sign off|The Engineer signed off for the snag list.|signed off for the snag list|signed off the snag list|sign off + N, không for.|signed the snag list off
+C|S|sign off|Please get the inspection sheet ___ before you pour.|signed off|sign off|signing off|get + sth + V3 (nhờ ai làm).
+C|M|sign off|Zone A was signed ___ by the client yesterday.|off|out|over|sign off (bị động: was signed off).
+C|E|sign off|Could you sign ___ the final account by Friday?|off|out|up|sign off.
+C|S|sign off|The QC engineer will sign it ___ after the test.|off|of|out|Đại từ đứng giữa: sign it off.
+F|S|sign off|The QC engineer will sign off it after the test.|sign off it|sign it off|Đại từ phải đứng giữa động từ và tiểu từ.
+C|M|sign off|We are waiting for the client's ___ on the design.|sign-off|sign off|signing off of|Danh từ: sign-off.
+C|E|sign off|The drawings cannot be issued until they are signed ___ by the lead engineer.|off|on|out|be signed off.
+C|M|sign off|The handover will take place once the punch list ___ signed off.|is|will be|be|Sau once dùng hiện tại.
+C|S|sign off|The permit must be signed off ___ the area supervisor.|by|from|with|Bị động + by.
+C|E|sign off|Please sign ___ and return the attached form.|off|of|up|sign off.
+F|M|sign off|The client will sign off the Zone A tomorrow.|sign off the Zone A|sign off Zone A|Tên khu vực (Zone A) không dùng the.
+C|M|sign off|The final ___ is scheduled for 30 November.|sign-off|sign off|signed off|Danh từ (có gạch nối): sign-off.
+C|S|sign off|The supervisor signed ___ the work after checking the anchors.|off|out|up|sign off.
+C|E|sign off|Has the budget been ___ off yet?|signed|sign|signing|Bị động hiện tại hoàn thành.
+C|M|sign off|Action: Engineer to sign off the inspection report ___ Wednesday.|by|until|since|by = hạn chót.
+C|E|sign off|We need the design signed off ___ we can order the materials.|before|until|unless|before + mệnh đề.
+F|E|sign off|The Engineer has sign off the test report.|has sign off|has signed off|Hiện tại hoàn thành: has + V3.
+C|M|sign off|The method statement was signed off ___ minor comments.|with|by|on|with comments.
+C|S|sign off|No concrete may be poured without a ___ inspection sheet.|signed-off|sign-off of|signing off|Tính từ ghép: signed-off.
+C|E|sign off|Once you sign it ___, please scan and email it back.|off|of|out|sign it off.
+C|M|sign off|The client refused to sign ___ the zone because of the open snags.|off|out|of|sign off.
+C|E|sign off|Who is responsible ___ signing off the final drawings?|for|of|to|responsible for + V-ing.
+C|M|sign off|The snag list must be signed off ___ both parties.|by|with|from|Bị động + by.

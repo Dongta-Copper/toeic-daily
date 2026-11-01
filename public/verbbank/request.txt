@@ -1,0 +1,103 @@
+# C|context|verb|question with ___|correct|wrong|wrong|why
+# F|context|verb|sentence|wrong phrase|correct phrase|why|alternatives separated by ;
+# context: E email · M biên bản họp · C hợp đồng/FIDIC · S công trường · I IELTS
+C|E|ask|Could you ask the MEP team ___ the ceiling levels before Friday?|to check|check|checking|ask + sb + to V.
+C|M|ask|The client asked ___ a revised programme by next Monday.|for|about|to|ask for + N = xin, đòi cái gì.
+C|E|ask|I am writing to ask ___ you could extend the deadline by one week.|whether|that|what|ask whether/if = hỏi liệu.
+C|S|ask|The foreman asked the workers not ___ the barrier.|to remove|remove|removing|ask sb not to V.
+C|E|ask|We have been asked ___ the method statement again.|to resubmit|resubmit|resubmitting|be asked + to V.
+C|E|ask|May I ask ___ the delivery has been confirmed?|if|that|what|ask if = hỏi liệu.
+C|M|ask|The Engineer asked the Contractor ___ more labour to Zone C.|to allocate|allocate|allocating|ask sb to V.
+C|E|ask|Could you ask the supplier ___ a new delivery date?|for|about to|to|ask sb for + N.
+C|I|ask|Many employees are reluctant to ask their managers ___ help.|for|about|to|ask for help.
+C|E|ask|Please ask the site team ___ the area before the inspection.|to clean|cleaning|cleaned|ask sb to V.
+F|E|ask|Could you ask the supplier send us the test certificates?|ask the supplier send|ask the supplier to send|ask + sb + to V.
+F|M|ask|The client asked to us for a progress update.|asked to us for|asked us for|ask + người trực tiếp, không có to.
+F|E|ask|I would like to ask about whether the drawings are approved.|ask about whether|ask whether|ask whether/if, không thêm about.|ask if
+F|S|ask|The supervisor asked them don't start before 7 am.|asked them don't start|asked them not to start|ask sb not to V.
+F|E|ask|We were asked for submitting the report by Friday.|asked for submitting|asked to submit|be asked + to V.
+C|E|ask|Do not hesitate to ask ___ you need further information.|if|whether to|that|"Do not hesitate to ask if…" = cần gì cứ hỏi.
+C|M|ask|The subcontractor asked ___ an extension of two weeks.|for|about|on|ask for + N.
+C|I|ask|Customers are often asked ___ a short survey after the service.|to complete|completing|complete|be asked to V.
+F|E|ask|Can I ask you a favour to review the attached draft?|ask you a favour to review|ask you to review|ask sb to V.
+C|E|ask|He asked me ___ I had received the invoice.|whether|that|what|Câu hỏi gián tiếp Yes/No → whether/if.
+C|E|request|We ___ your approval of the revised programme.|request|request for|requesting|Động từ request + N trực tiếp (không for).
+C|C|request|The Contractor requests that the Engineer ___ the instruction in writing.|confirm|confirms to|to confirm|request that + sb + V nguyên mẫu.
+C|E|request|You are kindly requested ___ the attached form by Friday.|to return|returning|return|be requested + to V.
+C|E|request|We would like to request ___ meeting to discuss the variation.|a|for a|about a|request + N (không for).
+C|M|request|The client requested that all drawings ___ in PDF format.|be submitted|are submit|to be submitted|request that + be + V3.
+C|E|request|As requested, please find ___ the updated cost report.|attached|attaching|to attach|"As requested, please find attached…"
+C|E|request|Further to your request ___ additional information, we attach the test results.|for|of|about|Danh từ: a request for + N.
+C|C|request|The Engineer may request the Contractor ___ additional samples.|to submit|submit|submitting|request sb to V (trang trọng).
+C|E|request|Access to the roof can be arranged ___ request.|on|by|in|on request = khi được yêu cầu.
+F|E|request|We request for an extension of time of 14 days.|request for|request|Động từ request không có for.
+F|E|request|You are request to attend the safety briefing.|are request|are requested|Bị động cần V3.
+F|C|request|The Contractor requested that the Engineer confirms the levels.|confirms|confirm|request that + V nguyên mẫu.|should confirm
+F|M|request|The client made a request about more frequent progress reports.|a request about|a request for|Danh từ: a request for + N.
+C|I|request|The number of requests ___ remote work has increased since 2020.|for|of|about|request for + N.
+C|E|request|Thank you for your email requesting ___ extension of time.|an|for an|about an|requesting + N.
+C|M|request|It was requested ___ the minutes be issued within two days.|that|to|for|It was requested that + mệnh đề.
+F|E|request|We requested the supplier sending the samples by courier.|requested the supplier sending|requested the supplier to send|request sb to V.|requested that the supplier send
+C|E|request|The documents you ___ are attached to this email.|requested|requested for|request to|request + tân ngữ (không for).
+C|C|request|A request ___ payment must be supported by a measurement sheet.|for|of|on|Danh từ: request for.
+C|E|request|We kindly request ___ this matter as urgent.|that you treat|you to treating|for you treat|request that + sb + V.
+C|C|require|The Contract ___ the Contractor to submit a programme within 28 days.|requires|requests for|asks for|Bắt buộc theo hợp đồng → require + sb + to V.
+C|S|require|All workers are required ___ a safety helmet on site.|to wear|wearing|wear|be required to V.
+C|S|require|Hot work ___ a permit to work.|requires|is required|required to|Chủ ngữ là công việc → require + N.
+C|C|require|The Specification requires ___ every batch of concrete.|testing|to test|test|Không có "require to V" khi thiếu tân ngữ; dùng require + V-ing.
+C|E|require|Please let me know if you require ___ further information.|any|of any|for any|require + N.
+C|C|require|The Engineer may require that the defective work ___ removed.|be|is to|to be|require that + be + V3.
+C|S|require|This task requires two people ___ the panel safely.|to lift|lift|lifting|require sb to V.
+F|S|require|Visitors are required wearing high-visibility vests.|required wearing|required to wear|be required to V.
+C|E|require|Should you require ___ assistance, please contact our site office.|further|furthermore|farther|further = thêm.
+C|I|require|Many jobs now require employees ___ basic digital skills.|to have|having|have|require sb to V.
+C|M|require|The design change will require ___ approval of the fire authority.|the|for the|of the|require + N.
+F|C|require|The works are required a building permit.|are required a building permit|require a building permit|Công việc cần giấy phép → chủ động require + N.
+C|S|require|The repair is not urgent, but it ___ attention before handover.|requires|is requiring|required to|require là động từ trạng thái → không dùng tiếp diễn.
+C|C|require|Unless otherwise ___, all materials shall be new.|required|requiring|require|Unless otherwise required = trừ khi có yêu cầu khác.
+C|M|require|It was agreed that a third-party inspection is ___.|required|requiring|require|be required (bị động).
+F|E|require|Please advise us if you are requiring any additional documents.|are requiring|require|require là động từ trạng thái, không dùng tiếp diễn.
+C|C|require|The Contractor shall provide all documents ___ by the Specification.|required|requiring|requires|Rút gọn: documents (which are) required.
+C|I|require|Governments should require large companies ___ their carbon emissions.|to report|report|reporting|require sb to V.
+F|S|require|This task require a trained operator.|require|requires|Chủ ngữ số ít → requires.
+C|E|require|Kindly let us know the quantities ___ for Zone B.|required|requiring|to require|Rút gọn: quantities (that are) required.
+C|C|instruct|The Engineer instructed us ___ the benches to Gate 12.|to relocate|relocate|relocating|instruct sb to V.
+C|M|instruct|The site manager ___ all teams to stop work during the storm.|instructed|requested for|asked for|Ra lệnh có thẩm quyền → instruct sb to V.
+C|C|instruct|We will not proceed until we are instructed ___ in writing.|to do so|doing so|do so|be instructed to V.
+F|C|instruct|The Engineer instructed us relocate the benches.|instructed us relocate|instructed us to relocate|instruct sb to V.
+C|E|instruct|Please confirm this instruction ___ writing.|in|by|on|in writing = bằng văn bản.
+C|C|instruct|If an instruction does not state that it is a Variation, the Contractor must give a Notice ___ starting the work.|before|after|while|FIDIC 3.5: gửi Notice trước khi làm.
+F|M|instruct|The Engineer gave an instruct to remove the defective tiles.|an instruct|an instruction|Danh từ: instruction.
+C|S|instruct|Workers must follow the ___ given in the method statement.|instructions|instructs|instructing|Danh từ số nhiều: instructions.
+C|C|instruct|The Contractor shall comply with the Engineer's ___.|instructions|instructing|instructs|comply with + danh từ.
+C|E|instruct|As ___ by the Engineer, we have added two extra drainage points.|instructed|instructing|instruct|As instructed by… = theo chỉ thị của…
+F|S|instruct|The foreman instructed to the team to clean the area.|instructed to the team|instructed the team|instruct + người trực tiếp, không to.
+C|M|instruct|The client instructed the designer ___ the facade colour.|to change|change|changing|instruct sb to V.
+C|E|instruct|We were instructed not ___ the slab until the Engineer had inspected it.|to pour|pour|pouring|be instructed not to V.
+C|C|instruct|The Engineer may instruct a Variation at any time ___ the Taking-Over Certificate is issued.|before|after|since|FIDIC 13.1.
+F|E|instruct|We are waiting your instruction before proceeding.|waiting your instruction|waiting for your instruction|wait for + N.|awaiting your instruction
+C|E|instruct|We await your ___ on how to proceed.|instructions|instruct|instructing|await + danh từ.
+C|S|instruct|The operator was instructed ___ the crane in high winds.|not to use|to not using|not use|be instructed not to V.
+C|M|instruct|Action: Engineer to issue a written instruction ___ 25 October.|by|until|since|by = hạn chót.
+F|C|instruct|The Contractor shall not take instructions from anyone except of the Engineer.|except of the Engineer|except the Engineer|except + N (không of).|other than the Engineer
+C|E|instruct|Kindly ___ us whether we should proceed with the night shift.|instruct|instruct to|instructing|instruct + sb (+ whether / to V).
+C|M|demand|The client demanded ___ the delay.|an explanation for|us explaining|us to explain|demand + N; không dùng demand + sb + to V.
+C|E|demand|The subcontractor demanded that the payment ___ made immediately.|be|is to|to be|demand that + be + V3.
+F|M|demand|The client demanded us to finish by Friday.|demanded us to finish|demanded that we finish|Không dùng demand + sb + to V.|demanded that we should finish
+C|I|demand|There is a growing ___ for skilled construction workers.|demand|demanding|demanded|Danh từ: demand for.
+C|I|demand|Demand ___ housing has risen sharply in large cities.|for|of|on|demand for + N.
+C|S|demand|Working at height is physically ___.|demanding|demanded|demand|Tính từ: demanding = đòi hỏi cao.
+C|E|demand|We do not wish to ___ payment, but the invoice is now 60 days overdue.|demand|demand for|demanding for|Động từ demand + N (không for).
+F|E|demand|The supplier demanded for immediate payment.|demanded for|demanded|Động từ demand không có for (danh từ mới là "a demand for").
+C|M|demand|The union demanded ___ meeting with the management.|an immediate|for an immediate|about an immediate|demand + N.
+C|E|demand|Instead of demanding, it is better to ___ the client's approval politely.|request|demand for|requesting for|Lịch sự, trang trọng → request + N.
+C|I|demand|High ___ for steel has pushed prices up.|demand|demands of|demanding|demand = nhu cầu.
+F|I|demand|The demand of skilled workers is higher than the supply.|demand of skilled workers|demand for skilled workers|demand for + N.
+C|M|demand|The residents demanded that the noisy works ___ at 6 pm.|stop|stopped|to stop|demand that + V nguyên mẫu.
+C|E|demand|This is a very ___ schedule, but we will do our best.|demanding|demanded|demand|Tính từ demanding.
+C|I|demand|Supply cannot keep up ___ demand.|with|to|for|keep up with demand.
+F|E|demand|We demand you to pay the outstanding amount.|demand you to pay|request that you pay|Trong email nên dùng request; demand không đi với sb to V.|demand that you pay;request you to pay
+C|I|demand|The job is ___ but rewarding.|demanding|demanded|demands|Tính từ demanding.
+C|M|demand|The Engineer has the right to demand ___ of the test results.|copies|to copy|copying|demand + N.
+C|I|demand|Rising demand ___ energy is a global challenge.|for|of|to|demand for.
+C|E|demand|The new schedule places heavy ___ on the installation team.|demands|demanding|demanded|place demands on = đặt áp lực lên.

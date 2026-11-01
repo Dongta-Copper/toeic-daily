@@ -6,6 +6,7 @@ import { ArrowLeft, ArrowRight, BarChart3, Check, FileText, Loader2, Repeat, Spa
 import { downloadWord } from '@/lib/wordExport'
 import { Quiz, lessonProgress, type LessonProgress } from '@/components/Lessons'
 import { VERB_PRACTICE } from '@/lib/verbPractice'
+import { LEVEL_LABEL, loadBank, mastery, pickQuestions, record, verbStats, type BankItem, type GroupStats, type Mastery } from '@/lib/verbBank'
 import { PASS_RATIO, type QuizQ } from '@/lib/lessons'
 import { FORMALITY, VERB_GROUPS, dateForGroup, groupForDate, isoDate, weekGroups, type VerbEntry, type VerbGroup } from '@/lib/verbGroups'
 import { ERROR_TYPES, getAttempts, type Attempt } from '@/lib/situation'
@@ -48,16 +49,47 @@ function fallbackQuiz(groups: VerbGroup[]): QuizQ[] {
   ).slice(0, SESSION)
 }
 
-/** 10 written questions for the given groups: nuance/structure items plus right-or-wrong items from the cards. */
+/**
+ * 10 questions drawn at random from the groups' 100-question banks (unseen and last-wrong first),
+ * optionally for one verb. Each answer updates that question's record, which drives per-verb mastery.
+ * Falls back to the right/wrong items from the cards if a bank cannot be loaded.
+ */
 function usePractice(groups: VerbGroup[]) {
   const [round, setRound] = useState(0)
-  function next(): QuizQ[] {
+  const [bank, setBank] = useState<BankItem[] | null>(null)
+  const [stats, setStats] = useState<Map<string, GroupStats>>(new Map())
+  const [current, setCurrent] = useState<BankItem[]>([])
+  const key = groups.map((g) => g.id).join(',')
+
+  useEffect(() => {
+    if (!groups.length) return
+    Promise.all([Promise.all(groups.map((g) => loadBank(g.id).catch(() => [] as BankItem[]))), verbStats.getAll()]).then(([banks, all]) => {
+      setBank(banks.flat())
+      setStats(new Map(all.map((s) => [s.id, s])))
+    })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key])
+
+  function next(verb?: string): QuizQ[] {
     setRound((r) => r + 1)
+    const picked = bank?.length ? pickQuestions(bank, stats, SESSION, verb) : []
+    setCurrent(picked)
+    if (picked.length) return picked.map((x) => x.q)
     const practice = shuffle(groups.flatMap((g) => VERB_PRACTICE[g.id] ?? []))
-    const take = groups.length > 1 ? 6 : 5 // weekly review: more nuance questions across the week
-    return shuffle([...practice.slice(0, take), ...fallbackQuiz(groups)]).slice(0, SESSION)
+    return shuffle([...practice.slice(0, 5), ...fallbackQuiz(groups)]).slice(0, SESSION)
   }
-  return { next, round }
+
+  function result(index: number, ok: boolean) {
+    const item = current[index]
+    if (!item) return
+    setStats((prev) => {
+      const s = record(prev.get(item.group), item.group, item.id, ok)
+      verbStats.save([s])
+      return new Map(prev).set(item.group, s)
+    })
+  }
+
+  return { next, round, result, bank, stats }
 }
 
 // ─── One verb card ────────────────────────────────────────────────────────────
@@ -171,13 +203,57 @@ export function PhraseHome() {
   )
 }
 
+// ─── Per-verb mastery ────────────────────────────────────────────────────────
+
+const LEVEL_STYLE: Record<string, string> = {
+  new: 'bg-gray-100 text-gray-500',
+  weak: 'bg-red-50 text-red-700',
+  ok: 'bg-amber-50 text-amber-700',
+  solid: 'bg-green-50 text-green-700',
+}
+
+function MasteryPanel({ levels, solid, bankSize, onPractise }: { levels: Mastery[]; solid: number; bankSize: number; onPractise: (verb: string) => void }) {
+  if (!bankSize) return null
+  return (
+    <section className="p-4 border border-gray-200 rounded-lg">
+      <div className="flex items-baseline justify-between mb-3">
+        <h2 className="text-sm font-semibold text-gray-900">Mức thuộc từng động từ</h2>
+        <span className="text-xs text-gray-500 tabular-nums">
+          {solid}/{levels.length} động từ đã chắc
+        </span>
+      </div>
+      <ul className="space-y-2.5">
+        {levels.map((m) => (
+          <li key={m.verb} className="flex items-center gap-3">
+            <span className="w-24 text-sm font-medium text-gray-900 truncate">{m.verb}</span>
+            <div className="flex-1 min-w-0">
+              <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
+                <div className="h-full bg-gray-900" style={{ width: `${m.total ? (m.lastRight / m.total) * 100 : 0}%` }} />
+              </div>
+              <p className="text-[11px] text-gray-500 mt-0.5 tabular-nums">
+                đúng {m.lastRight} · đã làm {m.answered}/{m.total} câu
+              </p>
+            </div>
+            <span className={`text-[11px] px-1.5 py-0.5 rounded whitespace-nowrap ${LEVEL_STYLE[m.level]}`}>{LEVEL_LABEL[m.level]}</span>
+            <button onClick={() => onPractise(m.verb)} className="text-xs px-2 py-1 border border-gray-300 rounded hover:border-gray-900 whitespace-nowrap">
+              Luyện riêng
+            </button>
+          </li>
+        ))}
+      </ul>
+      <p className="text-[11px] text-gray-400 mt-3">“Chắc” = đã làm ít nhất nửa số câu của động từ đó và lần gần nhất đúng từ 85% trở lên.</p>
+    </section>
+  )
+}
+
 // ─── One group ────────────────────────────────────────────────────────────────
 
 export function PhraseGroupView({ id }: { id: string }) {
   const group = VERB_GROUPS.find((g) => g.id === id)
   const groups = useMemo(() => (group ? [group] : []), [group])
-  const { next, round } = usePractice(groups)
-  const [stage, setStage] = useState<'learn' | 'loading' | 'quiz'>('learn')
+  const { next, round, result, bank, stats } = usePractice(groups)
+  const [stage, setStage] = useState<'learn' | 'quiz'>('learn')
+  const [focus, setFocus] = useState<string | undefined>()
   const [questions, setQuestions] = useState<QuizQ[]>([])
   const [prev, setPrev] = useState<LessonProgress | undefined>()
 
@@ -187,11 +263,16 @@ export function PhraseGroupView({ id }: { id: string }) {
 
   if (!group) return <div className="max-w-2xl mx-auto px-4 py-12 text-sm text-gray-500">Không tìm thấy nhóm.</div>
 
-  async function start() {
-    setStage('loading')
-    setQuestions(await next())
+  function start(verb?: string) {
+    setFocus(verb)
+    setQuestions(next(verb))
     setStage('quiz')
+    window.scrollTo({ top: 0 })
   }
+
+  const groupBank = (bank ?? []).filter((x) => x.group === group.id)
+  const levels = group.verbs.map((v) => mastery(groupBank, stats.get(group.id), v.verb))
+  const solid = levels.filter((m) => m.level === 'solid').length
 
   function finish(score: number) {
     const now = new Date().toISOString()
@@ -226,26 +307,30 @@ export function PhraseGroupView({ id }: { id: string }) {
           <div className="p-3 rounded-lg bg-amber-50 border border-amber-200 text-sm text-amber-900">
             <b>Chọn từ nào?</b> {group.tip}
           </div>
+          <MasteryPanel levels={levels} solid={solid} bankSize={groupBank.length} onPractise={start} />
           {group.verbs.map((v) => (
             <VerbCard key={v.verb} v={v} />
           ))}
-          <button onClick={start} className="w-full py-3.5 bg-gray-900 text-white font-medium rounded-lg flex items-center justify-center gap-2">
-            <Sparkles className="w-4 h-4" /> Luyện 10 câu nhóm này
+          <button onClick={() => start()} className="w-full py-3.5 bg-gray-900 text-white font-medium rounded-lg flex items-center justify-center gap-2">
+            <Sparkles className="w-4 h-4" /> Luyện 10 câu ngẫu nhiên
           </button>
-          <p className="-mt-2 text-xs text-gray-500 text-center">Chọn đúng động từ theo sắc thái và cấu trúc đi sau. Đạt 8/10 là hoàn thành.</p>
-        </div>
-      ) : stage === 'loading' ? (
-        <div className="p-8 border border-gray-200 rounded-lg text-center text-sm text-gray-500">
-          <Loader2 className="w-5 h-5 animate-spin mx-auto mb-2" /> Đang chuẩn bị câu hỏi…
+          <p className="-mt-2 text-xs text-gray-500 text-center">
+            Rút từ kho {groupBank.length || 100} câu (email, biên bản họp, hợp đồng, công trường, IELTS) — ưu tiên câu chưa làm và câu làm sai.
+          </p>
         </div>
       ) : (
         <>
-          <Quiz key={round} questions={questions} onDone={finish} />
+          {focus && (
+            <p className="mb-2 text-sm text-gray-600">
+              Đang luyện riêng: <b>{focus}</b>
+            </p>
+          )}
+          <Quiz key={round} questions={questions} onDone={finish} onResult={result} />
           <div className="mt-4 grid grid-cols-2 gap-2">
             <button onClick={() => setStage('learn')} className="py-2.5 border border-gray-300 rounded-md text-sm">
-              Xem lại thẻ
+              Xem thẻ & mức thuộc
             </button>
-            <button onClick={start} className="py-2.5 border border-gray-300 rounded-md text-sm flex items-center justify-center gap-1.5">
+            <button onClick={() => start(focus)} className="py-2.5 border border-gray-300 rounded-md text-sm flex items-center justify-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5" /> 10 câu mới
             </button>
           </div>
@@ -269,7 +354,7 @@ export function WeeklyReview() {
   const device = useToday()
   const today = device ?? new Date()
   const groups = useMemo(() => (device ? weekGroups(device) : []), [device])
-  const { next, round } = usePractice(groups)
+  const { next, round, result } = usePractice(groups)
   const [stage, setStage] = useState<'home' | 'loading' | 'quiz'>('home')
   const [questions, setQuestions] = useState<QuizQ[]>([])
   const [attempts, setAttempts] = useState<Attempt[] | null>(null)
@@ -286,9 +371,8 @@ export function WeeklyReview() {
   const toRedo = (thisWeek?.list ?? []).filter((a) => a.verdict !== 'correct').sort((a, b) => b.errors.length - a.errors.length).slice(0, 8)
   const topTypes = Object.entries(thisWeek?.types ?? {}).sort((a, b) => b[1] - a[1]).slice(0, 3)
 
-  async function start() {
-    setStage('loading')
-    setQuestions(await next())
+  function start() {
+    setQuestions(next())
     setStage('quiz')
   }
 
@@ -360,7 +444,7 @@ export function WeeklyReview() {
           </div>
         ) : (
           <>
-            <Quiz key={round} questions={questions} onDone={() => {}} />
+            <Quiz key={round} questions={questions} onDone={() => {}} onResult={result} />
             <button onClick={start} className="mt-3 w-full py-2.5 border border-gray-300 rounded-md text-sm">
               10 câu khác
             </button>

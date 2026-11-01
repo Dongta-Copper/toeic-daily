@@ -1,0 +1,101 @@
+# C|context|verb|question|correct|wrong|wrong|why  ·  F|context|verb|sentence|wrong|correct|why|alts
+C|E|increase|Material costs increased ___ 5% in October.|by|of|with|Mức tăng → by.
+F|E|increase|Material costs increased of 5%.|increased of 5%|increased by 5%|Mức tăng → by.
+C|I|increase|The number of cars has increased ___ 2 million to 3 million.|from|since|of|from … to …
+C|M|increase|The subcontractor agreed to increase the team ___ 8 to 12 workers.|from|since|of|increase from … to …
+C|I|increase|There has been a sharp ___ in house prices.|increase|increasing|increased|Danh từ: an increase in.
+F|I|increase|There was a big increase of steel prices last year.|increase of steel prices|increase in steel prices|an increase in + N.
+C|E|increase|The supplier has ___ its prices twice this year.|increased|risen|rised|Có tân ngữ (its prices) → increase/raise.
+C|C|increase|Any ___ in the Contract Price must be agreed or determined.|increase|increasing|increased|Danh từ: increase in.
+C|S|increase|Productivity increased ___ after the new crane arrived.|significantly|significant|significance|Trạng từ bổ nghĩa cho động từ.
+C|I|increase|Online shopping is increasing ___.|rapidly|rapid|rapidity|Trạng từ.
+C|M|increase|The variation will increase the cost ___ USD 18,000.|by|of|with|Mức tăng → by.
+C|I|increase|The population increased ___ 9 million in 2025.|to|by to|until|Tăng đến mức → to.
+C|E|increase|Due to the ___ demand, lead times are now 12 weeks.|increased|increase|increasingly|Tính từ V3: increased demand.
+C|I|increase|Cities are becoming ___ crowded.|increasingly|increasing|increase|Trạng từ: increasingly.
+C|C|increase|The Contractor may claim for any ___ Cost.|additional|addition|additionally|Tính từ trước danh từ.
+C|M|increase|We need to increase ___ in Zone B to meet the deadline.|the manpower|to the manpower|for the manpower|increase + N.
+C|I|increase|Carbon emissions continue ___.|to increase|increasing to|increase|continue + to V.
+C|E|increase|The increase ___ costs is mainly due to the steel price.|in|of|on|increase in.
+F|M|increase|The cost has been increased by itself because of inflation.|has been increased by itself|has increased|Tự tăng → chủ động nội động từ.
+C|I|increase|Unemployment increased ___ in 2020 than in 2019.|more|most|much|So sánh hơn: more … than.
+C|I|rise|Steel prices ___ sharply last month.|rose|raised|were risen|Tự tăng, không tân ngữ → rise (rose).
+F|E|rise|The supplier rose the price of the frames.|rose the price|raised the price|Có tân ngữ → raise.
+C|I|rise|Temperatures are expected to rise ___ 2 °C.|by|of|with|Mức tăng → by.
+C|I|rise|House prices have ___ every year since 2015.|risen|rose|raised|Hiện tại hoàn thành: have risen (rise-rose-risen).
+F|I|rise|Prices have rose every year.|have rose|have risen|Phân từ 2 của rise là risen.
+C|I|rise|There was a sharp ___ in the cost of living.|rise|rising|risen|Danh từ: a rise in.
+C|E|rise|Due to the ___ cost of steel, we must revise our quotation.|rising|risen|rise of|Tính từ V-ing: rising cost.
+C|I|rise|The number of accidents rose ___ 120 to 150.|from|since|of|from … to …
+C|M|rise|The water level ___ after the heavy rain.|rose|raised|risen|Tự dâng lên → rose.
+C|I|rise|The rise ___ interest rates affected many contractors.|in|of|on|a rise in.
+C|S|rise|The temperature inside the container ___ to 40 °C.|rose|raised|was risen|Nội động từ: rose.
+C|I|rise|Sea levels are rising ___ than expected.|faster|more fast|fastly|So sánh hơn: faster.
+C|E|rise|Labour costs have risen ___ 8% this year.|by|of|at|Mức tăng → by.
+C|I|rise|Youth unemployment is on the ___.|rise|rising|risen|on the rise = đang tăng.
+C|I|rise|Prices rose ___ in the first half of the year.|steadily|steady|steadiness|Trạng từ.
+C|I|rise|The graph shows a dramatic ___ in sales in 2024.|rise|raise|rising up|Danh từ "rise" (IELTS Task 1).
+F|I|rise|The sales raised dramatically in 2024.|sales raised|sales rose|Không có tân ngữ → rise.
+C|S|rise|Dust rose ___ the excavator started digging.|as soon as|until|since|as soon as + mệnh đề.
+C|I|rise|Inflation rose ___ its highest level in ten years.|to|by|until|Đến mức → to.
+C|I|rise|Costs are likely to rise ___.|further|farther|more far|rise further = tăng thêm.
+C|E|raise|The supplier ___ the price by 8%.|raised|rose|risen|Có tân ngữ → raise.
+F|I|raise|Prices raised by 8% last month.|Prices raised|Prices rose|Không có tân ngữ → rise.
+C|M|raise|The consultant ___ a concern about the fixing detail.|raised|rose|rised|raise a concern = nêu lo ngại.
+C|E|raise|We have raised an RFI ___ the anchor details.|on|for to|with|raise an RFI on + nội dung.
+C|M|raise|The Engineer raised the issue ___ the weekly meeting.|at|on|in to|at the meeting.
+C|M|raise|Several questions were ___ about the access route.|raised|risen|rose|Bị động: were raised.
+C|E|raise|Please raise any questions ___ the end of the week.|by|until|since|by = trước hạn.
+C|S|raise|The scaffold was raised ___ the third floor.|to|by to|until|raise sth to + mức.
+C|C|raise|The Contractor may raise a claim ___ the Employer.|against|to with|for|claim against sb.
+C|I|raise|Governments should raise ___ about road safety.|awareness|aware|awareness of|raise awareness.
+F|M|raise|The client rised a question about the colour.|rised|raised|raise là động từ có quy tắc: raised.
+C|E|raise|We would like to raise ___ issue of late payments.|the|for the|about the|raise + the issue of.
+C|I|raise|The government plans to raise taxes ___ fuel.|on|of|for|tax on + N.
+C|M|raise|The subcontractor raised ___ invoice for the extra work.|an|a|the an|raise an invoice.
+C|S|raise|Raise the barrier only ___ the area is clear.|when|until|unless when|when + mệnh đề.
+C|E|raise|Thank you for raising this ___.|matter|matters|mattered|raise + N số ít.
+C|C|raise|A dispute may be raised ___ the DAAB.|with|to of|for|raise sth with sb.
+C|I|raise|The new law raised the minimum wage ___ 6%.|by|of|with|Mức tăng → by.
+C|M|raise|The issue was raised ___ the client's representative.|by|from|with|Bị động + by.
+C|E|raise|Please do not hesitate to raise ___ concerns.|any|of any|about any|raise + N.
+C|S|reduce|Prefabrication ___ the duration by two weeks.|reduced|fell|decreased of|Có tân ngữ → reduce.
+F|S|reduce|The duration reduced two weeks thanks to prefabrication.|duration reduced two weeks|duration was reduced by two weeks|Không có người làm → bị động + by.
+C|E|reduce|We managed to reduce the cost ___ 3%.|by|of|with|Mức giảm → by.
+C|I|reduce|Cycling helps ___ air pollution.|reduce|reducing of|reduction|help + V.
+C|C|reduce|The Contractor may suspend work or reduce the ___ of work.|rate|rated|rating|reduce the rate of work.
+C|S|reduce|Wet cutting reduces the ___ of dust.|amount|number|quantities|Dust không đếm được → amount.
+C|I|reduce|There has been a significant ___ in accidents.|reduction|reduce|reduced|Danh từ: reduction in.
+F|I|reduce|There was a big reduce in accidents.|a big reduce|a big reduction|Danh từ: reduction.
+C|M|reduce|The client asked us to reduce the noise ___ night.|at|in|on|at night.
+C|E|reduce|The price was reduced ___ USD 12,000 to USD 10,500.|from|since|of|from … to …
+C|I|reduce|Governments must reduce ___ on fossil fuels.|dependence|dependent|depend|reduce + danh từ.
+C|S|reduce|Speed must be reduced ___ 10 km/h near the gate.|to|by to|until|Giảm đến mức → to.
+C|E|reduce|Ordering early will reduce the risk ___ late delivery.|of|for|in|the risk of + N.
+C|C|reduce|The Retention Money is reduced ___ the first half is released.|when|until|since|when + mệnh đề.
+C|I|reduce|Working from home reduces ___ time.|commuting|commute's|commuted|Danh từ ghép: commuting time.
+C|M|reduce|The supplier reduced ___ lead time to six weeks.|the|to the|for the|reduce + N.
+C|S|reduce|Proper lifting techniques reduce the risk of back ___.|injuries|injury's|injured|Danh từ số nhiều.
+C|I|reduce|Recycling reduces the ___ of waste sent to landfill.|amount|number|many|waste không đếm được → amount.
+C|E|reduce|We can reduce the price if you ___ the order before Friday.|confirm|will confirm|confirmed|Mệnh đề if loại 1 dùng hiện tại.
+C|M|reduce|The scope was reduced ___ the budget cut.|because of|because|so|because of + danh từ.
+C|I|fall|Productivity ___ in December because of the rain.|fell|felled|was fallen|Tự giảm, không tân ngữ → fall (fell).
+F|S|fall|We fell the cost by 3% by changing supplier.|fell the cost|reduced the cost|Có tân ngữ → reduce (fall không có tân ngữ).|cut the cost
+C|I|fall|Unemployment has ___ to 3%.|fallen|fell|felled|Hiện tại hoàn thành: has fallen.
+F|I|fall|Prices have fell since January.|have fell|have fallen|fall-fell-fallen.
+C|I|fall|Sales fell ___ 10% in the third quarter.|by|of|with|Mức giảm → by.
+C|I|fall|There was a sharp ___ in the number of visitors.|fall|falling|fallen|Danh từ: a fall in.
+C|I|fall|Birth rates are ___ in many countries.|falling|fall|fallen|Hiện tại tiếp diễn.
+C|I|fall|The price of steel fell ___ USD 700 to USD 640 per tonne.|from|since|of|from … to …
+C|S|fall|Safety nets protect workers who ___ from height.|fall|fell to|falling to|Hiện tại đơn sau who: fall.
+C|I|fall|The temperature fell ___ zero last night.|below|under of|less|fall below zero.
+C|I|fall|Profits fell ___ because of high material costs.|sharply|sharp|sharpness|Trạng từ.
+C|M|fall|Progress fell ___ the programme in Zone C.|behind|after|below of|fall behind = bị chậm so với.
+C|C|fall|If progress falls behind the Programme, the Engineer may instruct a ___ programme.|revised|revise|revising|Tính từ V3: revised programme.
+C|I|fall|Car sales have fallen ___ for three years.|steadily|steady|steadiness|Trạng từ.
+C|M|fall|Productivity fell ___ the hot weather.|due to|because|since|due to + danh từ.
+C|I|fall|The fall ___ oil prices helped transport companies.|in|of|on|a fall in.
+C|S|fall|Tools must be tied to prevent them ___ falling.|from|to|of|prevent sth from V-ing.
+C|I|fall|The number of smokers fell ___ 25% to 18%.|from|since|by from|from … to …
+C|M|fall|The task fell ___ the scope of the original contract.|outside|out|out of from|fall outside the scope.
+C|I|fall|Interest rates are expected to fall ___ next year.|further|farther|more far|fall further.
