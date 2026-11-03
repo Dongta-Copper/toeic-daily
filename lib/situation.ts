@@ -143,6 +143,22 @@ export function selfFeedback(s: Sentence, verdict: Verdict, tags: string[], pair
   }
 }
 
+// ─── AI grading of one sentence (an option next to the self-check) ───────────
+
+/** Self-checks and AI gradings are stored alike; a self-check's summary always starts this way. */
+export const isSelfCheck = (fb: Feedback) => fb.summary.startsWith('Tự chấm')
+
+export async function requestFeedback(s: Sentence, answer: string): Promise<Feedback> {
+  const res = await fetch('/api/situation-feedback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ sentence: s, answer }),
+  })
+  const data = await res.json().catch(() => ({}))
+  if (!res.ok) throw new Error(data.error ?? `AI chưa chấm được (HTTP ${res.status}). Vui lòng thử lại.`)
+  return data
+}
+
 /** Word-level comparison of the learner's sentence with the model (longest common subsequence). */
 export function wordDiff(answer: string, model: string): { text: string; kind: 'same' | 'mine' | 'model' }[] {
   const tok = (x: string) => x.trim().split(/\s+/).filter(Boolean)
@@ -191,7 +207,7 @@ export function dayForAI(day: SituationDay, answers: Record<string, string>, res
       `- **Câu mẫu:** ${s.english}`
     )
     if (s.notes) lines.push(`- **Ghi chú:** ${s.notes}`)
-    if (r) lines.push(`- **Tôi tự chấm:** ${r.summary}`)
+    if (r) lines.push(isSelfCheck(r) ? `- **Tôi tự chấm:** ${r.summary}` : `- **AI đã chấm (${r.score}/10):** ${r.summary}`)
   })
   return lines.join('\n')
 }

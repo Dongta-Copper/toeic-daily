@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { ArrowLeft, ArrowRight, BarChart3, Copy, FileText, Pencil, Volume2 } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BarChart3, Copy, FileText, Loader2, Pencil, Sparkles, Volume2 } from 'lucide-react'
 import {
   ERROR_TYPES,
   SCENARIO_META,
@@ -10,7 +10,9 @@ import {
   dayForAI,
   feedbackFromAttempt,
   getAttempts,
+  isSelfCheck,
   readDrafts,
+  requestFeedback,
   saveAttempt,
   saveDayProgress,
   selfFeedback,
@@ -67,8 +69,66 @@ function Diff({ answer, model }: { answer: string; model: string }) {
   )
 }
 
-/** Shows a saved result: old AI grading (with details) or a self-check. */
+function AIResult({ fb }: { fb: Feedback }) {
+  const v = VERDICT_STYLE[fb.verdict] ?? VERDICT_STYLE.minor
+  return (
+    <div className="p-4 rounded-md border border-gray-200 space-y-4">
+      <div className="flex items-center gap-2">
+        <Sparkles className="w-4 h-4 text-gray-400" />
+        <span className={`px-2 py-0.5 rounded border text-xs font-medium ${v.cls}`}>{v.label}</span>
+        <span className="text-xs text-gray-500 tabular-nums">{fb.score}/10</span>
+      </div>
+      <p className="text-sm text-gray-700 leading-relaxed">{fb.summary}</p>
+
+      {fb.errors.length > 0 && (
+        <ul className="space-y-3">
+          {fb.errors.map((e, i) => (
+            <li key={i} className="text-sm">
+              <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1">
+                <span className="text-xs px-1.5 py-0.5 rounded bg-gray-100 text-gray-600">{ERROR_TYPES[e.type] ?? e.type}</span>
+                <span className="text-red-600 line-through">{e.wrong}</span>
+                <span className="text-gray-400">→</span>
+                <span className="text-green-700 font-medium">{e.correct}</span>
+              </div>
+              <p className="text-xs text-gray-500 leading-relaxed mt-1">{e.explanation}</p>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      {fb.verdict !== 'correct' && fb.corrected && (
+        <div>
+          <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-1">Câu của bạn sau khi sửa</p>
+          <div className="flex items-start justify-between gap-3">
+            <p className="text-sm text-gray-900">{fb.corrected}</p>
+            <SpeakButton text={fb.corrected} />
+          </div>
+        </div>
+      )}
+
+      {fb.natural.length > 0 && (
+        <div>
+          <p className="text-xs font-medium text-gray-400 uppercase tracking-widest mb-2">Cách viết tự nhiên hơn</p>
+          <ul className="space-y-2">
+            {fb.natural.map((n, i) => (
+              <li key={i}>
+                <div className="flex items-start justify-between gap-3">
+                  <p className="text-sm text-gray-900">{n.text}</p>
+                  <SpeakButton text={n.text} />
+                </div>
+                <p className="text-xs text-gray-500 leading-relaxed">{n.note}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  )
+}
+
+/** Shows a saved result: AI grading (with details) or a self-check. */
 function SavedResult({ fb }: { fb: Feedback }) {
+  if (!isSelfCheck(fb)) return <AIResult fb={fb} />
   const v = VERDICT_STYLE[fb.verdict] ?? VERDICT_STYLE.minor
   const tagged = fb.errors.filter((e) => e.type)
   return (
@@ -136,11 +196,30 @@ export function SentenceCard({
   const [tags, setTags] = useState<string[]>([])
   const [pair, setPair] = useState({ wrong: '', correct: '' })
   const [showHint, setShowHint] = useState(false)
+  const [aiBusy, setAiBusy] = useState(false)
+  const [aiError, setAiError] = useState('')
 
   async function save() {
     if (!verdict) return
+    await record(selfFeedback(s, verdict, tags, pair))
+  }
+
+  async function gradeWithAI() {
     const text = answer.trim()
-    const fb = selfFeedback(s, verdict, tags, pair)
+    if (!text || aiBusy) return
+    setAiBusy(true)
+    setAiError('')
+    try {
+      await record(await requestFeedback(s, text))
+    } catch (e) {
+      setAiError(e instanceof Error ? e.message : 'AI chưa chấm được. Vui lòng thử lại.')
+    } finally {
+      setAiBusy(false)
+    }
+  }
+
+  async function record(fb: Feedback) {
+    const text = answer.trim()
     setResult(fb)
     setStage('saved')
     onGrade(verdict === 'correct' ? 'remembered' : 'review')
@@ -165,6 +244,17 @@ export function SentenceCard({
 
   const chip = (on: boolean) =>
     `px-2.5 py-1 rounded-full border text-xs transition-colors ${on ? 'border-gray-900 bg-gray-900 text-white' : 'border-gray-300 text-gray-600 hover:border-gray-900'}`
+
+  const aiButton = (
+    <button
+      onClick={gradeWithAI}
+      disabled={aiBusy}
+      className="flex items-center justify-center gap-1.5 px-5 py-2.5 border border-gray-300 text-sm font-medium text-gray-700 rounded-md hover:border-gray-900 disabled:opacity-50 transition-colors"
+    >
+      {aiBusy ? <Loader2 className="w-4 h-4 animate-spin" /> : <Sparkles className="w-4 h-4" />}
+      {aiBusy ? 'AI đang chấm…' : 'AI chấm'}
+    </button>
+  )
 
   return (
     <div className="p-5 border border-gray-200 rounded-lg">
@@ -206,7 +296,7 @@ export function SentenceCard({
           if (e.key === 'Enter' && (e.ctrlKey || e.metaKey) && stage === 'write') setStage('compare')
         }}
         rows={3}
-        readOnly={stage !== 'write'}
+        readOnly={stage !== 'write' || aiBusy}
         placeholder="Viết câu tiếng Anh của bạn…"
         // Phone keyboards would silently fix exactly the mistakes we want to see.
         autoCorrect="off"
@@ -217,22 +307,36 @@ export function SentenceCard({
       />
 
       {stage === 'write' ? (
+        <div className="mt-3 flex flex-wrap gap-2">
+          <button
+            onClick={() => {
+              setVerdict(null)
+              setTags([])
+              setPair({ wrong: '', correct: '' })
+              setAiError('')
+              setStage('compare')
+            }}
+            disabled={aiBusy}
+            className="px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 disabled:opacity-50 transition-colors"
+          >
+            {answer.trim() ? 'So với câu mẫu' : 'Xem câu mẫu'}
+          </button>
+          {answer.trim() && aiButton}
+        </div>
+      ) : (
         <button
           onClick={() => {
-            setVerdict(null)
-            setTags([])
-            setPair({ wrong: '', correct: '' })
-            setStage('compare')
+            setAiError('')
+            setStage('write')
           }}
-          className="mt-3 px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md hover:bg-gray-700 transition-colors"
+          disabled={aiBusy}
+          className="mt-3 flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 disabled:opacity-50 transition-colors"
         >
-          {answer.trim() ? 'So với câu mẫu' : 'Xem câu mẫu'}
-        </button>
-      ) : (
-        <button onClick={() => setStage('write')} className="mt-3 flex items-center gap-1.5 text-sm text-gray-500 hover:text-gray-900 transition-colors">
           <Pencil className="w-3.5 h-3.5" /> Viết lại
         </button>
       )}
+
+      {aiError && <p className="mt-3 text-sm text-red-600">{aiError}</p>}
 
       {stage !== 'write' && (
         <div className="mt-4 space-y-3">
@@ -314,9 +418,15 @@ export function SentenceCard({
                 </>
               )}
 
-              <button onClick={save} disabled={!verdict} className="w-full py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md disabled:opacity-30">
+              <button onClick={save} disabled={!verdict || aiBusy} className="w-full py-2.5 bg-gray-900 text-white text-sm font-medium rounded-md disabled:opacity-30">
                 Lưu kết quả
               </button>
+              {answer.trim() && (
+                <div className="pt-3 border-t border-gray-100 flex items-center justify-between gap-3">
+                  <p className="text-xs text-gray-500">Chưa chắc câu của mình đúng hay sai?</p>
+                  {aiButton}
+                </div>
+              )}
             </div>
           ) : (
             result && <SavedResult fb={result} />
@@ -404,7 +514,7 @@ export default function SituationPractice({ data, totalDays, hasNext }: { data: 
         </p>
         <h1 className="text-2xl font-semibold text-gray-900">Practice Situation</h1>
         <p className="text-sm text-gray-500 mt-2">
-          Viết câu → <b>So với câu mẫu</b> → tự chấm. Muốn giải thích chi tiết: <b>Xuất Word</b> cả bài rồi dán vào ChatGPT / Claude / DeepSeek.
+          Viết câu → <b>So với câu mẫu</b> để tự chấm, hoặc bấm <b>AI chấm</b> từng câu. Muốn review cả bài: <b>Xuất Word</b> rồi dán vào ChatGPT / Claude / DeepSeek.
         </p>
       </div>
 
